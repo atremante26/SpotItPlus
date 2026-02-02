@@ -1,0 +1,1964 @@
+{
+  "codebase_community": [
+    [
+      {
+        "primary": [
+          {
+            "value": "BADGES__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "COMMENTS__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "POSTHISTORY__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "POSTLINKS__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "POSTS__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "TAGS__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "USERS__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "VOTES__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "BADGES__USERID"
+          },
+          {
+            "value": "USERS__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "COMMENTS__USERID"
+          },
+          {
+            "value": "USERS__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "COMMENTS__POSTID"
+          },
+          {
+            "value": "POSTS__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "POSTHISTORY__USERID"
+          },
+          {
+            "value": "USERS__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "POSTHISTORY__POSTID"
+          },
+          {
+            "value": "POSTS__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "POSTLINKS__RELATEDPOSTID"
+          },
+          {
+            "value": "POSTS__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "POSTLINKS__POSTID"
+          },
+          {
+            "value": "POSTS__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "POSTS__OWNERUSERID"
+          },
+          {
+            "value": "USERS__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "POSTS__LASTEDITORUSERID"
+          },
+          {
+            "value": "USERS__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "TAGS__EXCERPTPOSTID"
+          },
+          {
+            "value": "POSTS__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "VOTES__USERID"
+          },
+          {
+            "value": "USERS__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "VOTES__POSTID"
+          },
+          {
+            "value": "POSTS__ID"
+          }
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTLINKS__ID"
+          },
+          108.0,
+          3356789.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTLINKS__POSTID"
+          },
+          4.0,
+          115360.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTLINKS__RELATEDPOSTID"
+          },
+          1.0,
+          115163.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTLINKS__LINKTYPEID"
+          },
+          1.0,
+          3.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTHISTORY__ID"
+          },
+          1.0,
+          386848.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTHISTORY__POSTHISTORYTYPEID"
+          },
+          1.0,
+          38.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTHISTORY__POSTID"
+          },
+          1.0,
+          115378.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTHISTORY__USERID"
+          },
+          -1.0,
+          55746.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "BADGES__ID"
+          },
+          1.0,
+          92240.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "BADGES__USERID"
+          },
+          2.0,
+          55746.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTS__ID"
+          },
+          1.0,
+          115378.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTS__POSTTYPEID"
+          },
+          1.0,
+          7.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTS__ACCEPTEDANSWERID"
+          },
+          5.0,
+          115345.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTS__SCORE"
+          },
+          -19.0,
+          192.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTS__VIEWCOUNT"
+          },
+          1.0,
+          175495.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTS__OWNERUSERID"
+          },
+          -1.0,
+          55746.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTS__ANSWERCOUNT"
+          },
+          0.0,
+          136.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTS__COMMENTCOUNT"
+          },
+          0.0,
+          45.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTS__FAVORITECOUNT"
+          },
+          0.0,
+          233.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTS__LASTEDITORUSERID"
+          },
+          -1.0,
+          55733.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "POSTS__PARENTID"
+          },
+          1.0,
+          115375.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "USERS__ID"
+          },
+          -1.0,
+          55747.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "USERS__REPUTATION"
+          },
+          1.0,
+          87393.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "USERS__VIEWS"
+          },
+          0.0,
+          20932.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "USERS__UPVOTES"
+          },
+          0.0,
+          11442.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "USERS__DOWNVOTES"
+          },
+          0.0,
+          1920.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "USERS__ACCOUNTID"
+          },
+          -1.0,
+          5027354.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "USERS__AGE"
+          },
+          13.0,
+          94.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "TAGS__ID"
+          },
+          1.0,
+          1869.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "TAGS__COUNT"
+          },
+          1.0,
+          7244.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "TAGS__EXCERPTPOSTID"
+          },
+          2331.0,
+          114058.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "TAGS__WIKIPOSTID"
+          },
+          2254.0,
+          114057.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "VOTES__ID"
+          },
+          1.0,
+          43538.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "VOTES__POSTID"
+          },
+          1.0,
+          16921.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "VOTES__VOTETYPEID"
+          },
+          1.0,
+          16.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "VOTES__USERID"
+          },
+          5.0,
+          11954.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "VOTES__BOUNTYAMOUNT"
+          },
+          0.0,
+          200.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "COMMENTS__ID"
+          },
+          1.0,
+          221292.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "COMMENTS__POSTID"
+          },
+          1.0,
+          115376.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "COMMENTS__SCORE"
+          },
+          0.0,
+          90.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "COMMENTS__USERID"
+          },
+          3.0,
+          55746.0
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "POSTLINKS__LINKTYPEID"
+          },
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "POSTHISTORY__POSTHISTORYTYPEID"
+          },
+          [
+            2,
+            1,
+            3,
+            16,
+            6,
+            5,
+            4,
+            10,
+            8,
+            12,
+            9,
+            13,
+            11,
+            37,
+            38,
+            14,
+            7,
+            19,
+            15,
+            36,
+            25,
+            24,
+            35,
+            33,
+            34
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "POSTS__POSTTYPEID"
+          },
+          [
+            1,
+            2,
+            7,
+            5,
+            4,
+            6,
+            3
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "VOTES__VOTETYPEID"
+          },
+          [
+            2,
+            5,
+            3,
+            1,
+            8,
+            11,
+            9,
+            15,
+            16,
+            10
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "VOTES__BOUNTYAMOUNT"
+          },
+          [
+            50,
+            25,
+            0,
+            100,
+            150,
+            200
+          ]
+        ]
+      },
+      {
+        "not_null": {
+          "value": "POSTLINKS__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTLINKS__CREATIONDATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTLINKS__POSTID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTLINKS__RELATEDPOSTID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTLINKS__LINKTYPEID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTHISTORY__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTHISTORY__POSTHISTORYTYPEID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTHISTORY__POSTID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTHISTORY__REVISIONGUID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTHISTORY__CREATIONDATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTHISTORY__TEXT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTHISTORY__COMMENT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTHISTORY__USERDISPLAYNAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BADGES__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BADGES__USERID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BADGES__NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BADGES__DATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTS__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTS__POSTTYPEID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTS__CREAIONDATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTS__SCORE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTS__LASACTIVITYDATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "POSTS__COMMENTCOUNT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "USERS__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "USERS__REPUTATION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "USERS__CREATIONDATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "USERS__DISPLAYNAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "USERS__LASTACCESSDATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "USERS__VIEWS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "USERS__UPVOTES"
+        }
+      },
+      {
+        "not_null": {
+          "value": "USERS__DOWNVOTES"
+        }
+      },
+      {
+        "not_null": {
+          "value": "USERS__ACCOUNTID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "TAGS__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "TAGS__TAGNAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "TAGS__COUNT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "VOTES__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "VOTES__POSTID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "VOTES__VOTETYPEID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "VOTES__CREATIONDATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "COMMENTS__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "COMMENTS__POSTID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "COMMENTS__SCORE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "COMMENTS__TEXT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "COMMENTS__CREATIONDATE"
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTLINKS__ID",
+            "POSTLINKS__CREATIONDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTLINKS__ID",
+            "POSTLINKS__POSTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTLINKS__ID",
+            "POSTLINKS__RELATEDPOSTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTLINKS__ID",
+            "POSTLINKS__LINKTYPEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTLINKS__POSTID",
+            "POSTLINKS__LINKTYPEID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTLINKS__ID",
+            "POSTLINKS__LINKTYPEID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTLINKS__LINKTYPEID",
+            "POSTLINKS__RELATEDPOSTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTHISTORY__ID",
+            "POSTHISTORY__POSTHISTORYTYPEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTHISTORY__ID",
+            "POSTHISTORY__POSTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTHISTORY__ID",
+            "POSTHISTORY__REVISIONGUID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTHISTORY__ID",
+            "POSTHISTORY__CREATIONDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTHISTORY__ID",
+            "POSTHISTORY__USERID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTHISTORY__ID",
+            "POSTHISTORY__TEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTHISTORY__ID",
+            "POSTHISTORY__COMMENT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTHISTORY__ID",
+            "POSTHISTORY__USERDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTHISTORY__POSTID",
+            "POSTHISTORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BADGES__ID",
+            "BADGES__USERID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BADGES__ID",
+            "BADGES__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BADGES__ID",
+            "BADGES__DATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__POSTTYPEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__ACCEPTEDANSWERID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__CREAIONDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__SCORE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__VIEWCOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__BODY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__OWNERUSERID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__LASACTIVITYDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__TITLE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__TAGS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__ANSWERCOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__COMMENTCOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__FAVORITECOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__LASTEDITORUSERID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__LASTEDITDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__COMMUNITYOWNEDDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__PARENTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__CLOSEDDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__OWNERDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ID",
+            "POSTS__LASTEDITORDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__CREAIONDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__SCORE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__VIEWCOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__BODY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__OWNERUSERID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__LASACTIVITYDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__TITLE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__TAGS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__ANSWERCOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__COMMENTCOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__FAVORITECOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__LASTEDITORUSERID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__LASTEDITDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__COMMUNITYOWNEDDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__CLOSEDDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__OWNERDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__LASTEDITORDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__CREAIONDATE",
+            "POSTS__CLOSEDDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__CREAIONDATE",
+            "POSTS__OWNERDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__CREAIONDATE",
+            "POSTS__LASTEDITORDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__BODY",
+            "POSTS__FAVORITECOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__BODY",
+            "POSTS__CLOSEDDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__BODY",
+            "POSTS__OWNERDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__BODY",
+            "POSTS__LASTEDITORDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__LASACTIVITYDATE",
+            "POSTS__CLOSEDDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__LASACTIVITYDATE",
+            "POSTS__LASTEDITORDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__TITLE",
+            "POSTS__COMMUNITYOWNEDDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__TITLE",
+            "POSTS__CLOSEDDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__TITLE",
+            "POSTS__OWNERDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__TITLE",
+            "POSTS__LASTEDITORDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__LASTEDITDATE",
+            "POSTS__COMMUNITYOWNEDDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__LASTEDITDATE",
+            "POSTS__CLOSEDDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__LASTEDITDATE",
+            "POSTS__OWNERDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__LASTEDITDATE",
+            "POSTS__LASTEDITORDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__COMMUNITYOWNEDDATE",
+            "POSTS__CLOSEDDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__COMMUNITYOWNEDDATE",
+            "POSTS__LASTEDITORDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__PARENTID",
+            "POSTS__LASTEDITORDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__CLOSEDDATE",
+            "POSTS__OWNERDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__CLOSEDDATE",
+            "POSTS__LASTEDITORDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__FAVORITECOUNT",
+            "POSTS__VIEWCOUNT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__SCORE",
+            "POSTS__VIEWCOUNT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__POSTTYPEID",
+            "POSTS__ACCEPTEDANSWERID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__POSTTYPEID",
+            "POSTS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__POSTTYPEID",
+            "POSTS__VIEWCOUNT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__ID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ACCEPTEDANSWERID",
+            "POSTS__COMMENTCOUNT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "POSTS__ANSWERCOUNT",
+            "POSTS__VIEWCOUNT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ID",
+            "USERS__REPUTATION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ID",
+            "USERS__CREATIONDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ID",
+            "USERS__DISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ID",
+            "USERS__LASTACCESSDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ID",
+            "USERS__WEBSITEURL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ID",
+            "USERS__LOCATION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ID",
+            "USERS__ABOUTME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ID",
+            "USERS__VIEWS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ID",
+            "USERS__UPVOTES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ID",
+            "USERS__DOWNVOTES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ID",
+            "USERS__ACCOUNTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ID",
+            "USERS__AGE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ID",
+            "USERS__PROFILEIMAGEURL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__CREATIONDATE",
+            "USERS__LOCATION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__CREATIONDATE",
+            "USERS__ABOUTME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__CREATIONDATE",
+            "USERS__AGE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__LASTACCESSDATE",
+            "USERS__WEBSITEURL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__LASTACCESSDATE",
+            "USERS__DOWNVOTES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__LASTACCESSDATE",
+            "USERS__AGE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ACCOUNTID",
+            "USERS__AGE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "USERS__ACCOUNTID",
+            "USERS__PROFILEIMAGEURL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TAGS__ID",
+            "TAGS__TAGNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TAGS__ID",
+            "TAGS__COUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TAGS__ID",
+            "TAGS__EXCERPTPOSTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TAGS__ID",
+            "TAGS__WIKIPOSTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TAGS__TAGNAME",
+            "TAGS__COUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TAGS__TAGNAME",
+            "TAGS__EXCERPTPOSTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TAGS__TAGNAME",
+            "TAGS__WIKIPOSTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TAGS__EXCERPTPOSTID",
+            "TAGS__WIKIPOSTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TAGS__ID",
+            "TAGS__WIKIPOSTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TAGS__ID",
+            "TAGS__EXCERPTPOSTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TAGS__WIKIPOSTID",
+            "TAGS__EXCERPTPOSTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "VOTES__ID",
+            "VOTES__POSTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "VOTES__ID",
+            "VOTES__VOTETYPEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "VOTES__ID",
+            "VOTES__CREATIONDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "VOTES__ID",
+            "VOTES__USERID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "VOTES__ID",
+            "VOTES__BOUNTYAMOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "VOTES__POSTID",
+            "VOTES__BOUNTYAMOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "VOTES__BOUNTYAMOUNT",
+            "VOTES__POSTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "VOTES__BOUNTYAMOUNT",
+            "VOTES__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "COMMENTS__ID",
+            "COMMENTS__POSTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "COMMENTS__ID",
+            "COMMENTS__SCORE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "COMMENTS__ID",
+            "COMMENTS__TEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "COMMENTS__ID",
+            "COMMENTS__CREATIONDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "COMMENTS__ID",
+            "COMMENTS__USERID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "COMMENTS__ID",
+            "COMMENTS__USERDISPLAYNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "COMMENTS__CREATIONDATE",
+            "COMMENTS__USERDISPLAYNAME"
+          ]
+        }
+      }
+    ]
+  ]
+}

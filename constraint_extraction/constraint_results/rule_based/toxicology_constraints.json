@@ -1,0 +1,230 @@
+{
+  "toxicology": [
+    [
+      {
+        "primary": [
+          {
+            "value": "ATOM__ATOM_ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "BOND__BOND_ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "CONNECTED__ATOM_ID"
+          },
+          {
+            "value": "CONNECTED__ATOM_ID2"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "MOLECULE__MOLECULE_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "ATOM__MOLECULE_ID"
+          },
+          {
+            "value": "MOLECULE__MOLECULE_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "BOND__MOLECULE_ID"
+          },
+          {
+            "value": "MOLECULE__MOLECULE_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "CONNECTED__BOND_ID"
+          },
+          {
+            "value": "BOND__BOND_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "CONNECTED__ATOM_ID2"
+          },
+          {
+            "value": "ATOM__ATOM_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "CONNECTED__ATOM_ID"
+          },
+          {
+            "value": "ATOM__ATOM_ID"
+          }
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "BOND__BOND_TYPE"
+          },
+          [
+            "-",
+            "=",
+            "#"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "MOLECULE__LABEL"
+          },
+          [
+            "+",
+            "-"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "ATOM__ELEMENT"
+          },
+          [
+            "cl",
+            "c",
+            "h",
+            "o",
+            "s",
+            "n",
+            "p",
+            "na",
+            "br",
+            "f",
+            "i",
+            "sn",
+            "pb",
+            "te",
+            "ca",
+            "zn",
+            "si",
+            "b",
+            "k",
+            "cu",
+            "y"
+          ]
+        ]
+      },
+      {
+        "not_null": {
+          "value": "BOND__BOND_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BOND__MOLECULE_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MOLECULE__MOLECULE_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MOLECULE__LABEL"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ATOM__ATOM_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ATOM__MOLECULE_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ATOM__ELEMENT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONNECTED__ATOM_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONNECTED__ATOM_ID2"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONNECTED__BOND_ID"
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BOND__BOND_ID",
+            "BOND__MOLECULE_ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BOND__BOND_ID",
+            "BOND__BOND_TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MOLECULE__MOLECULE_ID",
+            "MOLECULE__LABEL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ATOM__ATOM_ID",
+            "ATOM__MOLECULE_ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ATOM__ATOM_ID",
+            "ATOM__ELEMENT"
+          ]
+        }
+      }
+    ]
+  ]
+}

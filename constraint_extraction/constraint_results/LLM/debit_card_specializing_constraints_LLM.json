@@ -1,0 +1,431 @@
+{
+  "debit_card_specializing": [
+    [
+      {
+        "primary": [
+          {
+            "value": "CUSTOMERS__CUSTOMERID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "GASSTATIONS__GASSTATIONID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "PRODUCTS__PRODUCTID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "TRANSACTIONS_1K__TRANSACTIONID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "YEARMONTH__CUSTOMERID"
+          },
+          {
+            "value": "YEARMONTH__DATE"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "YEARMONTH__CUSTOMERID"
+          },
+          {
+            "value": "CUSTOMERS__CUSTOMERID"
+          }
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CUSTOMERS__CUSTOMERID"
+          },
+          3,
+          53314
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "GASSTATIONS__GASSTATIONID"
+          },
+          1,
+          2147483647
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "GASSTATIONS__CHAINID"
+          },
+          1,
+          290
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "PRODUCTS__PRODUCTID"
+          },
+          1,
+          630
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "YEARMONTH__CUSTOMERID"
+          },
+          1,
+          2147483647
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "YEARMONTH__CONSUMPTION"
+          },
+          -15040.792500000001,
+          21352.0325
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "TRANSACTIONS_1K__TRANSACTIONID"
+          },
+          1,
+          2147483647
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "TRANSACTIONS_1K__CUSTOMERID"
+          },
+          1,
+          2147483647
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "TRANSACTIONS_1K__CARDID"
+          },
+          26228,
+          775970
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "TRANSACTIONS_1K__GASSTATIONID"
+          },
+          1,
+          2147483647
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "TRANSACTIONS_1K__PRODUCTID"
+          },
+          1,
+          2147483647
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "TRANSACTIONS_1K__AMOUNT"
+          },
+          0,
+          2147483647
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "TRANSACTIONS_1K__PRICE"
+          },
+          0,
+          1e+308
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CUSTOMERS__SEGMENT"
+          },
+          [
+            "SME",
+            "LAM",
+            "KAM"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CUSTOMERS__CURRENCY"
+          },
+          [
+            "EUR",
+            "CZK"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "GASSTATIONS__COUNTRY"
+          },
+          [
+            "CZE",
+            "SVK"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "GASSTATIONS__SEGMENT"
+          },
+          [
+            "Value for money",
+            "Premium",
+            "Other",
+            "Noname",
+            "Discount"
+          ]
+        ]
+      },
+      {
+        "not_null": {
+          "value": "CUSTOMERS__CUSTOMERID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CUSTOMERS__SEGMENT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CUSTOMERS__CURRENCY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "GASSTATIONS__GASSTATIONID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "GASSTATIONS__CHAINID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "GASSTATIONS__COUNTRY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PRODUCTS__PRODUCTID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PRODUCTS__DESCRIPTION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "YEARMONTH__CUSTOMERID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "YEARMONTH__DATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "YEARMONTH__CONSUMPTION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "TRANSACTIONS_1K__TRANSACTIONID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "TRANSACTIONS_1K__DATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "TRANSACTIONS_1K__TIME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "TRANSACTIONS_1K__CUSTOMERID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "TRANSACTIONS_1K__CARDID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "TRANSACTIONS_1K__GASSTATIONID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "TRANSACTIONS_1K__PRODUCTID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "TRANSACTIONS_1K__AMOUNT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "TRANSACTIONS_1K__PRICE"
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CUSTOMERS__CUSTOMERID",
+            "CUSTOMERS__SEGMENT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CUSTOMERS__CUSTOMERID",
+            "CUSTOMERS__CURRENCY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "GASSTATIONS__GASSTATIONID",
+            "GASSTATIONS__CHAINID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "GASSTATIONS__GASSTATIONID",
+            "GASSTATIONS__COUNTRY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "GASSTATIONS__GASSTATIONID",
+            "GASSTATIONS__SEGMENT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "GASSTATIONS__CHAINID",
+            "GASSTATIONS__SEGMENT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PRODUCTS__PRODUCTID",
+            "PRODUCTS__DESCRIPTION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TRANSACTIONS_1K__TRANSACTIONID",
+            "TRANSACTIONS_1K__TIME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TRANSACTIONS_1K__TRANSACTIONID",
+            "TRANSACTIONS_1K__CUSTOMERID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TRANSACTIONS_1K__TRANSACTIONID",
+            "TRANSACTIONS_1K__CARDID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TRANSACTIONS_1K__TRANSACTIONID",
+            "TRANSACTIONS_1K__GASSTATIONID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TRANSACTIONS_1K__TRANSACTIONID",
+            "TRANSACTIONS_1K__PRODUCTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TRANSACTIONS_1K__TRANSACTIONID",
+            "TRANSACTIONS_1K__AMOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "TRANSACTIONS_1K__TRANSACTIONID",
+            "TRANSACTIONS_1K__PRICE"
+          ]
+        }
+      }
+    ]
+  ]
+}

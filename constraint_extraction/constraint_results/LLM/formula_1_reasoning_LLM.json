@@ -1,0 +1,5199 @@
+{
+  "database": "formula_1",
+  "between": [
+    {
+      "table": "circuits",
+      "column": "CIRCUITID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        2,
+        73
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "CIRCUITID is a unique identifier for circuits, which should logically start from 1 and can increase indefinitely as more circuits are added. The strict bounds observed (2 to 73) are based on current data but do not account for potential future entries. Therefore, using custom bounds [1, +\u221e] is more appropriate to accommodate future growth.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "circuits",
+      "column": "LAT",
+      "data_type": "REAL",
+      "strict_bounds": [
+        -34.9272,
+        57.2653
+      ],
+      "custom_bounds": [
+        -90,
+        90
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The LAT column represents latitude values, which are naturally bounded between -90 and 90 degrees. While the observed data range is narrower, using strict bounds may not account for potential future data entries. Therefore, custom bounds are appropriate to ensure all valid latitude values are included.",
+        "chosen_bounds": [
+          -34.9272,
+          57.2653
+        ]
+      }
+    },
+    {
+      "table": "circuits",
+      "column": "LNG",
+      "data_type": "REAL",
+      "strict_bounds": [
+        -118.189,
+        138.927
+      ],
+      "custom_bounds": [
+        -180,
+        180
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The LNG column represents longitude values, which are naturally bounded between -180 and 180 degrees. While the observed data range is narrower, using custom bounds ensures that all possible valid longitude values are included, accommodating any potential future data that may fall within the full range.",
+        "chosen_bounds": [
+          -180,
+          180
+        ]
+      }
+    },
+    {
+      "table": "status",
+      "column": "STATUSID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        136
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The STATUSID column is an identifier that is naturally bounded by the observed data range. The strict bounds [1, 136] are realistic and cover all existing values. Custom bounds are not necessary as the observed range is sufficient to ensure valid entries.",
+        "chosen_bounds": [
+          1,
+          136
+        ]
+      }
+    },
+    {
+      "table": "drivers",
+      "column": "DRIVERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        841
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The DRIVERID is a unique identifier for each driver, which should logically start from 1 and can extend indefinitely as more drivers are added. The strict bounds observed (1 to 841) are based on current data, but using custom bounds (1 to +\u221e) is more appropriate to accommodate future entries without constraints.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "drivers",
+      "column": "NUMBER",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        2,
+        99
+      ],
+      "custom_bounds": [
+        1,
+        99
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The NUMBER column represents driver numbers, which are naturally bounded and should logically start from 1 (as there is no driver with a number 0). The strict bounds observed (2 to 99) are based on current data but may not account for potential future drivers or historical data. Therefore, using custom bounds of [1, 99] is safer to ensure all valid driver numbers are included.",
+        "chosen_bounds": [
+          1,
+          99
+        ]
+      }
+    },
+    {
+      "table": "driverStandings",
+      "column": "DRIVERSTANDINGSID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        68460
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The DRIVERSTANDINGSID is a unique identifier for driver standings, which should logically start from 1 and can potentially increase indefinitely as new records are added. The strict bounds observed (1 to 68460) are based on current data but do not account for future entries. Therefore, using custom bounds [1, +\u221e] is more appropriate to accommodate future growth.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "driverStandings",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        982
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The RACEID column represents a unique identifier for races, which is inherently a count and can theoretically extend indefinitely as new races are added. While the observed data range is [1, 982], using custom bounds [1, +\u221e] is more appropriate to accommodate future races and ensure the integrity of the data as the database grows.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "driverStandings",
+      "column": "DRIVERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        841
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The DRIVERID column represents unique identification numbers for drivers, which are naturally bounded to positive integers starting from 1. While the strict observed range is [1, 841], using custom bounds [1, +\u221e] is more appropriate as it accounts for potential future additions of drivers beyond the current maximum observed value.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "driverStandings",
+      "column": "POINTS",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.0,
+        397.0
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The POINTS column in DRIVERSTANDINGS represents the points acquired by drivers, which is a naturally bounded value. The observed data range shows a maximum of 397.0 points, and the minimum is 0.0, making the strict bounds realistic and appropriate. Custom bounds are not necessary as the observed range sufficiently captures the valid values for this column.",
+        "chosen_bounds": [
+          0.0,
+          397.0
+        ]
+      }
+    },
+    {
+      "table": "driverStandings",
+      "column": "POSITION",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        108
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The POSITION column represents the finishing position of drivers in races, which is naturally bounded to positive integers starting from 1. The strict bounds [1, 108] are based on observed data, but since positions can theoretically extend beyond this in future races, custom bounds [1, +\u221e] would be more appropriate. However, given the current data, strict bounds are sufficient for now.",
+        "chosen_bounds": [
+          1,
+          108
+        ]
+      }
+    },
+    {
+      "table": "driverStandings",
+      "column": "WINS",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        13
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The WINS column represents the number of wins a driver has achieved, which is a naturally bounded value starting from 0. The strict bounds of [0, 13] are based on observed data and are realistic given the context of the sport. Custom bounds would not be necessary as the observed range sufficiently captures the possible values.",
+        "chosen_bounds": [
+          0,
+          13
+        ]
+      }
+    },
+    {
+      "table": "races",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        988
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The RACEID is a unique identifier for races and is naturally bounded to positive integers starting from 1. The observed data range is realistic and covers all existing entries, so strict bounds [1, 988] are appropriate. Custom bounds are not necessary as the strict bounds sufficiently represent the valid range.",
+        "chosen_bounds": [
+          1,
+          988
+        ]
+      }
+    },
+    {
+      "table": "races",
+      "column": "YEAR",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1950,
+        2017
+      ],
+      "custom_bounds": [
+        1950,
+        2023
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The YEAR column represents the year of races, which is naturally bounded. The strict bounds based on observed data are from 1950 to 2017, but since the current year is 2023 and future races may occur, using custom bounds from 1950 to 2023 is more appropriate to account for potential future data.",
+        "chosen_bounds": [
+          1950,
+          2023
+        ]
+      }
+    },
+    {
+      "table": "races",
+      "column": "ROUND",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        21
+      ],
+      "custom_bounds": [
+        1,
+        22
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ROUND column represents the race round number, which is naturally bounded. The observed data range is [1, 21], but the maximum number of rounds in a season can be 22 based on historical data. Therefore, using custom bounds [1, 22] is safer to account for potential future seasons with more rounds.",
+        "chosen_bounds": [
+          1,
+          22
+        ]
+      }
+    },
+    {
+      "table": "races",
+      "column": "CIRCUITID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        73
+      ],
+      "custom_bounds": [
+        1,
+        73
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The CIRCUITID column represents unique identification numbers for circuits, which are naturally bounded by the existing circuit IDs. The observed data range of [1, 73] is realistic and reflects the actual data, making strict bounds appropriate. Custom bounds are not necessary as the observed range is already well-defined.",
+        "chosen_bounds": [
+          1,
+          73
+        ]
+      }
+    },
+    {
+      "table": "constructors",
+      "column": "CONSTRUCTORID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        210
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The CONSTRUCTORID is a unique identification number for constructors, which should logically start from 1 and can increase indefinitely as new constructors are added. The observed data range is realistic, but since it is an identifier, it is safer to use strict bounds based on the current data range to ensure valid IDs are used.",
+        "chosen_bounds": [
+          1,
+          210
+        ]
+      }
+    },
+    {
+      "table": "constructorResults",
+      "column": "CONSTRUCTORRESULTSID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        15579
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The CONSTRUCTORRESULTSID is a unique identification number for constructor results, which should logically start from 1 and can increase indefinitely as new results are added. The strict bounds observed (1 to 15579) are based on current data but may not account for future entries. Therefore, using custom bounds [1, +\u221e] is more appropriate to accommodate potential future data.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "constructorResults",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        982
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The RACEID column represents a unique identifier for races, which is naturally bounded to positive integers. While the observed data range is [1, 982], it is semantically correct to use custom bounds [1, +\u221e] since RACEID should not have a maximum limit as new races can be added in the future. Thus, a BETWEEN constraint is appropriate to ensure valid race IDs.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "constructorResults",
+      "column": "CONSTRUCTORID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        210
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The CONSTRUCTORID is an identifier for constructors, which is naturally bounded to positive integers. While the observed data range is [1, 210], using custom bounds [1, +\u221e] is more appropriate as it allows for future entries beyond the current maximum, ensuring that the constraint remains valid as new constructors are added.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "constructorResults",
+      "column": "POINTS",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.0,
+        66.0
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The POINTS column in the CONSTRUCTORRESULTS table represents the points scored by constructors in races. While the observed data range is [0.0, 66.0], the semantic meaning of points suggests that they can theoretically extend beyond this range, especially in future seasons or under different scoring systems. Therefore, using custom bounds of [0, +\u221e] is more appropriate to accommodate potential future data while ensuring that negative values are not allowed.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "lapTimes",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        982
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The RACEID column represents a unique identification number for races, which is naturally bounded to positive integers. While the observed data range is [1, 982], it is semantically correct to use custom bounds [1, +\u221e] since RACEID should not have an upper limit as new races can be added in the future. The large sample size of 420,369 rows supports the use of custom bounds.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "lapTimes",
+      "column": "DRIVERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        841
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The DRIVERID column represents unique identification numbers for drivers, which are naturally bounded to positive integers. The observed data range is realistic and covers all existing driver IDs, making strict bounds appropriate. Custom bounds are unnecessary as the observed range is sufficient.",
+        "chosen_bounds": [
+          1,
+          841
+        ]
+      }
+    },
+    {
+      "table": "lapTimes",
+      "column": "LAP",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        78
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The LAP column represents lap numbers in a race, which are naturally bounded starting from 1 and going up to the maximum number of laps in a race. The observed data range shows a maximum of 78 laps, which is realistic for certain races. However, since lap numbers can vary by race and may exceed 78 in future events, using strict bounds would not accommodate all possible scenarios. Therefore, while a BETWEEN constraint is appropriate, custom bounds are not necessary as the observed range is sufficient.",
+        "chosen_bounds": [
+          1,
+          78
+        ]
+      }
+    },
+    {
+      "table": "lapTimes",
+      "column": "POSITION",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        24
+      ],
+      "custom_bounds": [
+        1,
+        24
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The POSITION column represents the finishing position of a driver in a race, which is naturally bounded between 1 and the maximum number of participants in a race. The observed data range of [1, 24] is consistent with the maximum number of cars that can participate in a Formula 1 race, making strict bounds appropriate. Custom bounds are not necessary as the observed range accurately reflects the valid values.",
+        "chosen_bounds": [
+          1,
+          24
+        ]
+      }
+    },
+    {
+      "table": "lapTimes",
+      "column": "MILLISECONDS",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        67411,
+        7507547
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The MILLISECONDS column represents lap times, which are naturally bounded as they cannot be negative. The observed data range is realistic and reflects actual lap times, making strict bounds appropriate. Custom bounds would not be necessary since the observed range already covers all valid values.",
+        "chosen_bounds": [
+          67411,
+          7507547
+        ]
+      }
+    },
+    {
+      "table": "qualifying",
+      "column": "QUALIFYID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        7419
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The QUALIFYID column is a unique identifier for qualifying records, which should logically start from 1 and increment without gaps. The observed data range is realistic and covers all existing records, making strict bounds appropriate. Custom bounds are unnecessary as the observed range is sufficient.",
+        "chosen_bounds": [
+          1,
+          7419
+        ]
+      }
+    },
+    {
+      "table": "qualifying",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        982
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The RACEID is a unique identifier for races, which semantically should start from 1 and can potentially go to infinity as new races are added. The strict bounds observed (1 to 982) are based on current data but do not account for future races. Therefore, using custom bounds [1, +\u221e] is more appropriate to accommodate future entries.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "qualifying",
+      "column": "DRIVERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        841
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The DRIVERID column represents unique identification numbers for drivers, which are naturally bounded to positive integers. The observed data range is realistic and covers all existing driver IDs, making strict bounds appropriate. Custom bounds are not necessary as the observed range is sufficient.",
+        "chosen_bounds": [
+          1,
+          841
+        ]
+      }
+    },
+    {
+      "table": "qualifying",
+      "column": "CONSTRUCTORID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        210
+      ],
+      "custom_bounds": [
+        1,
+        210
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The CONSTRUCTORID column is an identifier for constructors, which is naturally bounded by the observed data range of [1, 210]. Since the strict bounds match the observed data range and are realistic given the context of unique identifiers, there is no need for custom bounds.",
+        "chosen_bounds": [
+          1,
+          210
+        ]
+      }
+    },
+    {
+      "table": "qualifying",
+      "column": "NUMBER",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        99
+      ],
+      "custom_bounds": [
+        0,
+        99
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The NUMBER column in the QUALIFYING table represents the qualifying number assigned to drivers, which is naturally bounded between 0 and 99. The observed data range is consistent with the semantic meaning of the column, and the strict bounds accurately reflect the data without any edge cases. Therefore, a BETWEEN constraint with strict bounds is appropriate.",
+        "chosen_bounds": [
+          0,
+          99
+        ]
+      }
+    },
+    {
+      "table": "qualifying",
+      "column": "POSITION",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        28
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The POSITION column represents the finishing position of drivers in qualifying sessions, which is naturally bounded to positive integers. The strict bounds [1, 28] are realistic based on observed data, as they reflect the actual range of positions recorded. Custom bounds [1, +\u221e] are not necessary since the observed data provides a valid range that captures all current scenarios.",
+        "chosen_bounds": [
+          1,
+          28
+        ]
+      }
+    },
+    {
+      "table": "pitStops",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        841,
+        982
+      ],
+      "custom_bounds": [
+        841,
+        982
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The RACEID column is naturally bounded by the observed data range, which is consistent with the expected range of race identifiers. Since the strict bounds match the observed data range and are realistic, they should be used for the BETWEEN constraint.",
+        "chosen_bounds": [
+          841,
+          982
+        ]
+      }
+    },
+    {
+      "table": "pitStops",
+      "column": "DRIVERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        841
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The DRIVERID column represents unique identification numbers for drivers, which are naturally bounded to positive integers. The observed data range is realistic and covers all existing driver IDs, so strict bounds [1, 841] are appropriate. Custom bounds are not necessary as the observed range is sufficient.",
+        "chosen_bounds": [
+          1,
+          841
+        ]
+      }
+    },
+    {
+      "table": "pitStops",
+      "column": "STOP",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        6
+      ],
+      "custom_bounds": [
+        1,
+        6
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The STOP column represents the number of pit stops made during a race, which is naturally bounded between 1 and 6 based on observed data. The strict bounds accurately reflect the observed range, and since the values are consistent with the expected behavior of pit stops in races, there is no need for custom bounds.",
+        "chosen_bounds": [
+          1,
+          6
+        ]
+      }
+    },
+    {
+      "table": "pitStops",
+      "column": "LAP",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        74
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The LAP column represents the lap number in a race, which is naturally bounded starting from 1 and can go up to the maximum number of laps in a race. The observed data range of [1, 74] is realistic and reflects actual race conditions, so strict bounds are appropriate. Custom bounds would not be necessary as the observed range is sufficient.",
+        "chosen_bounds": [
+          1,
+          74
+        ]
+      }
+    },
+    {
+      "table": "pitStops",
+      "column": "MILLISECONDS",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        12897,
+        2011266
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The MILLISECONDS column represents a time duration for pit stops, which is naturally bounded as it cannot be negative. The observed data range is realistic and reflects actual pit stop times, making strict bounds appropriate. Custom bounds would not be necessary since the observed range already covers all valid values.",
+        "chosen_bounds": [
+          12897,
+          2011266
+        ]
+      }
+    },
+    {
+      "table": "seasons",
+      "column": "YEAR",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1950,
+        2017
+      ],
+      "custom_bounds": [
+        1950,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The YEAR column represents the seasons of Formula 1, which logically starts from 1950 and continues indefinitely into the future. While the strict bounds are based on observed data (1950 to 2017), using custom bounds (1950 to +\u221e) is more appropriate as it accounts for future seasons that may be added, ensuring the constraint remains valid as new data is introduced.",
+        "chosen_bounds": [
+          1950,
+          null
+        ]
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "CONSTRUCTORSTANDINGSID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        26872
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The CONSTRUCTORSTANDINGSID is a unique identifier for constructor standings, which should logically start from 1 and can increase indefinitely as new records are added. The strict bounds observed (1 to 26872) are based on current data but do not account for future entries. Therefore, using custom bounds [1, +\u221e] is more appropriate to accommodate potential future records.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        982
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The RACEID column represents a unique identification number for races, which is naturally bounded by the observed data range. The strict bounds [1, 982] are realistic and cover all existing race IDs, making them appropriate for a BETWEEN constraint. Custom bounds are not necessary as the observed range is sufficient.",
+        "chosen_bounds": [
+          1,
+          982
+        ]
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "CONSTRUCTORID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        210
+      ],
+      "custom_bounds": [
+        1,
+        210
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The CONSTRUCTORID column is an INTEGER that represents unique identifiers for constructors. The observed data range is realistic and matches the semantic meaning of the column, which is to identify constructors uniquely. Since the strict bounds [1, 210] accurately reflect the existing data and there are no edge cases or additional context suggesting the need for broader bounds, strict bounds are appropriate.",
+        "chosen_bounds": [
+          1,
+          210
+        ]
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "POINTS",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.0,
+        765.0
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The POINTS column in the constructorStandings table represents a score that can logically be bounded between 0 and the maximum observed value of 765.0. Since points cannot be negative and the observed range is realistic, strict bounds are appropriate. Custom bounds are not necessary as the observed data range sufficiently captures the valid values.",
+        "chosen_bounds": [
+          0.0,
+          765.0
+        ]
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "POSITION",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        22
+      ],
+      "custom_bounds": [
+        1,
+        22
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The POSITION column represents the finishing position of constructors in races, which is naturally bounded between 1 and 22. The observed data range is consistent with the expected range of positions, making strict bounds appropriate. Custom bounds are not necessary as the observed range accurately reflects the valid values.",
+        "chosen_bounds": [
+          1,
+          22
+        ]
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "WINS",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        19
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The WINS column represents the number of wins a constructor has achieved, which is a naturally bounded value starting from 0. The strict bounds of [0, 19] are realistic based on the observed data, and since the maximum observed value is 19, it is appropriate to use these strict bounds rather than custom bounds that suggest an unbounded upper limit.",
+        "chosen_bounds": [
+          0,
+          19
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "RESULTID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        23661
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The RESULTID column is a unique identifier for each result, which is naturally bounded by the observed data range. The strict bounds [1, 23661] accurately reflect the existing data, and since IDs are typically sequential and unique, using these bounds is appropriate. Custom bounds would not be necessary as the observed range is realistic and covers all current entries.",
+        "chosen_bounds": [
+          1,
+          23661
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        982
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The RACEID column represents unique identifiers for races, which are naturally bounded to positive integers starting from 1. While the observed data range is [1, 982], it is semantically correct to use custom bounds [1, +\u221e] to accommodate future races that may be added, ensuring the constraint remains valid as new data is introduced.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "DRIVERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        841
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The DRIVERID column represents unique identification numbers for drivers, which are naturally bounded to positive integers. The observed data range is realistic and covers all existing driver IDs, so strict bounds [1, 841] are appropriate. Custom bounds would not be necessary as the observed range is sufficient.",
+        "chosen_bounds": [
+          1,
+          841
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "CONSTRUCTORID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        210
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The CONSTRUCTORID is a unique identifier for constructors, which is naturally bounded by the observed data range. The strict bounds [1, 210] are realistic and reflect the actual data present in the table. Since CONSTRUCTORID should not be negative or zero, and the observed range covers all existing values, strict bounds are appropriate.",
+        "chosen_bounds": [
+          1,
+          210
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "NUMBER",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        208
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The NUMBER column represents the driver's number, which is naturally bounded to non-negative integers. The observed data range shows a maximum of 208, which is realistic given the context of racing numbers. Therefore, a BETWEEN constraint with strict bounds [0, 208] is appropriate.",
+        "chosen_bounds": [
+          0,
+          208
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "GRID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        34
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The GRID column represents the starting position of a driver in a race, which is naturally bounded to non-negative integers. The observed data range of [0, 34] is realistic and reflects the actual data, as there are typically a limited number of starting positions in a race. Therefore, strict bounds are appropriate to ensure valid starting positions.",
+        "chosen_bounds": [
+          0,
+          34
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "POSITION",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        33
+      ],
+      "custom_bounds": [
+        1,
+        33
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The POSITION column represents the finishing position of drivers in a race, which is naturally bounded between 1 and the maximum number of participants (33 in this case). The observed data range is consistent with the semantic meaning of the column, and since the strict bounds match the custom bounds, it is appropriate to use the strict bounds for the BETWEEN constraint.",
+        "chosen_bounds": [
+          1,
+          33
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "POSITIONORDER",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        39
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The POSITIONORDER column represents the finishing order of drivers in a race, which is naturally bounded to positive integers. The strict bounds [1, 39] are based on observed data and reflect the actual range of values in the dataset. Since the observed data does not exceed 39, using strict bounds is appropriate and ensures that only valid finishing positions are considered.",
+        "chosen_bounds": [
+          1,
+          39
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "POINTS",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.0,
+        50.0
+      ],
+      "custom_bounds": [
+        0,
+        50
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The POINTS column represents a scoring system in races, which is naturally bounded between 0 and 50 based on observed data. The strict bounds accurately reflect the observed range of values, and since the data is consistent with the expected scoring system, it is appropriate to use these bounds.",
+        "chosen_bounds": [
+          0.0,
+          50.0
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "LAPS",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        200
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The LAPS column represents the number of laps completed in a race, which is naturally bounded to be non-negative (0 or more). While the observed data shows a maximum of 200 laps, the semantic meaning suggests that there could be races with more laps in the future, especially in different racing formats or events. Therefore, using custom bounds of [0, +\u221e] is appropriate to accommodate potential future data while ensuring non-negative values.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "MILLISECONDS",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1474899,
+        15090540
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The MILLISECONDS column represents a measurable time duration for race results, which is naturally bounded as it cannot be negative. The strict bounds observed from the data range are realistic and appropriate, as they reflect the actual recorded times for race finishes. Therefore, a BETWEEN constraint using the strict bounds is suitable.",
+        "chosen_bounds": [
+          1474899,
+          15090540
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "FASTESTLAP",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        2,
+        78
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The FASTESTLAP column represents the lap number, which is naturally bounded as laps cannot be less than 1. The observed data range shows a strict bound of [2, 78], but since lap numbers start from 1, it is more appropriate to use custom bounds [1, +\u221e] to account for all possible valid lap numbers in future data. The sample size is large enough to trust the observed bounds.",
+        "chosen_bounds": [
+          2,
+          78
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "RANK",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        24
+      ],
+      "custom_bounds": [
+        1,
+        24
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The RANK column represents the finishing position of drivers in a race, which is naturally bounded between 1 and the maximum number of participants (24 in this case). The strict bounds include 0, which is not a valid rank, so custom bounds of [1, 24] are more appropriate to ensure valid ranking values.",
+        "chosen_bounds": [
+          1,
+          24
+        ]
+      }
+    },
+    {
+      "table": "results",
+      "column": "STATUSID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        136
+      ],
+      "custom_bounds": [
+        1,
+        136
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The STATUSID column is an INTEGER that represents a unique identification number for statuses. The observed data range is [1, 136], which is both realistic and matches the semantic meaning of the column. Since the strict bounds cover all observed values and there are no indications of edge cases or outliers, strict bounds are appropriate.",
+        "chosen_bounds": [
+          1,
+          136
+        ]
+      }
+    }
+  ],
+  "in": [
+    {
+      "table": "driverStandings",
+      "column": "WINS",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "category_count": 14,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The 'WINS' column represents a count of race wins, which is inherently limited to non-negative integers. The unique values observed (0 to 13) are likely complete for the context of the dataset, as it is improbable for a driver to have more than 13 wins in the current racing environment. Therefore, an IN constraint is appropriate to restrict values to this known set."
+      }
+    },
+    {
+      "table": "races",
+      "column": "ROUND",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "category_count": 21,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ROUND column represents the race round number, which is inherently limited to a specific set of integers (1 to 21). Since these values are fixed and represent a known range of rounds in a racing season, an IN constraint is appropriate to ensure data integrity."
+      }
+    },
+    {
+      "table": "races",
+      "column": "TIME",
+      "data_type": "VARCHAR",
+      "categories": [
+        "06:00:00",
+        "09:00:00",
+        "07:00:00",
+        "12:00:00",
+        "05:00:00",
+        "16:00:00",
+        "11:00:00",
+        "04:30:00",
+        "11:30:00",
+        "17:00:00",
+        "03:00:00",
+        "14:30:00",
+        "15:00:00",
+        "14:00:00",
+        "13:00:00",
+        "08:00:00",
+        "09:30:00",
+        "18:00:00",
+        "19:00:00",
+        "20:00:00"
+      ],
+      "category_count": 20,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The TIME column contains time values in a specific format, but it is not a true categorical column as new time values could appear in future data. The current unique values represent specific times but do not encompass all possible times that could be relevant for races. Therefore, an IN constraint would be too limiting."
+      }
+    },
+    {
+      "table": "constructors",
+      "column": "NATIONALITY",
+      "data_type": "VARCHAR",
+      "categories": [
+        "British",
+        "German",
+        "French",
+        "Italian",
+        "Japanese",
+        "Austrian",
+        "Indian",
+        "Dutch",
+        "Russian",
+        "Swiss",
+        "Irish",
+        "Hong Kong",
+        "Brazilian",
+        "Canadian",
+        "Mexican",
+        "American",
+        "Australian",
+        "New Zealand",
+        "South African",
+        "Rhodesian",
+        "Belgium",
+        "East German",
+        "Spanish",
+        "Malaysian"
+      ],
+      "category_count": 24,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While there are 24 unique values, the column represents nationalities which can change over time and new nationalities may emerge. Therefore, it is not a true enumeration and restricting to these values could be too limiting."
+      }
+    },
+    {
+      "table": "lapTimes",
+      "column": "POSITION",
+      "data_type": "INTEGER",
+      "categories": [
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        14,
+        15,
+        7,
+        6,
+        5,
+        3,
+        4,
+        17,
+        16,
+        18,
+        19,
+        1,
+        2,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "category_count": 24,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSITION column represents the finishing positions of drivers in a race, which are inherently limited to a specific range (1 to the total number of participants). Given that there are 24 unique values and they correspond to valid finishing positions, it makes sense to constrain this column to these values as they represent a complete enumeration of possible positions in the context of the data."
+      }
+    },
+    {
+      "table": "qualifying",
+      "column": "POSITION",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "category_count": 28,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSITION column represents the finishing positions in qualifying sessions, which are limited to a specific range (1 to 28). Since these values are known and fixed based on the rules of the sport, an IN constraint is appropriate to ensure only valid positions are recorded."
+      }
+    },
+    {
+      "table": "pitStops",
+      "column": "STOP",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "category_count": 6,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The 'STOP' column represents the number of pit stops during a race, which is inherently limited to a small set of possible values (1 to 6 in this case). Given the context of Formula 1 racing, it is reasonable to assume that these are the only valid values, making it a true categorical column suitable for an IN constraint."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "POSITION",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        3,
+        2,
+        4,
+        5,
+        6,
+        8,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        21
+      ],
+      "category_count": 22,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSITION column represents the finishing positions in races, which are inherently limited to a specific range of values (1 to the maximum number of participants). Given that there are only 22 unique values observed, it is reasonable to assume that these represent all valid finishing positions, making it a true categorical column suitable for an IN constraint."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "POSITIONTEXT",
+      "data_type": "VARCHAR",
+      "categories": [
+        "1",
+        "3",
+        "2",
+        "4",
+        "5",
+        "6",
+        "8",
+        "7",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "22",
+        "21",
+        "E"
+      ],
+      "category_count": 23,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSITIONTEXT column contains a limited and defined set of values representing finishing positions in races, which are known and unlikely to change. The presence of values like 'E' suggests a specific status (e.g., eliminated), indicating that the column is used for a controlled vocabulary. Therefore, an IN constraint is appropriate."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "WINS",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "category_count": 20,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While there are 20 unique values for WINS, which range from 0 to 19, it is possible for drivers to achieve more wins in future seasons. Therefore, this column is not a true categorical column with a fixed set of values, and an IN constraint would be too limiting."
+      }
+    },
+    {
+      "table": "results",
+      "column": "RANK",
+      "data_type": "INTEGER",
+      "categories": [
+        2,
+        3,
+        5,
+        7,
+        1,
+        14,
+        12,
+        4,
+        9,
+        13,
+        15,
+        16,
+        6,
+        11,
+        10,
+        17,
+        8,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        0
+      ],
+      "category_count": 25,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The RANK column represents finishing positions in races, which are inherently limited to a specific set of values (e.g., 0 for disqualified, 1 for first place, etc.). Given the context of racing, it is reasonable to constrain this column to known valid ranks, as new ranks are unlikely to appear beyond the existing range."
+      }
+    }
+  ],
+  "not_null": [
+    {
+      "table": "circuits",
+      "column": "CIRCUITID",
+      "data_type": "INTEGER",
+      "total_rows": 72,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITID is the unique identification number of the circuit, which serves as a primary key. It is logically required for every record to uniquely identify each circuit, and future records cannot exist without this identifier."
+      }
+    },
+    {
+      "table": "circuits",
+      "column": "CIRCUITREF",
+      "data_type": "VARCHAR",
+      "total_rows": 72,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CIRCUITREF serves as a reference name for each circuit, which is essential for identifying and distinguishing between different circuits. Given that it is a key identifier and the column description implies its importance, it should have a NOT NULL constraint to ensure that every record has a valid reference."
+      }
+    },
+    {
+      "table": "circuits",
+      "column": "NAME",
+      "data_type": "VARCHAR",
+      "total_rows": 72,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The NAME field is logically required as it represents the full name of the circuit, which is essential for identifying and distinguishing between different circuits. The column description indicates that it is a key attribute of the circuit, and it is unlikely that future records would be valid without a name."
+      }
+    },
+    {
+      "table": "circuits",
+      "column": "LOCATION",
+      "data_type": "VARCHAR",
+      "total_rows": 72,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LOCATION field is logically required as it provides essential information about the circuit's geographical position. Given that it is a key attribute for identifying and differentiating circuits, it should not be nullable. The column description indicates that it is important for understanding the circuit's context."
+      }
+    },
+    {
+      "table": "circuits",
+      "column": "COUNTRY",
+      "data_type": "VARCHAR",
+      "total_rows": 72,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The COUNTRY field is logically required as it identifies the location of the circuit, which is essential information for each circuit record. The column description indicates it is a key attribute of the circuit, and future records would reasonably need this information to be complete."
+      }
+    },
+    {
+      "table": "circuits",
+      "column": "LAT",
+      "data_type": "REAL",
+      "total_rows": 72,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LAT column represents the latitude of the circuit's location, which is essential for identifying the geographical position of the circuit. Since it is a critical attribute for circuits, it should have a NOT NULL constraint to ensure that every record has a valid latitude value."
+      }
+    },
+    {
+      "table": "circuits",
+      "column": "LNG",
+      "data_type": "REAL",
+      "total_rows": 72,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The LNG (longitude) field is not logically required for every record as it is an optional attribute that provides geographical information. While current data is 100% non-null, this does not guarantee that future records will always have this information. The column description does not indicate that it is essential, suggesting that it could be omitted in some cases."
+      }
+    },
+    {
+      "table": "circuits",
+      "column": "URL",
+      "data_type": "VARCHAR",
+      "total_rows": 72,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The URL field is not logically required for every record as it serves as an optional reference link for additional information about the circuit. While current data shows 100% non-null values, this does not guarantee that future records will always have a URL. The column description indicates it is a URL, which suggests it is supplementary rather than essential."
+      }
+    },
+    {
+      "table": "status",
+      "column": "STATUSID",
+      "data_type": "INTEGER",
+      "total_rows": 134,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "STATUSID is a unique identification number for the status, which implies it is essential for each record to have a unique identifier. As a primary key, it should always be present, making it logically required."
+      }
+    },
+    {
+      "table": "status",
+      "column": "STATUS",
+      "data_type": "VARCHAR",
+      "total_rows": 134,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The STATUS column is essential for understanding the outcome of each race entry, as it indicates the condition or situation of the driver or vehicle. Given that it serves a critical role in the context of race results, it should have a NOT NULL constraint to ensure that every record has a valid status."
+      }
+    },
+    {
+      "table": "drivers",
+      "column": "DRIVERID",
+      "data_type": "INTEGER",
+      "total_rows": 840,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DRIVERID is the unique identification number for each driver, making it a primary key for the DRIVERS table. It is logically required for every record to uniquely identify drivers, and the column description supports this necessity. Future records cannot reasonably omit this field, as it is essential for maintaining data integrity."
+      }
+    },
+    {
+      "table": "drivers",
+      "column": "DRIVERREF",
+      "data_type": "VARCHAR",
+      "total_rows": 840,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DRIVERREF column serves as a unique reference name for each driver, which is essential for identifying drivers in the database. Given that it is a key identifier and the column description implies its importance, it should have a NOT NULL constraint to ensure data integrity and consistency in future records."
+      }
+    },
+    {
+      "table": "drivers",
+      "column": "FORENAME",
+      "data_type": "VARCHAR",
+      "total_rows": 840,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The FORENAME field is logically required as it represents the first name of a driver, which is essential for identification. The column description indicates it is a key attribute for drivers, and it is unlikely that future records would reasonably omit this field."
+      }
+    },
+    {
+      "table": "drivers",
+      "column": "SURNAME",
+      "data_type": "VARCHAR",
+      "total_rows": 840,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SURNAME field is logically required as it is essential for identifying drivers. It is a key attribute for distinguishing between individuals, and the column description implies that it is a fundamental part of a driver's identity. Future records would reasonably need this field to ensure proper identification, making it necessary to enforce a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "drivers",
+      "column": "NATIONALITY",
+      "data_type": "VARCHAR",
+      "total_rows": 840,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The NATIONALITY field is logically required as it provides essential information about each driver. It is a key attribute that helps identify the driver's background and is likely to be relevant for all records. The column description indicates it pertains to the nationality of drivers, which is a fundamental characteristic that should not be omitted."
+      }
+    },
+    {
+      "table": "drivers",
+      "column": "URL",
+      "data_type": "VARCHAR",
+      "total_rows": 840,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The URL field is not logically required for every record as it serves as an optional attribute providing additional information about the driver. Future records could reasonably omit this field, and the current non-null status does not indicate a true requirement."
+      }
+    },
+    {
+      "table": "driverStandings",
+      "column": "DRIVERSTANDINGSID",
+      "data_type": "INTEGER",
+      "total_rows": 31578,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DRIVERSTANDINGSID is a unique identification number for driver standing records, which indicates it is essential for identifying each record uniquely. As a primary key, it should always have a value, making it logically required for every record."
+      }
+    },
+    {
+      "table": "driverStandings",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "total_rows": 31578,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The RACEID column is essential as it identifies which race the driver standings are associated with. It serves as a foreign key linking to the RACES table, making it logically required for every record in DRIVERSTANDINGS. The consistent non-null data across all rows further supports the necessity of this field."
+      }
+    },
+    {
+      "table": "driverStandings",
+      "column": "DRIVERID",
+      "data_type": "INTEGER",
+      "total_rows": 31578,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DRIVERID column is a foreign key that identifies which driver each standing record corresponds to. As it is essential for linking driver standings to specific drivers, it is logically required for every record. The column description indicates it is a unique identifier for drivers, further supporting the need for a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "driverStandings",
+      "column": "POINTS",
+      "data_type": "REAL",
+      "total_rows": 31578,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POINTS column is essential for driver standings as it represents the points acquired by drivers in each race. Since it is a key metric for determining standings, it should not be null. The column description indicates that it is a required field for each record, and logically, every driver standing record must have a points value."
+      }
+    },
+    {
+      "table": "driverStandings",
+      "column": "POSITION",
+      "data_type": "INTEGER",
+      "total_rows": 31578,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSITION column is logically required as it indicates the finishing position of a driver in a race, which is essential for understanding race results. The column description suggests it is a key attribute for driver standings, and future records would need this information to maintain consistency and integrity in the standings."
+      }
+    },
+    {
+      "table": "driverStandings",
+      "column": "POSITIONTEXT",
+      "data_type": "VARCHAR",
+      "total_rows": 31578,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The POSITIONTEXT column is not logically required as it serves as an additional descriptor for the position, which may not be essential for every record. Future records could reasonably omit this field, and its description indicates it is not crucial."
+      }
+    },
+    {
+      "table": "driverStandings",
+      "column": "WINS",
+      "data_type": "INTEGER",
+      "total_rows": 31578,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The WINS column represents the number of wins a driver has achieved in a season, which is a key performance metric in racing. It is logically required for every record in the driver standings, as it directly relates to the driver's performance and ranking. Even though current data shows no nulls, it is essential for the integrity of the standings that this field is always present."
+      }
+    },
+    {
+      "table": "races",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "total_rows": 976,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "RACEID is the unique identification number for each race, making it a primary key for the RACES table. It is logically required for every record to uniquely identify each race, and the column description supports this necessity."
+      }
+    },
+    {
+      "table": "races",
+      "column": "YEAR",
+      "data_type": "INTEGER",
+      "total_rows": 976,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The YEAR column is essential for identifying the specific season of each race, making it logically required for every record. It serves as a key attribute for the RACES table, and future records would not make sense without a year associated with them."
+      }
+    },
+    {
+      "table": "races",
+      "column": "ROUND",
+      "data_type": "INTEGER",
+      "total_rows": 976,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ROUND column is logically required as it indicates the specific round of the race, which is essential for identifying the sequence of races in a season. The column description implies that it is a necessary identifier for the race, and future records would need this information to maintain the integrity of the race data."
+      }
+    },
+    {
+      "table": "races",
+      "column": "CIRCUITID",
+      "data_type": "INTEGER",
+      "total_rows": 976,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITID is a foreign key that identifies the circuit associated with each race. It is logically required for every race record to have a corresponding circuit, making it essential for data integrity. The column description indicates it is a necessary identifier, and future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "races",
+      "column": "NAME",
+      "data_type": "VARCHAR",
+      "total_rows": 976,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The NAME column is logically required as it represents the name of the race, which is essential for identifying and distinguishing between different races. The column description indicates it is a key attribute of the race, and it is unlikely that a race could be recorded without a name."
+      }
+    },
+    {
+      "table": "races",
+      "column": "DATE",
+      "data_type": "DATE",
+      "total_rows": 976,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DATE column is essential for identifying when each race occurs, making it logically required for every record. Future records would need this information to be meaningful, and the column description supports its necessity as it indicates the duration time of the race."
+      }
+    },
+    {
+      "table": "races",
+      "column": "URL",
+      "data_type": "VARCHAR",
+      "total_rows": 976,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The URL field is not logically required for every race record. While it currently has 100% non-null values, this may be coincidental and does not indicate a true requirement. Future records could reasonably omit this field, as not all races may have a corresponding URL. The column description suggests it is an optional attribute for additional information rather than a necessary identifier."
+      }
+    },
+    {
+      "table": "constructors",
+      "column": "CONSTRUCTORID",
+      "data_type": "INTEGER",
+      "total_rows": 208,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CONSTRUCTORID is a primary key for the CONSTRUCTORS table, which uniquely identifies each constructor. As a primary key, it is logically required for every record and should not be null. The current data being 100% non-null further supports the necessity of this constraint."
+      }
+    },
+    {
+      "table": "constructors",
+      "column": "CONSTRUCTORREF",
+      "data_type": "VARCHAR",
+      "total_rows": 208,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CONSTRUCTORREF field serves as a reference name for constructors, which is essential for identifying them uniquely. Given that it is a reference identifier, it is logically required for every record, and future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "constructors",
+      "column": "NAME",
+      "data_type": "VARCHAR",
+      "total_rows": 208,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The NAME column is essential for identifying constructors, making it logically required for every record. The column description indicates it is the full name of the constructor, which is a critical identifier. Future records would reasonably need this field to ensure clarity and uniqueness in identifying constructors."
+      }
+    },
+    {
+      "table": "constructors",
+      "column": "NATIONALITY",
+      "data_type": "VARCHAR",
+      "total_rows": 208,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The NATIONALITY field is logically required as it provides essential information about each constructor. It is a key attribute that helps identify the constructor's background and is likely necessary for any future records. The column description does not suggest it is optional, and the absence of nationality would diminish the understanding of the constructor's identity."
+      }
+    },
+    {
+      "table": "constructors",
+      "column": "URL",
+      "data_type": "VARCHAR",
+      "total_rows": 208,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The URL field is not logically required for every record as it serves as an optional reference link for additional information about the constructor. While current data shows 100% non-null values, this does not guarantee that future records will always have a URL. The column description indicates that it is an introduction website, which suggests it is not essential for the core functionality of the database."
+      }
+    },
+    {
+      "table": "constructorResults",
+      "column": "CONSTRUCTORRESULTSID",
+      "data_type": "INTEGER",
+      "total_rows": 11082,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CONSTRUCTORRESULTSID is a unique identification number for each constructor result, which logically requires a value for every record. As a primary key, it must be non-null to uniquely identify each entry in the table, making it essential for the integrity of the data."
+      }
+    },
+    {
+      "table": "constructorResults",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "total_rows": 11082,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The RACEID column is essential as it serves as a foreign key linking constructor results to specific races. Every constructor result must be associated with a race, making this field logically required for every record."
+      }
+    },
+    {
+      "table": "constructorResults",
+      "column": "CONSTRUCTORID",
+      "data_type": "INTEGER",
+      "total_rows": 11082,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CONSTRUCTORID is a foreign key that links to the CONSTRUCTORS table, making it essential for identifying which constructor is associated with each result. Since it is logically required for every record in the CONSTRUCTORRESULTS table, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "constructorResults",
+      "column": "POINTS",
+      "data_type": "REAL",
+      "total_rows": 11082,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POINTS column represents the points acquired by a constructor in a race, which is essential for understanding the performance and standings of constructors. Since it is a key metric in racing results, it should logically be required for every record, and future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "lapTimes",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "total_rows": 420369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The RACEID column is essential as it identifies which race the lap times are associated with. Since it serves as a foreign key linking to the RACES table, it is logically required for every record in the LAPTIMES table. The column description indicates its importance, and future records would not make sense without this identifier."
+      }
+    },
+    {
+      "table": "lapTimes",
+      "column": "DRIVERID",
+      "data_type": "INTEGER",
+      "total_rows": 420369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DRIVERID is a foreign key that identifies each driver, making it essential for every lap time record. Since it is logically required for the integrity of the data and the column description indicates it is necessary to identify drivers, a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "lapTimes",
+      "column": "LAP",
+      "data_type": "INTEGER",
+      "total_rows": 420369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LAP column represents the lap number in a race, which is essential for identifying the specific lap associated with each timing record. Since every lap must have a number, it is logically required for every record, and future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "lapTimes",
+      "column": "POSITION",
+      "data_type": "INTEGER",
+      "total_rows": 420369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSITION column is logically required as it indicates the position of a driver during a race lap, which is essential information for understanding race performance. Given that it is a key attribute in lap times, it should not be nullable, as every lap must have a recorded position."
+      }
+    },
+    {
+      "table": "lapTimes",
+      "column": "TIME",
+      "data_type": "VARCHAR",
+      "total_rows": 420369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TIME column is essential for recording lap times, which are critical for race analysis. Given that it is a key performance metric, it should always have a value for each record, making it logically required."
+      }
+    },
+    {
+      "table": "lapTimes",
+      "column": "MILLISECONDS",
+      "data_type": "INTEGER",
+      "total_rows": 420369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The MILLISECONDS column represents the actual finishing time of drivers in milliseconds, which is essential for determining race results. Since it is a critical metric for performance and all current records are non-null, it logically requires a NOT NULL constraint to ensure data integrity in future records."
+      }
+    },
+    {
+      "table": "qualifying",
+      "column": "QUALIFYID",
+      "data_type": "INTEGER",
+      "total_rows": 7397,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "QUALIFYID serves as a unique identifier for qualifying records, making it essential for each record to have a value. As a primary key, it logically requires a NOT NULL constraint to ensure data integrity and uniqueness."
+      }
+    },
+    {
+      "table": "qualifying",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "total_rows": 7397,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The RACEID column is essential as it identifies which race the qualifying data pertains to. It serves as a foreign key linking to the RACES table, making it logically required for every record in the QUALIFYING table. Future records would not make sense without this identifier, thus a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "qualifying",
+      "column": "DRIVERID",
+      "data_type": "INTEGER",
+      "total_rows": 7397,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DRIVERID column is essential as it identifies which driver participated in the qualifying session. It is a foreign key that links to the DRIVERS table, making it logically required for every record in the QUALIFYING table. Future records would not make sense without this identifier, thus a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "qualifying",
+      "column": "CONSTRUCTORID",
+      "data_type": "INTEGER",
+      "total_rows": 7397,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CONSTRUCTORID is a foreign key that links to the CONSTRUCTORS table, indicating that every qualifying record must be associated with a constructor. This makes it logically required for every record, and the column description supports its necessity."
+      }
+    },
+    {
+      "table": "qualifying",
+      "column": "NUMBER",
+      "data_type": "INTEGER",
+      "total_rows": 7397,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The NUMBER column represents the qualifying number assigned to each driver, which is essential for identifying their performance in qualifying sessions. Given that it is a key attribute for qualifying results, it should always have a value, making it logically required for every record."
+      }
+    },
+    {
+      "table": "qualifying",
+      "column": "POSITION",
+      "data_type": "INTEGER",
+      "total_rows": 7397,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSITION column indicates the qualifying position of a driver, which is essential for understanding the results of the qualifying session. Since it is a key aspect of qualifying performance, it should logically be required for every record, and future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "pitStops",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "total_rows": 6070,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The RACEID column is logically required as it serves as a foreign key linking pit stops to specific races. Each pit stop must be associated with a race, making this field essential for the integrity of the data. The column description indicates it identifies the race, further supporting the need for a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "pitStops",
+      "column": "DRIVERID",
+      "data_type": "INTEGER",
+      "total_rows": 6070,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DRIVERID is essential for identifying which driver the pit stop record belongs to. As a foreign key, it is logically required for every record in the PITSTOPS table, and the column description indicates it is necessary for identifying each driver."
+      }
+    },
+    {
+      "table": "pitStops",
+      "column": "STOP",
+      "data_type": "INTEGER",
+      "total_rows": 6070,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The STOP column represents the stop number during pit stops, which is essential for identifying the sequence of stops made by a driver in a race. Since it is a key attribute for understanding pit stop strategies, it should always have a value, making it logically required for every record."
+      }
+    },
+    {
+      "table": "pitStops",
+      "column": "LAP",
+      "data_type": "INTEGER",
+      "total_rows": 6070,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LAP column is logically required as it indicates the lap number during which the pit stop occurred. Since pit stops are tied to specific laps in a race, this field must always have a value for every record to accurately represent the event. The column description supports this requirement, and future records would not make sense without a lap number."
+      }
+    },
+    {
+      "table": "pitStops",
+      "column": "TIME",
+      "data_type": "VARCHAR",
+      "total_rows": 6070,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TIME column is essential for understanding the exact timing of pit stops during races. Since it records the specific time of each pit stop, it is logically required for every record. Future records would not make sense without this information, as it is critical for analyzing race performance."
+      }
+    },
+    {
+      "table": "pitStops",
+      "column": "DURATION",
+      "data_type": "VARCHAR",
+      "total_rows": 6070,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DURATION field is essential for understanding the duration of pit stops, which is a critical aspect of race data. Given that it is logically required for every record to accurately reflect pit stop performance, it should have a NOT NULL constraint despite current data being complete."
+      }
+    },
+    {
+      "table": "pitStops",
+      "column": "MILLISECONDS",
+      "data_type": "INTEGER",
+      "total_rows": 6070,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The MILLISECONDS column represents the actual duration of pit stops, which is essential for analyzing race performance. Since it is a critical metric for understanding the efficiency of pit stops, it should not be nullable. The column description indicates that it is a required measurement, and logically, every pit stop should have a recorded duration."
+      }
+    },
+    {
+      "table": "seasons",
+      "column": "YEAR",
+      "data_type": "INTEGER",
+      "total_rows": 68,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The YEAR column is logically required as it serves as a unique identifier for each season in the context of Formula 1 racing. It is essential for distinguishing between different seasons, and the column description indicates it is a unique identification number for the race year. Future records would not make sense without a year, making this field necessary."
+      }
+    },
+    {
+      "table": "seasons",
+      "column": "URL",
+      "data_type": "VARCHAR",
+      "total_rows": 68,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The URL field is not logically required for every record as it serves as an optional reference link for additional information about the season. While current data is 100% non-null, this does not guarantee that future records will always have a URL. The column description indicates it is a supplementary attribute rather than a core identifier."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "CONSTRUCTORSTANDINGSID",
+      "data_type": "INTEGER",
+      "total_rows": 11836,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CONSTRUCTORSTANDINGSID is a unique identification number for constructor standings, which implies it is essential for identifying each record in the table. As a primary key, it should always have a value, and logically, it cannot be null for any record."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "total_rows": 11836,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The RACEID column is essential as it identifies which race the constructor standings are associated with. It serves as a foreign key linking to the RACES table, making it logically required for every record in the CONSTRUCTORSTANDINGS table. The column description indicates it is necessary for identifying standings related to specific races."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "CONSTRUCTORID",
+      "data_type": "INTEGER",
+      "total_rows": 11836,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CONSTRUCTORID is a foreign key that identifies which constructor each standing record belongs to. It is logically required for every record in the CONSTRUCTORSTANDINGS table to ensure that each standing is associated with a valid constructor. The column description indicates it is essential for identifying the constructor, and future records would not make sense without this identifier."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "POINTS",
+      "data_type": "REAL",
+      "total_rows": 11836,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POINTS column is essential for understanding the performance of constructors in the standings. It represents the points acquired in each race, which is a critical metric for standings. Given that it is logically required for every record and the column description indicates its importance, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "POSITION",
+      "data_type": "INTEGER",
+      "total_rows": 11836,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSITION column is logically required as it indicates the standing position of a constructor in a race, which is essential for understanding race results. Given that it is a key attribute of the constructor standings, it should not be nullable."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "POSITIONTEXT",
+      "data_type": "VARCHAR",
+      "total_rows": 11836,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The POSITIONTEXT column is not logically required as it serves as an additional descriptor for the position, which may not be essential for every record. Future records could reasonably omit this field, and its description indicates it is not crucial."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "column": "WINS",
+      "data_type": "INTEGER",
+      "total_rows": 11836,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The WINS column represents the number of wins for a constructor in a given race season, which is a fundamental aspect of standings in racing. It is logically required for every record as it directly contributes to the performance metrics of constructors. Even though current data shows no nulls, the nature of the data suggests that every constructor's standing should include this information, making it essential."
+      }
+    },
+    {
+      "table": "results",
+      "column": "RESULTID",
+      "data_type": "INTEGER",
+      "total_rows": 23657,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "RESULTID is the unique identification number identifying race results, which logically requires a value for every record. As a primary key, it must be non-null to ensure each result can be uniquely identified. Future records will also need this field to maintain data integrity."
+      }
+    },
+    {
+      "table": "results",
+      "column": "RACEID",
+      "data_type": "INTEGER",
+      "total_rows": 23657,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "RACEID is a foreign key that identifies which race the result corresponds to, making it essential for every record in the RESULTS table. The column description indicates it is required for linking results to races, and logically, a result without an associated race would not make sense."
+      }
+    },
+    {
+      "table": "results",
+      "column": "DRIVERID",
+      "data_type": "INTEGER",
+      "total_rows": 23657,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DRIVERID column is essential as it identifies which driver is associated with each race result. It serves as a foreign key linking to the DRIVERS table, making it logically required for every record in the RESULTS table. Future records would not make sense without this identifier, and the column description supports its necessity."
+      }
+    },
+    {
+      "table": "results",
+      "column": "CONSTRUCTORID",
+      "data_type": "INTEGER",
+      "total_rows": 23657,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CONSTRUCTORID is a foreign key that links to the CONSTRUCTORS table, making it essential for identifying which constructor is associated with each race result. Since it is logically required for every record to have a valid constructor, a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "results",
+      "column": "GRID",
+      "data_type": "INTEGER",
+      "total_rows": 23657,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The GRID column represents the starting grid position of a driver in a race, which is essential for understanding race results. Since it is a key aspect of race data, it should always be present, making it logically required for every record."
+      }
+    },
+    {
+      "table": "results",
+      "column": "POSITIONTEXT",
+      "data_type": "VARCHAR",
+      "total_rows": 23657,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The POSITIONTEXT column is not logically required for every record as it is described as 'not quite useful'. This suggests that it is optional information rather than essential. Although current data is 100% non-null, this does not guarantee that future records will require this field, as it may not be critical for understanding the results."
+      }
+    },
+    {
+      "table": "results",
+      "column": "POSITIONORDER",
+      "data_type": "INTEGER",
+      "total_rows": 23657,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSITIONORDER column represents the finishing order of positions, which is essential for understanding race results. It is logically required for every record as it directly relates to the outcome of the race. Future records should not reasonably omit this field, as every race result must include a finishing order."
+      }
+    },
+    {
+      "table": "results",
+      "column": "POINTS",
+      "data_type": "REAL",
+      "total_rows": 23657,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POINTS column represents the number of points acquired in each race, which is essential for understanding the performance of drivers and constructors. Since it is a key metric in racing results, it should logically be required for every record, and future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "results",
+      "column": "LAPS",
+      "data_type": "INTEGER",
+      "total_rows": 23657,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LAPS column represents the number of laps completed in a race, which is essential for understanding the race results. It is logically required for every record, as every race must have a defined number of laps completed by each driver. The column description indicates that it is a necessary attribute for race results, and future records would reasonably require this field to be present."
+      }
+    },
+    {
+      "table": "results",
+      "column": "STATUSID",
+      "data_type": "INTEGER",
+      "total_rows": 23657,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The STATUSID column is essential for identifying the status of each race result, as indicated by its name and description. It serves as a foreign key linking to the STATUS table, making it logically required for every record to ensure data integrity and meaningful relationships."
+      }
+    }
+  ],
+  "dependency": [
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "CIRCUITID",
+      "column_b": "CIRCUITREF",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CIRCUITID": 2,
+          "CIRCUITREF": "sepang"
+        },
+        {
+          "CIRCUITID": 3,
+          "CIRCUITREF": "bahrain"
+        },
+        {
+          "CIRCUITID": 4,
+          "CIRCUITREF": "catalunya"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITID is a primary key and uniquely identifies each CIRCUITREF, establishing a meaningful semantic relationship. The consistent mapping across all rows suggests that this dependency is reliable and would help verify query correctness."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "CIRCUITID",
+      "column_b": "NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CIRCUITID": 2,
+          "NAME": "Sepang International Circuit"
+        },
+        {
+          "CIRCUITID": 3,
+          "NAME": "Bahrain International Circuit"
+        },
+        {
+          "CIRCUITID": 4,
+          "NAME": "Circuit de Barcelona-Catalunya"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITID is a primary key, and it consistently maps to a unique NAME for each circuit, indicating a meaningful semantic relationship. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "CIRCUITID",
+      "column_b": "LOCATION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CIRCUITID": 2,
+          "LOCATION": "Kuala Lumpur"
+        },
+        {
+          "CIRCUITID": 3,
+          "LOCATION": "Sakhir"
+        },
+        {
+          "CIRCUITID": 4,
+          "LOCATION": "Montmel\u00f3"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITID is a primary key and uniquely identifies each circuit, making the relationship with LOCATION meaningful. The consistent mapping across 72 rows suggests a reliable dependency, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "CIRCUITID",
+      "column_b": "COUNTRY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CIRCUITID": 2,
+          "COUNTRY": "Malaysia"
+        },
+        {
+          "CIRCUITID": 3,
+          "COUNTRY": "Bahrain"
+        },
+        {
+          "CIRCUITID": 4,
+          "COUNTRY": "Spain"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITID is a primary key, and it consistently maps to a unique COUNTRY for each circuit, indicating a meaningful semantic relationship. Enforcing this constraint would help ensure data integrity and verify query correctness, as each circuit should always be associated with exactly one country."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "CIRCUITID",
+      "column_b": "LAT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CIRCUITID": 2.0,
+          "LAT": 2.76083
+        },
+        {
+          "CIRCUITID": 3.0,
+          "LAT": 26.0325
+        },
+        {
+          "CIRCUITID": 4.0,
+          "LAT": 41.57
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITID is a primary key, and it consistently maps to a unique LAT value for each circuit. This is a meaningful dependency as it reflects the geographic location of circuits, which is semantically relevant. Enforcing this constraint would help ensure data integrity and verify query correctness regarding circuit locations."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "CIRCUITID",
+      "column_b": "LNG",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CIRCUITID": 2.0,
+          "LNG": 101.738
+        },
+        {
+          "CIRCUITID": 3.0,
+          "LNG": 50.5106
+        },
+        {
+          "CIRCUITID": 4.0,
+          "LNG": 2.26111
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITID is a primary key, and it consistently determines the LNG values for each circuit. This is a meaningful dependency as it establishes a clear relationship between a unique identifier and its corresponding longitude, which is essential for geographic data integrity. Enforcing this constraint would help ensure that any queries referencing CIRCUITID will return accurate and consistent longitude values."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "CIRCUITID",
+      "column_b": "URL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CIRCUITID": 2,
+          "URL": "http://en.wikipedia.org/wiki/Sepang_International_Circuit"
+        },
+        {
+          "CIRCUITID": 3,
+          "URL": "http://en.wikipedia.org/wiki/Bahrain_International_Circuit"
+        },
+        {
+          "CIRCUITID": 4,
+          "URL": "http://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITID is a primary key, and each CIRCUITID consistently maps to a unique URL, indicating a meaningful relationship. Enforcing this constraint would help ensure data integrity and verify query correctness, as it confirms that each circuit has a valid and unique URL."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "CIRCUITREF",
+      "column_b": "NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CIRCUITREF": "sepang",
+          "NAME": "Sepang International Circuit"
+        },
+        {
+          "CIRCUITREF": "bahrain",
+          "NAME": "Bahrain International Circuit"
+        },
+        {
+          "CIRCUITREF": "catalunya",
+          "NAME": "Circuit de Barcelona-Catalunya"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITREF uniquely determines NAME, as evidenced by consistent mapping across all 72 rows. This is a meaningful semantic relationship, as CIRCUITREF serves as a reference code for the circuit's full name. Enforcing this constraint would enhance data integrity and help verify query correctness."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "CIRCUITREF",
+      "column_b": "LOCATION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CIRCUITREF": "sepang",
+          "LOCATION": "Kuala Lumpur"
+        },
+        {
+          "CIRCUITREF": "bahrain",
+          "LOCATION": "Sakhir"
+        },
+        {
+          "CIRCUITREF": "catalunya",
+          "LOCATION": "Montmel\u00f3"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITREF is a unique identifier for each circuit, and it consistently maps to a specific LOCATION across all rows. This indicates a meaningful semantic relationship, as each circuit reference corresponds to a unique location. Enforcing this functional dependency would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "CIRCUITREF",
+      "column_b": "COUNTRY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CIRCUITREF": "sepang",
+          "COUNTRY": "Malaysia"
+        },
+        {
+          "CIRCUITREF": "bahrain",
+          "COUNTRY": "Bahrain"
+        },
+        {
+          "CIRCUITREF": "catalunya",
+          "COUNTRY": "Spain"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITREF is a unique identifier for circuits, and it consistently maps to a specific COUNTRY. This is a meaningful semantic relationship as each circuit reference corresponds to exactly one country, which adds value for query verification and ensures data integrity."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "CIRCUITREF",
+      "column_b": "LAT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CIRCUITREF": "sepang",
+          "LAT": 2.76083
+        },
+        {
+          "CIRCUITREF": "bahrain",
+          "LAT": 26.0325
+        },
+        {
+          "CIRCUITREF": "catalunya",
+          "LAT": 41.57
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITREF is a unique identifier for circuits, and it consistently maps to a specific LAT value across all rows. This indicates a meaningful semantic relationship where each circuit reference corresponds to a unique latitude, which is important for geographical queries and data integrity."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "CIRCUITREF",
+      "column_b": "LNG",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CIRCUITREF": "sepang",
+          "LNG": 101.738
+        },
+        {
+          "CIRCUITREF": "bahrain",
+          "LNG": 50.5106
+        },
+        {
+          "CIRCUITREF": "catalunya",
+          "LNG": 2.26111
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITREF is a unique identifier for circuits, and it consistently maps to a specific longitude (LNG) for each circuit. This is a meaningful semantic relationship as it provides a reliable mapping between a circuit reference and its geographical longitude, which is useful for queries related to circuit locations."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "CIRCUITREF",
+      "column_b": "URL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CIRCUITREF": "sepang",
+          "URL": "http://en.wikipedia.org/wiki/Sepang_International_Circuit"
+        },
+        {
+          "CIRCUITREF": "bahrain",
+          "URL": "http://en.wikipedia.org/wiki/Bahrain_International_Circuit"
+        },
+        {
+          "CIRCUITREF": "catalunya",
+          "URL": "http://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CIRCUITREF uniquely determines the URL for each circuit, indicating a meaningful semantic relationship. The observed mapping is consistent across all 72 rows, suggesting reliability. This dependency is not trivial as CIRCUITREF is not a primary key, and enforcing this constraint would help ensure query correctness by validating that each circuit reference maps to the correct URL."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "NAME",
+      "column_b": "LOCATION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NAME": "Sepang International Circuit",
+          "LOCATION": "Kuala Lumpur"
+        },
+        {
+          "NAME": "Bahrain International Circuit",
+          "LOCATION": "Sakhir"
+        },
+        {
+          "NAME": "Circuit de Barcelona-Catalunya",
+          "LOCATION": "Montmel\u00f3"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency NAME \u2192 LOCATION is meaningful as each circuit name uniquely corresponds to a specific location, which is a reliable semantic relationship. Given the consistent mapping across 72 rows, it is unlikely to be coincidental. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents the possibility of having the same circuit name associated with different locations."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "NAME",
+      "column_b": "COUNTRY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NAME": "Sepang International Circuit",
+          "COUNTRY": "Malaysia"
+        },
+        {
+          "NAME": "Bahrain International Circuit",
+          "COUNTRY": "Bahrain"
+        },
+        {
+          "NAME": "Circuit de Barcelona-Catalunya",
+          "COUNTRY": "Spain"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency NAME \u2192 COUNTRY is meaningful as each circuit name uniquely identifies its country, which is a consistent and reliable mapping across the 72 rows. This relationship is not trivial, as NAME is not a primary key, and enforcing this constraint would enhance query verification by ensuring that each circuit name corresponds to exactly one country."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "NAME",
+      "column_b": "LAT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NAME": "Sepang International Circuit",
+          "LAT": 2.76083
+        },
+        {
+          "NAME": "Bahrain International Circuit",
+          "LAT": 26.0325
+        },
+        {
+          "NAME": "Circuit de Barcelona-Catalunya",
+          "LAT": 41.57
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency NAME \u2192 LAT is meaningful as each circuit name uniquely corresponds to a specific latitude, which is a natural mapping relationship. Given the observed data is 100% consistent across 72 rows, it suggests reliability. This constraint would help verify query correctness by ensuring that any given circuit name always returns the correct latitude."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "NAME",
+      "column_b": "LNG",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NAME": "Sepang International Circuit",
+          "LNG": 101.738
+        },
+        {
+          "NAME": "Bahrain International Circuit",
+          "LNG": 50.5106
+        },
+        {
+          "NAME": "Circuit de Barcelona-Catalunya",
+          "LNG": 2.26111
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency NAME \u2192 LNG is meaningful as each circuit name uniquely determines its longitude, which is a consistent and reliable mapping across the 72 rows. This relationship is not trivial since NAME is not a primary key, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "NAME",
+      "column_b": "URL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NAME": "Sepang International Circuit",
+          "URL": "http://en.wikipedia.org/wiki/Sepang_International_Circuit"
+        },
+        {
+          "NAME": "Bahrain International Circuit",
+          "URL": "http://en.wikipedia.org/wiki/Bahrain_International_Circuit"
+        },
+        {
+          "NAME": "Circuit de Barcelona-Catalunya",
+          "URL": "http://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency NAME \u2192 URL is meaningful as each circuit name uniquely maps to a specific URL, providing a reliable reference for each circuit. This relationship is consistent across all observed data and is not merely coincidental. Enforcing this constraint would enhance query verification by ensuring that any given circuit name always points to the correct URL."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "LOCATION",
+      "column_b": "COUNTRY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LOCATION": "Kuala Lumpur",
+          "COUNTRY": "Malaysia"
+        },
+        {
+          "LOCATION": "Sakhir",
+          "COUNTRY": "Bahrain"
+        },
+        {
+          "LOCATION": "Montmel\u00f3",
+          "COUNTRY": "Spain"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency LOCATION \u2192 COUNTRY is meaningful as each location consistently maps to a specific country, indicating a reliable semantic relationship. This mapping is not coincidental, as it reflects real-world geography. Enforcing this constraint would enhance data integrity and help verify query correctness, ensuring that each location is associated with the correct country."
+      }
+    },
+    {
+      "table": "circuits",
+      "type": "functional",
+      "column_a": "LAT",
+      "column_b": "LNG",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LAT": 2.76083,
+          "LNG": 101.738
+        },
+        {
+          "LAT": 26.0325,
+          "LNG": 50.5106
+        },
+        {
+          "LAT": 41.57,
+          "LNG": 2.26111
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While there is a consistent mapping between LAT and LNG in the current data, this relationship is not inherently meaningful as a functional dependency. Latitude and longitude are geographic coordinates that can exist independently; thus, LAT does not uniquely determine LNG in a semantic sense. This dependency could break with future data, as different locations can share the same latitude but have different longitudes. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "status",
+      "type": "functional",
+      "column_a": "STATUSID",
+      "column_b": "STATUS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "STATUSID": 1,
+          "STATUS": "Finished"
+        },
+        {
+          "STATUSID": 2,
+          "STATUS": "Disqualified"
+        },
+        {
+          "STATUSID": 3,
+          "STATUS": "Accident"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "STATUSID uniquely determines STATUS, establishing a meaningful semantic relationship where each status ID corresponds to a specific status description. This dependency is reliable given the consistent mapping observed across 134 rows, and enforcing it would help ensure data integrity and query correctness."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERID",
+      "column_b": "DRIVERREF",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERID": 1,
+          "DRIVERREF": "hamilton"
+        },
+        {
+          "DRIVERID": 2,
+          "DRIVERREF": "heidfeld"
+        },
+        {
+          "DRIVERID": 3,
+          "DRIVERREF": "rosberg"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERID \u2192 DRIVERREF is meaningful as each DRIVERID uniquely maps to a specific DRIVERREF, which serves as a reference name for the driver. This relationship is consistent across all 840 rows, indicating reliability. Enforcing this constraint would help ensure data integrity and verify query correctness, as it establishes a clear mapping between the unique identifier and its corresponding reference name."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERID",
+      "column_b": "NUMBER",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERID": 1.0,
+          "NUMBER": 44.0
+        },
+        {
+          "DRIVERID": 2.0,
+          "NUMBER": null
+        },
+        {
+          "DRIVERID": 3.0,
+          "NUMBER": 6.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While DRIVERID uniquely identifies each driver, the NUMBER column contains many null values, indicating that not all drivers have a corresponding number. This suggests that the relationship is not consistently meaningful across all rows, and enforcing a functional dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERID",
+      "column_b": "CODE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERID": 1,
+          "CODE": "HAM"
+        },
+        {
+          "DRIVERID": 2,
+          "CODE": "HEI"
+        },
+        {
+          "DRIVERID": 3,
+          "CODE": "ROS"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERID \u2192 CODE is meaningful as each driver has a unique code associated with their ID, which is a primary key. This relationship is consistent across all observed data and reflects a natural mapping between driver identification and their respective codes. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERID",
+      "column_b": "FORENAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERID": 1,
+          "FORENAME": "Lewis"
+        },
+        {
+          "DRIVERID": 2,
+          "FORENAME": "Nick"
+        },
+        {
+          "DRIVERID": 3,
+          "FORENAME": "Nico"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERID \u2192 FORENAME is meaningful as each driver ID uniquely corresponds to a specific forename, which is a semantic relationship. Given that DRIVERID is a primary key, this dependency is reliable and consistent across all 840 rows. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERID",
+      "column_b": "SURNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERID": 1,
+          "SURNAME": "Hamilton"
+        },
+        {
+          "DRIVERID": 2,
+          "SURNAME": "Heidfeld"
+        },
+        {
+          "DRIVERID": 3,
+          "SURNAME": "Rosberg"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERID \u2192 SURNAME is meaningful as each driver has a unique identifier (DRIVERID) that consistently maps to a specific surname. This relationship is reliable given the total of 840 rows, and it reflects a natural mapping where each driver ID corresponds to exactly one surname. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERID",
+      "column_b": "DOB",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERID": 1,
+          "DOB": "1985-01-07"
+        },
+        {
+          "DRIVERID": 2,
+          "DOB": "1977-05-10"
+        },
+        {
+          "DRIVERID": 3,
+          "DOB": "1985-06-27"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERID \u2192 DOB is meaningful as each driver has a unique date of birth associated with their unique identifier. This relationship is reliable given the total of 840 rows, and it is not just a coincidence. Enforcing this constraint would help ensure data integrity and verify query correctness, as it guarantees that each DRIVERID maps to exactly one DOB."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERID",
+      "column_b": "NATIONALITY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERID": 1,
+          "NATIONALITY": "British"
+        },
+        {
+          "DRIVERID": 2,
+          "NATIONALITY": "German"
+        },
+        {
+          "DRIVERID": 3,
+          "NATIONALITY": "German"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERID \u2192 NATIONALITY is meaningful as each driver has a unique nationality associated with their unique identifier. This relationship is consistent across the dataset and reflects a natural mapping. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents the possibility of having multiple nationalities for a single driver."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERID",
+      "column_b": "URL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERID": 1,
+          "URL": "http://en.wikipedia.org/wiki/Lewis_Hamilton"
+        },
+        {
+          "DRIVERID": 2,
+          "URL": "http://en.wikipedia.org/wiki/Nick_Heidfeld"
+        },
+        {
+          "DRIVERID": 3,
+          "URL": "http://en.wikipedia.org/wiki/Nico_Rosberg"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERID \u2192 URL is meaningful as each driver has a unique URL that corresponds to their profile. This relationship is consistent across all 840 rows, indicating reliability. The DRIVERID is a primary key, which makes this dependency non-trivial and important for ensuring that each driver is linked to their correct URL. Enforcing this constraint would help verify query correctness and maintain data integrity."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERREF",
+      "column_b": "NUMBER",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERREF": "hamilton",
+          "NUMBER": 44.0
+        },
+        {
+          "DRIVERREF": "heidfeld",
+          "NUMBER": null
+        },
+        {
+          "DRIVERREF": "rosberg",
+          "NUMBER": 6.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the mapping between DRIVERREF and NUMBER is consistent in the current data, the presence of null values for several DRIVERREF entries suggests that this relationship is not reliable or meaningful. The NUMBER column does not have a unique mapping for all DRIVERREF values, indicating that it may not be a valid functional dependency. Additionally, DRIVERREF is not a primary key, and enforcing this dependency could lead to issues with future data integrity."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERREF",
+      "column_b": "CODE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERREF": "hamilton",
+          "CODE": "HAM"
+        },
+        {
+          "DRIVERREF": "heidfeld",
+          "CODE": "HEI"
+        },
+        {
+          "DRIVERREF": "rosberg",
+          "CODE": "ROS"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERREF \u2192 CODE is meaningful as each driver reference consistently maps to a unique code, indicating a semantic relationship. This mapping is reliable with 840 rows and would help verify query correctness by ensuring that each driver reference corresponds to the correct code."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERREF",
+      "column_b": "FORENAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERREF": "hamilton",
+          "FORENAME": "Lewis"
+        },
+        {
+          "DRIVERREF": "heidfeld",
+          "FORENAME": "Nick"
+        },
+        {
+          "DRIVERREF": "rosberg",
+          "FORENAME": "Nico"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERREF \u2192 FORENAME is meaningful as each driver reference consistently maps to a unique forename. This relationship is not coincidental, as it is based on the unique identifiers for drivers. Enforcing this constraint would enhance data integrity and help verify query correctness, ensuring that each driver reference always corresponds to the correct forename."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERREF",
+      "column_b": "SURNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERREF": "hamilton",
+          "SURNAME": "Hamilton"
+        },
+        {
+          "DRIVERREF": "heidfeld",
+          "SURNAME": "Heidfeld"
+        },
+        {
+          "DRIVERREF": "rosberg",
+          "SURNAME": "Rosberg"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERREF \u2192 SURNAME is meaningful as it establishes a clear mapping between a driver's reference name and their surname. The observed mapping is consistent across all 840 rows, indicating reliability. This relationship is not trivial since DRIVERREF is not a primary key, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERREF",
+      "column_b": "DOB",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERREF": "hamilton",
+          "DOB": "1985-01-07"
+        },
+        {
+          "DRIVERREF": "heidfeld",
+          "DOB": "1977-05-10"
+        },
+        {
+          "DRIVERREF": "rosberg",
+          "DOB": "1985-06-27"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERREF \u2192 DOB is meaningful as each driver reference uniquely identifies a driver's date of birth. The observed mapping is consistent across all 840 rows, indicating reliability. This relationship is not trivial since DRIVERREF is not a primary key, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERREF",
+      "column_b": "NATIONALITY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERREF": "hamilton",
+          "NATIONALITY": "British"
+        },
+        {
+          "DRIVERREF": "heidfeld",
+          "NATIONALITY": "German"
+        },
+        {
+          "DRIVERREF": "rosberg",
+          "NATIONALITY": "German"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERREF \u2192 NATIONALITY is meaningful as each driver reference consistently maps to a unique nationality. This relationship is not trivial, as DRIVERREF is not a primary key, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "DRIVERREF",
+      "column_b": "URL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERREF": "hamilton",
+          "URL": "http://en.wikipedia.org/wiki/Lewis_Hamilton"
+        },
+        {
+          "DRIVERREF": "heidfeld",
+          "URL": "http://en.wikipedia.org/wiki/Nick_Heidfeld"
+        },
+        {
+          "DRIVERREF": "rosberg",
+          "URL": "http://en.wikipedia.org/wiki/Nico_Rosberg"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERREF \u2192 URL is meaningful as each driver reference consistently maps to a unique URL, providing a reliable way to access driver information. This relationship is not trivial, as DRIVERREF is not a primary key but serves as a unique identifier for drivers. Enforcing this constraint would enhance data integrity and assist in verifying query correctness."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "NUMBER",
+      "column_b": "CODE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NUMBER": 44.0,
+          "CODE": "HAM"
+        },
+        {
+          "NUMBER": null,
+          "CODE": "HEI"
+        },
+        {
+          "NUMBER": 6.0,
+          "CODE": "ROS"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency NUMBER \u2192 CODE is meaningful as it establishes a consistent mapping between driver numbers and their corresponding codes. Although there are null values for some numbers, the observed mapping is 100% consistent in the current data, indicating a reliable relationship. This constraint would help verify query correctness by ensuring that each driver number corresponds to a unique code, enhancing data integrity."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "NUMBER",
+      "column_b": "FORENAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NUMBER": 44.0,
+          "FORENAME": "Lewis"
+        },
+        {
+          "NUMBER": null,
+          "FORENAME": "Nick"
+        },
+        {
+          "NUMBER": 6.0,
+          "FORENAME": "Nico"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency of NUMBER on FORENAME is not meaningful because the NUMBER column can have null values, indicating that it does not uniquely determine the FORENAME for all drivers. Additionally, the relationship does not represent a consistent mapping as some drivers do not have a NUMBER assigned, making it unreliable and coincidental rather than a semantic relationship."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "NUMBER",
+      "column_b": "SURNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NUMBER": 44.0,
+          "SURNAME": "Hamilton"
+        },
+        {
+          "NUMBER": null,
+          "SURNAME": "Heidfeld"
+        },
+        {
+          "NUMBER": 6.0,
+          "SURNAME": "Rosberg"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency of NUMBER on SURNAME is not meaningful as the NUMBER column contains null values for several drivers, indicating that it does not uniquely determine the SURNAME. Additionally, the relationship does not represent a consistent semantic mapping, as multiple surnames can correspond to null values in NUMBER, making it unreliable for future data."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "NUMBER",
+      "column_b": "DOB",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NUMBER": 44.0,
+          "DOB": "1985-01-07"
+        },
+        {
+          "NUMBER": null,
+          "DOB": "1977-05-10"
+        },
+        {
+          "NUMBER": 6.0,
+          "DOB": "1985-06-27"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The determinant 'NUMBER' is not a unique identifier for drivers, as there are multiple entries with a null value for 'NUMBER' and no consistent mapping to 'DOB'. This suggests that the relationship is not reliable or meaningful, and enforcing a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "NUMBER",
+      "column_b": "NATIONALITY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NUMBER": 44.0,
+          "NATIONALITY": "British"
+        },
+        {
+          "NUMBER": null,
+          "NATIONALITY": "German"
+        },
+        {
+          "NUMBER": 6.0,
+          "NATIONALITY": "German"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency of NUMBER on NATIONALITY is not meaningful as the NUMBER column contains null values and does not uniquely determine the NATIONALITY. Multiple nationalities can correspond to null values in NUMBER, indicating that this is not a reliable or consistent mapping. Additionally, NUMBER is not a primary or unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "drivers",
+      "type": "functional",
+      "column_a": "NUMBER",
+      "column_b": "URL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NUMBER": 44.0,
+          "URL": "http://en.wikipedia.org/wiki/Lewis_Hamilton"
+        },
+        {
+          "NUMBER": null,
+          "URL": "http://en.wikipedia.org/wiki/Nick_Heidfeld"
+        },
+        {
+          "NUMBER": 6.0,
+          "URL": "http://en.wikipedia.org/wiki/Nico_Rosberg"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency of NUMBER determining URL is not meaningful because NUMBER is not unique for all drivers; several drivers have a null NUMBER, leading to multiple URLs mapping to the same value. This suggests that the relationship is coincidental rather than a reliable functional dependency. Additionally, NUMBER is not a primary key, and enforcing this constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "driverStandings",
+      "type": "functional",
+      "column_a": "DRIVERSTANDINGSID",
+      "column_b": "RACEID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERSTANDINGSID": 1,
+          "RACEID": 18
+        },
+        {
+          "DRIVERSTANDINGSID": 2,
+          "RACEID": 18
+        },
+        {
+          "DRIVERSTANDINGSID": 3,
+          "RACEID": 18
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency DRIVERSTANDINGSID \u2192 RACEID is not meaningful as a functional dependency because DRIVERSTANDINGSID is a unique identifier for each record in the DRIVERSTANDINGS table, which means it already uniquely determines RACEID and all other columns. This is a trivial dependency due to the nature of primary keys and does not add semantic value or help verify query correctness."
+      }
+    },
+    {
+      "table": "driverStandings",
+      "type": "functional",
+      "column_a": "DRIVERSTANDINGSID",
+      "column_b": "DRIVERID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERSTANDINGSID": 1,
+          "DRIVERID": 1
+        },
+        {
+          "DRIVERSTANDINGSID": 2,
+          "DRIVERID": 2
+        },
+        {
+          "DRIVERSTANDINGSID": 3,
+          "DRIVERID": 3
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency DRIVERSTANDINGSID \u2192 DRIVERID is trivial because DRIVERSTANDINGSID is a primary key, which inherently determines DRIVERID. This does not add meaningful semantic value or help verify query correctness, as primary keys already enforce uniqueness."
+      }
+    },
+    {
+      "table": "driverStandings",
+      "type": "functional",
+      "column_a": "DRIVERSTANDINGSID",
+      "column_b": "POINTS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERSTANDINGSID": 1.0,
+          "POINTS": 10.0
+        },
+        {
+          "DRIVERSTANDINGSID": 2.0,
+          "POINTS": 8.0
+        },
+        {
+          "DRIVERSTANDINGSID": 3.0,
+          "POINTS": 6.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DRIVERSTANDINGSID \u2192 POINTS is meaningful as each unique DRIVERSTANDINGSID consistently maps to a specific POINTS value, indicating a reliable scoring system in driver standings. This relationship is not trivial since DRIVERSTANDINGSID is a unique identifier for standings records, and enforcing this constraint would help ensure data integrity and correctness in queries related to driver points."
+      }
+    },
+    {
+      "table": "driverStandings",
+      "type": "functional",
+      "column_a": "DRIVERSTANDINGSID",
+      "column_b": "POSITION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERSTANDINGSID": 1,
+          "POSITION": 1
+        },
+        {
+          "DRIVERSTANDINGSID": 2,
+          "POSITION": 2
+        },
+        {
+          "DRIVERSTANDINGSID": 3,
+          "POSITION": 3
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency DRIVERSTANDINGSID \u2192 POSITION is trivial because DRIVERSTANDINGSID is a primary key, which inherently determines all other columns in the table. Enforcing this as a constraint does not add meaningful semantic value and would not help verify query correctness."
+      }
+    },
+    {
+      "table": "driverStandings",
+      "type": "functional",
+      "column_a": "DRIVERSTANDINGSID",
+      "column_b": "POSITIONTEXT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERSTANDINGSID": 1,
+          "POSITIONTEXT": "1"
+        },
+        {
+          "DRIVERSTANDINGSID": 2,
+          "POSITIONTEXT": "2"
+        },
+        {
+          "DRIVERSTANDINGSID": 3,
+          "POSITIONTEXT": "3"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the observed mapping is consistent, the dependency is not meaningful as POSITIONTEXT is not uniquely determined by DRIVERSTANDINGSID. The same POSITIONTEXT can correspond to different DRIVERSTANDINGSID values, indicating that this is not a reliable functional dependency. Additionally, POSITIONTEXT is not a unique or primary key, and enforcing this constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "driverStandings",
+      "type": "functional",
+      "column_a": "DRIVERSTANDINGSID",
+      "column_b": "WINS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DRIVERSTANDINGSID": 1,
+          "WINS": 1
+        },
+        {
+          "DRIVERSTANDINGSID": 2,
+          "WINS": 0
+        },
+        {
+          "DRIVERSTANDINGSID": 3,
+          "WINS": 0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency of DRIVERSTANDINGSID determining WINS is trivial because DRIVERSTANDINGSID is a primary key, which inherently ensures uniqueness for WINS. This does not add meaningful semantic value or help verify query correctness beyond what is already enforced by the primary key constraint."
+      }
+    },
+    {
+      "table": "races",
+      "type": "functional",
+      "column_a": "RACEID",
+      "column_b": "YEAR",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RACEID": 1,
+          "YEAR": 2009
+        },
+        {
+          "RACEID": 2,
+          "YEAR": 2009
+        },
+        {
+          "RACEID": 3,
+          "YEAR": 2009
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RACEID \u2192 YEAR is meaningful because each race is uniquely identified by its RACEID, and it consistently maps to a specific year. This relationship is not coincidental, as it reflects the inherent structure of the data where each race occurs in a specific year. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents the possibility of a race being associated with multiple years."
+      }
+    },
+    {
+      "table": "races",
+      "type": "functional",
+      "column_a": "RACEID",
+      "column_b": "ROUND",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RACEID": 1,
+          "ROUND": 1
+        },
+        {
+          "RACEID": 2,
+          "ROUND": 2
+        },
+        {
+          "RACEID": 3,
+          "ROUND": 3
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RACEID \u2192 ROUND is meaningful as each race has a unique round number associated with it, indicating the order of races in a season. This relationship is consistent across the observed data and is not merely coincidental. Enforcing this constraint would help ensure data integrity and verify query correctness, as it reflects the logical structure of race events."
+      }
+    },
+    {
+      "table": "races",
+      "type": "functional",
+      "column_a": "RACEID",
+      "column_b": "CIRCUITID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RACEID": 1,
+          "CIRCUITID": 1
+        },
+        {
+          "RACEID": 2,
+          "CIRCUITID": 2
+        },
+        {
+          "RACEID": 3,
+          "CIRCUITID": 17
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RACEID \u2192 CIRCUITID is meaningful as each race is held at a specific circuit, establishing a clear semantic relationship. Given that RACEID is a primary key, it uniquely identifies each race, and the observed mapping is consistent across 976 rows, indicating reliability. Enforcing this constraint would help ensure data integrity and verify query correctness regarding race-circuit associations."
+      }
+    },
+    {
+      "table": "races",
+      "type": "functional",
+      "column_a": "RACEID",
+      "column_b": "NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RACEID": 1,
+          "NAME": "Australian Grand Prix"
+        },
+        {
+          "RACEID": 2,
+          "NAME": "Malaysian Grand Prix"
+        },
+        {
+          "RACEID": 3,
+          "NAME": "Chinese Grand Prix"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RACEID \u2192 NAME is meaningful as each race ID uniquely corresponds to a specific race name, which is a semantic relationship. Given the total of 976 rows and consistent mapping, this dependency is reliable and not coincidental. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "races",
+      "type": "functional",
+      "column_a": "RACEID",
+      "column_b": "DATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RACEID": 1,
+          "DATE": "2009-03-29"
+        },
+        {
+          "RACEID": 2,
+          "DATE": "2009-04-05"
+        },
+        {
+          "RACEID": 3,
+          "DATE": "2009-04-19"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RACEID \u2192 DATE is meaningful as each race has a unique date associated with it, and RACEID serves as a primary key. This relationship is reliable given the total of 976 rows, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "races",
+      "type": "functional",
+      "column_a": "RACEID",
+      "column_b": "TIME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RACEID": 1,
+          "TIME": "06:00:00"
+        },
+        {
+          "RACEID": 2,
+          "TIME": "09:00:00"
+        },
+        {
+          "RACEID": 3,
+          "TIME": "07:00:00"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RACEID \u2192 TIME is meaningful because each race has a specific scheduled time, and this relationship is consistent across the dataset. Since RACEID is a unique identifier for each race, enforcing this constraint would help ensure data integrity and verify query correctness regarding race times."
+      }
+    },
+    {
+      "table": "races",
+      "type": "functional",
+      "column_a": "RACEID",
+      "column_b": "URL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RACEID": 1,
+          "URL": "http://en.wikipedia.org/wiki/2009_Australian_Grand_Prix"
+        },
+        {
+          "RACEID": 2,
+          "URL": "http://en.wikipedia.org/wiki/2009_Malaysian_Grand_Prix"
+        },
+        {
+          "RACEID": 3,
+          "URL": "http://en.wikipedia.org/wiki/2009_Chinese_Grand_Prix"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RACEID \u2192 URL is meaningful as each race has a unique URL that corresponds to it, providing a reliable mapping. Given that RACEID is a primary key, this relationship is not trivial but rather reinforces the integrity of the data by ensuring that each race can be uniquely identified by its URL. This constraint would help verify query correctness by ensuring that any query referencing a RACEID will consistently return the correct URL."
+      }
+    },
+    {
+      "table": "races",
+      "type": "functional",
+      "column_a": "DATE",
+      "column_b": "TIME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DATE": "2009-03-29",
+          "TIME": "06:00:00"
+        },
+        {
+          "DATE": "2009-04-05",
+          "TIME": "09:00:00"
+        },
+        {
+          "DATE": "2009-04-19",
+          "TIME": "07:00:00"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DATE \u2192 TIME is meaningful as it establishes a consistent relationship between the date of a race and its scheduled time. Given the observed data is 100% consistent across 976 rows, it suggests a reliable mapping. This relationship is not trivial since DATE is not a primary key, and enforcing this constraint would help ensure data integrity and verify query correctness regarding race scheduling."
+      }
+    },
+    {
+      "table": "races",
+      "type": "functional",
+      "column_a": "DATE",
+      "column_b": "URL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DATE": "2009-03-29",
+          "URL": "http://en.wikipedia.org/wiki/2009_Australian_Grand_Prix"
+        },
+        {
+          "DATE": "2009-04-05",
+          "URL": "http://en.wikipedia.org/wiki/2009_Malaysian_Grand_Prix"
+        },
+        {
+          "DATE": "2009-04-19",
+          "URL": "http://en.wikipedia.org/wiki/2009_Chinese_Grand_Prix"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DATE column in the RACES table uniquely determines the URL for each race, as evidenced by the consistent mapping across 976 rows. This is a meaningful semantic relationship since each race date corresponds to a specific event URL, which aids in verifying query correctness and ensuring data integrity."
+      }
+    },
+    {
+      "table": "constructors",
+      "type": "functional",
+      "column_a": "CONSTRUCTORID",
+      "column_b": "CONSTRUCTORREF",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORID": 1,
+          "CONSTRUCTORREF": "mclaren"
+        },
+        {
+          "CONSTRUCTORID": 2,
+          "CONSTRUCTORREF": "bmw_sauber"
+        },
+        {
+          "CONSTRUCTORID": 3,
+          "CONSTRUCTORREF": "williams"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CONSTRUCTORID \u2192 CONSTRUCTORREF is meaningful as it establishes a clear relationship between a unique identifier and its corresponding reference name. Given that the mapping is 100% consistent across 208 rows, it indicates reliability. This relationship is not trivial since CONSTRUCTORID is a primary key, but enforcing this constraint would still add value for query verification and ensure data integrity."
+      }
+    },
+    {
+      "table": "constructors",
+      "type": "functional",
+      "column_a": "CONSTRUCTORID",
+      "column_b": "NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORID": 1,
+          "NAME": "McLaren"
+        },
+        {
+          "CONSTRUCTORID": 2,
+          "NAME": "BMW Sauber"
+        },
+        {
+          "CONSTRUCTORID": 3,
+          "NAME": "Williams"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CONSTRUCTORID \u2192 NAME is meaningful as each constructor ID uniquely maps to a constructor name, which is a semantic relationship. Given that there are 208 rows and the mapping is 100% consistent, this dependency is reliable. Additionally, enforcing this constraint would help verify query correctness by ensuring that each constructor ID always corresponds to the correct name."
+      }
+    },
+    {
+      "table": "constructors",
+      "type": "functional",
+      "column_a": "CONSTRUCTORID",
+      "column_b": "NATIONALITY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORID": 1,
+          "NATIONALITY": "British"
+        },
+        {
+          "CONSTRUCTORID": 2,
+          "NATIONALITY": "German"
+        },
+        {
+          "CONSTRUCTORID": 3,
+          "NATIONALITY": "British"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CONSTRUCTORID \u2192 NATIONALITY is meaningful as each constructor ID consistently maps to a specific nationality, indicating a reliable semantic relationship. This mapping is not coincidental, and enforcing this constraint would help ensure data integrity and verify query correctness regarding constructors' nationalities."
+      }
+    },
+    {
+      "table": "constructors",
+      "type": "functional",
+      "column_a": "CONSTRUCTORID",
+      "column_b": "URL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORID": 1,
+          "URL": "http://en.wikipedia.org/wiki/McLaren"
+        },
+        {
+          "CONSTRUCTORID": 2,
+          "URL": "http://en.wikipedia.org/wiki/BMW_Sauber"
+        },
+        {
+          "CONSTRUCTORID": 3,
+          "URL": "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CONSTRUCTORID \u2192 URL is meaningful as each constructor ID uniquely maps to a specific URL, providing a reliable and consistent relationship across the 208 rows. This is not a trivial dependency since it is not just a primary key to another column, but rather a semantic relationship that enhances data integrity and query verification."
+      }
+    },
+    {
+      "table": "constructors",
+      "type": "functional",
+      "column_a": "CONSTRUCTORREF",
+      "column_b": "NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORREF": "mclaren",
+          "NAME": "McLaren"
+        },
+        {
+          "CONSTRUCTORREF": "bmw_sauber",
+          "NAME": "BMW Sauber"
+        },
+        {
+          "CONSTRUCTORREF": "williams",
+          "NAME": "Williams"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CONSTRUCTORREF \u2192 NAME is meaningful as it establishes a clear semantic relationship where each constructor reference maps to a unique constructor name. The observed mapping is consistent across all 208 rows, indicating reliability. This constraint would help verify query correctness by ensuring that any given constructor reference always corresponds to the correct constructor name, thus enhancing data integrity."
+      }
+    },
+    {
+      "table": "constructors",
+      "type": "functional",
+      "column_a": "CONSTRUCTORREF",
+      "column_b": "NATIONALITY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORREF": "mclaren",
+          "NATIONALITY": "British"
+        },
+        {
+          "CONSTRUCTORREF": "bmw_sauber",
+          "NATIONALITY": "German"
+        },
+        {
+          "CONSTRUCTORREF": "williams",
+          "NATIONALITY": "British"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CONSTRUCTORREF \u2192 NATIONALITY is meaningful as it establishes a clear relationship between a constructor's reference and its nationality. The observed mapping is consistent across all 208 rows, indicating reliability. This relationship is not trivial, as CONSTRUCTORREF is not a primary key but serves as a unique identifier for constructors. Enforcing this constraint would enhance data integrity and help verify query correctness, ensuring that each constructor reference consistently maps to the correct nationality."
+      }
+    },
+    {
+      "table": "constructors",
+      "type": "functional",
+      "column_a": "CONSTRUCTORREF",
+      "column_b": "URL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORREF": "mclaren",
+          "URL": "http://en.wikipedia.org/wiki/McLaren"
+        },
+        {
+          "CONSTRUCTORREF": "bmw_sauber",
+          "URL": "http://en.wikipedia.org/wiki/BMW_Sauber"
+        },
+        {
+          "CONSTRUCTORREF": "williams",
+          "URL": "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CONSTRUCTORREF \u2192 URL is meaningful as each constructor reference consistently maps to a unique URL, providing a reliable semantic relationship. This mapping is not coincidental, as it is based on established references for constructors in Formula 1. Enforcing this constraint would enhance query correctness by ensuring that each constructor reference always points to the correct URL."
+      }
+    },
+    {
+      "table": "constructors",
+      "type": "functional",
+      "column_a": "NAME",
+      "column_b": "NATIONALITY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NAME": "McLaren",
+          "NATIONALITY": "British"
+        },
+        {
+          "NAME": "BMW Sauber",
+          "NATIONALITY": "German"
+        },
+        {
+          "NAME": "Williams",
+          "NATIONALITY": "British"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency NAME \u2192 NATIONALITY is meaningful as it establishes a clear semantic relationship between the constructor's name and its nationality. The observed mapping is consistent across all 208 rows, indicating reliability. This relationship is not trivial since NAME is not a primary key, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "constructors",
+      "type": "functional",
+      "column_a": "NAME",
+      "column_b": "URL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NAME": "McLaren",
+          "URL": "http://en.wikipedia.org/wiki/McLaren"
+        },
+        {
+          "NAME": "BMW Sauber",
+          "URL": "http://en.wikipedia.org/wiki/BMW_Sauber"
+        },
+        {
+          "NAME": "Williams",
+          "URL": "http://en.wikipedia.org/wiki/Williams_Grand_Prix_Engineering"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency NAME \u2192 URL is meaningful as each constructor name uniquely maps to a specific URL, providing a reliable reference for further information. This relationship is consistent across all observed data and is not merely coincidental. Enforcing this constraint would enhance query verification by ensuring that each constructor name always points to the correct URL."
+      }
+    },
+    {
+      "table": "constructorResults",
+      "type": "functional",
+      "column_a": "CONSTRUCTORRESULTSID",
+      "column_b": "RACEID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORRESULTSID": 1,
+          "RACEID": 18
+        },
+        {
+          "CONSTRUCTORRESULTSID": 2,
+          "RACEID": 18
+        },
+        {
+          "CONSTRUCTORRESULTSID": 3,
+          "RACEID": 18
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency CONSTRUCTORRESULTSID \u2192 RACEID is not meaningful as CONSTRUCTORRESULTSID is a primary key, which inherently determines all other columns in the table. This relationship is trivial and does not add semantic value or help verify query correctness."
+      }
+    },
+    {
+      "table": "constructorResults",
+      "type": "functional",
+      "column_a": "CONSTRUCTORRESULTSID",
+      "column_b": "CONSTRUCTORID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORRESULTSID": 1,
+          "CONSTRUCTORID": 1
+        },
+        {
+          "CONSTRUCTORRESULTSID": 2,
+          "CONSTRUCTORID": 2
+        },
+        {
+          "CONSTRUCTORRESULTSID": 3,
+          "CONSTRUCTORID": 3
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency CONSTRUCTORRESULTSID \u2192 CONSTRUCTORID is trivial because CONSTRUCTORRESULTSID is a primary key in the CONSTRUCTORRESULTS table. Primary keys inherently determine all other columns, so enforcing this as a constraint does not add meaningful value or verification for query correctness."
+      }
+    },
+    {
+      "table": "constructorResults",
+      "type": "functional",
+      "column_a": "CONSTRUCTORRESULTSID",
+      "column_b": "POINTS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORRESULTSID": 1.0,
+          "POINTS": 14.0
+        },
+        {
+          "CONSTRUCTORRESULTSID": 2.0,
+          "POINTS": 8.0
+        },
+        {
+          "CONSTRUCTORRESULTSID": 3.0,
+          "POINTS": 9.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CONSTRUCTORRESULTSID \u2192 POINTS is meaningful as each unique CONSTRUCTORRESULTSID consistently maps to a specific POINTS value, indicating a reliable relationship. This is not a trivial dependency since CONSTRUCTORRESULTSID is a unique identifier for constructor results, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "constructorResults",
+      "type": "functional",
+      "column_a": "CONSTRUCTORRESULTSID",
+      "column_b": "STATUS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORRESULTSID": 1,
+          "STATUS": null
+        },
+        {
+          "CONSTRUCTORRESULTSID": 2,
+          "STATUS": null
+        },
+        {
+          "CONSTRUCTORRESULTSID": 3,
+          "STATUS": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency CONSTRUCTORRESULTSID \u2192 STATUS is not meaningful as STATUS is consistently null across all observed rows. This suggests that there is no valid mapping relationship, making it a trivial case rather than a functional dependency that adds value for query verification."
+      }
+    },
+    {
+      "table": "constructorResults",
+      "type": "functional",
+      "column_a": "RACEID",
+      "column_b": "STATUS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RACEID": 18,
+          "STATUS": null
+        },
+        {
+          "RACEID": 19,
+          "STATUS": null
+        },
+        {
+          "RACEID": 20,
+          "STATUS": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency RACEID \u2192 STATUS is not meaningful as STATUS is consistently null for all observed RACEID values. This suggests that there is no actual relationship between RACEID and STATUS, making it a coincidental pattern rather than a reliable functional dependency. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "constructorResults",
+      "type": "functional",
+      "column_a": "CONSTRUCTORID",
+      "column_b": "STATUS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORID": 1,
+          "STATUS": null
+        },
+        {
+          "CONSTRUCTORID": 2,
+          "STATUS": null
+        },
+        {
+          "CONSTRUCTORID": 3,
+          "STATUS": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all STATUS values are null for different CONSTRUCTORIDs, indicating that there is no meaningful relationship between CONSTRUCTORID and STATUS. This suggests that the dependency is not reliable or semantically meaningful, as it does not provide useful information for query verification."
+      }
+    },
+    {
+      "table": "constructorResults",
+      "type": "functional",
+      "column_a": "POINTS",
+      "column_b": "STATUS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "POINTS": 14.0,
+          "STATUS": null
+        },
+        {
+          "POINTS": 8.0,
+          "STATUS": null
+        },
+        {
+          "POINTS": 9.0,
+          "STATUS": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency POINTS \u2192 STATUS is not meaningful as STATUS is consistently null for all observed POINTS values. This indicates that there is no semantic relationship between POINTS and STATUS, making it a coincidental pattern rather than a reliable functional dependency. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "lapTimes",
+      "type": "functional",
+      "column_a": "TIME",
+      "column_b": "MILLISECONDS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TIME": "1:49.088",
+          "MILLISECONDS": 109088
+        },
+        {
+          "TIME": "1:33.740",
+          "MILLISECONDS": 93740
+        },
+        {
+          "TIME": "1:31.600",
+          "MILLISECONDS": 91600
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency TIME \u2192 MILLISECONDS is meaningful as it represents a consistent conversion from a formatted time string to its equivalent in milliseconds. Given the observed data is 100% consistent across 420369 rows, this suggests a reliable mapping. This relationship is not trivial, as TIME is not a primary key, and enforcing this constraint would help ensure data integrity and correctness in queries involving lap times."
+      }
+    },
+    {
+      "table": "qualifying",
+      "type": "functional",
+      "column_a": "QUALIFYID",
+      "column_b": "RACEID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "QUALIFYID": 1,
+          "RACEID": 18
+        },
+        {
+          "QUALIFYID": 2,
+          "RACEID": 18
+        },
+        {
+          "QUALIFYID": 3,
+          "RACEID": 18
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The QUALIFYID is a unique identifier for each qualifying record, and it consistently maps to a single RACEID across all rows. This indicates a meaningful relationship where each qualifying session is associated with exactly one race. Enforcing this constraint would help ensure data integrity and verify query correctness, as it reflects the logical structure of the data."
+      }
+    },
+    {
+      "table": "qualifying",
+      "type": "functional",
+      "column_a": "QUALIFYID",
+      "column_b": "DRIVERID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "QUALIFYID": 1,
+          "DRIVERID": 1
+        },
+        {
+          "QUALIFYID": 2,
+          "DRIVERID": 9
+        },
+        {
+          "QUALIFYID": 3,
+          "DRIVERID": 5
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The QUALIFYID is a unique identifier for each qualifying record, and it consistently maps to a single DRIVERID across all rows. This indicates a meaningful relationship where each qualifying event is associated with exactly one driver, which is semantically relevant for ensuring data integrity in the context of qualifying results. Enforcing this constraint would help verify query correctness and maintain the integrity of the data."
+      }
+    },
+    {
+      "table": "qualifying",
+      "type": "functional",
+      "column_a": "QUALIFYID",
+      "column_b": "CONSTRUCTORID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "QUALIFYID": 1,
+          "CONSTRUCTORID": 1
+        },
+        {
+          "QUALIFYID": 2,
+          "CONSTRUCTORID": 2
+        },
+        {
+          "QUALIFYID": 3,
+          "CONSTRUCTORID": 1
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The QUALIFYID is a unique identifier for each qualifying record, and it consistently maps to a single CONSTRUCTORID across all rows. This indicates a meaningful relationship where each qualifying event is associated with exactly one constructor. Enforcing this constraint would help ensure data integrity and verify query correctness, as it reflects the logical relationship between qualifying events and constructors."
+      }
+    },
+    {
+      "table": "qualifying",
+      "type": "functional",
+      "column_a": "QUALIFYID",
+      "column_b": "NUMBER",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "QUALIFYID": 1,
+          "NUMBER": 22
+        },
+        {
+          "QUALIFYID": 2,
+          "NUMBER": 4
+        },
+        {
+          "QUALIFYID": 3,
+          "NUMBER": 23
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency QUALIFYID \u2192 NUMBER is meaningful as each QUALIFYID uniquely determines a NUMBER, indicating a consistent mapping between qualifying events and their respective numbers. This relationship is not trivial since QUALIFYID is a unique identifier for qualifying records, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "qualifying",
+      "type": "functional",
+      "column_a": "QUALIFYID",
+      "column_b": "POSITION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "QUALIFYID": 1,
+          "POSITION": 1
+        },
+        {
+          "QUALIFYID": 2,
+          "POSITION": 2
+        },
+        {
+          "QUALIFYID": 3,
+          "POSITION": 3
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency QUALIFYID \u2192 POSITION is meaningful as it indicates that each qualifying event (identified by QUALIFYID) corresponds to a unique position. This relationship is consistent across all observed data, suggesting it is not coincidental. Enforcing this constraint would help ensure data integrity and verify query correctness, as it establishes a clear mapping between qualifying events and their respective positions."
+      }
+    },
+    {
+      "table": "qualifying",
+      "type": "functional",
+      "column_a": "QUALIFYID",
+      "column_b": "Q1",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "QUALIFYID": 1,
+          "Q1": "1:26.572"
+        },
+        {
+          "QUALIFYID": 2,
+          "Q1": "1:26.103"
+        },
+        {
+          "QUALIFYID": 3,
+          "Q1": "1:25.664"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency QUALIFYID \u2192 Q1 is meaningful as each QUALIFYID uniquely determines a specific Q1 time, which is consistent across 7397 rows. This relationship is not trivial since QUALIFYID is a unique identifier for qualifying sessions, and enforcing this constraint would help ensure data integrity and verify query correctness regarding qualifying times."
+      }
+    },
+    {
+      "table": "qualifying",
+      "type": "functional",
+      "column_a": "QUALIFYID",
+      "column_b": "Q2",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "QUALIFYID": 1,
+          "Q2": "1:25.187"
+        },
+        {
+          "QUALIFYID": 2,
+          "Q2": "1:25.315"
+        },
+        {
+          "QUALIFYID": 3,
+          "Q2": "1:25.452"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency QUALIFYID \u2192 Q2 is meaningful because each QUALIFYID uniquely determines a specific Q2 value, which represents the qualifying time in Q2 for that qualifying session. Given that QUALIFYID is a unique identifier for each qualifying record, this relationship is reliable and consistent across all 7397 rows. Enforcing this constraint would help ensure data integrity and verify query correctness, as it confirms that each qualifying session has a corresponding Q2 time."
+      }
+    },
+    {
+      "table": "qualifying",
+      "type": "functional",
+      "column_a": "QUALIFYID",
+      "column_b": "Q3",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "QUALIFYID": 1,
+          "Q3": "1:26.714"
+        },
+        {
+          "QUALIFYID": 2,
+          "Q3": "1:26.869"
+        },
+        {
+          "QUALIFYID": 3,
+          "Q3": "1:27.079"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency QUALIFYID \u2192 Q3 is meaningful as each QUALIFYID uniquely determines a specific Q3 time, which is essential for qualifying results. The observed mapping is consistent across 7397 rows, indicating reliability. This relationship is not trivial since QUALIFYID is a unique identifier for qualifying records, and enforcing this constraint would help ensure data integrity and correctness in queries related to qualifying times."
+      }
+    },
+    {
+      "table": "pitStops",
+      "type": "functional",
+      "column_a": "DURATION",
+      "column_b": "MILLISECONDS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DURATION": "23.227",
+          "MILLISECONDS": 23227
+        },
+        {
+          "DURATION": "23.199",
+          "MILLISECONDS": 23199
+        },
+        {
+          "DURATION": "22.994",
+          "MILLISECONDS": 22994
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DURATION \u2192 MILLISECONDS is meaningful as it represents a consistent conversion from a time duration in seconds to its equivalent in milliseconds. Given the 100% consistency observed in the current data across 6070 rows, this relationship is reliable. It is not a trivial dependency since DURATION is not a primary or unique key, and enforcing this constraint would help ensure query correctness by validating that the milliseconds value accurately reflects the duration provided."
+      }
+    },
+    {
+      "table": "seasons",
+      "type": "functional",
+      "column_a": "YEAR",
+      "column_b": "URL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "YEAR": 1950,
+          "URL": "http://en.wikipedia.org/wiki/1950_Formula_One_season"
+        },
+        {
+          "YEAR": 1951,
+          "URL": "http://en.wikipedia.org/wiki/1951_Formula_One_season"
+        },
+        {
+          "YEAR": 1952,
+          "URL": "http://en.wikipedia.org/wiki/1952_Formula_One_season"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency YEAR \u2192 URL is meaningful as each year uniquely maps to a specific URL for the corresponding Formula One season. This relationship is consistent across all 68 rows, indicating reliability. The YEAR serves as a unique identifier for each season, making this a valid functional dependency that enhances query verification."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "type": "functional",
+      "column_a": "CONSTRUCTORSTANDINGSID",
+      "column_b": "RACEID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORSTANDINGSID": 1,
+          "RACEID": 18
+        },
+        {
+          "CONSTRUCTORSTANDINGSID": 2,
+          "RACEID": 18
+        },
+        {
+          "CONSTRUCTORSTANDINGSID": 3,
+          "RACEID": 18
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency CONSTRUCTORSTANDINGSID \u2192 RACEID is trivial because CONSTRUCTORSTANDINGSID is a primary key, which inherently determines all other columns in the table. Enforcing this as a constraint does not add meaningful semantic value or help verify query correctness."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "type": "functional",
+      "column_a": "CONSTRUCTORSTANDINGSID",
+      "column_b": "CONSTRUCTORID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORSTANDINGSID": 1,
+          "CONSTRUCTORID": 1
+        },
+        {
+          "CONSTRUCTORSTANDINGSID": 2,
+          "CONSTRUCTORID": 2
+        },
+        {
+          "CONSTRUCTORSTANDINGSID": 3,
+          "CONSTRUCTORID": 3
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency CONSTRUCTORSTANDINGSID \u2192 CONSTRUCTORID is trivial because CONSTRUCTORSTANDINGSID is a primary key, which inherently determines all other columns in the table. Enforcing this as a constraint does not add meaningful semantic value or help verify query correctness."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "type": "functional",
+      "column_a": "CONSTRUCTORSTANDINGSID",
+      "column_b": "POINTS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORSTANDINGSID": 1.0,
+          "POINTS": 14.0
+        },
+        {
+          "CONSTRUCTORSTANDINGSID": 2.0,
+          "POINTS": 8.0
+        },
+        {
+          "CONSTRUCTORSTANDINGSID": 3.0,
+          "POINTS": 9.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CONSTRUCTORSTANDINGSID \u2192 POINTS is meaningful as each CONSTRUCTORSTANDINGSID uniquely determines a specific POINTS value, reflecting the points awarded to constructors in standings. This relationship is consistent across 11836 rows, indicating reliability. Since CONSTRUCTORSTANDINGSID is a unique identifier for standings, enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "type": "functional",
+      "column_a": "CONSTRUCTORSTANDINGSID",
+      "column_b": "POSITION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORSTANDINGSID": 1,
+          "POSITION": 1
+        },
+        {
+          "CONSTRUCTORSTANDINGSID": 2,
+          "POSITION": 3
+        },
+        {
+          "CONSTRUCTORSTANDINGSID": 3,
+          "POSITION": 2
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency CONSTRUCTORSTANDINGSID \u2192 POSITION is trivial because CONSTRUCTORSTANDINGSID is a primary key, which already ensures that each ID uniquely determines the POSITION. Therefore, enforcing this as a constraint does not add meaningful value."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "type": "functional",
+      "column_a": "CONSTRUCTORSTANDINGSID",
+      "column_b": "POSITIONTEXT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORSTANDINGSID": 1,
+          "POSITIONTEXT": "1"
+        },
+        {
+          "CONSTRUCTORSTANDINGSID": 2,
+          "POSITIONTEXT": "3"
+        },
+        {
+          "CONSTRUCTORSTANDINGSID": 3,
+          "POSITIONTEXT": "2"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency CONSTRUCTORSTANDINGSID \u2192 POSITIONTEXT is trivial because CONSTRUCTORSTANDINGSID is a primary key, which already ensures uniqueness for POSITIONTEXT. This does not add meaningful semantic value or help verify query correctness."
+      }
+    },
+    {
+      "table": "constructorStandings",
+      "type": "functional",
+      "column_a": "CONSTRUCTORSTANDINGSID",
+      "column_b": "WINS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CONSTRUCTORSTANDINGSID": 1,
+          "WINS": 1
+        },
+        {
+          "CONSTRUCTORSTANDINGSID": 2,
+          "WINS": 0
+        },
+        {
+          "CONSTRUCTORSTANDINGSID": 3,
+          "WINS": 0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency CONSTRUCTORSTANDINGSID \u2192 WINS is trivial because CONSTRUCTORSTANDINGSID is a primary key, which already ensures uniqueness. Therefore, enforcing this as a constraint does not add meaningful semantic value or help verify query correctness."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "RACEID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1,
+          "RACEID": 18
+        },
+        {
+          "RESULTID": 2,
+          "RACEID": 18
+        },
+        {
+          "RESULTID": 3,
+          "RACEID": 18
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency RESULTID \u2192 RACEID is trivial because RESULTID is the primary key of the RESULTS table. Primary keys inherently determine all other columns, making this dependency redundant and not meaningful for additional constraints."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "DRIVERID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1,
+          "DRIVERID": 1
+        },
+        {
+          "RESULTID": 2,
+          "DRIVERID": 2
+        },
+        {
+          "RESULTID": 3,
+          "DRIVERID": 3
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "RESULTID is a primary key in the RESULTS table, and it uniquely determines DRIVERID. This is a meaningful functional dependency as each result corresponds to exactly one driver, ensuring data integrity and correctness in queries related to race results."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "CONSTRUCTORID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1,
+          "CONSTRUCTORID": 1
+        },
+        {
+          "RESULTID": 2,
+          "CONSTRUCTORID": 2
+        },
+        {
+          "RESULTID": 3,
+          "CONSTRUCTORID": 3
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "RESULTID is a primary key in the RESULTS table, and it uniquely identifies each record. The mapping of RESULTID to CONSTRUCTORID is consistent across all rows, indicating a meaningful relationship where each result corresponds to a specific constructor. Enforcing this dependency as a constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "NUMBER",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1.0,
+          "NUMBER": 22.0
+        },
+        {
+          "RESULTID": 2.0,
+          "NUMBER": 3.0
+        },
+        {
+          "RESULTID": 3.0,
+          "NUMBER": 7.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RESULTID \u2192 NUMBER is meaningful because each RESULTID uniquely determines a NUMBER, which represents the driver's number in the race results. This relationship is consistent across all observed data and is not merely coincidental. Enforcing this constraint would help ensure data integrity and verify query correctness, as it reflects a natural mapping in the context of race results."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "GRID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1,
+          "GRID": 1
+        },
+        {
+          "RESULTID": 2,
+          "GRID": 5
+        },
+        {
+          "RESULTID": 3,
+          "GRID": 7
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RESULTID \u2192 GRID is meaningful because each RESULTID uniquely determines a GRID value, which represents the starting position of a driver in a race. This relationship is consistent across all 23657 rows, indicating reliability. Enforcing this constraint would help ensure data integrity and verify query correctness, as it reflects a logical mapping in the context of race results."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "POSITION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1.0,
+          "POSITION": 1.0
+        },
+        {
+          "RESULTID": 2.0,
+          "POSITION": 2.0
+        },
+        {
+          "RESULTID": 3.0,
+          "POSITION": 3.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While RESULTID is a primary key and uniquely identifies each row, the dependency of POSITION on RESULTID is not meaningful as POSITION can be null for some RESULTIDs. This suggests that the relationship is not consistently reliable and may not hold in future data, making it a coincidental pattern rather than a semantic relationship."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "POSITIONTEXT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1,
+          "POSITIONTEXT": "1"
+        },
+        {
+          "RESULTID": 2,
+          "POSITIONTEXT": "2"
+        },
+        {
+          "RESULTID": 3,
+          "POSITIONTEXT": "3"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While RESULTID uniquely determines POSITIONTEXT in the current dataset, the values of POSITIONTEXT include both numeric positions and a non-numeric value ('R'), which suggests that this relationship may not be semantically meaningful. The presence of 'R' indicates that POSITIONTEXT is not strictly a position but can also represent a status, making this dependency potentially misleading. Therefore, enforcing this as a constraint may not add value for query verification."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "POSITIONORDER",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1,
+          "POSITIONORDER": 1
+        },
+        {
+          "RESULTID": 2,
+          "POSITIONORDER": 2
+        },
+        {
+          "RESULTID": 3,
+          "POSITIONORDER": 3
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RESULTID \u2192 POSITIONORDER is meaningful because each RESULTID uniquely determines a POSITIONORDER, which represents the finishing order of the race results. This relationship is consistent across all 23657 rows, indicating reliability. Enforcing this constraint would help ensure data integrity and verify query correctness, as it reflects a logical relationship in the context of race results."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "POINTS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1.0,
+          "POINTS": 10.0
+        },
+        {
+          "RESULTID": 2.0,
+          "POINTS": 8.0
+        },
+        {
+          "RESULTID": 3.0,
+          "POINTS": 6.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RESULTID \u2192 POINTS is meaningful because each RESULTID uniquely determines a specific POINTS value, reflecting the scoring system in races. This relationship is consistent across all 23657 rows, indicating reliability. Enforcing this constraint would help ensure data integrity and verify query correctness regarding race results."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "LAPS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1,
+          "LAPS": 58
+        },
+        {
+          "RESULTID": 2,
+          "LAPS": 58
+        },
+        {
+          "RESULTID": 3,
+          "LAPS": 58
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RESULTID \u2192 LAPS is meaningful because each RESULTID uniquely determines the number of laps completed in a race, which is a critical aspect of race results. Given that the mapping is 100% consistent across 23657 rows, it indicates a reliable relationship. This constraint would help ensure data integrity and verify query correctness, as it enforces that each race result corresponds to a specific number of laps."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "TIME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1,
+          "TIME": "1:34:50.616"
+        },
+        {
+          "RESULTID": 2,
+          "TIME": "+5.478"
+        },
+        {
+          "RESULTID": 3,
+          "TIME": "+8.163"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RESULTID \u2192 TIME is meaningful as each RESULTID uniquely identifies a TIME value, which is essential for race results. Although some TIME values are null, the consistent mapping for non-null values across 23657 rows indicates reliability. Enforcing this constraint would help ensure data integrity and verify query correctness regarding race results."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "MILLISECONDS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1.0,
+          "MILLISECONDS": 5690616.0
+        },
+        {
+          "RESULTID": 2.0,
+          "MILLISECONDS": 5696094.0
+        },
+        {
+          "RESULTID": 3.0,
+          "MILLISECONDS": 5698779.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RESULTID \u2192 MILLISECONDS is meaningful because each RESULTID uniquely corresponds to a specific finishing time in milliseconds, which is a critical piece of information in race results. Although there are null values for some RESULTIDs, the consistent mapping for the majority of rows suggests that this relationship is reliable and significant for query verification. Enforcing this constraint would help ensure data integrity and correctness in the context of race results."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "FASTESTLAP",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1.0,
+          "FASTESTLAP": 39.0
+        },
+        {
+          "RESULTID": 2.0,
+          "FASTESTLAP": 41.0
+        },
+        {
+          "RESULTID": 3.0,
+          "FASTESTLAP": 41.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RESULTID \u2192 FASTESTLAP is meaningful because each RESULTID uniquely determines a FASTESTLAP, indicating that for each race result, there is a specific fastest lap associated with it. This relationship is consistent across all 23657 rows, suggesting reliability. Enforcing this constraint would help ensure data integrity and verify query correctness, as it reflects a natural mapping in the context of race results."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "RANK",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1.0,
+          "RANK": 2.0
+        },
+        {
+          "RESULTID": 2.0,
+          "RANK": 3.0
+        },
+        {
+          "RESULTID": 3.0,
+          "RANK": 5.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RESULTID \u2192 RANK is meaningful because each RESULTID uniquely determines a RANK, which is a significant attribute in the context of race results. This relationship is reliable given the total of 23657 rows and the observed consistency. Enforcing this constraint would help ensure data integrity and verify query correctness, as RANK is a critical aspect of race results."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "FASTESTLAPTIME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1,
+          "FASTESTLAPTIME": "1:27.452"
+        },
+        {
+          "RESULTID": 2,
+          "FASTESTLAPTIME": "1:27.739"
+        },
+        {
+          "RESULTID": 3,
+          "FASTESTLAPTIME": "1:28.090"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RESULTID \u2192 FASTESTLAPTIME is meaningful as each RESULTID uniquely determines a corresponding FASTESTLAPTIME, which is consistent across all 23657 rows. This relationship is not trivial since RESULTID is a primary key, and enforcing this constraint would help ensure data integrity and verify query correctness regarding fastest lap times associated with race results."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "FASTESTLAPSPEED",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1,
+          "FASTESTLAPSPEED": "218.300"
+        },
+        {
+          "RESULTID": 2,
+          "FASTESTLAPSPEED": "217.586"
+        },
+        {
+          "RESULTID": 3,
+          "FASTESTLAPSPEED": "216.719"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RESULTID \u2192 FASTESTLAPSPEED is meaningful because each RESULTID uniquely determines a corresponding FASTESTLAPSPEED, which is consistent across all 23657 rows. This relationship is not trivial as it provides valuable information about the performance of drivers in races, and enforcing this constraint would help ensure data integrity and correctness in queries related to race results."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "RESULTID",
+      "column_b": "STATUSID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RESULTID": 1,
+          "STATUSID": 1
+        },
+        {
+          "RESULTID": 2,
+          "STATUSID": 1
+        },
+        {
+          "RESULTID": 3,
+          "STATUSID": 1
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency RESULTID \u2192 STATUSID is meaningful because each result has a specific status associated with it, which is crucial for understanding the outcome of the race. The observed mapping is consistent across a large dataset (23657 rows), indicating reliability. This relationship is not trivial as it provides semantic value in interpreting race results, and enforcing this constraint would help ensure data integrity and correctness in queries related to race outcomes."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "POSITION",
+      "column_b": "POSITIONTEXT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "POSITION": 1.0,
+          "POSITIONTEXT": "1"
+        },
+        {
+          "POSITION": 2.0,
+          "POSITIONTEXT": "2"
+        },
+        {
+          "POSITION": 3.0,
+          "POSITIONTEXT": "3"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency POSITION \u2192 POSITIONTEXT is meaningful as it provides a clear mapping between race positions and their textual representations. The observed mapping is consistent across all rows, indicating reliability. This relationship is not trivial since POSITION is not a primary key, and enforcing this constraint would help ensure data integrity and correctness in queries related to race standings."
+      }
+    },
+    {
+      "table": "results",
+      "type": "functional",
+      "column_a": "MILLISECONDS",
+      "column_b": "STATUSID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MILLISECONDS": 5690616.0,
+          "STATUSID": 1.0
+        },
+        {
+          "MILLISECONDS": 5696094.0,
+          "STATUSID": 1.0
+        },
+        {
+          "MILLISECONDS": 5698779.0,
+          "STATUSID": 1.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While there is a consistent mapping observed between MILLISECONDS and STATUSID in the current data, the relationship does not represent a meaningful semantic dependency. The presence of null values for MILLISECONDS associated with multiple STATUSIDs indicates that this dependency could break with future data. Additionally, MILLISECONDS is not a primary or unique key, and enforcing this constraint may not add significant value for query verification."
+      }
+    }
+  ]
+}

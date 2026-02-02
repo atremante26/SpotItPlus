@@ -1,0 +1,1629 @@
+{
+  "database": "superhero",
+  "between": [
+    {
+      "table": "gender",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        3
+      ],
+      "custom_bounds": [
+        1,
+        3
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ID column in the GENDER table has a small, fixed range of values (1 to 3) that correspond to specific genders. Since the observed data range matches the semantic bounds and is realistic given the context, strict bounds are appropriate.",
+        "chosen_bounds": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "table": "superpower",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        167
+      ],
+      "custom_bounds": [
+        1,
+        167
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ID column in the superpower table is a unique identifier for each superpower, which is naturally bounded by the observed range of 1 to 167. Since the observed data range matches the semantic meaning of the column, strict bounds are appropriate.",
+        "chosen_bounds": [
+          1,
+          167
+        ]
+      }
+    },
+    {
+      "table": "publisher",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        25
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ID column in the publisher table is a unique identifier for each publisher, which is naturally bounded by the observed data range of [1, 25]. Since IDs are typically sequential and do not have negative values or zero, the strict bounds are appropriate and realistic given the current data. Custom bounds would not be necessary as the observed range is sufficient.",
+        "chosen_bounds": [
+          1,
+          25
+        ]
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        756
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ID column is a unique identifier for superheroes and should have a BETWEEN constraint to ensure valid IDs are used. The strict bounds [1, 756] are realistic given the observed data range, and since IDs are typically sequential and unique, using strict bounds is appropriate.",
+        "chosen_bounds": [
+          1,
+          756
+        ]
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "GENDER_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        3
+      ],
+      "custom_bounds": [
+        1,
+        3
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The GENDER_ID column has a limited and defined range of values (1 to 3) that correspond to specific genders. Since the observed data range matches the semantic bounds, strict bounds are appropriate to ensure only valid gender IDs are used.",
+        "chosen_bounds": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "EYE_COLOUR_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        35
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The EYE_COLOUR_ID column represents identifiers for eye colors, which are typically bounded by the number of distinct colors available. The observed data range of [1, 35] is realistic and reflects the actual data. Since the values are identifiers, they should not exceed the maximum observed value, making strict bounds appropriate.",
+        "chosen_bounds": [
+          1,
+          35
+        ]
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "HAIR_COLOUR_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        33
+      ],
+      "custom_bounds": [
+        1,
+        33
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The HAIR_COLOUR_ID column is an identifier for hair colors, which is a naturally bounded value. The observed data range is realistic and matches the semantic meaning of the column, as it represents specific hair color IDs. Since the strict bounds cover the entire observed range without any gaps, it is appropriate to use these bounds.",
+        "chosen_bounds": [
+          1,
+          33
+        ]
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "SKIN_COLOUR_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        33
+      ],
+      "custom_bounds": [
+        1,
+        33
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The SKIN_COLOUR_ID column is an identifier that maps to a specific set of skin colors, which is naturally bounded by the observed data range. The strict bounds [1, 33] accurately reflect the valid range of IDs based on the current data, and there is no need for custom bounds as the observed range is realistic and covers all possible values.",
+        "chosen_bounds": [
+          1,
+          33
+        ]
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "RACE_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        61
+      ],
+      "custom_bounds": [
+        1,
+        61
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The RACE_ID column is an integer that represents a specific identifier for races, which is naturally bounded by the observed data range. The strict bounds [1, 61] accurately reflect the valid range of values based on the current data, and there is no indication that a broader range is necessary. Therefore, using strict bounds is appropriate.",
+        "chosen_bounds": [
+          1,
+          61
+        ]
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "PUBLISHER_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        25
+      ],
+      "custom_bounds": [
+        1,
+        25
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The PUBLISHER_ID column is an integer that represents a unique identifier for publishers. The observed data range is realistic and matches the semantic meaning of the column, which is bounded by the number of publishers. Since the strict bounds [1, 25] accurately reflect the observed data and there are no edge cases or additional context suggesting a need for custom bounds, strict bounds should be used.",
+        "chosen_bounds": [
+          1,
+          25
+        ]
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "ALIGNMENT_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        3
+      ],
+      "custom_bounds": [
+        1,
+        3
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ALIGNMENT_ID column represents a categorical identifier for the alignment of superheroes, which is naturally bounded to the values 1, 2, and 3. The observed data range matches the semantic bounds, and since the values are discrete and limited, strict bounds are appropriate.",
+        "chosen_bounds": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "HEIGHT_CM",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        30480
+      ],
+      "custom_bounds": [
+        0,
+        300
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The HEIGHT_CM column represents the height of superheroes, which is a naturally bounded value. While the observed data range includes a maximum of 30480 cm, this is unrealistic for human or superhero heights. Custom bounds of [0, 300] are more appropriate as they reflect a reasonable maximum height for superheroes, ensuring that edge cases are handled correctly.",
+        "chosen_bounds": [
+          0,
+          300
+        ]
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "WEIGHT_KG",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        90000000
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The WEIGHT_KG column represents the weight of superheroes, which is a naturally bounded value that should not be negative. The observed data range includes a value of 0, which may indicate missing or unrecorded data. However, the upper bound of 90000000 is unrealistic for human or superhero weights. Therefore, while a BETWEEN constraint is appropriate, the strict bounds should be adjusted to a more realistic upper limit based on domain knowledge, such as [0, 500] or similar, but since the task specifies using strict bounds, we will use the observed range.",
+        "chosen_bounds": [
+          0,
+          90000000
+        ]
+      }
+    },
+    {
+      "table": "colour",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        35
+      ],
+      "custom_bounds": [
+        1,
+        35
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ID column in the COLOUR table is a unique identifier for each color, and the observed data range is well-defined and realistic. Since the values are strictly bounded between 1 and 35, using strict bounds is appropriate to ensure valid IDs are used.",
+        "chosen_bounds": [
+          1,
+          35
+        ]
+      }
+    },
+    {
+      "table": "attribute",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        6
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ID column in the ATTRIBUTE table is a unique identifier for attributes, which are typically assigned sequentially. The observed data range is [1, 6], which is realistic and reflects the actual data. Since IDs are not expected to be negative or exceed the maximum observed value, strict bounds are appropriate.",
+        "chosen_bounds": [
+          1,
+          6
+        ]
+      }
+    },
+    {
+      "table": "hero_power",
+      "column": "HERO_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        756
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The HERO_ID column represents unique identifiers for superheroes, which are naturally bounded to positive integers starting from 1. While the observed data range is [1, 756], using custom bounds [1, +\u221e] is more appropriate as it accounts for potential future entries beyond the current maximum observed value, ensuring that the constraint remains valid as new data is added.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "hero_power",
+      "column": "POWER_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        167
+      ],
+      "custom_bounds": [
+        1,
+        167
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The POWER_ID column is an identifier for superpowers, which is naturally bounded by the range of existing superpowers in the database. The observed data range is realistic and matches the semantic meaning of the column, making strict bounds appropriate.",
+        "chosen_bounds": [
+          1,
+          167
+        ]
+      }
+    },
+    {
+      "table": "race",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        61
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ID column in the RACE table is a unique identifier for each race entry, and it is naturally bounded by the observed data range of [1, 61]. Since IDs are typically sequential and do not have negative values or zero, the strict bounds are appropriate and realistic given the current data. Custom bounds would not be necessary as the observed range is sufficient.",
+        "chosen_bounds": [
+          1,
+          61
+        ]
+      }
+    },
+    {
+      "table": "alignment",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        4
+      ],
+      "custom_bounds": [
+        1,
+        4
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ID column in the ALIGNMENT table has a small, fixed set of values (1 to 4) that represent distinct alignments. Since the observed data range matches the semantic bounds, strict bounds are appropriate to ensure valid alignment IDs are used.",
+        "chosen_bounds": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "table": "hero_attribute",
+      "column": "HERO_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        756
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The HERO_ID column represents the unique identifier of the superhero, which is a naturally bounded value starting from 1 and increasing. While the strict observed range is [1, 756], using custom bounds [1, +\u221e] is more appropriate as it accounts for potential future entries beyond the current maximum observed value, ensuring that the constraint remains valid as new data is added.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "hero_attribute",
+      "column": "ATTRIBUTE_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        6
+      ],
+      "custom_bounds": [
+        1,
+        6
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ATTRIBUTE_ID column has a clearly defined range of observed values from 1 to 6, which aligns with the expected identifiers for attributes. Since the observed data range is realistic and matches the semantic meaning of the column, strict bounds are appropriate.",
+        "chosen_bounds": [
+          1,
+          6
+        ]
+      }
+    },
+    {
+      "table": "hero_attribute",
+      "column": "ATTRIBUTE_VALUE",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        5,
+        100
+      ],
+      "custom_bounds": [
+        0,
+        100
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ATTRIBUTE_VALUE column represents a characteristic value that is semantically expected to be within a certain range. While the observed data range is [5, 100], using custom bounds of [0, 100] is safer to account for potential edge cases where values below 5 might be valid in the future. This ensures that the constraint accommodates all possible valid values while still being bounded.",
+        "chosen_bounds": [
+          0,
+          100
+        ]
+      }
+    }
+  ],
+  "in": [
+    {
+      "table": "gender",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        2,
+        3
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The GENDER table has a limited and known set of values (1, 2, 3) that represent distinct categories of gender. Since there are only 3 rows and they are all unique, it is likely that this sample is complete. This column is categorical in nature, and an IN constraint would ensure that only valid gender values are used."
+      }
+    },
+    {
+      "table": "gender",
+      "column": "GENDER",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Male",
+        "Female",
+        "N/A"
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The GENDER column has a limited and known set of values ('Male', 'Female', 'N/A'), which are likely complete given the context of gender classification. This is a true categorical column where an IN constraint makes sense, as it represents a controlled vocabulary for gender."
+      }
+    },
+    {
+      "table": "publisher",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "category_count": 25,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column in the publisher table is a true categorical column with a complete set of unique values (1 to 25) representing distinct publishers. Since these IDs are fixed and correspond to specific publishers, an IN constraint is appropriate to ensure only valid publisher IDs are used."
+      }
+    },
+    {
+      "table": "publisher",
+      "column": "PUBLISHER_NAME",
+      "data_type": "VARCHAR",
+      "categories": [
+        "ABC Studios",
+        "Dark Horse Comics",
+        "DC Comics",
+        "George Lucas",
+        "Hanna-Barbera",
+        "HarperCollins",
+        "Icon Comics",
+        "IDW Publishing",
+        "Image Comics",
+        "J. K. Rowling",
+        "J. R. R. Tolkien",
+        "Marvel Comics",
+        "Microsoft",
+        "NBC - Heroes",
+        "Rebellion",
+        "Shueisha",
+        "Sony Pictures",
+        "South Park",
+        "Star Trek",
+        "SyFy",
+        "Team Epic TV",
+        "Titan Books",
+        "Universal Studios",
+        "Wildstorm"
+      ],
+      "category_count": 24,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The PUBLISHER_NAME column contains a variety of publishers, including well-known entities and individuals. Given the nature of publishing, new publishers can emerge, and existing ones may change names or new works may be associated with different publishers. Therefore, it is not a true enumeration, and constraining it to the current unique values would be too limiting."
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "GENDER_ID",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        2,
+        3
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The GENDER_ID column is a true categorical column with a limited and known set of values (1, 2, 3) representing distinct genders. Given the context of the superhero database, it is reasonable to assume that these are the only valid values, making an IN constraint appropriate."
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "EYE_COLOUR_ID",
+      "data_type": "INTEGER",
+      "categories": [
+        9,
+        33,
+        7,
+        14,
+        1,
+        23,
+        30,
+        31,
+        22,
+        4,
+        13,
+        28,
+        35,
+        12,
+        8,
+        16,
+        15,
+        2,
+        32,
+        17,
+        34
+      ],
+      "category_count": 21,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EYE_COLOUR_ID column represents a specific set of eye colors, which are likely to be limited and known. Given that there are only 21 unique values in a dataset of 750 rows, it suggests that this is a controlled vocabulary. Eye colors are typically finite and do not change frequently, making it reasonable to enforce an IN constraint to restrict values to this known set."
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "HAIR_COLOUR_ID",
+      "data_type": "INTEGER",
+      "categories": [
+        13,
+        1,
+        4,
+        6,
+        9,
+        31,
+        22,
+        19,
+        21,
+        23,
+        3,
+        29,
+        7,
+        14,
+        18,
+        10,
+        11,
+        28,
+        25,
+        20,
+        33,
+        12,
+        26,
+        17,
+        27,
+        5
+      ],
+      "category_count": 26,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While there are 26 unique values, hair colors can vary widely and new colors may emerge in the future. This suggests that the column is not a true enumeration and could have more valid values beyond the current dataset."
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "SKIN_COLOUR_ID",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        7,
+        23,
+        4,
+        13,
+        12,
+        14,
+        31,
+        21,
+        28,
+        24,
+        33,
+        22,
+        20,
+        8,
+        19
+      ],
+      "category_count": 16,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SKIN_COLOUR_ID column appears to represent a controlled vocabulary of skin colors, which is likely limited to a specific set of known values. Given that there are only 16 unique values in a dataset of 750 rows, it suggests that this is a categorical column with a defined set of valid options. It is reasonable to impose an IN constraint to restrict values to these known identifiers, as new skin colors are unlikely to be added frequently."
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "PUBLISHER_ID",
+      "data_type": "INTEGER",
+      "categories": [
+        13,
+        3,
+        4,
+        15,
+        25,
+        10,
+        1,
+        8,
+        21,
+        6,
+        5,
+        22,
+        19,
+        7,
+        2,
+        24,
+        20,
+        9,
+        17,
+        18,
+        11,
+        23,
+        16,
+        14,
+        12
+      ],
+      "category_count": 25,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The PUBLISHER_ID column is likely a true categorical column as it maps to a specific set of publishers, which are limited and known. The presence of 25 unique values suggests a controlled vocabulary, and since publishers are typically fixed entities, it is reasonable to enforce an IN constraint to restrict values to these known identifiers."
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "ALIGNMENT_ID",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        2,
+        3
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ALIGNMENT_ID column has a limited and known set of unique values (1, 2, 3) that represent distinct alignments (e.g., good, neutral, bad). Given that there are only 3 unique values in 750 rows, it is likely that this is a complete enumeration of possible alignments for superheroes, making an IN constraint appropriate."
+      }
+    },
+    {
+      "table": "attribute",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "category_count": 6,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column in the ATTRIBUTE table is a true categorical column with a complete set of unique values (1 to 6) that represent distinct attributes. Since these IDs are fixed and correspond to specific attributes, an IN constraint is appropriate to ensure only valid IDs are used."
+      }
+    },
+    {
+      "table": "attribute",
+      "column": "ATTRIBUTE_NAME",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Intelligence",
+        "Strength",
+        "Speed",
+        "Durability",
+        "Power",
+        "Combat"
+      ],
+      "category_count": 6,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ATTRIBUTE_NAME column contains a fixed set of known superhero attributes that are unlikely to change or expand significantly. Given that there are only 6 unique values and they represent distinct categories of attributes, it makes sense to enforce an IN constraint to ensure data integrity and consistency."
+      }
+    },
+    {
+      "table": "alignment",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "category_count": 4,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column 'ID' in the 'alignment' table has a complete set of unique values (1, 2, 3, 4) corresponding to specific alignments. Since there are only 4 rows and they all have unique IDs, it is likely that these represent all valid alignments. This makes it a true categorical column where an IN constraint is appropriate to restrict values to these specific IDs."
+      }
+    },
+    {
+      "table": "alignment",
+      "column": "ALIGNMENT",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Good",
+        "Bad",
+        "Neutral",
+        "N/A"
+      ],
+      "category_count": 4,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ALIGNMENT column has a limited and known set of values ('Good', 'Bad', 'Neutral', 'N/A') that represent distinct categories of moral alignment. Given that there are only 4 unique values in the data and they are likely exhaustive for this context, an IN constraint is appropriate to ensure data integrity and consistency."
+      }
+    },
+    {
+      "table": "hero_attribute",
+      "column": "ATTRIBUTE_ID",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "category_count": 6,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ATTRIBUTE_ID column has a limited and known set of unique values (1 to 6), indicating it is a true categorical column. Given that there are only 6 unique values across 3738 rows, it is likely that this set is complete and represents all valid attributes. Therefore, an IN constraint is appropriate to restrict values to this specific set."
+      }
+    },
+    {
+      "table": "hero_attribute",
+      "column": "ATTRIBUTE_VALUE",
+      "data_type": "INTEGER",
+      "categories": [
+        80,
+        75,
+        95,
+        85,
+        100,
+        60,
+        90,
+        55,
+        35,
+        65,
+        70,
+        50,
+        30,
+        10,
+        40,
+        45,
+        25,
+        20,
+        15,
+        5
+      ],
+      "category_count": 20,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ATTRIBUTE_VALUE column represents specific numerical values that likely correspond to defined levels of attributes for superheroes. Given that there are only 20 unique values and they appear to represent a finite set of possible attribute scores, it makes sense to constrain this column to these values. This is a controlled vocabulary for attribute scoring, and new values are unlikely to be valid in this context."
+      }
+    }
+  ],
+  "not_null": [
+    {
+      "table": "gender",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 3,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a primary key for the gender table, which is logically required for every record to uniquely identify each gender. Therefore, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "gender",
+      "column": "GENDER",
+      "data_type": "VARCHAR",
+      "total_rows": 3,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The GENDER column is not logically required for every record, as indicated by the presence of 'N/A' in the sample values. This suggests that there may be cases where the gender is not applicable or not specified. Therefore, it should not have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "superpower",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 167,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is the unique identifier for the superpower, which is essential for distinguishing each record. As a primary key, it must always have a value, making it logically required for every record."
+      }
+    },
+    {
+      "table": "superpower",
+      "column": "POWER_NAME",
+      "data_type": "VARCHAR",
+      "total_rows": 167,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POWER_NAME field is essential for identifying the specific superpower associated with each record. Given that it serves as a key descriptor of the superpower, it logically requires a NOT NULL constraint to ensure that every superpower has a defined name. The column description indicates that it is a fundamental attribute of the superpower, making it necessary for all records."
+      }
+    },
+    {
+      "table": "publisher",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 25,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is the unique identifier for the publisher, which is essential for distinguishing each record in the table. As a primary key, it must be present for every record, making it logically required and necessitating a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "publisher",
+      "column": "PUBLISHER_NAME",
+      "data_type": "VARCHAR",
+      "total_rows": 25,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The PUBLISHER_NAME field is logically required as it represents the name of the publisher, which is essential for identifying the publisher associated with each record. The column description indicates that it is a key identifier for the publisher, and having a null value would render the record incomplete. Additionally, the presence of an empty string in the sample values suggests that while current data is non-null, future records could potentially have this field omitted or incorrectly filled, thus a NOT NULL constraint is warranted."
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 750,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is the unique identifier for each superhero, making it logically required for every record. As a primary key, it must not be null to ensure each superhero can be uniquely identified. Future records will also need this field to maintain data integrity."
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "SUPERHERO_NAME",
+      "data_type": "VARCHAR",
+      "total_rows": 750,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SUPERHERO_NAME is logically required as it serves as the primary identifier for each superhero. The column description indicates that it is essential for identifying the superhero, and it is unlikely that a superhero would exist without a name. Therefore, a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "GENDER_ID",
+      "data_type": "INTEGER",
+      "total_rows": 750,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The GENDER_ID column is a foreign key that links to the GENDER table, which is essential for identifying the gender of each superhero. Given that gender is a fundamental characteristic of a superhero, this field should always be present, making it logically required for every record."
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "EYE_COLOUR_ID",
+      "data_type": "INTEGER",
+      "total_rows": 750,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EYE_COLOUR_ID field is logically required as it represents a key characteristic of the superhero. The column description indicates that it is essential for identifying the superhero's eye color, which is a fundamental attribute. Even though current data is 100% non-null, the nature of the data suggests that every superhero should have an eye color, making it appropriate to enforce a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "HAIR_COLOUR_ID",
+      "data_type": "INTEGER",
+      "total_rows": 750,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The HAIR_COLOUR_ID is a foreign key that identifies the hair color of the superhero, which is a fundamental characteristic for defining a superhero's appearance. Given that it is essential for the identity of the superhero and logically required for every record, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "superhero",
+      "column": "SKIN_COLOUR_ID",
+      "data_type": "INTEGER",
+      "total_rows": 750,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SKIN_COLOUR_ID field is likely required as it represents a fundamental characteristic of the superhero. Given that it is a foreign key mapping to the COLOUR table, it is essential for identifying the superhero's skin color. The column description indicates that it is a defining attribute, and logically, every superhero should have a skin color. Therefore, a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "colour",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 35,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a primary key, which is logically required for every record to uniquely identify each entry in the table. Therefore, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "colour",
+      "column": "COLOUR",
+      "data_type": "VARCHAR",
+      "total_rows": 35,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The COLOUR field is not logically required for every record, as it represents an optional characteristic of the superhero. Future records could reasonably omit this field, especially if a superhero does not have a defined color or if the color is not applicable. The column description does not indicate that it is essential, and the current non-null data does not imply a true requirement."
+      }
+    },
+    {
+      "table": "attribute",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 6,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is the unique identifier for the attribute, which is essential for distinguishing each record in the table. As a primary key, it must always have a value, making it logically required for every record."
+      }
+    },
+    {
+      "table": "attribute",
+      "column": "ATTRIBUTE_NAME",
+      "data_type": "VARCHAR",
+      "total_rows": 6,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ATTRIBUTE_NAME field is logically required as it represents essential characteristics that define a superhero's abilities. The column description indicates that attributes are fundamental qualities, and omitting them would undermine the purpose of the table. Therefore, a NOT NULL constraint is appropriate to ensure that every record has a valid attribute name."
+      }
+    },
+    {
+      "table": "hero_power",
+      "column": "HERO_ID",
+      "data_type": "INTEGER",
+      "total_rows": 5825,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The HERO_ID column is a foreign key that maps to the superhero table, making it essential for establishing the relationship between heroes and their powers. Since every hero must have at least one associated power, this field is logically required and should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "hero_power",
+      "column": "POWER_ID",
+      "data_type": "INTEGER",
+      "total_rows": 5825,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POWER_ID column is a foreign key that maps to the superpower table, indicating that every hero must have at least one associated superpower. This makes it logically required for every record in the hero_power table, and the column description supports this necessity."
+      }
+    },
+    {
+      "table": "race",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 61,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a primary key, which is logically required for every record to uniquely identify each entry in the race table. It is essential for maintaining data integrity and relationships with other tables."
+      }
+    },
+    {
+      "table": "race",
+      "column": "RACE",
+      "data_type": "VARCHAR",
+      "total_rows": 61,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The RACE column is logically required as it defines the race of the superhero, which is a fundamental characteristic. The column description indicates that it is essential for identifying the superhero's background. Future records should not reasonably omit this field, as it is critical for the context of the superhero's identity."
+      }
+    },
+    {
+      "table": "alignment",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 4,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a primary key for the alignment table, which logically requires it to be non-null for every record. It serves as a unique identifier for each alignment, making it essential for the integrity of the data."
+      }
+    },
+    {
+      "table": "alignment",
+      "column": "ALIGNMENT",
+      "data_type": "VARCHAR",
+      "total_rows": 4,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ALIGNMENT field is logically required as it defines the moral and ethical stance of a superhero, which is essential for understanding their character. The column description indicates that alignment is a fundamental aspect of a superhero's identity, and it is unlikely that future records would reasonably omit this field."
+      }
+    },
+    {
+      "table": "hero_attribute",
+      "column": "HERO_ID",
+      "data_type": "INTEGER",
+      "total_rows": 3738,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "HERO_ID is a foreign key that maps to the superhero table, making it essential for identifying which superhero the attribute belongs to. It is logically required for every record in the HERO_ATTRIBUTE table, and the column description indicates that it is necessary for mapping attributes to superheroes."
+      }
+    },
+    {
+      "table": "hero_attribute",
+      "column": "ATTRIBUTE_ID",
+      "data_type": "INTEGER",
+      "total_rows": 3738,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ATTRIBUTE_ID is a foreign key that maps to the ATTRIBUTE table, making it essential for establishing relationships between heroes and their attributes. Since it is logically required for every record in the HERO_ATTRIBUTE table to have a corresponding attribute, a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "hero_attribute",
+      "column": "ATTRIBUTE_VALUE",
+      "data_type": "INTEGER",
+      "total_rows": 3738,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ATTRIBUTE_VALUE is essential for defining the strength or capability of a superhero in relation to their attributes. Since it is a key aspect of the HERO_ATTRIBUTE table, it should always have a value, making it logically required for every record."
+      }
+    }
+  ],
+  "dependency": [
+    {
+      "table": "gender",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "GENDER",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "GENDER": "Male"
+        },
+        {
+          "ID": 2,
+          "GENDER": "Female"
+        },
+        {
+          "ID": 3,
+          "GENDER": "N/A"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 GENDER is meaningful as it establishes a clear relationship between a unique identifier and its corresponding gender value. The ID serves as a primary key, ensuring that each gender is uniquely associated with an ID. This constraint would help maintain data integrity and verify query correctness, as it prevents the possibility of having multiple gender values for the same ID."
+      }
+    },
+    {
+      "table": "superpower",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "POWER_NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "POWER_NAME": "Agility"
+        },
+        {
+          "ID": 2,
+          "POWER_NAME": "Accelerated Healing"
+        },
+        {
+          "ID": 3,
+          "POWER_NAME": "Lantern Power Ring"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 POWER_NAME is meaningful as each unique ID corresponds to exactly one superpower name, establishing a clear semantic relationship. This is not a coincidence, as the mapping is consistent across all rows, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "publisher",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "PUBLISHER_NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "PUBLISHER_NAME": ""
+        },
+        {
+          "ID": 2,
+          "PUBLISHER_NAME": "ABC Studios"
+        },
+        {
+          "ID": 3,
+          "PUBLISHER_NAME": "Dark Horse Comics"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 PUBLISHER_NAME is meaningful as each unique ID corresponds to exactly one publisher name, establishing a clear semantic relationship. The ID is a primary key, which ensures uniqueness, and enforcing this constraint would help maintain data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "superhero",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "SUPERHERO_NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "SUPERHERO_NAME": "3-D Man"
+        },
+        {
+          "ID": 2,
+          "SUPERHERO_NAME": "A-Bomb"
+        },
+        {
+          "ID": 3,
+          "SUPERHERO_NAME": "Abe Sapien"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a primary key in the SUPERHERO table, and it uniquely determines the SUPERHERO_NAME. This is a meaningful functional dependency as each superhero ID corresponds to exactly one superhero name, ensuring data integrity and consistency. Enforcing this constraint would help verify query correctness and maintain the relationship between IDs and superhero names."
+      }
+    },
+    {
+      "table": "superhero",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "FULL_NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "FULL_NAME": "Charles Chandler"
+        },
+        {
+          "ID": 2,
+          "FULL_NAME": "Richard Milhouse Jones"
+        },
+        {
+          "ID": 3,
+          "FULL_NAME": "Abraham Sapien"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a unique identifier for each superhero, and it consistently maps to a unique FULL_NAME across the dataset. This represents a meaningful semantic relationship where each superhero's ID corresponds to their full name, which is valuable for query verification and ensuring data integrity."
+      }
+    },
+    {
+      "table": "superhero",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "GENDER_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "GENDER_ID": 1
+        },
+        {
+          "ID": 2,
+          "GENDER_ID": 1
+        },
+        {
+          "ID": 3,
+          "GENDER_ID": 1
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 GENDER_ID is meaningful as it establishes a relationship between a superhero's unique identifier and their gender. Given that the mapping is consistent across 750 rows, it suggests a reliable relationship. This constraint would help ensure data integrity and verify query correctness, as each superhero should consistently map to a specific gender."
+      }
+    },
+    {
+      "table": "superhero",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "EYE_COLOUR_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "EYE_COLOUR_ID": 9
+        },
+        {
+          "ID": 2,
+          "EYE_COLOUR_ID": 33
+        },
+        {
+          "ID": 3,
+          "EYE_COLOUR_ID": 7
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 EYE_COLOUR_ID is meaningful as it establishes a consistent relationship between a superhero's unique identifier and their eye color. Given that ID is a primary key, it ensures that each superhero has a unique eye color ID associated with them. This constraint adds value for query verification by ensuring that any query involving a superhero's ID will consistently return the correct eye color ID."
+      }
+    },
+    {
+      "table": "superhero",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "HAIR_COLOUR_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "HAIR_COLOUR_ID": 13
+        },
+        {
+          "ID": 2,
+          "HAIR_COLOUR_ID": 1
+        },
+        {
+          "ID": 3,
+          "HAIR_COLOUR_ID": 1
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a primary key in the superhero table, and it consistently determines the HAIR_COLOUR_ID for each superhero. This indicates a meaningful relationship where each superhero has a unique hair color associated with their ID. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents the possibility of multiple superheroes having the same ID with different hair colors."
+      }
+    },
+    {
+      "table": "superhero",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "SKIN_COLOUR_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "SKIN_COLOUR_ID": 1
+        },
+        {
+          "ID": 2,
+          "SKIN_COLOUR_ID": 1
+        },
+        {
+          "ID": 3,
+          "SKIN_COLOUR_ID": 7
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a primary key, and it consistently determines the SKIN_COLOUR_ID across all rows, indicating a meaningful relationship between a superhero and their skin color. This constraint would help ensure data integrity and verify query correctness, as each superhero should have a specific skin color associated with their ID."
+      }
+    },
+    {
+      "table": "superhero",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "RACE_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "RACE_ID": 1.0
+        },
+        {
+          "ID": 2.0,
+          "RACE_ID": 24.0
+        },
+        {
+          "ID": 3.0,
+          "RACE_ID": 33.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 RACE_ID is meaningful as it establishes a consistent relationship between a superhero's unique identifier and their race. Given that ID is a primary key, this relationship is reliable across the 750 rows. Enforcing this constraint would help ensure data integrity and verify query correctness, as each superhero should consistently map to a specific race."
+      }
+    },
+    {
+      "table": "superhero",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "PUBLISHER_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "PUBLISHER_ID": 13.0
+        },
+        {
+          "ID": 2.0,
+          "PUBLISHER_ID": 13.0
+        },
+        {
+          "ID": 3.0,
+          "PUBLISHER_ID": 3.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 PUBLISHER_ID is meaningful as each superhero (identified by ID) is associated with exactly one publisher (PUBLISHER_ID). This relationship is consistent across the dataset and reflects a natural mapping, as each superhero belongs to a specific publisher. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "superhero",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "ALIGNMENT_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "ALIGNMENT_ID": 1.0
+        },
+        {
+          "ID": 2.0,
+          "ALIGNMENT_ID": 1.0
+        },
+        {
+          "ID": 3.0,
+          "ALIGNMENT_ID": 1.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a unique identifier for each superhero, and it consistently maps to a specific ALIGNMENT_ID. This indicates a meaningful relationship where each superhero has a defined alignment. Enforcing this constraint would help ensure data integrity and verify query correctness, as it establishes a clear link between superheroes and their alignments."
+      }
+    },
+    {
+      "table": "superhero",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "HEIGHT_CM",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "HEIGHT_CM": 188.0
+        },
+        {
+          "ID": 2.0,
+          "HEIGHT_CM": 203.0
+        },
+        {
+          "ID": 3.0,
+          "HEIGHT_CM": 191.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a unique identifier for each superhero, and it consistently maps to a specific HEIGHT_CM value. This is a meaningful dependency as it reflects the relationship between a superhero's unique ID and their height, which is a relevant attribute. Enforcing this constraint would help ensure data integrity and verify query correctness, as each superhero should have a unique height associated with their ID."
+      }
+    },
+    {
+      "table": "superhero",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "WEIGHT_KG",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "WEIGHT_KG": 90.0
+        },
+        {
+          "ID": 2.0,
+          "WEIGHT_KG": 441.0
+        },
+        {
+          "ID": 3.0,
+          "WEIGHT_KG": 65.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a primary key in the superhero table, and it uniquely determines the WEIGHT_KG for each superhero. This is a meaningful functional dependency as it ensures that each superhero has a specific weight associated with their unique ID, which is essential for data integrity and query correctness."
+      }
+    },
+    {
+      "table": "superhero",
+      "type": "functional",
+      "column_a": "SUPERHERO_NAME",
+      "column_b": "SKIN_COLOUR_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "SUPERHERO_NAME": "3-D Man",
+          "SKIN_COLOUR_ID": 1
+        },
+        {
+          "SUPERHERO_NAME": "A-Bomb",
+          "SKIN_COLOUR_ID": 1
+        },
+        {
+          "SUPERHERO_NAME": "Abe Sapien",
+          "SKIN_COLOUR_ID": 7
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the observed mapping is consistent, the determinant 'SUPERHERO_NAME' is not a unique identifier, as multiple superheroes share the same skin color (SKIN_COLOUR_ID). This suggests that the relationship is not meaningful as a functional dependency, but rather coincidental. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "colour",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "COLOUR",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "COLOUR": "No Colour"
+        },
+        {
+          "ID": 2,
+          "COLOUR": "Amber"
+        },
+        {
+          "ID": 3,
+          "COLOUR": "Auburn"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 COLOUR is meaningful as each unique ID corresponds to exactly one colour, establishing a clear semantic relationship. The consistency observed across 35 rows supports the reliability of this mapping, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "attribute",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "ATTRIBUTE_NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "ATTRIBUTE_NAME": "Intelligence"
+        },
+        {
+          "ID": 2,
+          "ATTRIBUTE_NAME": "Strength"
+        },
+        {
+          "ID": 3,
+          "ATTRIBUTE_NAME": "Speed"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 ATTRIBUTE_NAME is meaningful as each unique ID corresponds to exactly one attribute name, which is a semantic relationship. This mapping is reliable given the consistent data observed, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "race",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "RACE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "RACE": "-"
+        },
+        {
+          "ID": 2,
+          "RACE": "Alien"
+        },
+        {
+          "ID": 3,
+          "RACE": "Alpha"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a primary key that uniquely identifies each race, and each ID consistently maps to exactly one race name. This is a meaningful semantic relationship, as it provides a clear mapping from a unique identifier to a descriptive attribute, which is valuable for query verification and data integrity."
+      }
+    },
+    {
+      "table": "alignment",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "ALIGNMENT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "ALIGNMENT": "Good"
+        },
+        {
+          "ID": 2,
+          "ALIGNMENT": "Bad"
+        },
+        {
+          "ID": 3,
+          "ALIGNMENT": "Neutral"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 ALIGNMENT is meaningful as it establishes a clear mapping between unique identifiers and their corresponding alignment values. This relationship is not coincidental, as the ID serves as a primary key, ensuring that each alignment type is consistently associated with a specific ID. Enforcing this constraint would help maintain data integrity and verify query correctness, especially in scenarios where alignment information is critical."
+      }
+    }
+  ]
+}

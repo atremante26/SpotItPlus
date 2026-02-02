@@ -1,0 +1,3583 @@
+{
+  "database": "thrombosis_prediction",
+  "between": [
+    {
+      "table": "Laboratory",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        27654,
+        5452747
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ID column is an identifier for patients and should be a unique, positive integer. The observed data range is realistic and reflects the actual data present in the database. Since IDs are naturally bounded to positive integers, using the strict bounds [27654, 5452747] is appropriate to ensure valid entries.",
+        "chosen_bounds": [
+          27654,
+          5452747
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "GOT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        3,
+        21480
+      ],
+      "custom_bounds": [
+        0,
+        60
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The GOT column represents a medical measurement where the normal range is known to be less than 60. The observed data range includes extreme values (up to 21480) that are likely outliers or errors, thus using custom bounds of [0, 60] is more appropriate to ensure valid data entries.",
+        "chosen_bounds": [
+          0,
+          60
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "GPT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        4780
+      ],
+      "custom_bounds": [
+        0,
+        60
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The GPT column represents ALT levels, which are expected to be naturally bounded within a normal range. The observed data range includes values up to 4780, which is unrealistic for ALT levels, indicating potential outliers or errors in the data. The custom bounds of [0, 60] are semantically derived from common medical knowledge about normal ALT levels, making them safer to use.",
+        "chosen_bounds": [
+          0,
+          60
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "LDH",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        25,
+        67080
+      ],
+      "custom_bounds": [
+        0,
+        500
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The LDH column represents lactate dehydrogenase levels, which are typically expected to be within a certain range for clinical relevance. The observed data range shows a wide variation, with some extreme values (up to 67080) that are likely outliers or errors. The custom bounds of [0, 500] are more appropriate as they reflect the normal clinical range for LDH levels, ensuring that the data remains within a medically relevant scope.",
+        "chosen_bounds": [
+          0,
+          500
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "ALP",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        11,
+        1308
+      ],
+      "custom_bounds": [
+        0,
+        300
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ALP column represents alkaliphophatase levels, which are naturally bounded with a normal range of N < 300. The observed data range includes values up to 1308, which is likely an outlier or error. Therefore, using custom bounds of [0, 300] is safer to ensure valid data entries and to handle potential edge cases.",
+        "chosen_bounds": [
+          0,
+          300
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "TP",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.0,
+        9.9
+      ],
+      "custom_bounds": [
+        6.0,
+        8.5
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The TP (total protein) column should have a BETWEEN constraint because it represents a naturally bounded value with a known normal range. The strict bounds observed (0.0 to 9.9) include outliers that are not clinically relevant, while the custom bounds (6.0 to 8.5) reflect the medically accepted normal range for total protein levels. Using custom bounds is safer to ensure that only clinically relevant values are considered.",
+        "chosen_bounds": [
+          6.0,
+          8.5
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "ALB",
+      "data_type": "REAL",
+      "strict_bounds": [
+        1.0,
+        5.8
+      ],
+      "custom_bounds": [
+        3.5,
+        5.5
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ALB column represents albumin levels, which are naturally bounded within a specific range based on medical knowledge. The observed data range includes values below the normal range (3.5 to 5.5), indicating potential outliers or errors. Therefore, using custom bounds (3.5, 5.5) is safer to ensure that only clinically relevant values are considered.",
+        "chosen_bounds": [
+          3.5,
+          5.5
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "UA",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.4,
+        17.3
+      ],
+      "custom_bounds": [
+        6.5,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The UA column represents uric acid levels, which have a semantically derived normal range for females (6.5) and males (8.0). The observed data range includes values below this threshold, which may not be clinically relevant. Therefore, using custom bounds (6.5, +\u221e) is more appropriate to ensure that only meaningful values are considered.",
+        "chosen_bounds": [
+          6.5,
+          null
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "UN",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        152
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The column 'UN' represents urea nitrogen, which is a naturally bounded value that should not be negative. The observed data range is realistic and provides a strict upper limit of 152, which is consistent with common medical knowledge. Therefore, a BETWEEN constraint with strict bounds [0, 152] is appropriate.",
+        "chosen_bounds": [
+          0,
+          152
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "CRE",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.1,
+        17.1
+      ],
+      "custom_bounds": [
+        0,
+        1.5
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The CRE column represents creatinine levels, which are naturally bounded and should not exceed 1.5 based on medical guidelines. The observed range includes values that are not clinically relevant (up to 17.1), indicating potential outliers or errors. Therefore, using custom bounds of [0, 1.5] is safer and more appropriate for clinical interpretation.",
+        "chosen_bounds": [
+          0,
+          1.5
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "T_BIL",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.1,
+        7.9
+      ],
+      "custom_bounds": [
+        0,
+        2
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The T_BIL column represents total bilirubin levels, which are naturally bounded and should not exceed a certain physiological limit. The observed data range suggests values can go up to 7.9, but the custom bounds of [0, 2] are more appropriate based on common medical knowledge regarding normal bilirubin levels. This ensures that any outliers or extreme values in the observed data do not lead to incorrect interpretations.",
+        "chosen_bounds": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "T_CHO",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        37,
+        568
+      ],
+      "custom_bounds": [
+        null,
+        250
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The T_CHO column represents total cholesterol levels, which are naturally bounded by medical standards. The observed data range shows values up to 568, which exceeds the normal range of < 250. Therefore, using custom bounds of [-\u221e, 250] is safer to ensure that only clinically relevant values are considered, as the strict bounds may include outliers that are not medically acceptable.",
+        "chosen_bounds": [
+          null,
+          250
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "TG",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        867
+      ],
+      "custom_bounds": [
+        0,
+        200
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The TG column represents triglyceride levels, which are naturally bounded and have a well-defined normal range. The observed data range shows values up to 867, but the custom bounds of [0, 200] are more appropriate based on common medical knowledge regarding triglyceride levels, which typically should be below 200 for normal health. Therefore, using custom bounds is safer to handle edge cases and align with medical standards.",
+        "chosen_bounds": [
+          0,
+          200
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "CPK",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        10835
+      ],
+      "custom_bounds": [
+        0,
+        250
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The CPK column represents a measurement that is naturally bounded, with a known normal range of N < 250. The observed data range includes extreme values (up to 10835) that are likely outliers or errors, thus using custom bounds of [0, 250] is safer to ensure valid data entries.",
+        "chosen_bounds": [
+          0,
+          250
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "GLU",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        62,
+        499
+      ],
+      "custom_bounds": [
+        0,
+        180
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The GLU column represents blood glucose levels, which are naturally bounded. The custom bounds (0, 180) are semantically derived from common medical knowledge about normal blood glucose levels, while the strict bounds (62, 499) include outliers that may not be clinically relevant. Therefore, using custom bounds is safer to ensure valid data entries.",
+        "chosen_bounds": [
+          0,
+          180
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "WBC",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.9,
+        35.2
+      ],
+      "custom_bounds": [
+        3.5,
+        9.0
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The WBC (White Blood Cell) count is a naturally bounded value with a known normal range. The observed data range includes values that are outside the expected normal range, which suggests that the strict bounds may not be reliable. The custom bounds (3.5, 9.0) are based on common medical knowledge and provide a safer constraint to ensure that only clinically relevant values are considered.",
+        "chosen_bounds": [
+          3.5,
+          9.0
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "RBC",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.4,
+        6.6
+      ],
+      "custom_bounds": [
+        3.5,
+        6.0
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The RBC column represents the Red Blood Cell count, which is a naturally bounded value with expected normal ranges. The observed data range includes values below the typical lower limit of 3.5, which suggests that the strict bounds may not be realistic. Therefore, using custom bounds of [3.5, 6.0] aligns with the expected normal range for RBC counts, ensuring that edge cases are handled appropriately.",
+        "chosen_bounds": [
+          3.5,
+          6.0
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "HGB",
+      "data_type": "REAL",
+      "strict_bounds": [
+        1.3,
+        18.9
+      ],
+      "custom_bounds": [
+        10,
+        17
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The HGB column represents hemoglobin levels, which are naturally bounded values. The custom bounds (10, 17) are semantically derived from common medical knowledge about normal hemoglobin levels, while the strict bounds (1.3, 18.9) include outliers that may not be clinically relevant. Therefore, using custom bounds is safer to ensure valid hemoglobin levels.",
+        "chosen_bounds": [
+          10,
+          17
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "HCT",
+      "data_type": "REAL",
+      "strict_bounds": [
+        3.0,
+        56.0
+      ],
+      "custom_bounds": [
+        29,
+        52
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The HCT (Hematocrit) column is a measurement that is naturally bounded, with a typical normal range of 29 to 52. The observed data range includes values outside this normal range (e.g., 3.0 and 56.0), which may indicate outliers or errors. Therefore, using custom bounds based on semantic knowledge is safer to ensure valid data entries.",
+        "chosen_bounds": [
+          29,
+          52
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "PLT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        5,
+        5844
+      ],
+      "custom_bounds": [
+        100,
+        400
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The PLT (platelet) column should have a BETWEEN constraint because it represents a naturally bounded medical measurement. The observed data range shows values that are much higher than the expected normal range (100 to 400), indicating potential outliers or errors in data entry. Using custom bounds based on semantic knowledge (100 to 400) is safer to ensure valid platelet counts are considered, as the strict bounds include unrealistic values that do not reflect normal physiological conditions.",
+        "chosen_bounds": [
+          100,
+          400
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "PT",
+      "data_type": "REAL",
+      "strict_bounds": [
+        10.1,
+        27.0
+      ],
+      "custom_bounds": [
+        null,
+        14
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The PT column represents prothrombin time, which is a measurement that should logically be bounded. The observed data range shows values between 10.1 and 27.0, but the semantic bounds suggest that values should ideally be less than 14. Given the nature of the measurement and the potential for outliers, using custom bounds of [-\u221e, 14] is safer to ensure that any abnormal values above 14 are flagged, while still allowing for the observed data range.",
+        "chosen_bounds": [
+          null,
+          14
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "APTT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        57,
+        146
+      ],
+      "custom_bounds": [
+        0,
+        45
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The APTT column represents a measure of activated partial prothrombin time, which is a naturally bounded value. The observed data range shows values between 57 and 146, but the custom bounds based on semantic knowledge indicate that normal values should be less than 45. Therefore, using custom bounds is safer to ensure that edge cases are handled appropriately, as the observed data does not reflect the expected normal range.",
+        "chosen_bounds": [
+          0,
+          45
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "FG",
+      "data_type": "REAL",
+      "strict_bounds": [
+        23.8,
+        106.5
+      ],
+      "custom_bounds": [
+        150,
+        450
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The FG column represents fibrinogen levels, which are expected to fall within a specific range based on medical knowledge. The observed data range (23.8 to 106.5) is not consistent with the expected normal range (150 to 450), indicating that the observed values may not be reliable or representative of healthy levels. Therefore, it is appropriate to use custom bounds to ensure that the values align with medically accepted standards.",
+        "chosen_bounds": [
+          150,
+          450
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "PIC",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        114,
+        700
+      ],
+      "custom_bounds": [
+        0,
+        1039
+      ],
+      "custom_bounds_type": "loose",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The PIC column is an INTEGER type that represents a measurement, which is naturally bounded. The strict bounds of [114, 700] are realistic based on the observed data range and sample values. Since the observed data does not indicate any outliers or extreme values beyond this range, using strict bounds is appropriate.",
+        "chosen_bounds": [
+          114,
+          700
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "TAT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        63,
+        183
+      ],
+      "custom_bounds": [
+        0,
+        200
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The TAT column represents a measurement that is naturally bounded, as it reflects a time-related metric. The observed data range is [63, 183], but the custom bounds of [0, 200] are more appropriate to account for potential edge cases and ensure that all valid values are captured, especially since the strict bounds may not encompass all possible scenarios in practice.",
+        "chosen_bounds": [
+          0,
+          200
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "TAT2",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        59,
+        155
+      ],
+      "custom_bounds": [
+        0,
+        200
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The TAT2 column represents a measurement that is naturally bounded. The observed data range is [59, 155], but the custom bounds of [0, 200] are safer to account for potential edge cases and ensure that all valid values are included, especially since the strict bounds are based on current data which may not capture all possible valid values.",
+        "chosen_bounds": [
+          0,
+          200
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "IGG",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        3,
+        6510
+      ],
+      "custom_bounds": [
+        900,
+        2000
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The IGG column represents a medical measurement (Ig G concentration) that is semantically bounded based on clinical guidelines. The observed data range shows a wide variation, but the custom bounds (900, 2000) are more appropriate as they reflect the normal range for Ig G concentrations, ensuring that outlier values do not skew the interpretation of results.",
+        "chosen_bounds": [
+          900,
+          2000
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "IGA",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        1765
+      ],
+      "custom_bounds": [
+        80,
+        500
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The IGA column represents Ig A concentration, which has a known normal range of 80 to 500. Although the observed data range is broader (1 to 1765), using the custom bounds is safer as it reflects the clinically accepted normal range, ensuring that outliers or erroneous data do not skew the analysis.",
+        "chosen_bounds": [
+          80,
+          500
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "IGM",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        1573
+      ],
+      "custom_bounds": [
+        40,
+        400
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The IGM column represents the concentration of Ig M, which has a known normal range of 40 to 400. Although the observed data range is broader (0 to 1573), the custom bounds are more appropriate as they reflect the clinically accepted normal range, ensuring that outliers or erroneous data do not skew the analysis.",
+        "chosen_bounds": [
+          40,
+          400
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "C3",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        15,
+        196
+      ],
+      "custom_bounds": [
+        35,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The C3 column represents complement 3 levels, which are expected to be greater than 35 based on common medical knowledge. The observed data range shows values as low as 15, which is below the expected minimum. Therefore, using custom bounds of [35, +\u221e] is more appropriate to ensure valid data entries.",
+        "chosen_bounds": [
+          35,
+          null
+        ]
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "C4",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        3,
+        80
+      ],
+      "custom_bounds": [
+        10,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The C4 column represents a laboratory measurement that is semantically expected to be greater than 10 based on common medical knowledge. The observed data range is limited (3 to 80), but the custom bounds of [10, +\u221e] are more appropriate to account for potential edge cases and ensure that values below 10 are excluded, which aligns with the expected normal range.",
+        "chosen_bounds": [
+          10,
+          null
+        ]
+      }
+    },
+    {
+      "table": "Patient",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        2110,
+        5845877
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ID column is an identifier for patients and should logically start from 1 and go to positive infinity. The observed data range shows a wide range of values, but the strict bounds are not realistic for an ID, as IDs typically start from 1 and are unique. Therefore, custom bounds of [1, +\u221e] are more appropriate.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        14872,
+        9334040
+      ],
+      "custom_bounds": [
+        0,
+        10160977
+      ],
+      "custom_bounds_type": "loose",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ID column is an integer that serves as a unique identifier for patients. While the observed data range is quite large, it is reasonable to use the strict bounds since IDs should not exceed the maximum observed value. Custom bounds are unnecessary as IDs are naturally bounded by their purpose.",
+        "chosen_bounds": [
+          14872,
+          9334040
+        ]
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "ACL_IGG",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.0,
+        2150.3
+      ],
+      "custom_bounds": [
+        0,
+        2000
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ACL_IGG column represents a concentration measurement, which is naturally bounded. The observed data range shows values up to 2150.3, but the custom bounds of [0, 2000] are more semantically appropriate based on common medical knowledge regarding anti-cardiolipin antibody concentrations. This helps to ensure that any outlier values beyond the expected range are not considered valid.",
+        "chosen_bounds": [
+          0,
+          2000
+        ]
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "ACL_IGM",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.0,
+        187122.0
+      ],
+      "custom_bounds": [
+        0,
+        40
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The column ACL_IGM represents anti-Cardiolipin antibody (IgM) concentration, which is a naturally bounded value. The observed data range includes unrealistic high values (up to 187122.0) that do not align with the expected biological range. Custom bounds of [0, 40] are more appropriate based on domain knowledge, ensuring that only clinically relevant values are considered.",
+        "chosen_bounds": [
+          0,
+          40
+        ]
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "ANA",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        4096
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ANA column is an integer that represents a count of anti-nucleus antibodies, which is naturally bounded at 0 (no antibodies) and has an observed maximum of 4096. The strict bounds are realistic and reflect the observed data range, making them appropriate for a BETWEEN constraint.",
+        "chosen_bounds": [
+          0,
+          4096
+        ]
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "ACL_IGA",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        48547
+      ],
+      "custom_bounds": [
+        0,
+        500
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The column ACL_IGA represents the concentration of anti-Cardiolipin antibody (IgA), which is a measurement that should logically have a bounded range. The observed data range shows a maximum value of 48547, which is likely an outlier or error, as the custom bounds based on domain knowledge suggest a maximum of 500. Therefore, using custom bounds of [0, 500] is safer to ensure valid data entries.",
+        "chosen_bounds": [
+          0,
+          500
+        ]
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "THROMBOSIS",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        3
+      ],
+      "custom_bounds": [
+        0,
+        3
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The THROMBOSIS column represents a degree of thrombosis with a clear and limited range of values (0 to 3). Both the strict and custom bounds are the same, and the observed data is consistent with the semantic meaning of the column. Therefore, a BETWEEN constraint is appropriate with strict bounds.",
+        "chosen_bounds": [
+          0,
+          3
+        ]
+      }
+    }
+  ],
+  "in": [
+    {
+      "table": "Laboratory",
+      "column": "APTT",
+      "data_type": "INTEGER",
+      "categories": [
+        108,
+        84,
+        76,
+        90,
+        120,
+        106,
+        99,
+        101,
+        94,
+        95,
+        96,
+        87,
+        88,
+        93,
+        86,
+        109,
+        111,
+        107,
+        60,
+        57,
+        89,
+        112,
+        146,
+        143,
+        91,
+        100,
+        92
+      ],
+      "category_count": 27,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The APTT column contains a range of numerical values that represent a continuous measurement rather than a true categorical enumeration. The presence of 27 unique values suggests variability in the data, and it is likely that additional values could exist outside this sample. Therefore, an IN constraint would be too limiting."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "U_PRO",
+      "data_type": "VARCHAR",
+      "categories": [
+        "-",
+        "0",
+        "TR",
+        "1",
+        "2",
+        "30",
+        "100",
+        "300",
+        ">=300",
+        "3",
+        "%%",
+        "-15",
+        "4",
+        ">=1000",
+        "+1(30)",
+        "+2(100)"
+      ],
+      "category_count": 16,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The column U_PRO contains a variety of values that suggest it is not a true categorical column. The presence of values like '-', '>=300', and '+1(30)' indicates that the data is not strictly enumerated and could include more variations in the future. Additionally, the values represent a range of conditions rather than distinct categories, making an IN constraint too limiting."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "RA",
+      "data_type": "VARCHAR",
+      "categories": [
+        "-",
+        "+",
+        "+-",
+        "2+",
+        "7-"
+      ],
+      "category_count": 5,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column 'RA' has a limited set of unique values that represent specific results of a test (negative, positive, etc.), making it a true categorical column. The values are well-defined and likely complete for this context, suggesting that an IN constraint is appropriate."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "RNP",
+      "data_type": "VARCHAR",
+      "categories": [
+        "0",
+        "1",
+        "256",
+        "negative",
+        "16",
+        "64",
+        "4",
+        "15"
+      ],
+      "category_count": 8,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column 'RNP' has a limited set of unique values (8) that appear to represent specific categories related to anti-ribonuclear protein testing. Given the nature of laboratory results, these values are likely to be exhaustive for this test, making it reasonable to apply an IN constraint."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "SM",
+      "data_type": "VARCHAR",
+      "categories": [
+        "0",
+        "1",
+        "negative",
+        "2",
+        "8"
+      ],
+      "category_count": 5,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column 'SM' has a limited set of unique values (5) that appear to represent specific categories (0, 1, negative, 2, 8). Given the context and the nature of the data, it is reasonable to assume these values are exhaustive for this column, making it suitable for an IN constraint."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "SC170",
+      "data_type": "VARCHAR",
+      "categories": [
+        "16",
+        "1",
+        "0",
+        "negative",
+        "4"
+      ],
+      "category_count": 5,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column SC170 has a limited set of unique values (5) and appears to represent a categorical status (e.g., results of a test). Given that the values are likely to be fixed outcomes of a specific test, an IN constraint is appropriate to ensure data integrity and consistency."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "SSA",
+      "data_type": "VARCHAR",
+      "categories": [
+        "0",
+        "negative",
+        "16",
+        "4",
+        "256",
+        "1",
+        "64"
+      ],
+      "category_count": 7,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column 'SSA' has a limited set of unique values (7) that appear to represent specific test results, suggesting it is a categorical column. The values include both numeric and descriptive terms, indicating a controlled vocabulary for test outcomes. Given the context of laboratory results, it is reasonable to enforce an IN constraint to restrict values to this known set, as it is unlikely that new categories will emerge in the future."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "SSB",
+      "data_type": "VARCHAR",
+      "categories": [
+        "0",
+        "negative",
+        "1",
+        "32",
+        "8",
+        "2"
+      ],
+      "category_count": 6,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column SSB has a limited set of unique values (6), which suggests it is categorical. The values appear to represent a controlled vocabulary related to the presence or absence of a condition, making an IN constraint appropriate. Given the context, it is reasonable to assume these are the only valid values, and restricting to them would not be too limiting."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "CENTROMEA",
+      "data_type": "VARCHAR",
+      "categories": [
+        "0",
+        "negative"
+      ],
+      "category_count": 2,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column CENTROMEA has only 2 unique values ('0' and 'negative'), indicating it is a true categorical column. Given the total number of rows (13908) and the limited unique values, it is likely that this sample is complete. The values represent a clear status (negative or not), making an IN constraint appropriate."
+      }
+    },
+    {
+      "table": "Patient",
+      "column": "SEX",
+      "data_type": "VARCHAR",
+      "categories": [
+        "F",
+        "M"
+      ],
+      "category_count": 2,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SEX column has only two unique values ('F' and 'M'), which are well-defined and represent the only valid options for gender in this context. This makes it a true categorical column suitable for an IN constraint."
+      }
+    },
+    {
+      "table": "Patient",
+      "column": "ADMISSION",
+      "data_type": "VARCHAR",
+      "categories": [
+        "+",
+        "-",
+        "+("
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ADMISSION column has a limited set of unique values ('+', '-', '+(') that represent specific statuses regarding patient admission. Given the small number of unique values relative to the total rows, it is reasonable to assume that these are the only valid values. Therefore, an IN constraint is appropriate to enforce data integrity."
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "ANA",
+      "data_type": "INTEGER",
+      "categories": [
+        256,
+        0,
+        16,
+        4,
+        1024,
+        4096,
+        64,
+        4094
+      ],
+      "category_count": 8,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The column 'ANA' contains integer values that likely represent a range of measurements or concentrations rather than a fixed set of categories. The presence of unique values such as 256, 1024, and 4096 suggests that these values could represent varying degrees of anti-nucleus antibody concentration, which may not be exhaustive. Therefore, it is not a true categorical column suitable for an IN constraint."
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "ANA_PATTERN",
+      "data_type": "VARCHAR",
+      "categories": [
+        "P",
+        "P,S",
+        "S",
+        "D,P,S",
+        "P.S",
+        "S,P",
+        "S,D",
+        "D,P",
+        "P,D",
+        "p",
+        "S,N",
+        "D,S",
+        "D",
+        "N",
+        "P.D"
+      ],
+      "category_count": 15,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column 'ANA_PATTERN' has a limited set of unique values (15) that appear to represent specific patterns observed in ANA examinations. Given that these values are likely to be predefined categories in medical testing, it makes sense to enforce an IN constraint to restrict entries to these known patterns, as new patterns are unlikely to emerge frequently."
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "KCT",
+      "data_type": "VARCHAR",
+      "categories": [
+        "-",
+        "+"
+      ],
+      "category_count": 2,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The KCT column has only two unique values ('-' and '+'), which indicates it is a true categorical column representing a measure of degree of coagulation. Given the limited and defined nature of these values, an IN constraint is appropriate to restrict entries to these specific values."
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "RVVT",
+      "data_type": "VARCHAR",
+      "categories": [
+        "-",
+        "+"
+      ],
+      "category_count": 2,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The RVVT column has only two unique values ('-' and '+'), which indicates it is a true categorical column representing a binary status (positive or negative). Given the limited and defined nature of these values, an IN constraint is appropriate to enforce data integrity."
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "LAC",
+      "data_type": "VARCHAR",
+      "categories": [
+        "-",
+        "+"
+      ],
+      "category_count": 2,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column LAC has only two unique values ('-' and '+'), which indicates it is a true categorical column representing a binary status (positive or negative). Given the limited and defined nature of these values, an IN constraint is appropriate to enforce data integrity."
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "THROMBOSIS",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "category_count": 4,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The THROMBOSIS column has a limited and known set of values (0, 1, 2, 3) that represent specific degrees of thrombosis. Given that there are only 4 unique values in 806 rows, it is reasonable to conclude that this is a true categorical column where an IN constraint is appropriate to restrict values to this specific set."
+      }
+    }
+  ],
+  "not_null": [
+    {
+      "table": "Laboratory",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 13908,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column serves as a unique identifier for each patient in the laboratory table, making it logically required for every record. It is essential for maintaining data integrity and ensuring that each laboratory test can be accurately associated with a specific patient. The column description indicates that it is an identification field, further supporting the need for a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "column": "DATE",
+      "data_type": "DATE",
+      "total_rows": 13908,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DATE column is essential for identifying when laboratory tests were conducted. It is logically required for every record, as without a date, the context of the laboratory results would be incomplete. The column description indicates it is a date of the laboratory tests, reinforcing its necessity."
+      }
+    },
+    {
+      "table": "Patient",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 1238,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column serves as the primary key for the Patient table, which logically requires it to be unique and non-null for every record. It is essential for identifying each patient, and future records must have this field populated to maintain data integrity."
+      }
+    },
+    {
+      "table": "Patient",
+      "column": "SEX",
+      "data_type": "VARCHAR",
+      "total_rows": 1238,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SEX column is logically required as it represents a fundamental attribute of the patient. The description indicates it is a categorical field with defined values (F for female, M for male), suggesting that it should always be present for every patient record. Future records should not reasonably omit this field, as it is essential for demographic and clinical analysis."
+      }
+    },
+    {
+      "table": "Patient",
+      "column": "ADMISSION",
+      "data_type": "VARCHAR",
+      "total_rows": 1238,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The ADMISSION column is not logically required as it indicates whether a patient was admitted to the hospital or followed at the outpatient clinic. The presence of values like '-' and '' suggests that it can be optional. Future records could reasonably omit this field, and the description does not indicate it is essential."
+      }
+    },
+    {
+      "table": "Patient",
+      "column": "DIAGNOSIS",
+      "data_type": "VARCHAR",
+      "total_rows": 1238,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DIAGNOSIS column is essential for identifying the patient's condition, which is a critical aspect of patient records. The column description indicates it holds disease names, suggesting it is a required field for every patient record. Future records would logically need this information to be meaningful, making a NOT NULL constraint appropriate."
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "ACL_IGG",
+      "data_type": "REAL",
+      "total_rows": 806,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ACL_IGG column represents the concentration of anti-Cardiolipin antibody (IgG), which is a critical measurement in the context of thrombosis prediction. Given its importance in diagnosing and monitoring conditions related to thrombosis, it is logically required for every record. The column description indicates that it is essential for the examination results, and future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "ACL_IGM",
+      "data_type": "REAL",
+      "total_rows": 806,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ACL_IGM column represents the concentration of anti-Cardiolipin antibody (IgM), which is a critical measure in the context of thrombosis prediction. Given its importance in diagnosing and monitoring conditions related to thrombosis, it is logically required for every record. The column description indicates that it is essential for understanding the patient's condition, and future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "ACL_IGA",
+      "data_type": "INTEGER",
+      "total_rows": 806,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column ACL_IGA represents the concentration of anti-Cardiolipin antibody (IgA), which is a relevant measure in the context of thrombosis prediction. Given its medical significance, it is logical to require this field for every record, as it is essential for evaluating a patient's condition. The column description indicates that it is a critical measurement, suggesting that it should not be optional. Therefore, a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "Examination",
+      "column": "THROMBOSIS",
+      "data_type": "INTEGER",
+      "total_rows": 806,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The THROMBOSIS column indicates the degree of thrombosis, which is essential for understanding the patient's condition. Given that it is a critical aspect of the examination results, it should always have a value. The column description suggests it is required for every record, and logically, every examination should include this information."
+      }
+    }
+  ],
+  "dependency": [
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 27654,
+          "CENTROMEA": null
+        },
+        {
+          "ID": 30609,
+          "CENTROMEA": null
+        },
+        {
+          "ID": 43003,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 CENTROMEA is not meaningful as CENTROMEA is consistently null for all observed IDs. This suggests that there is no actual mapping relationship, making it a coincidence rather than a semantic relationship. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "DATE",
+      "column_b": "SSB",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DATE": "1991-09-11",
+          "SSB": null
+        },
+        {
+          "DATE": "1991-09-17",
+          "SSB": null
+        },
+        {
+          "DATE": "1991-09-19",
+          "SSB": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency DATE \u2192 SSB is not meaningful as SSB is consistently null for all observed dates. This suggests that there is no actual relationship between DATE and SSB, making it a coincidental pattern rather than a reliable functional dependency. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "DATE",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DATE": "1991-09-11",
+          "CENTROMEA": null
+        },
+        {
+          "DATE": "1991-09-17",
+          "CENTROMEA": null
+        },
+        {
+          "DATE": "1991-09-19",
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency DATE \u2192 CENTROMEA is not meaningful as CENTROMEA consistently has null values for all observed dates. This suggests that there is no actual relationship between DATE and CENTROMEA, making it a coincidental pattern rather than a reliable functional dependency. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "GPT",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "GPT": 36.0,
+          "CENTROMEA": null
+        },
+        {
+          "GPT": 31.0,
+          "CENTROMEA": null
+        },
+        {
+          "GPT": 22.0,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of GPT consistently lead to a null value for CENTROMEA, indicating no meaningful relationship. This suggests that the dependency is not semantically meaningful and is likely coincidental rather than a reliable mapping. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "LDH",
+      "column_b": "SC170",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LDH": 567.0,
+          "SC170": null
+        },
+        {
+          "LDH": 579.0,
+          "SC170": null
+        },
+        {
+          "LDH": 684.0,
+          "SC170": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of LDH consistently map to null values of SC170, indicating a lack of meaningful relationship. This suggests that SC170 does not depend on LDH in a semantic way, and enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "LDH",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LDH": 567.0,
+          "CENTROMEA": null
+        },
+        {
+          "LDH": 579.0,
+          "CENTROMEA": null
+        },
+        {
+          "LDH": 684.0,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of LDH consistently lead to a null value for CENTROMEA, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "ALB",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ALB": 3.3,
+          "CENTROMEA": null
+        },
+        {
+          "ALB": 3.4,
+          "CENTROMEA": null
+        },
+        {
+          "ALB": 3.6,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of ALB consistently lead to a null value for CENTROMEA, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "UA",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "UA": 3.8,
+          "CENTROMEA": null
+        },
+        {
+          "UA": 4.2,
+          "CENTROMEA": null
+        },
+        {
+          "UA": 4.9,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of UA consistently lead to a null value for CENTROMEA, indicating no meaningful relationship. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "T_CHO",
+      "column_b": "SC170",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "T_CHO": 165.0,
+          "SC170": null
+        },
+        {
+          "T_CHO": null,
+          "SC170": null
+        },
+        {
+          "T_CHO": 134.0,
+          "SC170": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that T_CHO consistently leads to SC170 being null, indicating that there is no meaningful relationship between these columns. This suggests that SC170 does not depend on T_CHO, making it a coincidental pattern rather than a functional dependency. Enforcing a constraint here would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "T_CHO",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "T_CHO": 165.0,
+          "CENTROMEA": null
+        },
+        {
+          "T_CHO": null,
+          "CENTROMEA": null
+        },
+        {
+          "T_CHO": 134.0,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of T_CHO consistently lead to a null value for CENTROMEA, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TG",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TG": null,
+          "CENTROMEA": null
+        },
+        {
+          "TG": 185.0,
+          "CENTROMEA": null
+        },
+        {
+          "TG": 205.0,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of TG consistently map to null values of CENTROMEA, indicating a lack of meaningful semantic relationship. This suggests that the dependency is coincidental rather than a reliable mapping. Additionally, TG does not serve as a primary or unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TG",
+      "column_b": "DNA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TG": null,
+          "DNA": null
+        },
+        {
+          "TG": 185.0,
+          "DNA": null
+        },
+        {
+          "TG": 205.0,
+          "DNA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that TG consistently maps to null for DNA across all rows, indicating no meaningful relationship. This suggests that the dependency is coincidental rather than a semantic relationship. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "CPK",
+      "column_b": "SC170",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CPK": 9.0,
+          "SC170": null
+        },
+        {
+          "CPK": null,
+          "SC170": null
+        },
+        {
+          "CPK": 10.0,
+          "SC170": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of CPK consistently lead to a null value for SC170, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "CPK",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CPK": 9.0,
+          "CENTROMEA": null
+        },
+        {
+          "CPK": null,
+          "CENTROMEA": null
+        },
+        {
+          "CPK": 10.0,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of CPK consistently lead to a null value for CENTROMEA, indicating no meaningful relationship. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "GLU",
+      "column_b": "SC170",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "GLU": null,
+          "SC170": null
+        },
+        {
+          "GLU": 88.0,
+          "SC170": null
+        },
+        {
+          "GLU": 134.0,
+          "SC170": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of GLU lead to a consistent value of SC170 (null), indicating a lack of meaningful semantic relationship. This dependency appears to be coincidental rather than a true functional dependency, as SC170 does not provide any additional information based on the values of GLU. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "GLU",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "GLU": null,
+          "CENTROMEA": null
+        },
+        {
+          "GLU": 88.0,
+          "CENTROMEA": null
+        },
+        {
+          "GLU": 134.0,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of GLU consistently lead to a null value for CENTROMEA, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "WBC",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "WBC": 5.0,
+          "CENTROMEA": null
+        },
+        {
+          "WBC": 10.4,
+          "CENTROMEA": null
+        },
+        {
+          "WBC": 10.5,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of WBC lead to a null value for CENTROMEA, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is coincidental rather than a semantic relationship. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "HGB",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "HGB": 6.4,
+          "CENTROMEA": null
+        },
+        {
+          "HGB": 6.7,
+          "CENTROMEA": null
+        },
+        {
+          "HGB": 7.9,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of HGB lead to a consistent value of CENTROMEA (null), but this does not indicate a meaningful semantic relationship. The dependency appears to be coincidental rather than a true functional dependency, as HGB values do not logically determine CENTROMEA in a medical context. Additionally, CENTROMEA being consistently null suggests it may not be relevant or meaningful in relation to HGB, thus enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "HCT",
+      "column_b": "SC170",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "HCT": 20.3,
+          "SC170": null
+        },
+        {
+          "HCT": 21.6,
+          "SC170": null
+        },
+        {
+          "HCT": 24.7,
+          "SC170": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that for every value of HCT, SC170 is consistently null. This suggests a lack of meaningful semantic relationship between HCT and SC170, as SC170 does not provide any useful information based on the current data. Therefore, enforcing this as a functional dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "HCT",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "HCT": 20.3,
+          "CENTROMEA": null
+        },
+        {
+          "HCT": 21.6,
+          "CENTROMEA": null
+        },
+        {
+          "HCT": 24.7,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of HCT lead to a consistent value of CENTROMEA (null), indicating a lack of meaningful semantic relationship. This suggests that CENTROMEA does not depend on HCT in a meaningful way, and enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "PLT",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PLT": 227.0,
+          "CENTROMEA": null
+        },
+        {
+          "PLT": 242.0,
+          "CENTROMEA": null
+        },
+        {
+          "PLT": 233.0,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of PLT consistently lead to a null value for CENTROMEA, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "PT",
+      "column_b": "RNP",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PT": null,
+          "RNP": null
+        },
+        {
+          "PT": 11.3,
+          "RNP": null
+        },
+        {
+          "PT": null,
+          "RNP": "0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between PT and RNP does not represent a meaningful semantic relationship. The values of RNP are not consistently determined by PT, as there are multiple instances where PT has a value and RNP is null, and vice versa. This suggests that the relationship is coincidental rather than a reliable functional dependency. Additionally, PT is not a primary or unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "PT",
+      "column_b": "SM",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PT": null,
+          "SM": null
+        },
+        {
+          "PT": 11.3,
+          "SM": null
+        },
+        {
+          "PT": null,
+          "SM": "0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between PT and SM does not represent a meaningful semantic relationship. The values of SM appear to be inconsistent and do not provide a reliable mapping based on the PT values. Additionally, the presence of nulls and the lack of a clear, consistent pattern suggest that this dependency is coincidental rather than a true functional dependency. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "PT",
+      "column_b": "SC170",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PT": null,
+          "SC170": null
+        },
+        {
+          "PT": 11.3,
+          "SC170": null
+        },
+        {
+          "PT": 12.0,
+          "SC170": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that PT does not consistently determine SC170, as there are multiple instances where PT is null while SC170 has values. This indicates that the relationship is not reliable and likely coincidental rather than a meaningful semantic dependency. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "PT",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PT": null,
+          "CENTROMEA": null
+        },
+        {
+          "PT": 11.3,
+          "CENTROMEA": null
+        },
+        {
+          "PT": 12.0,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that while PT values are consistent with CENTROMEA being null for most cases, there are instances where PT is null and CENTROMEA has a value. This indicates that the relationship is not reliable and could break with future data. Additionally, there is no meaningful semantic relationship between PT and CENTROMEA, making this dependency coincidental rather than a true functional dependency."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "APTT",
+      "column_b": "RA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "APTT": null,
+          "RA": null
+        },
+        {
+          "APTT": null,
+          "RA": "-"
+        },
+        {
+          "APTT": null,
+          "RA": "+"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between APTT and RA does not represent a meaningful functional dependency. APTT values can correspond to multiple RA values, indicating that RA does not uniquely depend on APTT. The presence of multiple RA values for the same APTT value suggests that this is not a reliable or consistent mapping, and enforcing such a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "APTT",
+      "column_b": "SSA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "APTT": null,
+          "SSA": null
+        },
+        {
+          "APTT": null,
+          "SSA": "0"
+        },
+        {
+          "APTT": null,
+          "SSA": "negative"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between APTT and SSA is not consistent, as APTT can have multiple SSA values (including nulls) for the same APTT value. This indicates that there is no meaningful functional dependency between these columns, and enforcing such a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "APTT",
+      "column_b": "SSB",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "APTT": null,
+          "SSB": null
+        },
+        {
+          "APTT": null,
+          "SSB": "0"
+        },
+        {
+          "APTT": null,
+          "SSB": "negative"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between APTT and SSB does not represent a meaningful functional dependency. APTT values can correspond to multiple SSB values, including nulls, which indicates that the mapping is not consistent. This suggests that the relationship is coincidental rather than a reliable semantic mapping. Additionally, APTT is not a unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "FG",
+      "column_b": "RA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FG": null,
+          "RA": null
+        },
+        {
+          "FG": 27.0,
+          "RA": null
+        },
+        {
+          "FG": null,
+          "RA": "-"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between FG and RA does not represent a meaningful functional dependency. The values of RA are not uniquely determined by FG, as multiple RA values can correspond to the same FG value (including nulls). This suggests that the relationship is coincidental rather than a reliable semantic mapping. Additionally, the presence of multiple RA values for the same FG value indicates that enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "FG",
+      "column_b": "RNP",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FG": null,
+          "RNP": null
+        },
+        {
+          "FG": 27.0,
+          "RNP": null
+        },
+        {
+          "FG": null,
+          "RNP": "0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between FG and RNP does not represent a meaningful semantic relationship. The values of FG do not consistently determine the values of RNP, as there are multiple instances where FG is null and RNP has varying values. This suggests that the relationship is coincidental rather than a reliable functional dependency. Additionally, FG is not a primary or unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "FG",
+      "column_b": "SM",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FG": null,
+          "SM": null
+        },
+        {
+          "FG": 27.0,
+          "SM": null
+        },
+        {
+          "FG": null,
+          "SM": "0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping does not indicate a meaningful functional dependency. The values of FG do not consistently determine the values of SM, as there are multiple instances where FG is null and SM has varying values. This suggests that the relationship is coincidental rather than a reliable semantic mapping. Additionally, FG is not a primary or unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "FG",
+      "column_b": "SC170",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FG": null,
+          "SC170": null
+        },
+        {
+          "FG": 27.0,
+          "SC170": null
+        },
+        {
+          "FG": null,
+          "SC170": "16"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between FG and SC170 does not represent a meaningful semantic relationship. The values of FG do not consistently determine the values of SC170, as there are multiple instances where FG is null and SC170 has varying values. This suggests that the relationship is coincidental rather than a reliable functional dependency. Additionally, FG is not a primary or unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "FG",
+      "column_b": "SSA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FG": null,
+          "SSA": null
+        },
+        {
+          "FG": 27.0,
+          "SSA": null
+        },
+        {
+          "FG": null,
+          "SSA": "0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between FG and SSA does not represent a meaningful semantic relationship. The values of FG do not consistently determine the values of SSA, as there are multiple instances where FG is null and SSA has varying values. This suggests that the relationship is coincidental rather than a reliable functional dependency. Additionally, FG is not a primary or unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "FG",
+      "column_b": "SSB",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FG": null,
+          "SSB": null
+        },
+        {
+          "FG": 27.0,
+          "SSB": null
+        },
+        {
+          "FG": null,
+          "SSB": "0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between FG and SSB does not represent a meaningful functional dependency. The values of SSB do not consistently depend on FG, as there are multiple instances where FG has a value and SSB is null or varies independently. This suggests that the relationship is coincidental rather than a reliable semantic mapping. Additionally, FG is not a primary or unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "FG",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FG": null,
+          "CENTROMEA": null
+        },
+        {
+          "FG": 27.0,
+          "CENTROMEA": null
+        },
+        {
+          "FG": null,
+          "CENTROMEA": "0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between FG and CENTROMEA does not represent a meaningful semantic relationship. The values of FG do not consistently determine the values of CENTROMEA, as evidenced by the presence of nulls and the lack of a clear mapping pattern. This suggests that the relationship is coincidental rather than a reliable functional dependency. Additionally, enforcing this constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "PIC",
+      "column_b": "U_PRO",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PIC": null,
+          "U_PRO": null
+        },
+        {
+          "PIC": null,
+          "U_PRO": "-"
+        },
+        {
+          "PIC": null,
+          "U_PRO": "0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between PIC and U_PRO is not meaningful as PIC has multiple values mapping to various U_PRO values, indicating that it does not uniquely determine U_PRO. The observed mapping suggests a lack of a consistent semantic relationship, and the presence of multiple U_PRO values for the same PIC value (including nulls) indicates that this is likely a coincidental pattern rather than a reliable functional dependency."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "PIC",
+      "column_b": "IGG",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PIC": null,
+          "IGG": 339.0
+        },
+        {
+          "PIC": null,
+          "IGG": 771.0
+        },
+        {
+          "PIC": null,
+          "IGG": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between PIC and IGG is not meaningful as a functional dependency because PIC is consistently null in the observed data, leading to multiple IGG values for the same PIC value. This suggests that there is no semantic relationship or unique mapping between these columns, and enforcing such a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "PIC",
+      "column_b": "IGA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PIC": null,
+          "IGA": 145.0
+        },
+        {
+          "PIC": null,
+          "IGA": 188.0
+        },
+        {
+          "PIC": null,
+          "IGA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that PIC is consistently null, leading to multiple different values for IGA. This indicates that there is no meaningful functional dependency between PIC and IGA, as the determinant does not uniquely determine the dependent. The relationship appears coincidental rather than semantic, and enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "PIC",
+      "column_b": "IGM",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PIC": null,
+          "IGM": 46.0
+        },
+        {
+          "PIC": null,
+          "IGM": 132.0
+        },
+        {
+          "PIC": null,
+          "IGM": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between PIC and IGM is not meaningful as PIC is consistently null across multiple rows, leading to multiple corresponding IGM values. This indicates that there is no unique mapping from PIC to IGM, making it unreliable as a functional dependency. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "PIC",
+      "column_b": "RA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PIC": null,
+          "RA": null
+        },
+        {
+          "PIC": null,
+          "RA": "-"
+        },
+        {
+          "PIC": null,
+          "RA": "+"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between PIC and RA does not represent a meaningful functional dependency. The values of RA do not consistently map to unique values of PIC, as evidenced by multiple RA values being associated with null PIC values. Additionally, the observed mapping suggests that the relationship is coincidental rather than a semantic mapping, and enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT",
+      "column_b": "RA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT": null,
+          "RA": null
+        },
+        {
+          "TAT": null,
+          "RA": "-"
+        },
+        {
+          "TAT": null,
+          "RA": "+"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between TAT and RA does not represent a meaningful functional dependency. The values of RA do not consistently depend on TAT, as evidenced by multiple RA values being associated with null TAT values. Additionally, TAT is not a primary or unique key, and the observed mapping appears to be coincidental rather than a reliable semantic relationship."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT",
+      "column_b": "RF",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT": null,
+          "RF": null
+        },
+        {
+          "TAT": null,
+          "RF": "<20.5"
+        },
+        {
+          "TAT": null,
+          "RF": "<20.8"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that TAT is consistently null or has multiple corresponding values for RF, indicating that TAT does not uniquely determine RF. This suggests that the relationship is not meaningful and may be coincidental rather than a reliable functional dependency. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT",
+      "column_b": "RNP",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT": null,
+          "RNP": null
+        },
+        {
+          "TAT": null,
+          "RNP": "0"
+        },
+        {
+          "TAT": null,
+          "RNP": "1"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping does not represent a meaningful functional dependency. The determinant TAT has multiple values (including null) corresponding to various values of RNP, indicating that RNP does not uniquely depend on TAT. This suggests a lack of a consistent semantic relationship, and enforcing such a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT",
+      "column_b": "SM",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT": null,
+          "SM": null
+        },
+        {
+          "TAT": null,
+          "SM": "0"
+        },
+        {
+          "TAT": null,
+          "SM": "1"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between TAT and SM does not represent a meaningful functional dependency. The values of SM do not consistently depend on TAT, as there are multiple SM values for the same TAT value (including nulls). This suggests that the relationship is coincidental rather than a reliable semantic mapping. Additionally, TAT is not a primary or unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT",
+      "column_b": "SC170",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT": null,
+          "SC170": null
+        },
+        {
+          "TAT": null,
+          "SC170": "16"
+        },
+        {
+          "TAT": null,
+          "SC170": "1"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping does not represent a meaningful functional dependency. The values of SC170 do not consistently depend on TAT, as there are multiple SC170 values for the same TAT value (including nulls), indicating that the relationship is coincidental rather than semantic. Additionally, TAT is not a primary or unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT",
+      "column_b": "SSA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT": null,
+          "SSA": null
+        },
+        {
+          "TAT": null,
+          "SSA": "0"
+        },
+        {
+          "TAT": null,
+          "SSA": "negative"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between TAT and SSA does not represent a meaningful functional dependency. The values of SSA are not consistently determined by TAT, as there are multiple SSA values (including nulls) for the same TAT value. This suggests that the relationship is coincidental rather than a reliable mapping, and enforcing a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT",
+      "column_b": "SSB",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT": null,
+          "SSB": null
+        },
+        {
+          "TAT": null,
+          "SSB": "0"
+        },
+        {
+          "TAT": null,
+          "SSB": "negative"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between TAT and SSB does not represent a meaningful functional dependency. The values of SSB are inconsistent with the values of TAT, as TAT can have multiple null values and SSB can take on various values (including null, '0', 'negative', etc.) without a clear, consistent mapping. This suggests that the relationship is coincidental rather than a reliable semantic mapping. Additionally, TAT is not a primary or unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT": null,
+          "CENTROMEA": null
+        },
+        {
+          "TAT": null,
+          "CENTROMEA": "0"
+        },
+        {
+          "TAT": 77.0,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between TAT and CENTROMEA is inconsistent, as TAT values do not consistently determine a single value for CENTROMEA. The presence of nulls and varying CENTROMEA values for the same TAT indicates that this is not a meaningful functional dependency. Additionally, the relationship does not represent a semantic mapping like code to name, and enforcing such a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT2",
+      "column_b": "RA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT2": null,
+          "RA": null
+        },
+        {
+          "TAT2": null,
+          "RA": "-"
+        },
+        {
+          "TAT2": null,
+          "RA": "+"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between TAT2 and RA does not represent a meaningful functional dependency. TAT2 has multiple values (including null) that correspond to various RA values, indicating that RA does not uniquely depend on TAT2. This suggests a lack of a consistent mapping and implies that the relationship is coincidental rather than semantic. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT2",
+      "column_b": "RNP",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT2": null,
+          "RNP": null
+        },
+        {
+          "TAT2": null,
+          "RNP": "0"
+        },
+        {
+          "TAT2": null,
+          "RNP": "1"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between TAT2 and RNP does not represent a meaningful functional dependency. TAT2 has multiple null values and does not consistently determine a single value for RNP, which suggests that the relationship is coincidental rather than semantic. Additionally, TAT2 is not a primary or unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT2",
+      "column_b": "SM",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT2": null,
+          "SM": null
+        },
+        {
+          "TAT2": null,
+          "SM": "0"
+        },
+        {
+          "TAT2": null,
+          "SM": "1"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between TAT2 and SM does not represent a meaningful functional dependency. The values of SM are inconsistent with the values of TAT2, as multiple SM values can correspond to the same TAT2 value (including nulls). This suggests that the relationship is coincidental rather than a reliable mapping. Additionally, TAT2 is not a primary or unique key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT2",
+      "column_b": "SC170",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT2": null,
+          "SC170": null
+        },
+        {
+          "TAT2": null,
+          "SC170": "16"
+        },
+        {
+          "TAT2": null,
+          "SC170": "1"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping does not represent a meaningful functional dependency. The values of SC170 do not consistently depend on TAT2, as TAT2 has multiple null values and varying SC170 values for the same TAT2 value. This suggests that the relationship is coincidental rather than a reliable semantic mapping. Additionally, TAT2 is not a primary or unique key, further indicating that enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT2",
+      "column_b": "SSA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT2": null,
+          "SSA": null
+        },
+        {
+          "TAT2": null,
+          "SSA": "0"
+        },
+        {
+          "TAT2": null,
+          "SSA": "negative"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that TAT2 does not consistently determine SSA, as there are multiple SSA values (including nulls) for the same TAT2 value. This indicates that the relationship is not meaningful and may be coincidental rather than a reliable functional dependency."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT2",
+      "column_b": "SSB",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT2": null,
+          "SSB": null
+        },
+        {
+          "TAT2": null,
+          "SSB": "0"
+        },
+        {
+          "TAT2": null,
+          "SSB": "negative"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that TAT2 does not consistently determine SSB, as there are multiple SSB values (including nulls) for the same TAT2 value. This suggests that the relationship is not meaningful and may be coincidental rather than a reliable functional dependency. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "TAT2",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAT2": null,
+          "CENTROMEA": null
+        },
+        {
+          "TAT2": null,
+          "CENTROMEA": "0"
+        },
+        {
+          "TAT2": 113.0,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping does not represent a meaningful functional dependency. The values of CENTROMEA are inconsistent with TAT2, as there are multiple instances where TAT2 has values while CENTROMEA is null, and vice versa. This suggests that the relationship is not reliable or semantic, but rather coincidental. Additionally, TAT2 does not appear to be a primary or unique key, further indicating that enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGG",
+      "column_b": "RNP",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGG": 339.0,
+          "RNP": null
+        },
+        {
+          "IGG": 771.0,
+          "RNP": null
+        },
+        {
+          "IGG": null,
+          "RNP": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of IGG consistently lead to a null value for RNP, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGG",
+      "column_b": "SM",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGG": 339.0,
+          "SM": null
+        },
+        {
+          "IGG": 771.0,
+          "SM": null
+        },
+        {
+          "IGG": null,
+          "SM": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that for every value of IGG, SM is consistently null. This suggests that there is no meaningful relationship between IGG and SM, as SM does not vary with different IGG values. Therefore, enforcing a functional dependency here would not add value and is not semantically meaningful."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGG",
+      "column_b": "SC170",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGG": 339.0,
+          "SC170": null
+        },
+        {
+          "IGG": 771.0,
+          "SC170": null
+        },
+        {
+          "IGG": null,
+          "SC170": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of IGG consistently lead to a null value for SC170, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is not semantically meaningful and is likely coincidental rather than a reliable mapping. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGG",
+      "column_b": "SSA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGG": 339.0,
+          "SSA": null
+        },
+        {
+          "IGG": 771.0,
+          "SSA": null
+        },
+        {
+          "IGG": null,
+          "SSA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of IGG lead to a consistent SSA value of null, indicating that there is no meaningful relationship between IGG and SSA. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGG",
+      "column_b": "SSB",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGG": 339.0,
+          "SSB": null
+        },
+        {
+          "IGG": 771.0,
+          "SSB": null
+        },
+        {
+          "IGG": null,
+          "SSB": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of IGG consistently lead to a null value for SSB, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is not semantically meaningful and is likely coincidental rather than a reliable mapping. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGG",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGG": 339.0,
+          "CENTROMEA": null
+        },
+        {
+          "IGG": 771.0,
+          "CENTROMEA": null
+        },
+        {
+          "IGG": null,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of IGG lead to a consistent value of CENTROMEA (null), indicating a lack of meaningful semantic relationship. This dependency appears to be coincidental rather than a true functional dependency, as CENTROMEA does not provide any useful information based on the values of IGG. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGG",
+      "column_b": "DNA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGG": 339.0,
+          "DNA": null
+        },
+        {
+          "IGG": 771.0,
+          "DNA": null
+        },
+        {
+          "IGG": null,
+          "DNA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of IGG lead to a consistent value of DNA (null), which does not represent a meaningful semantic relationship. The dependency appears to be coincidental rather than a reliable mapping, as DNA values are consistently null regardless of IGG values. Therefore, enforcing this as a functional dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGA",
+      "column_b": "SM",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGA": 145.0,
+          "SM": null
+        },
+        {
+          "IGA": 188.0,
+          "SM": null
+        },
+        {
+          "IGA": null,
+          "SM": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of IGA consistently lead to a null value for SM, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGA",
+      "column_b": "SC170",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGA": 145.0,
+          "SC170": null
+        },
+        {
+          "IGA": 188.0,
+          "SC170": null
+        },
+        {
+          "IGA": null,
+          "SC170": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of IGA consistently lead to a null value for SC170, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGA",
+      "column_b": "SSA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGA": 145.0,
+          "SSA": null
+        },
+        {
+          "IGA": 188.0,
+          "SSA": null
+        },
+        {
+          "IGA": null,
+          "SSA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of IGA consistently lead to a null value for SSA, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGA",
+      "column_b": "SSB",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGA": 145.0,
+          "SSB": null
+        },
+        {
+          "IGA": 188.0,
+          "SSB": null
+        },
+        {
+          "IGA": null,
+          "SSB": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of IGA consistently lead to a null value for SSB, indicating a lack of meaningful relationship. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGA",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGA": 145.0,
+          "CENTROMEA": null
+        },
+        {
+          "IGA": 188.0,
+          "CENTROMEA": null
+        },
+        {
+          "IGA": null,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of IGA lead to a consistent value of CENTROMEA (null), indicating a lack of meaningful semantic relationship. This suggests that the relationship is coincidental rather than a true functional dependency. Additionally, since IGA does not uniquely determine CENTROMEA in a meaningful way, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGM",
+      "column_b": "SC170",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGM": 46.0,
+          "SC170": null
+        },
+        {
+          "IGM": 132.0,
+          "SC170": null
+        },
+        {
+          "IGM": null,
+          "SC170": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of IGM consistently lead to a null value for SC170, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is not semantically meaningful and is likely coincidental rather than a reliable mapping. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "IGM",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "IGM": 46.0,
+          "CENTROMEA": null
+        },
+        {
+          "IGM": 132.0,
+          "CENTROMEA": null
+        },
+        {
+          "IGM": null,
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of IGM lead to a consistent value of CENTROMEA (null), indicating a lack of meaningful semantic relationship. This suggests that the dependency is coincidental rather than a true functional dependency. Additionally, since CENTROMEA is consistently null regardless of IGM's value, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "RA",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RA": null,
+          "CENTROMEA": null
+        },
+        {
+          "RA": "-",
+          "CENTROMEA": null
+        },
+        {
+          "RA": "+",
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between RA and CENTROMEA does not represent a meaningful functional dependency. The values of CENTROMEA do not consistently depend on the values of RA, as there are multiple instances where RA has different values (including null) while CENTROMEA remains null or varies independently. This suggests that the relationship is coincidental rather than a reliable semantic mapping. Additionally, RA is not a primary or unique key, further indicating that this dependency is not meaningful for constraint enforcement."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "RF",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RF": null,
+          "CENTROMEA": null
+        },
+        {
+          "RF": "<20.5",
+          "CENTROMEA": null
+        },
+        {
+          "RF": "<20.8",
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of RF lead to null values in CENTROMEA, indicating no meaningful relationship. This suggests that RF does not determine CENTROMEA in a semantic way, and enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "RF",
+      "column_b": "DNA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RF": null,
+          "DNA": null
+        },
+        {
+          "RF": "<20.5",
+          "DNA": null
+        },
+        {
+          "RF": "<20.8",
+          "DNA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between RF and DNA does not represent a meaningful functional dependency. The values of RF do not consistently determine a unique value for DNA, as many RF values map to null for DNA. Additionally, the relationship appears coincidental rather than semantically meaningful, as RF is a measure of rheumatoid factor and DNA levels are not inherently related. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "RNP",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RNP": null,
+          "CENTROMEA": null
+        },
+        {
+          "RNP": "0",
+          "CENTROMEA": null
+        },
+        {
+          "RNP": "1",
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping does not indicate a meaningful functional dependency. The values of RNP do not consistently determine the values of CENTROMEA, as there are multiple instances where RNP has different values (including nulls) while CENTROMEA remains null or varies independently. This suggests that the relationship is coincidental rather than semantic, and enforcing a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "RNP",
+      "column_b": "DNA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "RNP": null,
+          "DNA": null
+        },
+        {
+          "RNP": null,
+          "DNA": "41.9"
+        },
+        {
+          "RNP": "0",
+          "DNA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between RNP and DNA does not represent a meaningful functional dependency. The values of RNP do not consistently determine a unique value for DNA, as evidenced by multiple nulls and varying DNA values for the same RNP. This suggests that the relationship is coincidental rather than a reliable semantic mapping. Additionally, RNP is not a primary or unique key, further indicating that enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "SM",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "SM": null,
+          "CENTROMEA": null
+        },
+        {
+          "SM": "0",
+          "CENTROMEA": null
+        },
+        {
+          "SM": "1",
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between SM and CENTROMEA does not represent a meaningful functional dependency. The values of SM do not consistently determine a unique value for CENTROMEA, as evidenced by multiple instances where the same SM value corresponds to different CENTROMEA values (including nulls). This suggests that the observed mapping is coincidental rather than a reliable semantic relationship. Additionally, the presence of nulls and varying outputs indicates that enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "SM",
+      "column_b": "DNA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "SM": null,
+          "DNA": null
+        },
+        {
+          "SM": null,
+          "DNA": "41.9"
+        },
+        {
+          "SM": "0",
+          "DNA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between SM and DNA does not represent a meaningful functional dependency. The values of SM do not consistently determine unique values of DNA, as evidenced by multiple nulls and varying DNA values for the same SM value. This suggests a coincidental pattern rather than a reliable semantic relationship. Additionally, the presence of nulls indicates that the relationship is not robust enough to enforce as a constraint."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "SC170",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "SC170": null,
+          "CENTROMEA": null
+        },
+        {
+          "SC170": "16",
+          "CENTROMEA": null
+        },
+        {
+          "SC170": "1",
+          "CENTROMEA": "0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between SC170 and CENTROMEA does not represent a meaningful functional dependency. While there is a consistent pattern in the current data, the presence of multiple null values and the fact that CENTROMEA can have different values for the same SC170 indicates that this relationship is not reliable or semantically meaningful. Additionally, the determinant SC170 is not a primary or unique key, further suggesting that this dependency is coincidental rather than a true functional relationship."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "SSA",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "SSA": null,
+          "CENTROMEA": null
+        },
+        {
+          "SSA": "0",
+          "CENTROMEA": null
+        },
+        {
+          "SSA": "negative",
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between SSA and CENTROMEA does not represent a meaningful functional dependency. The values of CENTROMEA do not consistently depend on SSA, as there are multiple instances where CENTROMEA has values regardless of SSA's value. This suggests that the relationship is coincidental rather than a reliable mapping, and enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "Laboratory",
+      "type": "functional",
+      "column_a": "SSB",
+      "column_b": "CENTROMEA",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "SSB": null,
+          "CENTROMEA": null
+        },
+        {
+          "SSB": "0",
+          "CENTROMEA": null
+        },
+        {
+          "SSB": "negative",
+          "CENTROMEA": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping between SSB and CENTROMEA does not represent a meaningful semantic relationship. The values of SSB do not consistently determine a unique value for CENTROMEA, as evidenced by multiple instances where SSB has different values while CENTROMEA remains null or varies independently. This suggests that the relationship is coincidental rather than a reliable functional dependency. Additionally, the presence of null values in both columns indicates that this dependency is not robust enough to enforce as a constraint."
+      }
+    },
+    {
+      "table": "Patient",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "SEX",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 2110,
+          "SEX": "F"
+        },
+        {
+          "ID": 11408,
+          "SEX": "F"
+        },
+        {
+          "ID": 12052,
+          "SEX": "F"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a unique identifier for each patient, and it consistently determines the SEX of the patient. This is a meaningful functional dependency as it reflects a natural relationship between a patient's ID and their sex, which is unlikely to change in future data. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "Patient",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "BIRTHDAY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 2110,
+          "BIRTHDAY": "1934-02-13"
+        },
+        {
+          "ID": 11408,
+          "BIRTHDAY": "1937-05-02"
+        },
+        {
+          "ID": 12052,
+          "BIRTHDAY": "1956-04-14"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a primary key, and it uniquely determines the BIRTHDAY for each patient. This is a meaningful functional dependency as it ensures that each patient ID corresponds to exactly one birthday, which is essential for maintaining data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "Patient",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "DESCRIPTION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 2110,
+          "DESCRIPTION": "1994-02-14"
+        },
+        {
+          "ID": 11408,
+          "DESCRIPTION": "1996-12-01"
+        },
+        {
+          "ID": 12052,
+          "DESCRIPTION": "1991-08-13"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the ID is a primary key and consistently maps to a DESCRIPTION, the DESCRIPTION column can be null for some IDs. This means the dependency is not fully reliable as a functional dependency since it does not hold for all cases. Therefore, enforcing this as a constraint would not add value."
+      }
+    },
+    {
+      "table": "Patient",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "FIRST_DATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 2110,
+          "FIRST_DATE": "1993-02-10"
+        },
+        {
+          "ID": 11408,
+          "FIRST_DATE": "1973-01-01"
+        },
+        {
+          "ID": 12052,
+          "FIRST_DATE": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a primary key, and it consistently maps to a FIRST_DATE, which is meaningful as it indicates the first date a patient was recorded. This relationship is reliable across 1238 rows, and enforcing this constraint would help ensure data integrity and verify query correctness regarding patient records."
+      }
+    },
+    {
+      "table": "Patient",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "ADMISSION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 2110,
+          "ADMISSION": "+"
+        },
+        {
+          "ID": 11408,
+          "ADMISSION": "+"
+        },
+        {
+          "ID": 12052,
+          "ADMISSION": "+"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a primary key, and it consistently determines the ADMISSION status for each patient. This is a meaningful dependency as it reflects the patient's admission status, which is crucial for understanding their treatment context. Enforcing this constraint would help ensure data integrity and verify query correctness regarding patient admission statuses."
+      }
+    },
+    {
+      "table": "Patient",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "DIAGNOSIS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 2110,
+          "DIAGNOSIS": "RA susp."
+        },
+        {
+          "ID": 11408,
+          "DIAGNOSIS": "PSS"
+        },
+        {
+          "ID": 12052,
+          "DIAGNOSIS": "SLE"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a unique identifier for each patient, and it consistently maps to a specific diagnosis. This indicates a meaningful functional dependency where each patient ID corresponds to exactly one diagnosis. Enforcing this constraint would help maintain data integrity and verify query correctness, ensuring that each patient ID is associated with a valid diagnosis."
+      }
+    },
+    {
+      "table": "Examination",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "KCT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 14872.0,
+          "KCT": null
+        },
+        {
+          "ID": 48473.0,
+          "KCT": "-"
+        },
+        {
+          "ID": 102490.0,
+          "KCT": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 KCT is meaningful as it establishes a relationship between a patient's identification and their coagulation test result. Given that ID is a primary key, it ensures that each patient has a unique KCT value, which is relevant for medical assessments. The consistency observed in the data supports the reliability of this dependency, making it valuable for query verification."
+      }
+    },
+    {
+      "table": "Examination",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "RVVT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 14872.0,
+          "RVVT": null
+        },
+        {
+          "ID": 48473.0,
+          "RVVT": "-"
+        },
+        {
+          "ID": 102490.0,
+          "RVVT": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a unique identifier for each patient in the EXAMINATION table, and RVVT represents a measure of coagulation that is expected to be consistent for each patient. The observed mapping shows a consistent relationship between ID and RVVT, indicating that for each patient ID, there is a specific RVVT value (or null). This suggests a meaningful functional dependency that can help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "Examination",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "LAC",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 14872.0,
+          "LAC": "-"
+        },
+        {
+          "ID": 48473.0,
+          "LAC": "-"
+        },
+        {
+          "ID": 102490.0,
+          "LAC": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 LAC is meaningful as it indicates that for each patient ID, there is a consistent result for the LAC test. Given that ID is a unique identifier for patients, this relationship is reliable and should be enforced to ensure data integrity and correctness in queries related to laboratory results."
+      }
+    },
+    {
+      "table": "Examination",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "SYMPTOMS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 14872.0,
+          "SYMPTOMS": "AMI"
+        },
+        {
+          "ID": 48473.0,
+          "SYMPTOMS": null
+        },
+        {
+          "ID": 102490.0,
+          "SYMPTOMS": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a unique identifier for each patient examination, and it consistently maps to a single SYMPTOMS value (or null). This indicates a meaningful functional dependency where each examination ID corresponds to exactly one set of symptoms, which is relevant for understanding patient conditions. Enforcing this constraint would help ensure data integrity and verify query correctness regarding patient symptoms."
+      }
+    },
+    {
+      "table": "Examination",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "THROMBOSIS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 14872.0,
+          "THROMBOSIS": 1.0
+        },
+        {
+          "ID": 48473.0,
+          "THROMBOSIS": 0.0
+        },
+        {
+          "ID": 102490.0,
+          "THROMBOSIS": 0.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column serves as a unique identifier for each patient in the EXAMINATION table, and the THROMBOSIS column indicates the degree of thrombosis for each patient. Since each patient (ID) has a consistent and unique mapping to their thrombosis status, this is a meaningful functional dependency that should be enforced. It helps ensure data integrity and verifies that each patient has a defined thrombosis status, which is crucial for medical records."
+      }
+    },
+    {
+      "table": "Examination",
+      "type": "functional",
+      "column_a": "SYMPTOMS",
+      "column_b": "THROMBOSIS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "SYMPTOMS": "AMI",
+          "THROMBOSIS": 1
+        },
+        {
+          "SYMPTOMS": null,
+          "THROMBOSIS": 0
+        },
+        {
+          "SYMPTOMS": "CNS lupus",
+          "THROMBOSIS": 2
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The relationship between SYMPTOMS and THROMBOSIS appears to be meaningful, as specific symptoms consistently correlate with specific levels of thrombosis. This suggests a semantic relationship rather than a coincidence. Given the 806 rows of data, the observed mapping is reliable, and enforcing this constraint would help ensure query correctness by maintaining the integrity of the relationship between symptoms and thrombosis levels."
+      }
+    }
+  ]
+}

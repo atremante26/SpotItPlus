@@ -1,0 +1,885 @@
+{
+  "student_club": [
+    [
+      {
+        "primary": [
+          {
+            "value": "EVENT__EVENT_ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "MAJOR__MAJOR_ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "ZIP_CODE__ZIP_CODE"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "ATTENDANCE__LINK_TO_EVENT"
+          },
+          {
+            "value": "ATTENDANCE__LINK_TO_MEMBER"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "BUDGET__BUDGET_ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "EXPENSE__EXPENSE_ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "INCOME__INCOME_ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "MEMBER__MEMBER_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "ATTENDANCE__LINK_TO_MEMBER"
+          },
+          {
+            "value": "MEMBER__MEMBER_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "ATTENDANCE__LINK_TO_EVENT"
+          },
+          {
+            "value": "EVENT__EVENT_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "BUDGET__LINK_TO_EVENT"
+          },
+          {
+            "value": "EVENT__EVENT_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "EXPENSE__LINK_TO_MEMBER"
+          },
+          {
+            "value": "MEMBER__MEMBER_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "EXPENSE__LINK_TO_BUDGET"
+          },
+          {
+            "value": "BUDGET__BUDGET_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "INCOME__LINK_TO_MEMBER"
+          },
+          {
+            "value": "MEMBER__MEMBER_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "MEMBER__ZIP"
+          },
+          {
+            "value": "ZIP_CODE__ZIP_CODE"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "MEMBER__LINK_TO_MAJOR"
+          },
+          {
+            "value": "MAJOR__MAJOR_ID"
+          }
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "INCOME__AMOUNT"
+          },
+          0,
+          2147483647
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "BUDGET__SPENT"
+          },
+          0.0,
+          327.07
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "BUDGET__REMAINING"
+          },
+          -1e+308,
+          0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "BUDGET__AMOUNT"
+          },
+          10,
+          350
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "ZIP_CODE__ZIP_CODE"
+          },
+          10000,
+          99999
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "EXPENSE__COST"
+          },
+          0,
+          1e+308
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "MEMBER__ZIP"
+          },
+          1000,
+          99999
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "INCOME__SOURCE"
+          },
+          [
+            "Dues",
+            "Fundraising",
+            "School Appropration",
+            "Sponsorship"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "BUDGET__CATEGORY"
+          },
+          [
+            "Advertisement",
+            "Food",
+            "Speaker Gifts",
+            "Parking",
+            "Club T-Shirts"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "BUDGET__EVENT_STATUS"
+          },
+          [
+            "Closed",
+            "Open",
+            "Planning"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "ZIP_CODE__TYPE"
+          },
+          [
+            "Unique",
+            "Standard",
+            "PO Box"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "MEMBER__POSITION"
+          },
+          [
+            "Member",
+            "Inactive",
+            "President",
+            "Vice President",
+            "Treasurer",
+            "Secretary"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "MEMBER__T_SHIRT_SIZE"
+          },
+          [
+            "Medium",
+            "X-Large",
+            "Large",
+            "Small"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EVENT__TYPE"
+          },
+          [
+            "Meeting",
+            "Election",
+            "Game",
+            "Guest Speaker",
+            "Social",
+            "Registration",
+            "Community Service",
+            "Budget"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EVENT__STATUS"
+          },
+          [
+            "Open",
+            "Planning",
+            "Closed"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "MAJOR__COLLEGE"
+          },
+          [
+            "College of Agriculture and Applied Sciences",
+            "College of Natural Resources",
+            "School of Business",
+            "College of Engineering",
+            "College of Humanities and Social Sciences",
+            "College of Science",
+            "College of Education & Human Services",
+            "College of the Arts"
+          ]
+        ]
+      },
+      {
+        "not_null": {
+          "value": "INCOME__INCOME_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "INCOME__DATE_RECEIVED"
+        }
+      },
+      {
+        "not_null": {
+          "value": "INCOME__AMOUNT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "INCOME__SOURCE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__BUDGET_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__CATEGORY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__SPENT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__REMAINING"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__AMOUNT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__EVENT_STATUS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__LINK_TO_EVENT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ZIP_CODE__ZIP_CODE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ZIP_CODE__TYPE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ZIP_CODE__CITY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ZIP_CODE__STATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ZIP_CODE__SHORT_STATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXPENSE__EXPENSE_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXPENSE__EXPENSE_DESCRIPTION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXPENSE__EXPENSE_DATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXPENSE__COST"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXPENSE__LINK_TO_MEMBER"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXPENSE__LINK_TO_BUDGET"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__MEMBER_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__FIRST_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__LAST_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__EMAIL"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__POSITION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__PHONE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__ZIP"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ATTENDANCE__LINK_TO_EVENT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ATTENDANCE__LINK_TO_MEMBER"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EVENT__EVENT_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EVENT__EVENT_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EVENT__EVENT_DATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EVENT__TYPE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EVENT__STATUS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MAJOR__MAJOR_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MAJOR__MAJOR_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MAJOR__DEPARTMENT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MAJOR__COLLEGE"
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__INCOME_ID",
+            "INCOME__DATE_RECEIVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__INCOME_ID",
+            "INCOME__LINK_TO_MEMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__SOURCE",
+            "INCOME__NOTES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__BUDGET_ID",
+            "BUDGET__CATEGORY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__BUDGET_ID",
+            "BUDGET__SPENT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__BUDGET_ID",
+            "BUDGET__REMAINING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__BUDGET_ID",
+            "BUDGET__AMOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__BUDGET_ID",
+            "BUDGET__EVENT_STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__BUDGET_ID",
+            "BUDGET__LINK_TO_EVENT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ZIP_CODE__ZIP_CODE",
+            "ZIP_CODE__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ZIP_CODE__ZIP_CODE",
+            "ZIP_CODE__CITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ZIP_CODE__ZIP_CODE",
+            "ZIP_CODE__COUNTY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ZIP_CODE__ZIP_CODE",
+            "ZIP_CODE__STATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ZIP_CODE__ZIP_CODE",
+            "ZIP_CODE__SHORT_STATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ZIP_CODE__STATE",
+            "ZIP_CODE__SHORT_STATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__EXPENSE_ID",
+            "EXPENSE__EXPENSE_DESCRIPTION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__EXPENSE_ID",
+            "EXPENSE__EXPENSE_DATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__EXPENSE_ID",
+            "EXPENSE__COST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__EXPENSE_ID",
+            "EXPENSE__LINK_TO_MEMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__EXPENSE_ID",
+            "EXPENSE__LINK_TO_BUDGET"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__FIRST_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__LAST_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__EMAIL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__POSITION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__T_SHIRT_SIZE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__PHONE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__ZIP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__LINK_TO_MAJOR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__EMAIL",
+            "MEMBER__PHONE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__EMAIL",
+            "MEMBER__ZIP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__EMAIL",
+            "MEMBER__LINK_TO_MAJOR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_ID",
+            "EVENT__EVENT_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_ID",
+            "EVENT__EVENT_DATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_ID",
+            "EVENT__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_ID",
+            "EVENT__NOTES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_ID",
+            "EVENT__LOCATION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_ID",
+            "EVENT__STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_NAME",
+            "EVENT__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MAJOR__MAJOR_ID",
+            "MAJOR__MAJOR_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MAJOR__MAJOR_ID",
+            "MAJOR__DEPARTMENT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MAJOR__MAJOR_ID",
+            "MAJOR__COLLEGE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MAJOR__MAJOR_NAME",
+            "MAJOR__DEPARTMENT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MAJOR__MAJOR_NAME",
+            "MAJOR__COLLEGE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MAJOR__DEPARTMENT",
+            "MAJOR__COLLEGE"
+          ]
+        }
+      }
+    ]
+  ]
+}

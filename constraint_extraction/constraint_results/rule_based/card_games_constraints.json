@@ -1,0 +1,9484 @@
+{
+  "card_games": [
+    [
+      {
+        "primary": [
+          {
+            "value": "CARDS__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "FOREIGN_DATA__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "LEGALITIES__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "SETS__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "SET_TRANSLATIONS__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "RULINGS__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "FOREIGN_DATA__UUID"
+          },
+          {
+            "value": "CARDS__UUID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "LEGALITIES__UUID"
+          },
+          {
+            "value": "CARDS__UUID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "RULINGS__UUID"
+          },
+          {
+            "value": "CARDS__UUID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "SET_TRANSLATIONS__SETCODE"
+          },
+          {
+            "value": "CARDS__SETCODE"
+          }
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LEGALITIES__ID"
+          },
+          1.0,
+          427907.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__ID"
+          },
+          1.0,
+          56832.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__CONVERTEDMANACOST"
+          },
+          0.0,
+          1000000.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__EDHRECRANK"
+          },
+          1.0,
+          20900.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__FACECONVERTEDMANACOST"
+          },
+          0.0,
+          7.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__HASALTERNATIVEDECKLIMIT"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__HASCONTENTWARNING"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__HASFOIL"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__HASNONFOIL"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__ISALTERNATIVE"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__ISFULLART"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__ISONLINEONLY"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__ISOVERSIZED"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__ISPROMO"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__ISREPRINT"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__ISRESERVED"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__ISSTARTER"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__ISSTORYSPOTLIGHT"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__ISTEXTLESS"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CARDS__ISTIMESHIFTED"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RULINGS__ID"
+          },
+          1.0,
+          87769.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SET_TRANSLATIONS__ID"
+          },
+          1.0,
+          1210.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SETS__ID"
+          },
+          1.0,
+          551.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SETS__BASESETSIZE"
+          },
+          0.0,
+          1694.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SETS__ISFOILONLY"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SETS__ISFOREIGNONLY"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SETS__ISNONFOILONLY"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SETS__ISONLINEONLY"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SETS__ISPARTIALPREVIEW"
+          },
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SETS__MCMID"
+          },
+          4.0,
+          3660.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SETS__MCMIDEXTRAS"
+          },
+          2371.0,
+          3680.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SETS__TCGPLAYERGROUPID"
+          },
+          1.0,
+          2778.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SETS__TOTALSETSIZE"
+          },
+          0.0,
+          1694.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "FOREIGN_DATA__ID"
+          },
+          1.0,
+          229205.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "FOREIGN_DATA__MULTIVERSEID"
+          },
+          73246.0,
+          507640.0
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "LEGALITIES__FORMAT"
+          },
+          [
+            "commander",
+            "duel",
+            "legacy",
+            "modern",
+            "penny",
+            "premodern",
+            "vintage",
+            "gladiator",
+            "historic",
+            "pauper",
+            "pioneer",
+            "brawl",
+            "future",
+            "standard",
+            "oldschool"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "LEGALITIES__STATUS"
+          },
+          [
+            "Legal",
+            "Banned",
+            "Restricted"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__ASCIINAME"
+          },
+          [
+            "El-Hajjaj",
+            "Junun Efreet",
+            "Dandan",
+            "Ghazban Ogre",
+            "Lim-Dul's Vault",
+            "Lim-Dul's Paladin",
+            "Lim-Dul's High Guard",
+            "Juzam Djinn",
+            "Khabal Ghoul",
+            "Ifh-Biff Efreet",
+            "Ring of Ma'ruf",
+            "Jotun Grunt",
+            "Jotun Owl Keeper",
+            "Legions of Lim-Dul",
+            "Seance",
+            "Lim-Dul's Cohort",
+            "Lim-Dul's Hex",
+            "Oath of Lim-Dul",
+            "Marton Stromgald",
+            "Deja Vu",
+            "Lim-Dul the Necromancer",
+            "Chicken a la King",
+            "The Ultimate Nightmare of Wizards of the Coast Customer Service",
+            "Ghazban Ogress",
+            "Saute",
+            "Bosium Strip"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__AVAILABILITY"
+          },
+          [
+            "mtgo,paper",
+            "paper",
+            "arena",
+            "arena,mtgo,paper",
+            "arena,paper",
+            "mtgo",
+            "arena,mtgo",
+            "shandalar",
+            "dreamcast"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__BORDERCOLOR"
+          },
+          [
+            "black",
+            "white",
+            "borderless",
+            "silver",
+            "gold"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__COLORINDICATOR"
+          },
+          [
+            "U",
+            "G",
+            "R",
+            "B",
+            "G,R",
+            "W",
+            "G,R,W",
+            "B,G",
+            "B,R,U"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__CONVERTEDMANACOST"
+          },
+          [
+            7.0,
+            5.0,
+            4.0,
+            1.0,
+            6.0,
+            3.0,
+            2.0,
+            9.0,
+            8.0,
+            0.0,
+            10.0,
+            12.0,
+            14.0,
+            11.0,
+            16.0,
+            13.0,
+            15.0,
+            1000000.0,
+            0.5
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__DUELDECK"
+          },
+          [
+            "a",
+            "b"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__FACECONVERTEDMANACOST"
+          },
+          [
+            4.0,
+            5.0,
+            6.0,
+            3.0,
+            2.0,
+            1.0,
+            7.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__FLAVORNAME"
+          },
+          [
+            "Godzilla, King of the Monsters",
+            "King Caesar, Ancient Guardian",
+            "Mothra, Supersonic Queen",
+            "Babygodzilla, Ruin Reborn",
+            "Spacegodzilla, Death Corona",
+            "Spacegodzilla, Void Invader",
+            "Destoroyah, Perfect Lifeform",
+            "Godzilla, Doom Inevitable",
+            "Anguirus, Armored Killer",
+            "Godzilla, Primeval Champion",
+            "Bio-Quartz Spacegodzilla",
+            "Ghidorah, King of the Cosmos",
+            "Biollante, Plant Beast Form",
+            "King Caesar, Awoken Titan",
+            "Dorat, the Perfect Pet",
+            "Rodan, Titan of Winged Fury",
+            "Gigan, Cyberclaw Terror",
+            "Mothra's Great Cocoon",
+            "Battra, Dark Destroyer",
+            "Mechagodzilla, the Weapon",
+            "Mechagodzilla, Battle Fortress"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__FRAMEVERSION"
+          },
+          [
+            "2003",
+            "1993",
+            "2015",
+            "1997",
+            "future"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__HAND"
+          },
+          [
+            "1",
+            "0",
+            "-2",
+            "-1",
+            "2",
+            "3",
+            "-4",
+            "-3"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__HASALTERNATIVEDECKLIMIT"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__HASCONTENTWARNING"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__HASFOIL"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__HASNONFOIL"
+          },
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__ISALTERNATIVE"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__ISFULLART"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__ISONLINEONLY"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__ISOVERSIZED"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__ISPROMO"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__ISREPRINT"
+          },
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__ISRESERVED"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__ISSTARTER"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__ISSTORYSPOTLIGHT"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__ISTEXTLESS"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__ISTIMESHIFTED"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__LAYOUT"
+          },
+          [
+            "normal",
+            "aftermath",
+            "split",
+            "flip",
+            "leveler",
+            "saga",
+            "vanguard",
+            "transform",
+            "adventure",
+            "meld",
+            "modal_dfc",
+            "scheme",
+            "planar",
+            "host",
+            "augment"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__LEADERSHIPSKILLS"
+          },
+          [
+            "{'brawl': False, 'commander': True, 'oathbreaker': False}",
+            "{'brawl': False, 'commander': False, 'oathbreaker': True}",
+            "{'brawl': False, 'commander': True, 'oathbreaker': True}",
+            "{'brawl': True, 'commander': True, 'oathbreaker': False}",
+            "{'brawl': True, 'commander': False, 'oathbreaker': True}"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__LIFE"
+          },
+          [
+            "-5",
+            "-1",
+            "2",
+            "5",
+            "-4",
+            "0",
+            "-2",
+            "9",
+            "1",
+            "-7",
+            "4",
+            "-3",
+            "-6",
+            "3",
+            "7",
+            "8",
+            "12",
+            "6",
+            "30",
+            "15",
+            "-8",
+            "18",
+            "10"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__LOYALTY"
+          },
+          [
+            "6",
+            "3",
+            "4",
+            "5",
+            "X",
+            "7",
+            "2",
+            "*",
+            "0",
+            "1d4+1",
+            "20"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__POWER"
+          },
+          [
+            "4",
+            "3",
+            "2",
+            "1",
+            "0",
+            "11",
+            "6",
+            "*",
+            "5",
+            "7",
+            "8",
+            "9",
+            "13",
+            "12",
+            "2+*",
+            "10",
+            "-1",
+            "1+*",
+            "?",
+            "16",
+            "15",
+            "99",
+            "\u221e",
+            "1.5",
+            "0.5",
+            "3.5",
+            "2.5",
+            "*\u00b2"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__RARITY"
+          },
+          [
+            "uncommon",
+            "common",
+            "rare",
+            "mythic"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__SIDE"
+          },
+          [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CARDS__SUPERTYPES"
+          },
+          [
+            "Legendary",
+            "Basic",
+            "Legendary,Snow",
+            "World",
+            "Snow",
+            "Basic,Snow",
+            "Ongoing",
+            "Host"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SET_TRANSLATIONS__LANGUAGE"
+          },
+          [
+            "Chinese Simplified",
+            "Chinese Traditional",
+            "French",
+            "German",
+            "Italian",
+            "Japanese",
+            "Korean",
+            "Portuguese (Brazil)",
+            "Russian",
+            "Spanish"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SETS__ISFOILONLY"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SETS__ISFOREIGNONLY"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SETS__ISNONFOILONLY"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SETS__ISONLINEONLY"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SETS__ISPARTIALPREVIEW"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SETS__MCMIDEXTRAS"
+          },
+          [
+            3209,
+            3459,
+            2587,
+            2371,
+            3113,
+            3680,
+            2419,
+            2961,
+            2451,
+            3474
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SETS__TYPE"
+          },
+          [
+            "core",
+            "masters",
+            "expansion",
+            "starter",
+            "memorabilia",
+            "archenemy",
+            "box",
+            "draft_innovation",
+            "commander",
+            "from_the_vault",
+            "funny",
+            "duel_deck",
+            "masterpiece",
+            "promo",
+            "premium_deck",
+            "planechase",
+            "token",
+            "vanguard",
+            "treasure_chest",
+            "spellbook"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "FOREIGN_DATA__LANGUAGE"
+          },
+          [
+            "German",
+            "Spanish",
+            "French",
+            "Italian",
+            "Japanese",
+            "Portuguese (Brazil)",
+            "Russian",
+            "Chinese Simplified",
+            "Korean",
+            "Chinese Traditional",
+            "Phyrexian",
+            "Sanskrit",
+            "Latin",
+            "Hebrew",
+            "Arabic",
+            "Ancient Greek"
+          ]
+        ]
+      },
+      {
+        "not_null": {
+          "value": "LEGALITIES__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "LEGALITIES__FORMAT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "LEGALITIES__STATUS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "LEGALITIES__UUID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__BORDERCOLOR"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__CONVERTEDMANACOST"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__FRAMEVERSION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__HASALTERNATIVEDECKLIMIT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__HASCONTENTWARNING"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__HASFOIL"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__HASNONFOIL"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__ISALTERNATIVE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__ISFULLART"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__ISONLINEONLY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__ISOVERSIZED"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__ISPROMO"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__ISREPRINT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__ISRESERVED"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__ISSTARTER"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__ISSTORYSPOTLIGHT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__ISTEXTLESS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__ISTIMESHIFTED"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__LAYOUT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__MTGJSONV4ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__NUMBER"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__PRINTINGS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__RARITY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__SCRYFALLID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__SCRYFALLORACLEID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__SETCODE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__TYPE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__TYPES"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CARDS__UUID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RULINGS__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RULINGS__DATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RULINGS__TEXT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RULINGS__UUID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SET_TRANSLATIONS__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SET_TRANSLATIONS__LANGUAGE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SET_TRANSLATIONS__SETCODE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SETS__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SETS__BASESETSIZE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SETS__CODE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SETS__ISFOILONLY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SETS__ISFOREIGNONLY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SETS__ISNONFOILONLY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SETS__ISONLINEONLY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SETS__ISPARTIALPREVIEW"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SETS__KEYRUNECODE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SETS__NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SETS__RELEASEDATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SETS__TOTALSETSIZE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SETS__TYPE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FOREIGN_DATA__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FOREIGN_DATA__FLAVORTEXT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FOREIGN_DATA__LANGUAGE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FOREIGN_DATA__NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FOREIGN_DATA__TEXT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FOREIGN_DATA__TYPE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FOREIGN_DATA__UUID"
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LEGALITIES__ID",
+            "LEGALITIES__FORMAT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LEGALITIES__ID",
+            "LEGALITIES__STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LEGALITIES__ID",
+            "LEGALITIES__UUID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ARTIST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ASCIINAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__AVAILABILITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__BORDERCOLOR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__CARDKINGDOMFOILID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__CARDKINGDOMID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__COLORIDENTITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__COLORINDICATOR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__COLORS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__CONVERTEDMANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__DUELDECK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__EDHRECRANK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__FACECONVERTEDMANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__FACENAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__FLAVORNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__FLAVORTEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__FRAMEEFFECTS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__FRAMEVERSION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__HAND"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__HASCONTENTWARNING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__HASFOIL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__HASNONFOIL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ISALTERNATIVE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ISFULLART"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ISONLINEONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ISOVERSIZED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ISPROMO"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ISREPRINT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ISRESERVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ISSTARTER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ISTEXTLESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ISTIMESHIFTED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__KEYWORDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__LAYOUT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__LEADERSHIPSKILLS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__LIFE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__LOYALTY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__MANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__MCMID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__MCMMETAID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__MTGARENAID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__MTGJSONV4ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__MTGOFOILID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__MTGOID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__MULTIVERSEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ORIGINALRELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ORIGINALTEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ORIGINALTYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__OTHERFACEIDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__POWER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__PRINTINGS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__PROMOTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__PURCHASEURLS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__RARITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__SCRYFALLID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__SCRYFALLILLUSTRATIONID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__SCRYFALLORACLEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__SETCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__SIDE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__SUBTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__TEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__TOUGHNESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__TYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__UUID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__VARIATIONS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__COLORIDENTITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__COLORS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__CONVERTEDMANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__EDHRECRANK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__HASCONTENTWARNING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__ISALTERNATIVE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__ISFULLART"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__ISOVERSIZED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__ISRESERVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__ISTEXTLESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__KEYWORDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__LAYOUT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__LEADERSHIPSKILLS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__MANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__MCMMETAID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__ORIGINALRELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__POWER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__PRINTINGS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__SCRYFALLORACLEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__SUBTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__TEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__TOUGHNESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ASCIINAME",
+            "CARDS__TYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__AVAILABILITY",
+            "CARDS__ISONLINEONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__CARDKINGDOMID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__COLORIDENTITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__COLORINDICATOR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__COLORS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__CONVERTEDMANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__DUELDECK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__EDHRECRANK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__FACECONVERTEDMANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__FACENAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__FLAVORNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__FLAVORTEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__FRAMEEFFECTS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__FRAMEVERSION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__HASCONTENTWARNING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__HASFOIL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__HASNONFOIL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISALTERNATIVE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISFULLART"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISONLINEONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISOVERSIZED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISPROMO"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISREPRINT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISRESERVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISSTARTER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISTEXTLESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISTIMESHIFTED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__KEYWORDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__LAYOUT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__LEADERSHIPSKILLS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__LOYALTY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__MANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__MCMID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__MCMMETAID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__MTGARENAID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__MTGJSONV4ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__MTGOFOILID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__MTGOID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__MULTIVERSEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ORIGINALRELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ORIGINALTEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ORIGINALTYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__OTHERFACEIDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__POWER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__PRINTINGS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__PROMOTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__PURCHASEURLS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__RARITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__SCRYFALLID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__SCRYFALLILLUSTRATIONID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__SCRYFALLORACLEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__SETCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__SIDE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__SUBTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__TEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__TOUGHNESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__TYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__UUID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__VARIATIONS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__COLORIDENTITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__COLORINDICATOR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__COLORS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__CONVERTEDMANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__DUELDECK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__EDHRECRANK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__FACECONVERTEDMANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__FACENAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__FLAVORNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__FLAVORTEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__FRAMEEFFECTS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__FRAMEVERSION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__HAND"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__HASCONTENTWARNING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__HASFOIL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__HASNONFOIL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ISALTERNATIVE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ISFULLART"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ISONLINEONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ISOVERSIZED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ISPROMO"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ISREPRINT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ISRESERVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ISSTARTER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ISTEXTLESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ISTIMESHIFTED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__KEYWORDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__LAYOUT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__LEADERSHIPSKILLS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__LIFE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__LOYALTY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__MANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__MCMID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__MCMMETAID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__MTGARENAID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__MTGJSONV4ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__MTGOFOILID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__MTGOID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__MULTIVERSEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ORIGINALRELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ORIGINALTEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ORIGINALTYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__OTHERFACEIDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__POWER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__PRINTINGS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__PROMOTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__PURCHASEURLS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__RARITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__SCRYFALLID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__SCRYFALLILLUSTRATIONID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__SCRYFALLORACLEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__SETCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__SIDE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__SUBTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__TEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__TOUGHNESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__TYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__UUID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__VARIATIONS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__COLORS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__DUELDECK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__FACECONVERTEDMANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__HASCONTENTWARNING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__ISALTERNATIVE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__ISFULLART"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__ISOVERSIZED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__ISRESERVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__ISTEXTLESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__LOYALTY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__MANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__MTGARENAID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__SIDE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__COLORINDICATOR",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__DUELDECK",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__DUELDECK",
+            "CARDS__ISFULLART"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__DUELDECK",
+            "CARDS__ISONLINEONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__DUELDECK",
+            "CARDS__ISOVERSIZED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__DUELDECK",
+            "CARDS__ISPROMO"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__DUELDECK",
+            "CARDS__ISSTARTER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__DUELDECK",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__DUELDECK",
+            "CARDS__ISTEXTLESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__DUELDECK",
+            "CARDS__ISTIMESHIFTED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__HASCONTENTWARNING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__ISRESERVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__LOYALTY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__HASCONTENTWARNING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__ISALTERNATIVE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__ISOVERSIZED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__ISRESERVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__ISTEXTLESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__HASCONTENTWARNING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__ISALTERNATIVE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__ISOVERSIZED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__ISRESERVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__ISTEXTLESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__KEYWORDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__LOYALTY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__MANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__MCMMETAID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__POWER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__SUBTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__TEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__TOUGHNESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACENAME",
+            "CARDS__TYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__FRAMEEFFECTS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__FRAMEVERSION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__HASCONTENTWARNING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__HASFOIL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__HASNONFOIL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__ISALTERNATIVE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__ISFULLART"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__ISONLINEONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__ISOVERSIZED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__ISPROMO"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__ISREPRINT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__ISRESERVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__ISSTARTER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__ISTEXTLESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__ISTIMESHIFTED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__KEYWORDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__LAYOUT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__LEADERSHIPSKILLS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__MANACOST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__MCMID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__MCMMETAID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__MTGARENAID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__MTGJSONV4ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__MTGOID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__MULTIVERSEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__ORIGINALTEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__ORIGINALTYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__POWER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__PRINTINGS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__PROMOTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__PURCHASEURLS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__RARITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__SCRYFALLID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__SCRYFALLILLUSTRATIONID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__SCRYFALLORACLEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__SETCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__SUBTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__TEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__TOUGHNESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__TYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__UUID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORNAME",
+            "CARDS__VARIATIONS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORTEXT",
+            "CARDS__HAND"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORTEXT",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORTEXT",
+            "CARDS__HASCONTENTWARNING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORTEXT",
+            "CARDS__ISRESERVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORTEXT",
+            "CARDS__ISTEXTLESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORTEXT",
+            "CARDS__LAYOUT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORTEXT",
+            "CARDS__LIFE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORTEXT",
+            "CARDS__LOYALTY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FLAVORTEXT",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FRAMEEFFECTS",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FRAMEEFFECTS",
+            "CARDS__HASCONTENTWARNING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FRAMEEFFECTS",
+            "CARDS__ISRESERVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FRAMEEFFECTS",
+            "CARDS__ISTEXTLESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__HASCONTENTWARNING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__HASNONFOIL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__ISALTERNATIVE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__ISFULLART"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__ISPROMO"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__ISREPRINT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__ISRESERVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__ISSTARTER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__ISTEXTLESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__ISTIMESHIFTED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__KEYWORDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__LAYOUT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__PROMOTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__RARITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__TYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__KEYWORDS",
+            "CARDS__LIFE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__LIFE",
+            "CARDS__PROMOTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__LIFE",
+            "CARDS__RARITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__LIFE",
+            "CARDS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__LIFE",
+            "CARDS__TYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__LOYALTY",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__LOYALTY",
+            "CARDS__TYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__LOYALTY",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMID",
+            "CARDS__MCMMETAID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMID",
+            "CARDS__MTGOFOILID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMID",
+            "CARDS__MTGOID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMID",
+            "CARDS__ORIGINALRELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMID",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMMETAID",
+            "CARDS__ORIGINALRELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMMETAID",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__MTGOFOILID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__MTGOID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__ORIGINALRELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__PROMOTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__MTGOFOILID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__MTGOID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__MULTIVERSEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__ORIGINALRELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__ORIGINALTEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__ORIGINALTYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__OTHERFACEIDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__POWER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__PRINTINGS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__PROMOTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__PURCHASEURLS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__RARITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__SCRYFALLID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__SCRYFALLILLUSTRATIONID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__SCRYFALLORACLEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__SETCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__SIDE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__SUBTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__TEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__TOUGHNESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__TYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__UUID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__VARIATIONS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGJSONV4ID",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__MTGOID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__PRINTINGS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__PROMOTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__RARITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__SCRYFALLID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__SCRYFALLORACLEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__SETCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__VARIATIONS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOID",
+            "CARDS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOID",
+            "CARDS__NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOID",
+            "CARDS__ORIGINALRELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOID",
+            "CARDS__PRINTINGS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOID",
+            "CARDS__PROMOTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOID",
+            "CARDS__RARITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOID",
+            "CARDS__SCRYFALLID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOID",
+            "CARDS__SCRYFALLORACLEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOID",
+            "CARDS__SETCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOID",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOID",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOID",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__ORIGINALRELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__PRINTINGS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__PROMOTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__RARITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__SCRYFALLID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__SCRYFALLORACLEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__SETCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NAME",
+            "CARDS__PRINTINGS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NAME",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ORIGINALRELEASEDATE",
+            "CARDS__SIDE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__OTHERFACEIDS",
+            "CARDS__PRINTINGS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__OTHERFACEIDS",
+            "CARDS__PROMOTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__OTHERFACEIDS",
+            "CARDS__SETCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__OTHERFACEIDS",
+            "CARDS__SIDE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__OTHERFACEIDS",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__OTHERFACEIDS",
+            "CARDS__VARIATIONS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__OTHERFACEIDS",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__RARITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__SCRYFALLID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__SCRYFALLILLUSTRATIONID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__SCRYFALLORACLEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__SETCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__SIDE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__SUBTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__TEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__TOUGHNESS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__TYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__UUID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__VARIATIONS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__PURCHASEURLS",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__SCRYFALLID",
+            "CARDS__SCRYFALLORACLEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__SCRYFALLID",
+            "CARDS__SETCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__SCRYFALLID",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__SCRYFALLID",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__SCRYFALLID",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__SCRYFALLORACLEID",
+            "CARDS__SUPERTYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TYPE",
+            "CARDS__TYPES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__UUID",
+            "CARDS__VARIATIONS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__UUID",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__VARIATIONS",
+            "CARDS__WATERMARK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__EDHRECRANK"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISREPRINT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISTEXTLESS"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISALTERNATIVE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__HASFOIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISRESERVED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISTIMESHIFTED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__MTGARENAID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISPROMO"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISFULLART"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__HASNONFOIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__TOUGHNESS"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__FACECONVERTEDMANACOST"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__HASCONTENTWARNING"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISONLINEONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISOVERSIZED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__POWER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__ISSTARTER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMFOILID",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__ISREPRINT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__ISTEXTLESS"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__ISALTERNATIVE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__HASFOIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__ISRESERVED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__ISTIMESHIFTED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__MTGARENAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__ISPROMO"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__ISFULLART"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__HASNONFOIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__TOUGHNESS"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__FACECONVERTEDMANACOST"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__HASCONTENTWARNING"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__CONVERTEDMANACOST"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__ISONLINEONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__ISOVERSIZED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__POWER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__ISSTARTER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__EDHRECRANK",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISREPRINT",
+            "CARDS__ISTEXTLESS"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISREPRINT",
+            "CARDS__NUMBER"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISREPRINT",
+            "CARDS__MTGARENAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISREPRINT",
+            "CARDS__MCMMETAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISREPRINT",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISREPRINT",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISREPRINT",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISREPRINT",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISREPRINT",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISREPRINT",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISREPRINT",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISREPRINT",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISREPRINT",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__NUMBER"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__MTGARENAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__ISFULLART"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__FACECONVERTEDMANACOST"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__MCMMETAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTEXTLESS",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__ISALTERNATIVE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__HASFOIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__ISRESERVED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__ISTIMESHIFTED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__HAND"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__MTGARENAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__ISPROMO"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__ISFULLART"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__HASNONFOIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__HASCONTENTWARNING"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__ISONLINEONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__LIFE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__ISOVERSIZED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__NUMBER",
+            "CARDS__ISSTARTER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISALTERNATIVE",
+            "CARDS__HASFOIL"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISALTERNATIVE",
+            "CARDS__MTGARENAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISALTERNATIVE",
+            "CARDS__FACECONVERTEDMANACOST"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISALTERNATIVE",
+            "CARDS__MCMMETAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISALTERNATIVE",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISALTERNATIVE",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISALTERNATIVE",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISALTERNATIVE",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISALTERNATIVE",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISALTERNATIVE",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISALTERNATIVE",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISALTERNATIVE",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISALTERNATIVE",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASFOIL",
+            "CARDS__MTGARENAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASFOIL",
+            "CARDS__MCMMETAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASFOIL",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASFOIL",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASFOIL",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASFOIL",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASFOIL",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASFOIL",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASFOIL",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASFOIL",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISRESERVED",
+            "CARDS__MTGARENAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISRESERVED",
+            "CARDS__FACECONVERTEDMANACOST"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISRESERVED",
+            "CARDS__MCMMETAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISRESERVED",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISRESERVED",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISRESERVED",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISRESERVED",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISRESERVED",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISRESERVED",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISRESERVED",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISRESERVED",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISRESERVED",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTIMESHIFTED",
+            "CARDS__MTGARENAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTIMESHIFTED",
+            "CARDS__FACECONVERTEDMANACOST"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTIMESHIFTED",
+            "CARDS__MCMMETAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTIMESHIFTED",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTIMESHIFTED",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTIMESHIFTED",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTIMESHIFTED",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTIMESHIFTED",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTIMESHIFTED",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTIMESHIFTED",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTIMESHIFTED",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISTIMESHIFTED",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HAND",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__ISPROMO"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__ISFULLART"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__HASNONFOIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__TOUGHNESS"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__FACECONVERTEDMANACOST"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__HASCONTENTWARNING"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__CONVERTEDMANACOST"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__ISONLINEONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__ISOVERSIZED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__POWER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__ISSTARTER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGARENAID",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISPROMO",
+            "CARDS__MCMMETAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISPROMO",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISPROMO",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISPROMO",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISPROMO",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISPROMO",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISPROMO",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISPROMO",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISPROMO",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISPROMO",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISFULLART",
+            "CARDS__FACECONVERTEDMANACOST"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISFULLART",
+            "CARDS__MCMMETAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISFULLART",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISFULLART",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISFULLART",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISFULLART",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISFULLART",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISFULLART",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISFULLART",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISFULLART",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISFULLART",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASNONFOIL",
+            "CARDS__MCMMETAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASNONFOIL",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASNONFOIL",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASNONFOIL",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASNONFOIL",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASNONFOIL",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASNONFOIL",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASNONFOIL",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASNONFOIL",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TOUGHNESS",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TOUGHNESS",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TOUGHNESS",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TOUGHNESS",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TOUGHNESS",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TOUGHNESS",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TOUGHNESS",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__MCMMETAID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__HASCONTENTWARNING"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__ISOVERSIZED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FACECONVERTEDMANACOST",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMMETAID",
+            "CARDS__HASCONTENTWARNING"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMMETAID",
+            "CARDS__ISONLINEONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMMETAID",
+            "CARDS__ISOVERSIZED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMMETAID",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMMETAID",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMMETAID",
+            "CARDS__POWER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMMETAID",
+            "CARDS__ISSTARTER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMMETAID",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASCONTENTWARNING",
+            "CARDS__CONVERTEDMANACOST"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASCONTENTWARNING",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASCONTENTWARNING",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASCONTENTWARNING",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASCONTENTWARNING",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASCONTENTWARNING",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASCONTENTWARNING",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASCONTENTWARNING",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASCONTENTWARNING",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASCONTENTWARNING",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CONVERTEDMANACOST",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CONVERTEDMANACOST",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CONVERTEDMANACOST",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISONLINEONLY",
+            "CARDS__FRAMEVERSION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISONLINEONLY",
+            "CARDS__MULTIVERSEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISONLINEONLY",
+            "CARDS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISONLINEONLY",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISONLINEONLY",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISONLINEONLY",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISONLINEONLY",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISONLINEONLY",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISONLINEONLY",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FRAMEVERSION",
+            "CARDS__LIFE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FRAMEVERSION",
+            "CARDS__ISOVERSIZED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FRAMEVERSION",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FRAMEVERSION",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FRAMEVERSION",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FRAMEVERSION",
+            "CARDS__POWER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FRAMEVERSION",
+            "CARDS__ISSTARTER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__FRAMEVERSION",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__LIFE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__ISOVERSIZED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__POWER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__ISSTARTER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MULTIVERSEID",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMID",
+            "CARDS__LIFE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMID",
+            "CARDS__ISOVERSIZED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMID",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMID",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMID",
+            "CARDS__POWER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMID",
+            "CARDS__ISSTARTER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MCMID",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__LIFE",
+            "CARDS__TCGPLAYERPRODUCTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__LIFE",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__LIFE",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__LIFE",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TCGPLAYERPRODUCTID",
+            "CARDS__ISOVERSIZED"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TCGPLAYERPRODUCTID",
+            "CARDS__HASALTERNATIVEDECKLIMIT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TCGPLAYERPRODUCTID",
+            "CARDS__ISSTORYSPOTLIGHT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TCGPLAYERPRODUCTID",
+            "CARDS__POWER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TCGPLAYERPRODUCTID",
+            "CARDS__ISSTARTER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__TCGPLAYERPRODUCTID",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISOVERSIZED",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISOVERSIZED",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISOVERSIZED",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISOVERSIZED",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISOVERSIZED",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASALTERNATIVEDECKLIMIT",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASALTERNATIVEDECKLIMIT",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASALTERNATIVEDECKLIMIT",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASALTERNATIVEDECKLIMIT",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__HASALTERNATIVEDECKLIMIT",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISSTORYSPOTLIGHT",
+            "CARDS__CARDKINGDOMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISSTORYSPOTLIGHT",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISSTORYSPOTLIGHT",
+            "CARDS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISSTORYSPOTLIGHT",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISSTORYSPOTLIGHT",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__POWER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__ISSTARTER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__CARDKINGDOMID",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__POWER",
+            "CARDS__MTGOFOILID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__POWER",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__ISSTARTER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__MTGOFOILID",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__ISSTARTER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ID",
+            "CARDS__LOYALTY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__ISSTARTER",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CARDS__LOYALTY",
+            "CARDS__MTGOID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RULINGS__ID",
+            "RULINGS__DATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RULINGS__ID",
+            "RULINGS__TEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RULINGS__ID",
+            "RULINGS__UUID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SET_TRANSLATIONS__ID",
+            "SET_TRANSLATIONS__LANGUAGE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SET_TRANSLATIONS__ID",
+            "SET_TRANSLATIONS__SETCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SET_TRANSLATIONS__ID",
+            "SET_TRANSLATIONS__TRANSLATION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__BASESETSIZE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__BLOCK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__BOOSTER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__CODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__ISFOILONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__ISFOREIGNONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__ISNONFOILONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__ISONLINEONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__ISPARTIALPREVIEW"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__KEYRUNECODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__MCMID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__MCMIDEXTRAS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__MCMNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__MTGOCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__PARENTCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__RELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__TCGPLAYERGROUPID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__TOTALSETSIZE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__BLOCK",
+            "SETS__ISONLINEONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__BLOCK",
+            "SETS__ISPARTIALPREVIEW"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__BOOSTER",
+            "SETS__ISFOILONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__BOOSTER",
+            "SETS__ISFOREIGNONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__BOOSTER",
+            "SETS__ISNONFOILONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__BOOSTER",
+            "SETS__ISPARTIALPREVIEW"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__BOOSTER",
+            "SETS__MCMIDEXTRAS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__BOOSTER",
+            "SETS__PARENTCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__ISFOILONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__ISFOREIGNONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__ISNONFOILONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__ISONLINEONLY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__ISPARTIALPREVIEW"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__KEYRUNECODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__MCMID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__MCMIDEXTRAS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__MCMNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__MTGOCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__PARENTCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__RELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__TCGPLAYERGROUPID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__TOTALSETSIZE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__CODE",
+            "SETS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__KEYRUNECODE",
+            "SETS__MCMIDEXTRAS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMID",
+            "SETS__MCMIDEXTRAS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMID",
+            "SETS__MCMNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMID",
+            "SETS__MTGOCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMID",
+            "SETS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMID",
+            "SETS__PARENTCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMID",
+            "SETS__RELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMID",
+            "SETS__TCGPLAYERGROUPID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMID",
+            "SETS__TOTALSETSIZE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMID",
+            "SETS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__MCMNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__MTGOCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__RELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__TCGPLAYERGROUPID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__TOTALSETSIZE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMNAME",
+            "SETS__MTGOCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMNAME",
+            "SETS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMNAME",
+            "SETS__PARENTCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMNAME",
+            "SETS__RELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMNAME",
+            "SETS__TCGPLAYERGROUPID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMNAME",
+            "SETS__TOTALSETSIZE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMNAME",
+            "SETS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MTGOCODE",
+            "SETS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MTGOCODE",
+            "SETS__PARENTCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MTGOCODE",
+            "SETS__RELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MTGOCODE",
+            "SETS__TCGPLAYERGROUPID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MTGOCODE",
+            "SETS__TOTALSETSIZE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MTGOCODE",
+            "SETS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__NAME",
+            "SETS__PARENTCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__NAME",
+            "SETS__RELEASEDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__NAME",
+            "SETS__TCGPLAYERGROUPID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__NAME",
+            "SETS__TOTALSETSIZE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__NAME",
+            "SETS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__TCGPLAYERGROUPID",
+            "SETS__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__BASESETSIZE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__ISFOILONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__ISONLINEONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__TCGPLAYERGROUPID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__TOTALSETSIZE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__ISFOREIGNONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__ISPARTIALPREVIEW"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__ID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMIDEXTRAS",
+            "SETS__ISNONFOILONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__BASESETSIZE",
+            "SETS__ISONLINEONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__BASESETSIZE",
+            "SETS__TOTALSETSIZE"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__BASESETSIZE",
+            "SETS__ISFOREIGNONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__BASESETSIZE",
+            "SETS__ISPARTIALPREVIEW"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ISFOILONLY",
+            "SETS__TCGPLAYERGROUPID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ISFOILONLY",
+            "SETS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ISFOILONLY",
+            "SETS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ISONLINEONLY",
+            "SETS__TCGPLAYERGROUPID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ISONLINEONLY",
+            "SETS__TOTALSETSIZE"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ISONLINEONLY",
+            "SETS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ISONLINEONLY",
+            "SETS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__TCGPLAYERGROUPID",
+            "SETS__ISFOREIGNONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__TCGPLAYERGROUPID",
+            "SETS__ISPARTIALPREVIEW"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__TCGPLAYERGROUPID",
+            "SETS__ISNONFOILONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__TOTALSETSIZE",
+            "SETS__ISFOREIGNONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__TOTALSETSIZE",
+            "SETS__ISPARTIALPREVIEW"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ISFOREIGNONLY",
+            "SETS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ISFOREIGNONLY",
+            "SETS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ISPARTIALPREVIEW",
+            "SETS__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ISPARTIALPREVIEW",
+            "SETS__MCMID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__ID",
+            "SETS__ISNONFOILONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SETS__MCMID",
+            "SETS__ISNONFOILONLY"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FOREIGN_DATA__ID",
+            "FOREIGN_DATA__FLAVORTEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FOREIGN_DATA__ID",
+            "FOREIGN_DATA__LANGUAGE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FOREIGN_DATA__ID",
+            "FOREIGN_DATA__MULTIVERSEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FOREIGN_DATA__ID",
+            "FOREIGN_DATA__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FOREIGN_DATA__ID",
+            "FOREIGN_DATA__TEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FOREIGN_DATA__ID",
+            "FOREIGN_DATA__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FOREIGN_DATA__ID",
+            "FOREIGN_DATA__UUID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FOREIGN_DATA__MULTIVERSEID",
+            "FOREIGN_DATA__NAME"
+          ]
+        }
+      }
+    ]
+  ]
+}

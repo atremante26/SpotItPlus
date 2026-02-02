@@ -1,0 +1,1069 @@
+{
+  "database": "debit_card_specializing",
+  "between": [
+    {
+      "table": "customers",
+      "column": "CUSTOMERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        3,
+        53314
+      ],
+      "custom_bounds": [
+        0,
+        123819
+      ],
+      "custom_bounds_type": "loose",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The CUSTOMERID is a unique identifier for customers, which should have a strict range based on observed data. The strict bounds [3, 53314] are realistic and appropriate for this column, as IDs should not be negative or exceed the maximum observed value.",
+        "chosen_bounds": [
+          3,
+          53314
+        ]
+      }
+    },
+    {
+      "table": "gasstations",
+      "column": "GASSTATIONID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        44,
+        5772
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The GASSTATIONID is a unique identifier for gas stations, which should logically start from 1 and can extend indefinitely as new gas stations are added. The strict bounds observed (44 to 5772) are based on current data but do not account for future entries. Therefore, using custom bounds [1, +\u221e] is more appropriate to accommodate potential new gas stations.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "gasstations",
+      "column": "CHAINID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        290
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The CHAINID column is an identifier that is naturally bounded by the observed data range. The strict bounds [1, 290] are realistic and cover all observed values, making them appropriate for a BETWEEN constraint. Custom bounds are not necessary as the observed range is sufficient.",
+        "chosen_bounds": [
+          1,
+          290
+        ]
+      }
+    },
+    {
+      "table": "products",
+      "column": "PRODUCTID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        630
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The PRODUCTID is a unique identifier for products, which should logically start from 1 and can go up to the maximum observed value of 630. Since the observed data range is realistic and covers all existing product IDs, strict bounds are appropriate. Custom bounds are not necessary as the observed range is sufficient.",
+        "chosen_bounds": [
+          1,
+          630
+        ]
+      }
+    },
+    {
+      "table": "yearmonth",
+      "column": "CUSTOMERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        5,
+        52353
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The CUSTOMERID column is an identifier that should logically start from 1 and can go up to any positive integer, making it semantically bounded to [1, +\u221e]. The observed data range shows a strict bound of [5, 52353], but using custom bounds is safer to account for potential future entries that may fall below the observed minimum.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "yearmonth",
+      "column": "CONSUMPTION",
+      "data_type": "REAL",
+      "strict_bounds": [
+        -582092.86,
+        2052187.11
+      ],
+      "custom_bounds": [
+        -15040.792500000001,
+        21352.0325
+      ],
+      "custom_bounds_type": "loose",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The CONSUMPTION column is a REAL type that can have a wide range of values, but the observed strict bounds include negative values which may not be semantically correct for consumption data. The custom bounds provide a more reasonable range that excludes extreme outliers, making them safer for handling edge cases.",
+        "chosen_bounds": [
+          -15040.792500000001,
+          21352.0325
+        ]
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "TRANSACTIONID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        1000
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The TRANSACTIONID is a unique identifier for each transaction, which is naturally bounded to positive integers. While the observed data range is [1, 1000], using custom bounds [1, +\u221e] is more appropriate as it allows for future transactions beyond the current dataset while ensuring that IDs remain positive.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "CUSTOMERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        96,
+        49838
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The CUSTOMERID column represents unique identifiers for customers, which are naturally bounded to positive integers. While the observed data range is [96, 49838], using custom bounds [1, +\u221e] is safer to account for potential future customer IDs that may not be present in the current dataset. This ensures that all valid customer IDs are included, especially since IDs typically start from 1.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "CARDID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        26228,
+        775970
+      ],
+      "custom_bounds": [
+        12150,
+        1173565
+      ],
+      "custom_bounds_type": "loose",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The CARDID column represents a unique identifier for cards, which is naturally bounded by the observed data range. The strict bounds [26228, 775970] are realistic and reflect the actual data, making them appropriate for a BETWEEN constraint. Custom bounds are not necessary as the strict bounds sufficiently cover the observed values.",
+        "chosen_bounds": [
+          26228,
+          775970
+        ]
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "GASSTATIONID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        48,
+        5481
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The GASSTATIONID is an identifier that should logically start from 1 and can extend indefinitely as new gas stations are added. The observed data range suggests that there are IDs up to 5481, but using custom bounds of [1, +\u221e] is safer to accommodate future entries and ensure all valid IDs are included.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "PRODUCTID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        2,
+        352
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The PRODUCTID column represents a unique identifier for products, which typically starts from 1 and can theoretically extend indefinitely as new products are added. The strict bounds observed (2 to 352) are based on current data but do not account for potential future products. Therefore, using custom bounds [1, +\u221e] is more appropriate to accommodate new entries while ensuring valid product IDs.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "AMOUNT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        264
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The AMOUNT column represents a monetary value, which is naturally bounded below by 0 (no negative amounts). While the observed data range is [0, 264], it is semantically correct to allow for amounts greater than 264, as there is no upper limit to how much can be spent in a transaction. Therefore, custom bounds [0, +\u221e] are appropriate to accommodate potential future transactions.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "PRICE",
+      "data_type": "REAL",
+      "strict_bounds": [
+        1.76,
+        5762.49
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The PRICE column should have a BETWEEN constraint because it represents monetary values, which are naturally bounded. While the observed data range is [1.76, 5762.49], using custom bounds of [0, +\u221e] is safer to account for potential future transactions that may have prices lower than the observed minimum, ensuring that all valid price entries are captured.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    }
+  ],
+  "in": [
+    {
+      "table": "customers",
+      "column": "SEGMENT",
+      "data_type": "VARCHAR",
+      "categories": [
+        "SME",
+        "LAM",
+        "KAM"
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SEGMENT column has a limited number of unique values (3) and appears to represent distinct categories of customers (SME, LAM, KAM). Given the total number of rows (32461), it is likely that this sample is complete, and these are the only valid values. Therefore, an IN constraint is appropriate to enforce data integrity."
+      }
+    },
+    {
+      "table": "customers",
+      "column": "CURRENCY",
+      "data_type": "VARCHAR",
+      "categories": [
+        "EUR",
+        "CZK"
+      ],
+      "category_count": 2,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CURRENCY column has only 2 unique values (EUR, CZK) out of 32461 total rows, indicating it is likely a complete enumeration for this dataset. Given that these are standard currency codes, it makes sense to enforce an IN constraint to restrict values to these known currencies."
+      }
+    },
+    {
+      "table": "gasstations",
+      "column": "COUNTRY",
+      "data_type": "VARCHAR",
+      "categories": [
+        "CZE",
+        "SVK"
+      ],
+      "category_count": 2,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The COUNTRY column has only 2 unique values ('CZE', 'SVK') out of 5716 total rows, suggesting a controlled vocabulary. Given the limited number of unique values, it is reasonable to assume that these are the only valid entries for this column, making it a true categorical column suitable for an IN constraint."
+      }
+    },
+    {
+      "table": "gasstations",
+      "column": "SEGMENT",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Value for money",
+        "Premium",
+        "Other",
+        "Noname",
+        "Discount"
+      ],
+      "category_count": 5,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SEGMENT column has a limited and defined set of unique values (5), which suggests it is a true categorical column. Given the nature of segments in gas stations, it is reasonable to assume that these categories are stable and unlikely to change frequently, making an IN constraint appropriate."
+      }
+    },
+    {
+      "table": "yearmonth",
+      "column": "DATE",
+      "data_type": "VARCHAR",
+      "categories": [
+        "201207",
+        "201302",
+        "201303",
+        "201304",
+        "201203",
+        "201205",
+        "201305",
+        "201306",
+        "201307",
+        "201308",
+        "201309",
+        "201310",
+        "201311",
+        "201201",
+        "201202",
+        "201204",
+        "201206",
+        "201208",
+        "201209",
+        "201112",
+        "201301"
+      ],
+      "category_count": 21,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The DATE column contains values formatted as 'YYYYMM', which represent specific months and years. While there are currently 21 unique values, this is not a complete enumeration of all possible months and years. New months and years will continue to appear in future data, making it inappropriate to impose an IN constraint that restricts values to the current set."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "DATE",
+      "data_type": "DATE",
+      "categories": [
+        "2012-08-24",
+        "2012-08-23",
+        "2012-08-25",
+        "2012-08-26"
+      ],
+      "category_count": 4,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The DATE column contains only a few unique values in this sample, but dates are inherently not categorical as new dates can always appear in future data. Restricting to these exact values would be too limiting since transactions can occur on any date."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "PRODUCTID",
+      "data_type": "INTEGER",
+      "categories": [
+        2,
+        23,
+        5,
+        11,
+        7,
+        9,
+        22,
+        15,
+        24,
+        12,
+        18,
+        20,
+        317,
+        322,
+        336,
+        332,
+        341,
+        352,
+        31,
+        72,
+        36,
+        8,
+        25,
+        40,
+        44,
+        16,
+        48,
+        19
+      ],
+      "category_count": 28,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While there are 28 unique values in the PRODUCTID column, it is likely that this is not a complete enumeration of all possible products. New products could be introduced in the future, and the current dataset may not capture all existing products. Therefore, it would be too limiting to impose an IN constraint on this column."
+      }
+    }
+  ],
+  "not_null": [
+    {
+      "table": "customers",
+      "column": "CUSTOMERID",
+      "data_type": "INTEGER",
+      "total_rows": 32461,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CUSTOMERID is a primary key that uniquely identifies each customer, making it logically required for every record. The column description indicates it is an identification of the customer, further supporting the necessity of this field. Future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "customers",
+      "column": "SEGMENT",
+      "data_type": "VARCHAR",
+      "total_rows": 32461,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SEGMENT field is logically required as it categorizes customers into specific segments, which is essential for understanding customer demographics and targeting. The column description indicates it is a client segment, suggesting its importance. Future records would likely need this information for effective customer management."
+      }
+    },
+    {
+      "table": "customers",
+      "column": "CURRENCY",
+      "data_type": "VARCHAR",
+      "total_rows": 32461,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CURRENCY field is essential for identifying the currency used by customers, which is critical for financial transactions. Given that it serves as a key identifier for monetary values, it should not be nullable. The column description supports its necessity, indicating that it is a required attribute for each customer."
+      }
+    },
+    {
+      "table": "gasstations",
+      "column": "GASSTATIONID",
+      "data_type": "INTEGER",
+      "total_rows": 5716,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "GASSTATIONID is a primary identifier for gas stations, making it logically required for every record. The column name and description indicate that it is essential for identifying each gas station, and it is unlikely that future records would omit this field."
+      }
+    },
+    {
+      "table": "gasstations",
+      "column": "CHAINID",
+      "data_type": "INTEGER",
+      "total_rows": 5716,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CHAINID is likely a foreign key that identifies the chain to which the gas station belongs. As such, it is logically required for every record to establish the relationship between gas stations and their respective chains. The column name and the context suggest that it is essential for the integrity of the data, and future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "gasstations",
+      "column": "COUNTRY",
+      "data_type": "VARCHAR",
+      "total_rows": 5716,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The COUNTRY field is logically required as it identifies the location of the gas station, which is essential for understanding the context of the gas station's operations. Given that it is a key attribute for gas stations, it should not be nullable."
+      }
+    },
+    {
+      "table": "gasstations",
+      "column": "SEGMENT",
+      "data_type": "VARCHAR",
+      "total_rows": 5716,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The SEGMENT column provides additional categorization for gas stations but is not essential for the identification or operation of a gas station. Future records could reasonably omit this field, as it is not a primary key or foreign key, and the description does not indicate it is required."
+      }
+    },
+    {
+      "table": "products",
+      "column": "PRODUCTID",
+      "data_type": "INTEGER",
+      "total_rows": 591,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The PRODUCTID serves as a unique identifier for each product, making it essential for every record in the PRODUCTS table. As a primary key, it logically requires a NOT NULL constraint to ensure data integrity and proper identification of products."
+      }
+    },
+    {
+      "table": "products",
+      "column": "DESCRIPTION",
+      "data_type": "VARCHAR",
+      "total_rows": 591,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DESCRIPTION field is essential for identifying the product, as it provides necessary context and information about what the product is. Given that it serves as a key descriptor for the products, it should not be nullable. Future records would logically require a description to maintain the integrity and usability of the data."
+      }
+    },
+    {
+      "table": "yearmonth",
+      "column": "CUSTOMERID",
+      "data_type": "INTEGER",
+      "total_rows": 383282,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CUSTOMERID column is essential for identifying which customer the consumption data belongs to. As it serves as a foreign key linking to the CUSTOMERS table, it is logically required for every record in the YEARMONTH table. The column description indicates it is a Customer ID, reinforcing its necessity. Future records would not make sense without this identifier."
+      }
+    },
+    {
+      "table": "yearmonth",
+      "column": "DATE",
+      "data_type": "VARCHAR",
+      "total_rows": 383282,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DATE column in the YEARMONTH table is logically required as it represents a specific time period for consumption data. Given that it is essential for understanding the context of the consumption records, it should have a NOT NULL constraint to ensure that every record has a valid date associated with it."
+      }
+    },
+    {
+      "table": "yearmonth",
+      "column": "CONSUMPTION",
+      "data_type": "REAL",
+      "total_rows": 383282,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CONSUMPTION field is essential for understanding customer usage patterns, as it represents the consumption amount associated with each customer and date. Given that it is a key metric for analysis and the column description indicates it is related to consumption, it should have a NOT NULL constraint to ensure data integrity and completeness in future records."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "TRANSACTIONID",
+      "data_type": "INTEGER",
+      "total_rows": 1000,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TRANSACTIONID is a primary key for the TRANSACTIONS_1K table, which logically requires it to be unique and non-null for every record. This field is essential for identifying each transaction, and future records must have a TRANSACTIONID to maintain data integrity."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "DATE",
+      "data_type": "DATE",
+      "total_rows": 1000,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DATE field is logically required for every transaction record as it indicates when the transaction occurred. It is essential for tracking and analyzing transaction history, and future records would not make sense without a date. The column description supports its necessity."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "TIME",
+      "data_type": "VARCHAR",
+      "total_rows": 1000,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TIME field is logically required for each transaction as it indicates when the transaction occurred. Omitting this field would make it difficult to understand the timing of transactions, which is essential for analysis and reporting. The column description does not suggest it is optional, and the nature of transaction records implies that a time is necessary."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "CUSTOMERID",
+      "data_type": "INTEGER",
+      "total_rows": 1000,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CUSTOMERID is a foreign key that identifies the customer associated with each transaction. It is logically required for every transaction record to link it to a customer, making it essential for data integrity. The column description indicates it is a Customer ID, further supporting the need for a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "CARDID",
+      "data_type": "INTEGER",
+      "total_rows": 1000,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CARDID field is essential for identifying the specific card used in each transaction. As it serves as a foreign key linking to card information, it is logically required for every transaction record. The column description indicates it is a 'Card ID', which suggests it is a necessary identifier. Future records would reasonably need this field to maintain data integrity and ensure each transaction can be associated with a specific card."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "GASSTATIONID",
+      "data_type": "INTEGER",
+      "total_rows": 1000,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The GASSTATIONID is a foreign key that identifies the gas station associated with each transaction. It is logically required for every transaction record to link it to a specific gas station, making it essential for the integrity of the data. The column name and its role in the context of transactions suggest that it should always be present."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "PRODUCTID",
+      "data_type": "INTEGER",
+      "total_rows": 1000,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The PRODUCTID is essential for identifying the specific product associated with each transaction. As a foreign key, it logically should not be null for any transaction record, indicating that it is required for the integrity of the data."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "AMOUNT",
+      "data_type": "INTEGER",
+      "total_rows": 1000,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The AMOUNT field is logically required for every transaction record as it represents the monetary value of the transaction. It is essential for calculating totals and understanding transaction details. The column description indicates it is a critical attribute, and future records would not make sense without this information."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "column": "PRICE",
+      "data_type": "REAL",
+      "total_rows": 1000,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The PRICE field is essential for each transaction as it represents the cost associated with the transaction. Given that it is a financial attribute, it logically cannot be null for any record, and the column description supports its necessity."
+      }
+    }
+  ],
+  "dependency": [
+    {
+      "table": "customers",
+      "type": "functional",
+      "column_a": "CUSTOMERID",
+      "column_b": "SEGMENT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CUSTOMERID": 3,
+          "SEGMENT": "SME"
+        },
+        {
+          "CUSTOMERID": 5,
+          "SEGMENT": "LAM"
+        },
+        {
+          "CUSTOMERID": 6,
+          "SEGMENT": "SME"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CUSTOMERID \u2192 SEGMENT is meaningful as it establishes a clear relationship between a unique customer identifier and their corresponding segment. Given the total of 32,461 rows and the observed 100% consistency in the mapping, this dependency is reliable. It is not trivial since it is not a primary key to any other column, and enforcing this constraint would help ensure data integrity and verify query correctness regarding customer segmentation."
+      }
+    },
+    {
+      "table": "customers",
+      "type": "functional",
+      "column_a": "CUSTOMERID",
+      "column_b": "CURRENCY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CUSTOMERID": 3,
+          "CURRENCY": "EUR"
+        },
+        {
+          "CUSTOMERID": 5,
+          "CURRENCY": "EUR"
+        },
+        {
+          "CUSTOMERID": 6,
+          "CURRENCY": "EUR"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CUSTOMERID \u2192 CURRENCY is meaningful as it establishes a clear relationship between a customer and their associated currency. Given that there are 32,461 rows and the mapping is 100% consistent, it suggests reliability. This is not a trivial dependency since CUSTOMERID is a primary key, but enforcing this constraint can help ensure data integrity and verify query correctness regarding customer currency associations."
+      }
+    },
+    {
+      "table": "gasstations",
+      "type": "functional",
+      "column_a": "GASSTATIONID",
+      "column_b": "CHAINID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "GASSTATIONID": 44,
+          "CHAINID": 13
+        },
+        {
+          "GASSTATIONID": 45,
+          "CHAINID": 6
+        },
+        {
+          "GASSTATIONID": 46,
+          "CHAINID": 23
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency GASSTATIONID \u2192 CHAINID is meaningful as each gas station is associated with a specific chain, which is a semantic relationship. The observed mapping is consistent across 5716 rows, indicating reliability. Since GASSTATIONID is a primary key, this dependency is not trivial and enforcing it would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "gasstations",
+      "type": "functional",
+      "column_a": "GASSTATIONID",
+      "column_b": "COUNTRY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "GASSTATIONID": 44,
+          "COUNTRY": "CZE"
+        },
+        {
+          "GASSTATIONID": 45,
+          "COUNTRY": "CZE"
+        },
+        {
+          "GASSTATIONID": 46,
+          "COUNTRY": "CZE"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "GASSTATIONID is a unique identifier for gas stations, and it consistently maps to a specific COUNTRY. This is a meaningful semantic relationship as each gas station is located in exactly one country, making it a reliable functional dependency that adds value for query verification."
+      }
+    },
+    {
+      "table": "gasstations",
+      "type": "functional",
+      "column_a": "GASSTATIONID",
+      "column_b": "SEGMENT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "GASSTATIONID": 44,
+          "SEGMENT": "Value for money"
+        },
+        {
+          "GASSTATIONID": 45,
+          "SEGMENT": "Premium"
+        },
+        {
+          "GASSTATIONID": 46,
+          "SEGMENT": "Other"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency GASSTATIONID \u2192 SEGMENT is meaningful as it establishes a clear relationship between a unique identifier (GASSTATIONID) and its corresponding segment classification. Given the observed mapping is 100% consistent across 5716 rows, it indicates reliability. This relationship is not trivial since GASSTATIONID is a primary key, but it provides valuable semantic information that can help verify query correctness and ensure data integrity regarding gas station classifications."
+      }
+    },
+    {
+      "table": "gasstations",
+      "type": "functional",
+      "column_a": "CHAINID",
+      "column_b": "COUNTRY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CHAINID": 13,
+          "COUNTRY": "CZE"
+        },
+        {
+          "CHAINID": 6,
+          "COUNTRY": "CZE"
+        },
+        {
+          "CHAINID": 23,
+          "COUNTRY": "CZE"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that multiple CHAINID values map to the same COUNTRY (CZE), indicating that CHAINID does not uniquely determine COUNTRY. Therefore, this is not a meaningful functional dependency that should be enforced as a constraint."
+      }
+    },
+    {
+      "table": "gasstations",
+      "type": "functional",
+      "column_a": "CHAINID",
+      "column_b": "SEGMENT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CHAINID": 13,
+          "SEGMENT": "Value for money"
+        },
+        {
+          "CHAINID": 6,
+          "SEGMENT": "Premium"
+        },
+        {
+          "CHAINID": 23,
+          "SEGMENT": "Other"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CHAINID \u2192 SEGMENT is meaningful as it establishes a clear relationship between a chain identifier and its corresponding segment classification. The observed mapping is consistent across all 5716 rows, indicating reliability. This is not a trivial primary key relationship, as CHAINID is not a primary key in the context of this dependency. Enforcing this constraint would enhance data integrity and help verify query correctness by ensuring that each chain ID consistently maps to the correct segment."
+      }
+    },
+    {
+      "table": "products",
+      "type": "functional",
+      "column_a": "PRODUCTID",
+      "column_b": "DESCRIPTION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PRODUCTID": 1,
+          "DESCRIPTION": "Rucn\u00ed zad\u00e1n\u00ed"
+        },
+        {
+          "PRODUCTID": 2,
+          "DESCRIPTION": "Nafta"
+        },
+        {
+          "PRODUCTID": 3,
+          "DESCRIPTION": "Special"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency PRODUCTID \u2192 DESCRIPTION is meaningful as each product ID uniquely maps to a specific product description, which is a semantic relationship. Given the observed consistency across 591 rows, it is reliable and would help verify query correctness by ensuring that each product ID always corresponds to the correct description."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "type": "functional",
+      "column_a": "TRANSACTIONID",
+      "column_b": "DATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANSACTIONID": 1,
+          "DATE": "2012-08-24"
+        },
+        {
+          "TRANSACTIONID": 2,
+          "DATE": "2012-08-24"
+        },
+        {
+          "TRANSACTIONID": 3,
+          "DATE": "2012-08-24"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "TRANSACTIONID is a primary key, which inherently ensures that each TRANSACTIONID maps to exactly one DATE. This is a trivial dependency and does not add meaningful semantic value or verification for queries."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "type": "functional",
+      "column_a": "TRANSACTIONID",
+      "column_b": "TIME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANSACTIONID": 1,
+          "TIME": "09:41:00"
+        },
+        {
+          "TRANSACTIONID": 2,
+          "TIME": "10:03:00"
+        },
+        {
+          "TRANSACTIONID": 3,
+          "TIME": "10:03:00"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANSACTIONID is a unique identifier for each transaction, and it consistently maps to a single TIME value. This is a meaningful functional dependency as it ensures that each transaction has a specific time associated with it, which is crucial for data integrity and query correctness."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "type": "functional",
+      "column_a": "TRANSACTIONID",
+      "column_b": "CUSTOMERID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANSACTIONID": 1,
+          "CUSTOMERID": 31543
+        },
+        {
+          "TRANSACTIONID": 2,
+          "CUSTOMERID": 46707
+        },
+        {
+          "TRANSACTIONID": 3,
+          "CUSTOMERID": 46707
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANSACTIONID is a unique identifier for each transaction, and it consistently maps to a single CUSTOMERID. This is a meaningful functional dependency as it establishes a clear relationship between a transaction and the customer associated with it. Enforcing this constraint would help ensure data integrity and verify query correctness, as each transaction should always be linked to exactly one customer."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "type": "functional",
+      "column_a": "TRANSACTIONID",
+      "column_b": "CARDID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANSACTIONID": 1,
+          "CARDID": 486621
+        },
+        {
+          "TRANSACTIONID": 2,
+          "CARDID": 550134
+        },
+        {
+          "TRANSACTIONID": 3,
+          "CARDID": 550134
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANSACTIONID is a unique identifier for each transaction, and it consistently maps to a single CARDID. This indicates a meaningful functional dependency where each transaction is associated with exactly one card. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents the possibility of multiple cards being associated with the same transaction."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "type": "functional",
+      "column_a": "TRANSACTIONID",
+      "column_b": "GASSTATIONID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANSACTIONID": 1,
+          "GASSTATIONID": 3704
+        },
+        {
+          "TRANSACTIONID": 2,
+          "GASSTATIONID": 3704
+        },
+        {
+          "TRANSACTIONID": 3,
+          "GASSTATIONID": 3704
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANSACTIONID is a unique identifier for each transaction, and it consistently maps to a single GASSTATIONID. This indicates a meaningful relationship where each transaction is associated with exactly one gas station, which is semantically relevant for ensuring data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "type": "functional",
+      "column_a": "TRANSACTIONID",
+      "column_b": "PRODUCTID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANSACTIONID": 1,
+          "PRODUCTID": 2
+        },
+        {
+          "TRANSACTIONID": 2,
+          "PRODUCTID": 2
+        },
+        {
+          "TRANSACTIONID": 3,
+          "PRODUCTID": 23
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANSACTIONID is a unique identifier for each transaction, and it consistently maps to a single PRODUCTID across the observed data. This indicates a meaningful relationship where each transaction corresponds to exactly one product, which is semantically relevant for ensuring data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "type": "functional",
+      "column_a": "TRANSACTIONID",
+      "column_b": "AMOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANSACTIONID": 1,
+          "AMOUNT": 28
+        },
+        {
+          "TRANSACTIONID": 2,
+          "AMOUNT": 18
+        },
+        {
+          "TRANSACTIONID": 3,
+          "AMOUNT": 1
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANSACTIONID is a unique identifier for each transaction, and it consistently maps to a single AMOUNT. This is a meaningful functional dependency as it ensures that each transaction has a defined amount associated with it, which is crucial for data integrity and query correctness."
+      }
+    },
+    {
+      "table": "transactions_1k",
+      "type": "functional",
+      "column_a": "TRANSACTIONID",
+      "column_b": "PRICE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANSACTIONID": 1.0,
+          "PRICE": 672.64
+        },
+        {
+          "TRANSACTIONID": 2.0,
+          "PRICE": 430.72
+        },
+        {
+          "TRANSACTIONID": 3.0,
+          "PRICE": 121.99
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANSACTIONID is a unique identifier for each transaction, and it consistently maps to a single PRICE value. This is a meaningful functional dependency as it ensures that each transaction has a specific price, which is essential for data integrity and query verification. Although it is a primary key, enforcing this dependency adds value by explicitly confirming the relationship between transaction IDs and their corresponding prices."
+      }
+    }
+  ]
+}

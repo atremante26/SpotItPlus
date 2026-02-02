@@ -1,0 +1,3609 @@
+{
+  "database": "financial",
+  "between": [
+    {
+      "table": "loan",
+      "column": "LOAN_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        4959,
+        7308
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The LOAN_ID is a unique identifier for loans, and while it has a strict observed range, it is semantically correct to use the exact observed range as a constraint since it reflects the actual data present in the database. Using custom bounds would not be appropriate as it could allow for IDs that do not exist.",
+        "chosen_bounds": [
+          4959,
+          7308
+        ]
+      }
+    },
+    {
+      "table": "loan",
+      "column": "ACCOUNT_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        2,
+        11362
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ACCOUNT_ID column represents unique identifiers for accounts, which are naturally bounded to positive integers. While the strict observed range is [2, 11362], using custom bounds [1, +\u221e] is safer to account for potential future entries and ensures that all valid account IDs are included, as IDs typically start from 1.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "loan",
+      "column": "AMOUNT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        4980,
+        590820
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The AMOUNT column represents approved loan amounts, which are naturally bounded to be non-negative. The strict bounds observed (4980 to 590820) are realistic and reflect the actual data range. Since the values are all positive and there are no negative amounts, using the strict bounds is appropriate to ensure valid loan amounts.",
+        "chosen_bounds": [
+          4980,
+          590820
+        ]
+      }
+    },
+    {
+      "table": "loan",
+      "column": "DURATION",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        12,
+        60
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The DURATION column represents the loan duration in months, which is semantically expected to be a positive integer. While the observed data range is [12, 60], it is reasonable to allow for durations shorter than 12 months (e.g., 1 month) based on common lending practices. Therefore, custom bounds of [1, +\u221e] are more appropriate to accommodate potential edge cases.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "loan",
+      "column": "PAYMENTS",
+      "data_type": "REAL",
+      "strict_bounds": [
+        304.0,
+        9910.0
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The PAYMENTS column represents monthly payments, which should logically be non-negative (0 to +\u221e). While the observed data range is [304.0, 9910.0], using custom bounds of [0, +\u221e] is safer to account for potential future values that may fall below the observed minimum, ensuring that all valid payment scenarios are covered.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "client",
+      "column": "CLIENT_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        13998
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "CLIENT_ID is a unique identifier for clients, which should logically start from 1 and can potentially increase indefinitely as new clients are added. The strict bounds observed (1 to 13998) are based on current data but do not account for future growth. Therefore, using custom bounds [1, +\u221e] is more appropriate to accommodate new entries.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "client",
+      "column": "DISTRICT_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        77
+      ],
+      "custom_bounds": [
+        1,
+        77
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The DISTRICT_ID is a naturally bounded value representing specific districts, and the observed data range [1, 77] is realistic and matches the semantic meaning of the column. Since the strict bounds align with the observed data, they can be safely used for the BETWEEN constraint.",
+        "chosen_bounds": [
+          1,
+          77
+        ]
+      }
+    },
+    {
+      "table": "district",
+      "column": "DISTRICT_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        77
+      ],
+      "custom_bounds": [
+        1,
+        77
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The DISTRICT_ID is a naturally bounded value representing unique identifiers for districts. The observed data range [1, 77] is realistic and matches the semantic meaning of the column, which indicates that all district IDs are within this range. Therefore, strict bounds are appropriate.",
+        "chosen_bounds": [
+          1,
+          77
+        ]
+      }
+    },
+    {
+      "table": "district",
+      "column": "A8",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        5
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The column A8 represents a count of municipalities, which is naturally bounded to non-negative integers. The observed data range [0, 5] is realistic and reflects the actual data. Since the values do not exceed 5 and are all within the range of 0 to 5, strict bounds are appropriate to ensure data integrity.",
+        "chosen_bounds": [
+          0,
+          5
+        ]
+      }
+    },
+    {
+      "table": "district",
+      "column": "A9",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        11
+      ],
+      "custom_bounds": [
+        1,
+        11
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The column A9 is an INTEGER type with a clearly defined observed data range of [1, 11]. The values are bounded and represent a count or measurement that is naturally limited to this range. Since the strict bounds match the observed data range and are realistic given the context, they should be used for the BETWEEN constraint.",
+        "chosen_bounds": [
+          1,
+          11
+        ]
+      }
+    },
+    {
+      "table": "district",
+      "column": "A10",
+      "data_type": "REAL",
+      "strict_bounds": [
+        33.9,
+        100.0
+      ],
+      "custom_bounds": [
+        0,
+        100
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The column A10 represents the ratio of urban inhabitants, which is naturally bounded between 0 and 100. While the observed data range is [33.9, 100.0], using custom bounds of [0, 100] is safer to account for potential edge cases and ensure all valid ratios are included, especially since the semantic meaning implies that values should not fall below 0 or exceed 100.",
+        "chosen_bounds": [
+          0,
+          100
+        ]
+      }
+    },
+    {
+      "table": "district",
+      "column": "A11",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        8110,
+        12541
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The A11 column represents average salary, which is a naturally bounded value that should not be negative. The observed data range is realistic and reflects actual data, so strict bounds are appropriate. Custom bounds are not necessary as the observed range is valid.",
+        "chosen_bounds": [
+          8110,
+          12541
+        ]
+      }
+    },
+    {
+      "table": "district",
+      "column": "A12",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.2,
+        7.3
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The column A12 represents the unemployment rate for the year 1995, which is a naturally bounded value that should logically fall within the range of 0 to 100 percent. The observed data range of [0.2, 7.3] is realistic and reflects actual data, making strict bounds appropriate. Custom bounds of [0, +\u221e] would not be suitable as unemployment rates cannot exceed 100%.",
+        "chosen_bounds": [
+          0.2,
+          7.3
+        ]
+      }
+    },
+    {
+      "table": "district",
+      "column": "A13",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.43,
+        9.4
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The column A13 represents the unemployment rate for the years 1996, which is a naturally bounded value. The observed data range is realistic and reflects the actual data collected, making strict bounds appropriate. Custom bounds would not be necessary as the observed range already covers the expected values.",
+        "chosen_bounds": [
+          0.43,
+          9.4
+        ]
+      }
+    },
+    {
+      "table": "district",
+      "column": "A14",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        81,
+        167
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The column A14 represents the number of entrepreneurs per 1000 inhabitants, which is a naturally bounded value. The observed data range of [81, 167] is realistic and reflects the actual data. Therefore, strict bounds should be used to ensure that only valid values within this range are accepted.",
+        "chosen_bounds": [
+          81,
+          167
+        ]
+      }
+    },
+    {
+      "table": "district",
+      "column": "A15",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        818,
+        85677
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The column A15 represents the number of committed crimes in 1995, which is a naturally bounded value that cannot be negative. While the observed data range is [818, 85677], using custom bounds [0, +\u221e] is safer to account for potential future data that may not be captured in the current dataset. This ensures that any valid count of crimes is included, as counts cannot be negative.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "district",
+      "column": "A16",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        888,
+        99107
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The column A16 represents the number of committed crimes in a district, which is a naturally bounded value that cannot be negative. The observed data range is realistic and reflects the actual data, so strict bounds are appropriate. Custom bounds would not be necessary as the observed range already covers the valid values.",
+        "chosen_bounds": [
+          888,
+          99107
+        ]
+      }
+    },
+    {
+      "table": "trans",
+      "column": "TRANS_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        3682987
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The TRANS_ID column is an identifier that should be unique and positive, making it semantically bounded to be greater than or equal to 1. While the observed data range is [1, 3682987], using custom bounds [1, +\u221e] is more appropriate to accommodate future entries beyond the current maximum observed value.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "trans",
+      "column": "ACCOUNT_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        11382
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ACCOUNT_ID is a unique identifier for accounts, which should logically be a positive integer. While the observed data range is [1, 11382], using custom bounds [1, +\u221e] is more appropriate as it allows for future accounts beyond the current maximum observed value, ensuring that the constraint remains valid as new data is added.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "trans",
+      "column": "AMOUNT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        87400
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The AMOUNT column represents a monetary value, which is naturally bounded to be non-negative (0 to +\u221e). The observed data range shows a minimum of 0 and a maximum of 87400, which is realistic given the context of transactions. However, since monetary amounts can theoretically be any non-negative value, using strict bounds would be appropriate to ensure valid transactions while still allowing for future values beyond the observed maximum.",
+        "chosen_bounds": [
+          0,
+          87400
+        ]
+      }
+    },
+    {
+      "table": "trans",
+      "column": "BALANCE",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        -41126,
+        209637
+      ],
+      "custom_bounds": [
+        null,
+        0
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The BALANCE column represents the account balance, which can be negative (indicating debt) or positive. The observed data range is realistic and reflects actual account balances, so strict bounds are appropriate. Custom bounds would not accurately represent the possible values for this column.",
+        "chosen_bounds": [
+          -41126,
+          209637
+        ]
+      }
+    },
+    {
+      "table": "trans",
+      "column": "ACCOUNT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        99994199
+      ],
+      "custom_bounds": [
+        0,
+        234567876
+      ],
+      "custom_bounds_type": "loose",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ACCOUNT column is an INTEGER type that represents account identifiers, which are naturally bounded to non-negative values. The strict bounds [0, 99994199] are realistic and reflect the observed data range accurately. Since the values are identifiers, using strict bounds is appropriate to ensure valid account references.",
+        "chosen_bounds": [
+          0,
+          99994199
+        ]
+      }
+    },
+    {
+      "table": "account",
+      "column": "ACCOUNT_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        11382
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ACCOUNT_ID is a unique identifier for accounts, which should logically start from 1 and can extend indefinitely as new accounts are created. The strict bounds observed (1 to 11382) are based on current data but do not account for future growth. Therefore, using custom bounds [1, +\u221e] is more appropriate to accommodate the potential for new accounts beyond the current maximum.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "account",
+      "column": "DISTRICT_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        77
+      ],
+      "custom_bounds": [
+        1,
+        77
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The DISTRICT_ID is an identifier that is naturally bounded within a specific range (1 to 77) based on the observed data. The strict bounds match the observed data range, and since the values are identifiers, there is no need for custom bounds. The sample size is sufficient to trust the observed bounds.",
+        "chosen_bounds": [
+          1,
+          77
+        ]
+      }
+    },
+    {
+      "table": "card",
+      "column": "CARD_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        1247
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The CARD_ID is a unique identifier for each card and should have a strict range since IDs are typically positive integers starting from 1. The observed data range is realistic and reflects the actual data, making strict bounds appropriate.",
+        "chosen_bounds": [
+          1,
+          1247
+        ]
+      }
+    },
+    {
+      "table": "card",
+      "column": "DISP_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        9,
+        13660
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The DISP_ID is an identifier that should logically start from 1 and can be unbounded upwards, as it represents unique identifiers. The strict bounds observed (9 to 13660) may not account for future entries or edge cases, so using custom bounds [1, +\u221e] is more appropriate to ensure all valid identifiers are included.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "order",
+      "column": "ORDER_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        29401,
+        46338
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ORDER_ID is a unique identifier for each order, which should logically start from 1 and can increase indefinitely as new orders are created. While the observed data range is [29401, 46338], using custom bounds [1, +\u221e] is more appropriate to account for future entries and ensure that all valid ORDER_IDs are included.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "order",
+      "column": "ACCOUNT_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        11362
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ACCOUNT_ID is a unique identifier for accounts, which are typically non-negative integers. While the observed data range is [1, 11362], using custom bounds [1, +\u221e] is more appropriate as it accounts for potential future accounts that may be added beyond the current maximum. This ensures that the constraint remains valid as new data is introduced.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "order",
+      "column": "ACCOUNT_TO",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        399,
+        99994199
+      ],
+      "custom_bounds": [
+        0,
+        223524238
+      ],
+      "custom_bounds_type": "loose",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ACCOUNT_TO column represents account numbers, which are typically positive integers. The strict bounds of [399, 99994199] are realistic given the observed data range and the nature of account numbers. Custom bounds are not necessary as the strict bounds sufficiently cover the valid range of account numbers without including outliers.",
+        "chosen_bounds": [
+          399,
+          99994199
+        ]
+      }
+    },
+    {
+      "table": "order",
+      "column": "AMOUNT",
+      "data_type": "REAL",
+      "strict_bounds": [
+        1.0,
+        14882.0
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The AMOUNT column in the ORDER table represents a monetary value, which is naturally bounded to be non-negative. The observed data range shows a realistic range of values from 1.0 to 14882.0, indicating that all recorded amounts are positive and within this range. Since the strict bounds accurately reflect the observed data and there are no negative values, it is appropriate to use these bounds for the BETWEEN constraint.",
+        "chosen_bounds": [
+          1.0,
+          14882.0
+        ]
+      }
+    },
+    {
+      "table": "disp",
+      "column": "DISP_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        13690
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The DISP_ID is an identifier and is expected to be unique for each record. While the observed data range is bounded between 1 and 13690, it is semantically more appropriate to use custom bounds of [1, +\u221e] to accommodate future entries and ensure that the identifier remains valid as new records are added.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "disp",
+      "column": "CLIENT_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        13998
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The CLIENT_ID column represents unique identifiers for clients, which are naturally bounded to positive integers starting from 1. While the observed data range is [1, 13998], using custom bounds [1, +\u221e] is more appropriate as it accounts for potential future entries beyond the current maximum observed value, ensuring that all valid CLIENT_IDs are included.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "disp",
+      "column": "ACCOUNT_ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        11382
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ACCOUNT_ID column represents unique identifiers for accounts, which are naturally bounded to positive integers. While the observed data range is [1, 11382], using custom bounds [1, +\u221e] is more appropriate as it allows for future account IDs beyond the current maximum, ensuring that new accounts can be accommodated without violating constraints.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    }
+  ],
+  "in": [
+    {
+      "table": "loan",
+      "column": "DURATION",
+      "data_type": "INTEGER",
+      "categories": [
+        24,
+        12,
+        60,
+        48,
+        36
+      ],
+      "category_count": 5,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While there are only 5 unique values in the current dataset, the DURATION column represents loan durations which could potentially include other values in the future (e.g., 6 months, 18 months). Therefore, it is not a true categorical column with a complete set of known values, and constraining it could limit future valid entries."
+      }
+    },
+    {
+      "table": "loan",
+      "column": "STATUS",
+      "data_type": "VARCHAR",
+      "categories": [
+        "A",
+        "B",
+        "D",
+        "C"
+      ],
+      "category_count": 4,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The STATUS column has a limited and defined set of values ('A', 'B', 'C', 'D') that represent specific repayment statuses. Given that there are only 4 unique values in 682 rows, it is reasonable to conclude that this is a complete enumeration of possible statuses. Restricting to these values would not be too limiting, as they are clearly defined and understood within the context of loan repayment."
+      }
+    },
+    {
+      "table": "client",
+      "column": "GENDER",
+      "data_type": "VARCHAR",
+      "categories": [
+        "F",
+        "M"
+      ],
+      "category_count": 2,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The GENDER column has only two unique values ('F' and 'M'), which are well-defined and represent the only valid options for gender in this context. This makes it a true categorical column suitable for an IN constraint."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A3",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Prague",
+        "central Bohemia",
+        "south Bohemia",
+        "west Bohemia",
+        "north Bohemia",
+        "east Bohemia",
+        "south Moravia",
+        "north Moravia"
+      ],
+      "category_count": 8,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column A3 contains a limited and known set of unique values representing regions in a specific country. Given that there are only 8 unique values and they represent distinct geographical areas, it is reasonable to apply an IN constraint to restrict values to this set. It is unlikely that new categories will appear, as these regions are well-defined."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A7",
+      "data_type": "VARCHAR",
+      "categories": [
+        "0",
+        "6",
+        "4",
+        "1",
+        "7",
+        "9",
+        "10",
+        "2",
+        "3",
+        "5",
+        "8",
+        "18",
+        "14",
+        "20",
+        "13",
+        "11",
+        "12"
+      ],
+      "category_count": 17,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The column A7 contains numeric values represented as strings, which may indicate categories or classifications. However, the presence of numeric values suggests that there could be additional valid values not captured in the current dataset. Therefore, it is not a true categorical column with a complete set of known values, and constraining it could limit future data entries."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A8",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        2,
+        3,
+        0,
+        4,
+        5
+      ],
+      "category_count": 6,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column A8 has a limited set of unique values (6) and appears to represent a categorical classification. Given that the values are integers and seem to indicate specific categories, it is reasonable to enforce an IN constraint to restrict values to this known set."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A9",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        5,
+        6,
+        4,
+        8,
+        7,
+        2,
+        9,
+        10,
+        11,
+        3
+      ],
+      "category_count": 11,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column A9 has a limited set of unique integer values (11 unique values) and appears to represent a categorical classification. Given that the values are discrete and likely represent specific categories within the district context, an IN constraint is appropriate to enforce data integrity and restrict entries to these known valid values."
+      }
+    },
+    {
+      "table": "trans",
+      "column": "TYPE",
+      "data_type": "VARCHAR",
+      "categories": [
+        "PRIJEM",
+        "VYDAJ",
+        "VYBER"
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column 'TYPE' in the 'TRANS' table has a limited set of known values ('PRIJEM', 'VYDAJ', 'VYBER') that represent distinct transaction types. Given the total rows and the number of unique values, it is reasonable to conclude that this is a true categorical column with a controlled vocabulary, making an IN constraint appropriate."
+      }
+    },
+    {
+      "table": "trans",
+      "column": "OPERATION",
+      "data_type": "VARCHAR",
+      "categories": [
+        "VKLAD",
+        "PREVOD Z UCTU",
+        "PREVOD NA UCET",
+        "VYBER",
+        "VYBER KARTOU"
+      ],
+      "category_count": 5,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The OPERATION column has a limited and known set of values (5 unique operations) that represent distinct transaction modes. Given the nature of financial transactions, it is unlikely that new operation types will emerge frequently, making it reasonable to enforce an IN constraint."
+      }
+    },
+    {
+      "table": "trans",
+      "column": "K_SYMBOL",
+      "data_type": "VARCHAR",
+      "categories": [
+        "SIPO",
+        "SLUZBY",
+        "UVER",
+        " ",
+        "POJISTNE",
+        "DUCHOD",
+        "UROK",
+        "SANKC. UROK"
+      ],
+      "category_count": 8,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The K_SYMBOL column has a limited and known set of unique values (8), which are clearly defined categories related to transaction purposes. The description indicates these are specific types of payments, suggesting that they are enumerated values. Given the total number of rows and the uniqueness of the values, it is reasonable to apply an IN constraint to restrict entries to these valid categories."
+      }
+    },
+    {
+      "table": "trans",
+      "column": "BANK",
+      "data_type": "VARCHAR",
+      "categories": [
+        "AB",
+        "YZ",
+        "ST",
+        "QR",
+        "WX",
+        "CD",
+        "UV",
+        "KL",
+        "GH",
+        "OP",
+        "IJ",
+        "EF",
+        "MN"
+      ],
+      "category_count": 13,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The BANK column contains a limited set of unique values (13) that represent unique two-letter codes for banks. Given that these codes are likely predefined and used consistently across transactions, it is reasonable to apply an IN constraint to restrict values to this specific set. The description suggests that these codes are controlled vocabulary, making it a true categorical column."
+      }
+    },
+    {
+      "table": "account",
+      "column": "FREQUENCY",
+      "data_type": "VARCHAR",
+      "categories": [
+        "POPLATEK MESICNE",
+        "POPLATEK TYDNE",
+        "POPLATEK PO OBRATU"
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The FREQUENCY column has a limited set of known values ('POPLATEK MESICNE', 'POPLATEK TYDNE', 'POPLATEK PO OBRATU') which are likely to represent all possible frequency types for account payments. Given the small number of unique values relative to the total rows, it is reasonable to assume this is a complete enumeration, making an IN constraint appropriate."
+      }
+    },
+    {
+      "table": "card",
+      "column": "TYPE",
+      "data_type": "VARCHAR",
+      "categories": [
+        "gold",
+        "classic",
+        "junior"
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TYPE column in the CARD table has a limited and known set of values ('gold', 'classic', 'junior'), which are clearly defined categories of credit cards. Given that there are only 3 unique values out of 892 total rows, it is reasonable to assume this sample is complete. This column represents a true enumeration of credit card types, and restricting to these exact values would not be too limiting."
+      }
+    },
+    {
+      "table": "order",
+      "column": "BANK_TO",
+      "data_type": "VARCHAR",
+      "categories": [
+        "YZ",
+        "ST",
+        "QR",
+        "WX",
+        "CD",
+        "AB",
+        "UV",
+        "GH",
+        "IJ",
+        "KL",
+        "EF",
+        "MN",
+        "OP"
+      ],
+      "category_count": 13,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The BANK_TO column contains a limited and known set of values (bank codes) that are likely to remain consistent. Given that there are only 13 unique values across 6471 rows, it suggests that these values represent all valid banks. Therefore, an IN constraint is appropriate to enforce data integrity."
+      }
+    },
+    {
+      "table": "order",
+      "column": "K_SYMBOL",
+      "data_type": "VARCHAR",
+      "categories": [
+        "SIPO",
+        "UVER",
+        "POJISTNE",
+        "LEASING"
+      ],
+      "category_count": 4,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The K_SYMBOL column has a limited and known set of unique values (4), which are likely to represent specific categories of payment purposes. Given that these values are defined in the column description and there is no indication of potential new categories, an IN constraint is appropriate to enforce data integrity."
+      }
+    },
+    {
+      "table": "disp",
+      "column": "TYPE",
+      "data_type": "VARCHAR",
+      "categories": [
+        "OWNER",
+        "DISPONENT"
+      ],
+      "category_count": 2,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TYPE column in the DISP table has only 2 unique values ('OWNER', 'DISPONENT') out of 5369 total rows, indicating it is likely a complete enumeration. The description suggests these are the only valid types for dispositions, making an IN constraint appropriate to enforce data integrity."
+      }
+    }
+  ],
+  "not_null": [
+    {
+      "table": "loan",
+      "column": "LOAN_ID",
+      "data_type": "INTEGER",
+      "total_rows": 682,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "LOAN_ID is the primary key for the LOAN table, which logically requires it to be unique and non-null for every record. The column description indicates it is an identifier for the loan data, reinforcing that it must always be present."
+      }
+    },
+    {
+      "table": "loan",
+      "column": "ACCOUNT_ID",
+      "data_type": "INTEGER",
+      "total_rows": 682,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ACCOUNT_ID field is a foreign key that links to the ACCOUNT table, making it essential for identifying which account the loan is associated with. Since it is logically required for every loan record to have an associated account, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "loan",
+      "column": "DATE",
+      "data_type": "DATE",
+      "total_rows": 682,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DATE field in the LOAN table represents the date when the loan is approved, which is a critical piece of information for each loan record. It is logically required for every loan entry to have an approval date, and the column description supports this necessity. Future records would not make sense without this date, as it is essential for tracking the loan's timeline."
+      }
+    },
+    {
+      "table": "loan",
+      "column": "AMOUNT",
+      "data_type": "INTEGER",
+      "total_rows": 682,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The AMOUNT field represents the approved amount for a loan, which is essential for every loan record. It is logically required for the integrity of the loan data, as a loan without an amount would not make sense. The column description indicates that it is a critical attribute, and future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "loan",
+      "column": "DURATION",
+      "data_type": "INTEGER",
+      "total_rows": 682,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DURATION field is logically required as it represents the loan duration in months, which is essential for understanding the terms of the loan. The column description indicates that it is a critical attribute for loans, and future records would need this information to define the loan's repayment schedule."
+      }
+    },
+    {
+      "table": "loan",
+      "column": "PAYMENTS",
+      "data_type": "REAL",
+      "total_rows": 682,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The PAYMENTS column represents monthly payments for loans, which is essential for understanding the loan's repayment structure. Given that it is a critical financial metric, it should not be nullable. The column description indicates that it is a required attribute for loan records, and logically, every loan should have a defined payment amount."
+      }
+    },
+    {
+      "table": "loan",
+      "column": "STATUS",
+      "data_type": "VARCHAR",
+      "total_rows": 682,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The STATUS column is essential for understanding the repayment status of loans, as indicated by its description. It logically requires a value for every record to accurately reflect the state of the loan, making it necessary to enforce a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "client",
+      "column": "CLIENT_ID",
+      "data_type": "INTEGER",
+      "total_rows": 5369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CLIENT_ID is the unique identifier for each client, making it essential for every record. As a primary key, it logically requires a NOT NULL constraint to ensure that each client can be uniquely identified. The column description supports this requirement, indicating that it is a unique number."
+      }
+    },
+    {
+      "table": "client",
+      "column": "GENDER",
+      "data_type": "VARCHAR",
+      "total_rows": 5369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The GENDER field is logically required as it is a fundamental attribute of a client. The column description indicates it categorizes clients as either male or female, which is essential for demographic analysis and client profiling. Even though current data is 100% non-null, it is reasonable to enforce a NOT NULL constraint to ensure future records also include this critical information."
+      }
+    },
+    {
+      "table": "client",
+      "column": "BIRTH_DATE",
+      "data_type": "DATE",
+      "total_rows": 5369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The BIRTH_DATE field is logically required as it serves as a fundamental identifier for clients, providing essential demographic information. The column description indicates it is a birth date, which is typically necessary for client identification and age verification. Given that all current records are non-null, it suggests a strong requirement for this field, and it is unlikely that future records would reasonably omit this information."
+      }
+    },
+    {
+      "table": "client",
+      "column": "DISTRICT_ID",
+      "data_type": "INTEGER",
+      "total_rows": 5369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DISTRICT_ID is a foreign key that indicates the location of the branch associated with each client. It is logically required for every client record to have a valid district association, as it provides essential context for the client's location. The column description supports this requirement, and the absence of nulls in current data suggests that it is indeed necessary for future records as well."
+      }
+    },
+    {
+      "table": "district",
+      "column": "DISTRICT_ID",
+      "data_type": "INTEGER",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "DISTRICT_ID is a primary key for the DISTRICT table, which logically requires it to be present for every record. The column description indicates it is essential for identifying the location of the branch, and it is unlikely that future records would omit this field."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A2",
+      "data_type": "VARCHAR",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column A2 represents the district name, which is essential for identifying the location of the branch. Since it is a key attribute for the DISTRICT table and logically required for every record, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A3",
+      "data_type": "VARCHAR",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The A3 column represents a region, which is essential for identifying the geographical location of a district. Given that it is a key attribute for understanding the context of the district, it should not be nullable. The column description does not indicate it is optional, and logically, every district should have a defined region."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A4",
+      "data_type": "VARCHAR",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The column A4 does not have a clear indication of being logically required based on its description ('No description'). The current non-null data may be coincidental, and future records could reasonably omit this field. Therefore, it should not have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A5",
+      "data_type": "VARCHAR",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The column A5 represents a municipality within a district, which may not be essential for every record. While current data is complete, future records could reasonably omit this field if the municipality is not applicable or known. The description does not indicate that this field is required, suggesting it may be optional."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A6",
+      "data_type": "VARCHAR",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The column A6 is labeled as 'municipality < district < region', which suggests it is a descriptive attribute rather than a critical identifier. While current data is 100% non-null, this does not guarantee that future records will require this field. It is possible that some districts may not have a value for A6, indicating it should not be constrained as NOT NULL."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A7",
+      "data_type": "VARCHAR",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The column A7 is not logically required as it does not serve as a primary key, foreign key, or essential identifier. The description indicates it is related to municipalities but does not imply it is mandatory. Future records could reasonably omit this field, and the current non-null status does not guarantee it is required."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A8",
+      "data_type": "INTEGER",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column A8 represents a key attribute related to the municipality, which is essential for understanding the district's characteristics. Given that it is an INTEGER type and the description suggests it relates to the municipality, it is logically required for every record. The current data being 100% non-null further supports the need for a NOT NULL constraint, as it indicates that this field is necessary for the integrity of the data."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A9",
+      "data_type": "INTEGER",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The column A9 is described as 'not useful', which suggests it is not essential for the integrity of the data. Although current data is 100% non-null, this does not imply a logical requirement for future records, as the field may not hold significant value in the context of the dataset."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A10",
+      "data_type": "REAL",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The column A10 represents the ratio of urban inhabitants, which may not be essential for every district record. While current data is complete, future records could reasonably omit this field if the information is not available or relevant. The description does not indicate that it is a required field."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A11",
+      "data_type": "INTEGER",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The A11 column represents the average salary, which is a critical metric for understanding the economic context of a district. Given that it is essential for analysis and decision-making, it should have a NOT NULL constraint to ensure that every record contains this important information."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A13",
+      "data_type": "REAL",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The column A13 represents the unemployment rate for the year 1996, which is not essential for every record in the DISTRICT table. It is likely that future records could exist without this data, as it may not be applicable or available for all districts. The column description does not indicate that it is a required field, suggesting it is optional information."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A14",
+      "data_type": "INTEGER",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The column A14 represents the number of entrepreneurs per 1000 inhabitants, which is a relevant metric for the district's economic profile. Given its significance in understanding the district's characteristics, it should logically be required for every record. The column description indicates it is an essential attribute, and future records should consistently have this data to maintain the integrity of the dataset."
+      }
+    },
+    {
+      "table": "district",
+      "column": "A16",
+      "data_type": "INTEGER",
+      "total_rows": 77,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The column A16 represents the number of committed crimes in 1996, which is not a critical identifier or essential attribute for the district records. While current data is complete, it does not logically require a value for every record, and future records could reasonably omit this field if the data is not available or relevant."
+      }
+    },
+    {
+      "table": "trans",
+      "column": "TRANS_ID",
+      "data_type": "INTEGER",
+      "total_rows": 1056320,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TRANS_ID is the transaction id, which serves as a unique identifier for each transaction record. As a primary key, it is logically required for every record to ensure each transaction can be distinctly identified. The column description and the nature of the data indicate that this field is essential and should always be present."
+      }
+    },
+    {
+      "table": "trans",
+      "column": "ACCOUNT_ID",
+      "data_type": "INTEGER",
+      "total_rows": 1056320,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ACCOUNT_ID column is a foreign key that links transactions to specific accounts, making it essential for every transaction record. The column description does not indicate it is optional, and logically, every transaction must be associated with an account. Therefore, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "trans",
+      "column": "DATE",
+      "data_type": "DATE",
+      "total_rows": 1056320,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DATE column in the TRANS table is logically required as it represents the date of the transaction, which is essential for tracking and recording financial activities. Given that it is a critical attribute for understanding when transactions occur, it should have a NOT NULL constraint to ensure that every transaction record has a valid date."
+      }
+    },
+    {
+      "table": "trans",
+      "column": "TYPE",
+      "data_type": "VARCHAR",
+      "total_rows": 1056320,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TYPE column is logically required as it indicates the nature of the transaction (credit or withdrawal). The column description specifies that it categorizes transactions, making it essential for understanding the data. Future records would need this field to accurately represent the transaction type, so a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "trans",
+      "column": "AMOUNT",
+      "data_type": "INTEGER",
+      "total_rows": 1056320,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The AMOUNT field is logically required for every transaction record as it represents the amount of money involved in the transaction. Given that it is essential for understanding the financial impact of each transaction, it should have a NOT NULL constraint to ensure data integrity."
+      }
+    },
+    {
+      "table": "trans",
+      "column": "BALANCE",
+      "data_type": "INTEGER",
+      "total_rows": 1056320,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The BALANCE column represents the balance after a transaction, which is essential for understanding the financial state of an account. Since it is a critical piece of information for every transaction record, it should have a NOT NULL constraint to ensure that every record contains this necessary data."
+      }
+    },
+    {
+      "table": "account",
+      "column": "ACCOUNT_ID",
+      "data_type": "INTEGER",
+      "total_rows": 4500,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ACCOUNT_ID is a primary key for the ACCOUNT table, which logically requires it to be unique and non-null for every record. The column description indicates it is essential for identifying accounts, and future records must have this field populated to maintain data integrity."
+      }
+    },
+    {
+      "table": "account",
+      "column": "DISTRICT_ID",
+      "data_type": "INTEGER",
+      "total_rows": 4500,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DISTRICT_ID is likely a foreign key that identifies the location of the branch associated with the account. This is essential for categorizing accounts by their respective districts, making it logically required for every record. The column description indicates its importance, and the absence of this field would hinder the ability to associate accounts with their districts."
+      }
+    },
+    {
+      "table": "account",
+      "column": "FREQUENCY",
+      "data_type": "VARCHAR",
+      "total_rows": 4500,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The FREQUENCY column is essential for understanding the payment schedule of the account. It logically requires a value for every record, as it defines how often payments are made. The column description indicates that it is a key attribute of the account, and future records would not make sense without this information."
+      }
+    },
+    {
+      "table": "account",
+      "column": "DATE",
+      "data_type": "DATE",
+      "total_rows": 4500,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DATE column represents the creation date of the account, which is logically required for every account record. It serves as an essential identifier for when the account was established, and future records should not reasonably omit this information."
+      }
+    },
+    {
+      "table": "card",
+      "column": "CARD_ID",
+      "data_type": "INTEGER",
+      "total_rows": 892,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CARD_ID is the unique identifier for each credit card, making it essential for every record. As a primary key, it logically must be present for the integrity of the data, and the column description supports its necessity."
+      }
+    },
+    {
+      "table": "card",
+      "column": "DISP_ID",
+      "data_type": "INTEGER",
+      "total_rows": 892,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DISP_ID column is likely a foreign key that identifies a specific disposition related to the card. Given that it is essential for linking the card to its corresponding disposition and the column description indicates it is a unique identifier, it should have a NOT NULL constraint to ensure data integrity."
+      }
+    },
+    {
+      "table": "card",
+      "column": "TYPE",
+      "data_type": "VARCHAR",
+      "total_rows": 892,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TYPE column indicates the type of credit card, which is essential for identifying the nature of the card. Since it serves as a key attribute for the CARD table and is logically required for every record, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "card",
+      "column": "ISSUED",
+      "data_type": "DATE",
+      "total_rows": 892,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ISSUED date is essential for identifying when a credit card was issued, which is a critical piece of information for managing card validity and tracking. Given that it is a date field related to the issuance of a card, it should logically be required for every record, and future records would reasonably need this information as well."
+      }
+    },
+    {
+      "table": "order",
+      "column": "ORDER_ID",
+      "data_type": "INTEGER",
+      "total_rows": 6471,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "ORDER_ID is the unique identifier for each order, making it essential for distinguishing between records. As a primary key, it logically must be present for every record, and the column description supports its necessity."
+      }
+    },
+    {
+      "table": "order",
+      "column": "ACCOUNT_ID",
+      "data_type": "INTEGER",
+      "total_rows": 6471,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ACCOUNT_ID column is a foreign key that links to the ACCOUNT table, making it essential for identifying the account associated with each order. Given its role in maintaining data integrity and the logical requirement for every order to be associated with an account, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "order",
+      "column": "BANK_TO",
+      "data_type": "VARCHAR",
+      "total_rows": 6471,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The BANK_TO field is logically required as it indicates the bank of the recipient for each order. Since it is essential for processing transactions, future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "order",
+      "column": "ACCOUNT_TO",
+      "data_type": "INTEGER",
+      "total_rows": 6471,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ACCOUNT_TO column represents the account of the recipient, which is essential for processing orders. Since it is a key identifier for the transaction, it should always be present to ensure the integrity of the order data."
+      }
+    },
+    {
+      "table": "order",
+      "column": "AMOUNT",
+      "data_type": "REAL",
+      "total_rows": 6471,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The AMOUNT field is essential for the ORDER table as it represents the debited amount for each order. Since it is a financial transaction, it logically cannot be null. The column description indicates that it is a required attribute, and the absence of an amount would make the order incomplete. Therefore, a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "order",
+      "column": "K_SYMBOL",
+      "data_type": "VARCHAR",
+      "total_rows": 6471,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The K_SYMBOL column is not logically required as it can contain optional values indicating the purpose of the payment. The presence of empty strings in the sample values suggests that future records could reasonably omit this field. Therefore, it should not have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "disp",
+      "column": "DISP_ID",
+      "data_type": "INTEGER",
+      "total_rows": 5369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DISP_ID serves as a unique identifier for each record in the DISP table, making it logically required for every record. As a primary key, it must not be null to ensure the integrity and uniqueness of each entry. The column description indicates that it is a unique number identifying this row of record, further supporting the need for a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "disp",
+      "column": "CLIENT_ID",
+      "data_type": "INTEGER",
+      "total_rows": 5369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CLIENT_ID column is a foreign key that links to the CLIENT table, making it essential for identifying the client associated with each disposition. Given its role in maintaining data integrity and the logical requirement for each disposition to be linked to a client, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "disp",
+      "column": "ACCOUNT_ID",
+      "data_type": "INTEGER",
+      "total_rows": 5369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ACCOUNT_ID column is a foreign key that links to the ACCOUNT table, making it essential for the integrity of the DISP records. The column description indicates it is required for identifying the account associated with the disposition. Given its role in maintaining relationships between tables, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "disp",
+      "column": "TYPE",
+      "data_type": "VARCHAR",
+      "total_rows": 5369,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TYPE column in the DISP table indicates the role of the disposition (e.g., OWNER, DISPONENT), which is essential for understanding the nature of the record. Given that it serves a critical function in identifying the type of disposition and is logically required for every record, it should have a NOT NULL constraint to ensure data integrity."
+      }
+    }
+  ],
+  "dependency": [
+    {
+      "table": "loan",
+      "type": "functional",
+      "column_a": "LOAN_ID",
+      "column_b": "ACCOUNT_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LOAN_ID": 4959,
+          "ACCOUNT_ID": 2
+        },
+        {
+          "LOAN_ID": 4961,
+          "ACCOUNT_ID": 19
+        },
+        {
+          "LOAN_ID": 4962,
+          "ACCOUNT_ID": 25
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "LOAN_ID is a unique identifier for each loan, and it consistently maps to a single ACCOUNT_ID across all rows. This indicates a meaningful relationship where each loan is associated with exactly one account, which is semantically significant for maintaining data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "loan",
+      "type": "functional",
+      "column_a": "LOAN_ID",
+      "column_b": "DATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LOAN_ID": 4959,
+          "DATE": "1994-01-05"
+        },
+        {
+          "LOAN_ID": 4961,
+          "DATE": "1996-04-29"
+        },
+        {
+          "LOAN_ID": 4962,
+          "DATE": "1997-12-08"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "LOAN_ID is a unique identifier for each loan, and it consistently maps to a specific DATE when the loan is approved. This is a meaningful functional dependency as it ensures that each loan ID corresponds to exactly one approval date, which is crucial for maintaining data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "loan",
+      "type": "functional",
+      "column_a": "LOAN_ID",
+      "column_b": "AMOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LOAN_ID": 4959,
+          "AMOUNT": 80952
+        },
+        {
+          "LOAN_ID": 4961,
+          "AMOUNT": 30276
+        },
+        {
+          "LOAN_ID": 4962,
+          "AMOUNT": 30276
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "LOAN_ID is a unique identifier for each loan, and it consistently maps to a specific AMOUNT. This is a meaningful functional dependency as it reflects the relationship between a loan and its approved amount, which is semantically significant for financial data integrity. Enforcing this constraint would help ensure that each loan ID corresponds to exactly one approved amount, thus enhancing query correctness and data reliability."
+      }
+    },
+    {
+      "table": "loan",
+      "type": "functional",
+      "column_a": "LOAN_ID",
+      "column_b": "DURATION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LOAN_ID": 4959,
+          "DURATION": 24
+        },
+        {
+          "LOAN_ID": 4961,
+          "DURATION": 12
+        },
+        {
+          "LOAN_ID": 4962,
+          "DURATION": 12
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LOAN_ID is a unique identifier for each loan, and it consistently maps to a specific DURATION across all observed rows. This indicates a meaningful relationship where each loan has a defined duration, which is semantically relevant for loan management. Enforcing this constraint would help ensure data integrity and verify query correctness regarding loan durations."
+      }
+    },
+    {
+      "table": "loan",
+      "type": "functional",
+      "column_a": "LOAN_ID",
+      "column_b": "PAYMENTS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LOAN_ID": 4959.0,
+          "PAYMENTS": 3373.0
+        },
+        {
+          "LOAN_ID": 4961.0,
+          "PAYMENTS": 2523.0
+        },
+        {
+          "LOAN_ID": 4962.0,
+          "PAYMENTS": 2523.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency LOAN_ID \u2192 PAYMENTS is meaningful as each loan ID corresponds to a specific payment amount, which is a critical aspect of loan management. The observed mapping is consistent across 682 rows, indicating reliability. This relationship is not trivial since LOAN_ID is a primary key, but it provides valuable semantic information about loan payments that can aid in query verification and data integrity."
+      }
+    },
+    {
+      "table": "loan",
+      "type": "functional",
+      "column_a": "LOAN_ID",
+      "column_b": "STATUS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LOAN_ID": 4959,
+          "STATUS": "A"
+        },
+        {
+          "LOAN_ID": 4961,
+          "STATUS": "B"
+        },
+        {
+          "LOAN_ID": 4962,
+          "STATUS": "A"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency LOAN_ID \u2192 STATUS is meaningful as each loan ID uniquely determines the loan's status, which is a critical attribute for understanding the loan's repayment condition. Given that the mapping is 100% consistent across 682 rows, it indicates reliability. This relationship is not trivial since LOAN_ID is a primary key, but enforcing this constraint adds value for query verification and ensures data integrity regarding loan statuses."
+      }
+    },
+    {
+      "table": "loan",
+      "type": "functional",
+      "column_a": "ACCOUNT_ID",
+      "column_b": "DATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCOUNT_ID": 2,
+          "DATE": "1994-01-05"
+        },
+        {
+          "ACCOUNT_ID": 19,
+          "DATE": "1996-04-29"
+        },
+        {
+          "ACCOUNT_ID": 25,
+          "DATE": "1997-12-08"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ACCOUNT_ID \u2192 DATE is meaningful as it indicates that each account is associated with a specific loan approval date. Given the observed mapping is 100% consistent across 682 rows, it suggests a reliable relationship. This constraint would help ensure data integrity and verify query correctness, as it prevents the possibility of multiple dates being associated with the same account."
+      }
+    },
+    {
+      "table": "loan",
+      "type": "functional",
+      "column_a": "ACCOUNT_ID",
+      "column_b": "AMOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCOUNT_ID": 2,
+          "AMOUNT": 80952
+        },
+        {
+          "ACCOUNT_ID": 19,
+          "AMOUNT": 30276
+        },
+        {
+          "ACCOUNT_ID": 25,
+          "AMOUNT": 30276
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ACCOUNT_ID \u2192 AMOUNT is meaningful as it indicates that each account can have a specific loan amount associated with it. Given the observed mapping is 100% consistent across 682 rows, it suggests a reliable relationship. This constraint would help ensure data integrity and verify query correctness, as it prevents the possibility of multiple loan amounts for the same account."
+      }
+    },
+    {
+      "table": "loan",
+      "type": "functional",
+      "column_a": "ACCOUNT_ID",
+      "column_b": "DURATION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCOUNT_ID": 2,
+          "DURATION": 24
+        },
+        {
+          "ACCOUNT_ID": 19,
+          "DURATION": 12
+        },
+        {
+          "ACCOUNT_ID": 25,
+          "DURATION": 12
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ACCOUNT_ID \u2192 DURATION is meaningful as it indicates that each account has a specific loan duration associated with it. Given the observed mapping is 100% consistent across 682 rows, it suggests a reliable relationship. This constraint would help ensure data integrity and verify query correctness, as it enforces that each account can only have one defined loan duration."
+      }
+    },
+    {
+      "table": "loan",
+      "type": "functional",
+      "column_a": "ACCOUNT_ID",
+      "column_b": "PAYMENTS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCOUNT_ID": 2.0,
+          "PAYMENTS": 3373.0
+        },
+        {
+          "ACCOUNT_ID": 19.0,
+          "PAYMENTS": 2523.0
+        },
+        {
+          "ACCOUNT_ID": 25.0,
+          "PAYMENTS": 2523.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ACCOUNT_ID \u2192 PAYMENTS is meaningful as it indicates that each account has a specific payment amount associated with it, which is a logical relationship in the context of loans. The observed mapping is consistent across 682 rows, suggesting reliability. This constraint would help ensure data integrity and verify query correctness, as it enforces that each account ID corresponds to a unique payment amount."
+      }
+    },
+    {
+      "table": "loan",
+      "type": "functional",
+      "column_a": "ACCOUNT_ID",
+      "column_b": "STATUS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCOUNT_ID": 2,
+          "STATUS": "A"
+        },
+        {
+          "ACCOUNT_ID": 19,
+          "STATUS": "B"
+        },
+        {
+          "ACCOUNT_ID": 25,
+          "STATUS": "A"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ACCOUNT_ID \u2192 STATUS is meaningful because each account can have a specific repayment status that reflects its current state. The observed mapping is consistent across 682 rows, indicating reliability. This relationship is not trivial as ACCOUNT_ID is a primary key, but STATUS provides important information about the loan's state, which is semantically significant for financial queries and reporting."
+      }
+    },
+    {
+      "table": "client",
+      "type": "functional",
+      "column_a": "CLIENT_ID",
+      "column_b": "GENDER",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CLIENT_ID": 1,
+          "GENDER": "F"
+        },
+        {
+          "CLIENT_ID": 2,
+          "GENDER": "M"
+        },
+        {
+          "CLIENT_ID": 3,
+          "GENDER": "F"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CLIENT_ID \u2192 GENDER is meaningful as it establishes a consistent relationship between a unique client identifier and their gender. Given that CLIENT_ID is a primary key, this relationship is reliable across the 5369 rows. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents the possibility of having multiple genders associated with a single CLIENT_ID."
+      }
+    },
+    {
+      "table": "client",
+      "type": "functional",
+      "column_a": "CLIENT_ID",
+      "column_b": "BIRTH_DATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CLIENT_ID": 1,
+          "BIRTH_DATE": "1970-12-13"
+        },
+        {
+          "CLIENT_ID": 2,
+          "BIRTH_DATE": "1945-02-04"
+        },
+        {
+          "CLIENT_ID": 3,
+          "BIRTH_DATE": "1940-10-09"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CLIENT_ID is a unique identifier for each client, and it consistently maps to a unique BIRTH_DATE. This is a meaningful semantic relationship as each client has a distinct birth date, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "client",
+      "type": "functional",
+      "column_a": "CLIENT_ID",
+      "column_b": "DISTRICT_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CLIENT_ID": 1,
+          "DISTRICT_ID": 18
+        },
+        {
+          "CLIENT_ID": 2,
+          "DISTRICT_ID": 1
+        },
+        {
+          "CLIENT_ID": 3,
+          "DISTRICT_ID": 1
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CLIENT_ID \u2192 DISTRICT_ID is meaningful as it establishes a relationship between clients and their respective districts. Given that CLIENT_ID is a unique identifier for each client, this relationship is not coincidental and is likely to hold true in future data. Enforcing this constraint would help ensure data integrity and verify query correctness, as it guarantees that each client is associated with a specific district."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A2",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1,
+          "A2": "Hl.m. Praha"
+        },
+        {
+          "DISTRICT_ID": 2,
+          "A2": "Benesov"
+        },
+        {
+          "DISTRICT_ID": 3,
+          "A2": "Beroun"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "DISTRICT_ID uniquely determines A2 (district name), which is a meaningful semantic relationship. This dependency is reliable with 77 rows and reflects a consistent mapping that is unlikely to change, thus adding value for query verification."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A3",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1,
+          "A3": "Prague"
+        },
+        {
+          "DISTRICT_ID": 2,
+          "A3": "central Bohemia"
+        },
+        {
+          "DISTRICT_ID": 3,
+          "A3": "central Bohemia"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A3 is meaningful as it maps each district ID to its corresponding region name, which is a semantic relationship. The observed mapping is consistent across the dataset, indicating reliability. Enforcing this constraint would help ensure data integrity and verify query correctness, as it establishes a clear relationship between district identifiers and their respective regions."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A4",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1,
+          "A4": "1204953"
+        },
+        {
+          "DISTRICT_ID": 2,
+          "A4": "88884"
+        },
+        {
+          "DISTRICT_ID": 3,
+          "A4": "75232"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A4 is meaningful as it establishes a consistent mapping between a unique identifier (DISTRICT_ID) and a specific attribute (A4) related to the district. Given that the mapping is 100% consistent across 77 rows, it suggests a reliable relationship rather than a coincidence. Enforcing this constraint would help ensure data integrity and verify query correctness, as it confirms that each district ID corresponds to a specific value in A4."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A5",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1,
+          "A5": "0"
+        },
+        {
+          "DISTRICT_ID": 2,
+          "A5": "80"
+        },
+        {
+          "DISTRICT_ID": 3,
+          "A5": "55"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A5 is meaningful as it establishes a consistent mapping between district identifiers and their corresponding municipality information. Given that DISTRICT_ID is a unique identifier for each district, this relationship is not coincidental and is likely to hold true across the dataset. Enforcing this constraint would enhance data integrity and assist in verifying query correctness related to district information."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A6",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1,
+          "A6": "0"
+        },
+        {
+          "DISTRICT_ID": 2,
+          "A6": "26"
+        },
+        {
+          "DISTRICT_ID": 3,
+          "A6": "26"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A6 is meaningful as it establishes a consistent mapping between district identifiers and a specific attribute (A6) related to the district. Given that the mapping is 100% consistent across 77 rows, it suggests a reliable relationship rather than a coincidence. Enforcing this constraint would help ensure data integrity and verify query correctness, as it provides a clear semantic relationship between the district ID and its associated attribute."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A7",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1,
+          "A7": "0"
+        },
+        {
+          "DISTRICT_ID": 2,
+          "A7": "6"
+        },
+        {
+          "DISTRICT_ID": 3,
+          "A7": "4"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A7 is meaningful as it establishes a consistent mapping between district identifiers and a specific attribute (A7) related to the district. Given that the mapping is 100% consistent across 77 rows, it suggests a reliable relationship rather than a coincidence. This constraint would help ensure data integrity and verify query correctness by enforcing that each district ID corresponds to a specific value in A7."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A8",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1,
+          "A8": 1
+        },
+        {
+          "DISTRICT_ID": 2,
+          "A8": 2
+        },
+        {
+          "DISTRICT_ID": 3,
+          "A8": 1
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A8 is meaningful as it suggests a consistent mapping of district identifiers to a specific attribute (A8) that likely represents a characteristic of the district. Given that the observed mapping is 100% consistent across 77 rows, it indicates reliability. This relationship is not trivial since A8 appears to represent a specific attribute rather than being a direct consequence of being a primary key. Enforcing this constraint would help ensure data integrity and verify query correctness regarding district attributes."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A9",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1,
+          "A9": 1
+        },
+        {
+          "DISTRICT_ID": 2,
+          "A9": 5
+        },
+        {
+          "DISTRICT_ID": 3,
+          "A9": 5
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A9 does not represent a meaningful semantic relationship, as A9 is described as 'not useful'. Additionally, while the observed mapping is consistent, it does not imply a reliable or significant relationship that would add value for query verification. The determinant is a primary key, making this dependency trivial."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A10",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1.0,
+          "A10": 100.0
+        },
+        {
+          "DISTRICT_ID": 2.0,
+          "A10": 46.7
+        },
+        {
+          "DISTRICT_ID": 3.0,
+          "A10": 41.7
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A10 is meaningful as it represents a consistent mapping of district identifiers to the ratio of urban inhabitants, which is a relevant metric for each district. Given that the mapping is 100% consistent across 77 rows, it indicates reliability. This relationship is not trivial, as it provides valuable information that can enhance query correctness and data integrity."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A11",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1,
+          "A11": 12541
+        },
+        {
+          "DISTRICT_ID": 2,
+          "A11": 8507
+        },
+        {
+          "DISTRICT_ID": 3,
+          "A11": 8980
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A11 is meaningful as it represents a consistent mapping of district IDs to average salaries, which is a relevant semantic relationship. Given that the mapping is 100% consistent across 77 rows, it indicates reliability. This constraint would help ensure data integrity and verify query correctness regarding average salaries associated with each district."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A12",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1.0,
+          "A12": 0.2
+        },
+        {
+          "DISTRICT_ID": 2.0,
+          "A12": 1.6
+        },
+        {
+          "DISTRICT_ID": 3.0,
+          "A12": 1.9
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A12 is meaningful as it represents a consistent mapping of district IDs to a specific attribute (unemployment rate in 1995). Given that the mapping is 100% consistent across 77 rows, it suggests a reliable relationship. This dependency is not trivial since DISTRICT_ID is a primary key, but A12 provides valuable information that can be used for query verification and analysis. Enforcing this constraint would help ensure data integrity and correctness in queries related to district attributes."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A13",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1.0,
+          "A13": 0.43
+        },
+        {
+          "DISTRICT_ID": 2.0,
+          "A13": 1.85
+        },
+        {
+          "DISTRICT_ID": 3.0,
+          "A13": 2.21
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A13 is meaningful as it represents a consistent mapping of district identifiers to a specific metric (unemployment rate for 1996). Given that DISTRICT_ID is a primary key, this relationship is reliable and not coincidental. Enforcing this constraint would help ensure data integrity and verify query correctness regarding unemployment rates associated with each district."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A14",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1,
+          "A14": 167
+        },
+        {
+          "DISTRICT_ID": 2,
+          "A14": 132
+        },
+        {
+          "DISTRICT_ID": 3,
+          "A14": 111
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A14 is meaningful as it represents a consistent mapping of district identifiers to the number of entrepreneurs per 1000 inhabitants. Given that the observed mapping is 100% consistent across 77 rows, it suggests a reliable relationship. This dependency is not trivial since DISTRICT_ID is a primary key, but A14 provides valuable demographic information that can enhance query correctness and data integrity."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A15",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1.0,
+          "A15": 85677.0
+        },
+        {
+          "DISTRICT_ID": 2.0,
+          "A15": 2159.0
+        },
+        {
+          "DISTRICT_ID": 3.0,
+          "A15": 2824.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A15 is meaningful as it represents a consistent mapping of district identifiers to a specific metric (number of committed crimes in 1995). Given that DISTRICT_ID is a unique identifier for each district, this relationship is reliable and not coincidental. Enforcing this constraint would help ensure data integrity and verify query correctness regarding crime statistics associated with each district."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "DISTRICT_ID",
+      "column_b": "A16",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISTRICT_ID": 1,
+          "A16": 99107
+        },
+        {
+          "DISTRICT_ID": 2,
+          "A16": 2674
+        },
+        {
+          "DISTRICT_ID": 3,
+          "A16": 2813
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISTRICT_ID \u2192 A16 is meaningful as it represents a consistent mapping of district identifiers to a specific attribute (number of committed crimes in 1996). Given that the mapping is 100% consistent across 77 rows, it suggests a reliable relationship. This dependency is not trivial since DISTRICT_ID is a primary key, and enforcing this constraint would help ensure data integrity and correctness in queries related to district statistics."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A3",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A3": "Prague"
+        },
+        {
+          "A2": "Benesov",
+          "A3": "central Bohemia"
+        },
+        {
+          "A2": "Beroun",
+          "A3": "central Bohemia"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The mapping from A2 (district name) to A3 (region) is meaningful and consistent across all observed data. It represents a semantic relationship where each district name corresponds to a specific region, which is valuable for query verification and data integrity. Given that there are 77 rows and the mapping is 100% consistent, this dependency is reliable and should be enforced as a constraint."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A4",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A4": "1204953"
+        },
+        {
+          "A2": "Benesov",
+          "A4": "88884"
+        },
+        {
+          "A2": "Beroun",
+          "A4": "75232"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency A2 \u2192 A4 represents a meaningful relationship where each district name (A2) consistently maps to a unique identifier (A4). This is not a trivial dependency, as A2 is not a primary key and the mapping is reliable across the observed data. Enforcing this constraint would enhance data integrity and help verify query correctness."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A5",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A5": "0"
+        },
+        {
+          "A2": "Benesov",
+          "A5": "80"
+        },
+        {
+          "A2": "Beroun",
+          "A5": "55"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The relationship between A2 (district name) and A5 (municipality level) is meaningful as it reflects a consistent mapping where each district name corresponds to a specific municipality level. This dependency is reliable given the 100% consistency observed in the current data across 77 rows. Enforcing this constraint would help ensure data integrity and verify query correctness, as it establishes a clear semantic relationship between the district name and its corresponding municipality level."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A6",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A6": "0"
+        },
+        {
+          "A2": "Benesov",
+          "A6": "26"
+        },
+        {
+          "A2": "Beroun",
+          "A6": "26"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The mapping between A2 (district name) and A6 (municipality < district < region) is meaningful as it establishes a clear semantic relationship where each district name corresponds to a specific municipality classification. Given that the observed mapping is 100% consistent across 77 rows, it indicates reliability. This dependency is not trivial since A2 is not a primary key, and enforcing this constraint would enhance query verification by ensuring that each district name consistently maps to its corresponding municipality classification."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A7",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A7": "0"
+        },
+        {
+          "A2": "Benesov",
+          "A7": "6"
+        },
+        {
+          "A2": "Beroun",
+          "A7": "4"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency A2 \u2192 A7 is meaningful as it represents a consistent mapping between district names and a specific attribute (A7) that likely indicates a characteristic of the district. Given that the mapping is 100% consistent across 77 rows, it suggests a reliable relationship rather than a coincidence. This constraint would help ensure data integrity and verify query correctness related to district attributes."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A8",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A8": 1
+        },
+        {
+          "A2": "Benesov",
+          "A8": 2
+        },
+        {
+          "A2": "Beroun",
+          "A8": 1
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency A2 \u2192 A8 is meaningful as it establishes a consistent mapping between district names and their corresponding identifiers. Given that the observed mapping is 100% consistent across 77 rows, it suggests a reliable relationship. This dependency is not trivial, as A2 is not a primary key, and enforcing it would help ensure data integrity and correctness in queries related to district identification."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A9",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A9": 1
+        },
+        {
+          "A2": "Benesov",
+          "A9": 5
+        },
+        {
+          "A2": "Beroun",
+          "A9": 5
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The mapping between A2 (district name) and A9 (not useful) is consistent across all observed data, suggesting a meaningful relationship. Although A9 is described as 'not useful', the consistent mapping indicates that A2 uniquely determines A9, which could help in verifying query correctness. This dependency is not trivial as A2 is not a primary key."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A10",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A10": 100.0
+        },
+        {
+          "A2": "Benesov",
+          "A10": 46.7
+        },
+        {
+          "A2": "Beroun",
+          "A10": 41.7
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The mapping between district names (A2) and the ratio of urban inhabitants (A10) is meaningful and consistent across all observed data. Each district name uniquely corresponds to a specific urban inhabitant ratio, suggesting a reliable semantic relationship. This constraint would help ensure data integrity and verify query correctness regarding urban demographics."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A11",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A11": 12541
+        },
+        {
+          "A2": "Benesov",
+          "A11": 8507
+        },
+        {
+          "A2": "Beroun",
+          "A11": 8980
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency A2 \u2192 A11 represents a meaningful relationship where each district name (A2) consistently maps to a unique average salary (A11). This is not a trivial dependency, as A2 is not a primary key and the mapping is reliable across the observed data. Enforcing this constraint would help ensure data integrity and verify query correctness regarding average salaries associated with district names."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A12",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A12": 0.2
+        },
+        {
+          "A2": "Benesov",
+          "A12": 1.6
+        },
+        {
+          "A2": "Beroun",
+          "A12": 1.9
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency A2 \u2192 A12 is meaningful as it represents a consistent mapping between district names and their corresponding unemployment rates. Given that the observed mapping is 100% consistent across 77 rows, it suggests a reliable relationship. This dependency is not trivial, as A2 is not a primary key, and enforcing it would help ensure data integrity and verify query correctness regarding unemployment rates associated with specific districts."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A13",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A13": 0.43
+        },
+        {
+          "A2": "Benesov",
+          "A13": 1.85
+        },
+        {
+          "A2": "Beroun",
+          "A13": 2.21
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The relationship between A2 (district name) and A13 (unemployment rate 1996) is meaningful as it reflects a consistent mapping where each district has a specific unemployment rate. This dependency is reliable with 77 rows of data showing 100% consistency. It is not trivial since A2 is not a primary key, and enforcing this constraint would help ensure data integrity and verify query correctness regarding unemployment rates associated with districts."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A14",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A14": 167
+        },
+        {
+          "A2": "Benesov",
+          "A14": 132
+        },
+        {
+          "A2": "Beroun",
+          "A14": 111
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency A2 \u2192 A14 represents a meaningful relationship where each district name (A2) consistently maps to a specific number of entrepreneurs per 1000 inhabitants (A14). This is not a trivial relationship, as it provides valuable demographic information about each district. Given that the mapping is 100% consistent across 77 rows, it is reliable and should be enforced as a constraint to ensure data integrity and facilitate accurate queries."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A15",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A15": 85677.0
+        },
+        {
+          "A2": "Benesov",
+          "A15": 2159.0
+        },
+        {
+          "A2": "Beroun",
+          "A15": 2824.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency A2 \u2192 A15 represents a meaningful relationship where each district name (A2) consistently maps to a specific number of committed crimes (A15). This is not a trivial dependency, as A2 is not a primary key and the mapping is reliable across 77 rows. Enforcing this constraint would help ensure data integrity and verify query correctness regarding crime statistics by district."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A2",
+      "column_b": "A16",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A2": "Hl.m. Praha",
+          "A16": 99107
+        },
+        {
+          "A2": "Benesov",
+          "A16": 2674
+        },
+        {
+          "A2": "Beroun",
+          "A16": 2813
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency A2 \u2192 A16 represents a meaningful relationship where each district name (A2) consistently maps to a specific value (A16). This is not a trivial dependency, as A2 is not a primary key and the mapping is reliable across 77 rows. Enforcing this constraint would enhance data integrity and help verify query correctness."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A4",
+      "column_b": "A5",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A4": "1204953",
+          "A5": "0"
+        },
+        {
+          "A4": "88884",
+          "A5": "80"
+        },
+        {
+          "A4": "75232",
+          "A5": "55"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The mapping between A4 and A5 shows a consistent relationship where each value of A4 corresponds to exactly one value of A5. This suggests a meaningful semantic relationship, likely indicating a specific characteristic or classification related to A4. Given that there are 77 rows and the mapping is 100% consistent, it is reliable. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A4",
+      "column_b": "A6",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A4": "1204953",
+          "A6": "0"
+        },
+        {
+          "A4": "88884",
+          "A6": "26"
+        },
+        {
+          "A4": "75232",
+          "A6": "26"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The observed mapping between A4 and A6 is consistent across all rows, indicating a reliable functional dependency. A4 appears to represent a specific attribute that semantically relates to A6, suggesting that A4 could be a code or identifier that consistently maps to a specific value in A6. This relationship is meaningful and could help verify query correctness, as it ensures that for each unique A4 value, there is a corresponding A6 value, which adds value to data integrity."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A4",
+      "column_b": "A7",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A4": "1204953",
+          "A7": "0"
+        },
+        {
+          "A4": "88884",
+          "A7": "6"
+        },
+        {
+          "A4": "75232",
+          "A7": "4"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The observed mapping between A4 and A7 is consistent across all 77 rows, indicating a reliable functional dependency. A4 appears to represent a specific attribute that semantically relates to A7, suggesting a meaningful relationship rather than a coincidence. Enforcing this constraint would help ensure data integrity and verify query correctness, as it establishes a clear mapping between these two columns."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A4",
+      "column_b": "A8",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A4": "1204953",
+          "A8": 1
+        },
+        {
+          "A4": "88884",
+          "A8": 2
+        },
+        {
+          "A4": "75232",
+          "A8": 1
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The mapping between A4 and A8 shows a consistent relationship across all 77 rows, indicating that for each unique value of A4, there is a specific corresponding value of A8. This suggests a meaningful semantic relationship, as A4 appears to represent a specific category or classification that directly correlates with A8. Enforcing this constraint would help ensure data integrity and verify query correctness, as it establishes a clear dependency that can be relied upon in future data entries."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A4",
+      "column_b": "A9",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A4": "1204953",
+          "A9": 1
+        },
+        {
+          "A4": "88884",
+          "A9": 5
+        },
+        {
+          "A4": "75232",
+          "A9": 5
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The observed mapping between A4 and A9 is consistent across all 77 rows, indicating a reliable functional dependency. A4 appears to represent a specific attribute that consistently maps to a value in A9, suggesting a meaningful semantic relationship. This dependency is not trivial as A4 is not a primary or unique key, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A4",
+      "column_b": "A10",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A4": "1204953",
+          "A10": 100.0
+        },
+        {
+          "A4": "88884",
+          "A10": 46.7
+        },
+        {
+          "A4": "75232",
+          "A10": 41.7
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The observed mapping between A4 and A10 is consistent across all 77 rows, indicating a reliable functional dependency. A4 appears to represent a specific identifier related to a district, while A10 represents a measurable attribute (ratio of urban inhabitants). This suggests a meaningful semantic relationship, as the ratio of urban inhabitants is likely to be associated with specific district identifiers. Enforcing this constraint would help ensure data integrity and verify query correctness, as it establishes a clear relationship between the district identifier and its urban inhabitant ratio."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A4",
+      "column_b": "A11",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A4": "1204953",
+          "A11": 12541
+        },
+        {
+          "A4": "88884",
+          "A11": 8507
+        },
+        {
+          "A4": "75232",
+          "A11": 8980
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The observed mapping between A4 and A11 is consistent across all 77 rows, indicating a reliable dependency. A4 appears to represent a specific identifier that correlates with the average salary (A11) in a district, suggesting a meaningful semantic relationship. Enforcing this constraint would help ensure data integrity and verify query correctness, as it establishes a clear link between district identifiers and their corresponding average salaries."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A4",
+      "column_b": "A12",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A4": "1204953",
+          "A12": 0.2
+        },
+        {
+          "A4": "88884",
+          "A12": 1.6
+        },
+        {
+          "A4": "75232",
+          "A12": 1.9
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The observed mapping between A4 and A12 is consistent across all 77 rows, indicating a reliable dependency. A4 appears to represent a specific identifier related to a district, while A12 represents a measurable attribute (unemployment rate in 1995). This suggests a meaningful semantic relationship, as each district identifier (A4) consistently maps to a specific unemployment rate (A12). Enforcing this constraint would help ensure data integrity and verify query correctness regarding unemployment rates associated with districts."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A4",
+      "column_b": "A13",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A4": "1204953",
+          "A13": 0.43
+        },
+        {
+          "A4": "88884",
+          "A13": 1.85
+        },
+        {
+          "A4": "75232",
+          "A13": 2.21
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The observed mapping between A4 and A13 is consistent across all rows, indicating a reliable functional dependency. A4 appears to represent a specific characteristic of the district, while A13 represents a measurable statistic (unemployment rate for 1996). This suggests a meaningful semantic relationship, as A4 likely categorizes districts in a way that directly correlates with the unemployment rate. Enforcing this constraint would help ensure data integrity and verify query correctness regarding district statistics."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A4",
+      "column_b": "A14",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A4": "1204953",
+          "A14": 167
+        },
+        {
+          "A4": "88884",
+          "A14": 132
+        },
+        {
+          "A4": "75232",
+          "A14": 111
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The mapping between A4 and A14 shows a consistent relationship across all observed data, indicating that A4 (which appears to represent a specific identifier) reliably determines A14 (the number of entrepreneurs per 1000 inhabitants). This suggests a meaningful semantic relationship, as A4 likely represents a specific district or area, and A14 quantifies a demographic characteristic of that area. Enforcing this functional dependency would help ensure data integrity and verify query correctness, as it establishes a clear relationship between the district identifier and its associated demographic data."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A4",
+      "column_b": "A15",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A4": "1204953",
+          "A15": 85677.0
+        },
+        {
+          "A4": "88884",
+          "A15": 2159.0
+        },
+        {
+          "A4": "75232",
+          "A15": 2824.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The mapping between A4 and A15 appears to be meaningful as A4 represents a specific identifier that likely correlates with the number of committed crimes in the district (A15). Given that the observed mapping is 100% consistent across 77 rows, it suggests a reliable relationship. This dependency is not trivial, as A4 is not a primary key, and enforcing this constraint would help ensure data integrity and verify query correctness regarding crime statistics in relation to district identifiers."
+      }
+    },
+    {
+      "table": "district",
+      "type": "functional",
+      "column_a": "A4",
+      "column_b": "A16",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "A4": "1204953",
+          "A16": 99107
+        },
+        {
+          "A4": "88884",
+          "A16": 2674
+        },
+        {
+          "A4": "75232",
+          "A16": 2813
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The observed mapping between A4 and A16 is consistent across all 77 rows, indicating a reliable dependency. A4 appears to represent a specific identifier related to the district, while A16 represents a count of committed crimes, suggesting a meaningful relationship where each district identifier consistently maps to a specific crime count. This dependency is not trivial, as A4 is not a primary key, and enforcing this constraint would help ensure data integrity and verify query correctness regarding crime statistics by district."
+      }
+    },
+    {
+      "table": "trans",
+      "type": "functional",
+      "column_a": "TRANS_ID",
+      "column_b": "ACCOUNT_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANS_ID": 1,
+          "ACCOUNT_ID": 1
+        },
+        {
+          "TRANS_ID": 5,
+          "ACCOUNT_ID": 1
+        },
+        {
+          "TRANS_ID": 6,
+          "ACCOUNT_ID": 1
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANS_ID is a unique identifier for each transaction, and it consistently maps to a single ACCOUNT_ID. This indicates a meaningful relationship where each transaction is associated with exactly one account, which is semantically relevant for ensuring data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "trans",
+      "type": "functional",
+      "column_a": "TRANS_ID",
+      "column_b": "DATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANS_ID": 1,
+          "DATE": "1995-03-24"
+        },
+        {
+          "TRANS_ID": 5,
+          "DATE": "1995-04-13"
+        },
+        {
+          "TRANS_ID": 6,
+          "DATE": "1995-05-13"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANS_ID is a unique identifier for each transaction, and it consistently maps to a single DATE across a large dataset. This indicates a meaningful functional dependency that ensures each transaction has a specific date, which is important for maintaining data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "trans",
+      "type": "functional",
+      "column_a": "TRANS_ID",
+      "column_b": "TYPE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANS_ID": 1,
+          "TYPE": "PRIJEM"
+        },
+        {
+          "TRANS_ID": 5,
+          "TYPE": "PRIJEM"
+        },
+        {
+          "TRANS_ID": 6,
+          "TYPE": "PRIJEM"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANS_ID is a unique identifier for each transaction, and it consistently maps to a specific TYPE of transaction. This is a meaningful semantic relationship as it defines the nature of the transaction (credit or withdrawal). Enforcing this constraint would help ensure data integrity and verify query correctness, as each transaction should have a distinct type."
+      }
+    },
+    {
+      "table": "trans",
+      "type": "functional",
+      "column_a": "TRANS_ID",
+      "column_b": "OPERATION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANS_ID": 1,
+          "OPERATION": "VKLAD"
+        },
+        {
+          "TRANS_ID": 5,
+          "OPERATION": "PREVOD Z UCTU"
+        },
+        {
+          "TRANS_ID": 6,
+          "OPERATION": "PREVOD Z UCTU"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANS_ID is a unique identifier for each transaction, and it consistently maps to a single OPERATION type. This is a meaningful functional dependency as it ensures that each transaction ID corresponds to exactly one operation type, which is crucial for maintaining data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "trans",
+      "type": "functional",
+      "column_a": "TRANS_ID",
+      "column_b": "AMOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANS_ID": 1,
+          "AMOUNT": 1000
+        },
+        {
+          "TRANS_ID": 5,
+          "AMOUNT": 3679
+        },
+        {
+          "TRANS_ID": 6,
+          "AMOUNT": 3679
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANS_ID is a primary key, and it uniquely identifies each transaction. The consistent mapping of TRANS_ID to AMOUNT indicates a meaningful relationship where each transaction should have a specific amount associated with it. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "trans",
+      "type": "functional",
+      "column_a": "TRANS_ID",
+      "column_b": "BALANCE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANS_ID": 1,
+          "BALANCE": 1000
+        },
+        {
+          "TRANS_ID": 5,
+          "BALANCE": 4679
+        },
+        {
+          "TRANS_ID": 6,
+          "BALANCE": 20977
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANS_ID is a unique identifier for each transaction, and it consistently maps to a specific BALANCE. This is a meaningful dependency as it ensures that for each transaction, the balance can be accurately tracked, which is crucial for financial integrity. Enforcing this constraint would help verify query correctness and maintain data consistency."
+      }
+    },
+    {
+      "table": "trans",
+      "type": "functional",
+      "column_a": "TRANS_ID",
+      "column_b": "K_SYMBOL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANS_ID": 1,
+          "K_SYMBOL": null
+        },
+        {
+          "TRANS_ID": 5,
+          "K_SYMBOL": null
+        },
+        {
+          "TRANS_ID": 6,
+          "K_SYMBOL": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While TRANS_ID is a primary key and uniquely identifies each transaction, the K_SYMBOL values are consistently null in the observed data. This suggests that there is no meaningful relationship between TRANS_ID and K_SYMBOL, making it a trivial dependency rather than a semantic one. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "trans",
+      "type": "functional",
+      "column_a": "TRANS_ID",
+      "column_b": "BANK",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANS_ID": 1,
+          "BANK": null
+        },
+        {
+          "TRANS_ID": 5,
+          "BANK": "AB"
+        },
+        {
+          "TRANS_ID": 6,
+          "BANK": "AB"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency TRANS_ID \u2192 BANK is meaningful because each transaction ID should correspond to exactly one bank, which is a semantic relationship. Although there are null values for BANK, the consistent mapping for non-null values suggests that enforcing this constraint would help ensure data integrity and verify query correctness. Given the large number of rows (1,056,320), this dependency is reliable and not just a coincidence."
+      }
+    },
+    {
+      "table": "trans",
+      "type": "functional",
+      "column_a": "TRANS_ID",
+      "column_b": "ACCOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TRANS_ID": 1.0,
+          "ACCOUNT": null
+        },
+        {
+          "TRANS_ID": 5.0,
+          "ACCOUNT": 41403269.0
+        },
+        {
+          "TRANS_ID": 6.0,
+          "ACCOUNT": 41403269.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "TRANS_ID is a unique identifier for each transaction, and it consistently maps to a specific ACCOUNT. This indicates a meaningful relationship where each transaction should be associated with exactly one account. Enforcing this constraint would help ensure data integrity and verify query correctness, especially in financial contexts where accurate account tracking is crucial."
+      }
+    },
+    {
+      "table": "account",
+      "type": "functional",
+      "column_a": "ACCOUNT_ID",
+      "column_b": "DISTRICT_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCOUNT_ID": 1,
+          "DISTRICT_ID": 18
+        },
+        {
+          "ACCOUNT_ID": 2,
+          "DISTRICT_ID": 1
+        },
+        {
+          "ACCOUNT_ID": 3,
+          "DISTRICT_ID": 5
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ACCOUNT_ID \u2192 DISTRICT_ID is meaningful as each account is associated with a specific district, which is a semantic relationship. Given the observed mapping is 100% consistent across 4500 rows, it indicates reliability. Since ACCOUNT_ID is a primary key, this dependency is not trivial but adds value for query verification, ensuring that each account is correctly linked to its district."
+      }
+    },
+    {
+      "table": "account",
+      "type": "functional",
+      "column_a": "ACCOUNT_ID",
+      "column_b": "FREQUENCY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCOUNT_ID": 1,
+          "FREQUENCY": "POPLATEK MESICNE"
+        },
+        {
+          "ACCOUNT_ID": 2,
+          "FREQUENCY": "POPLATEK MESICNE"
+        },
+        {
+          "ACCOUNT_ID": 3,
+          "FREQUENCY": "POPLATEK MESICNE"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While ACCOUNT_ID is a primary key and consistently maps to the same FREQUENCY value in the current dataset, this does not indicate a meaningful functional dependency. The observed consistency may be coincidental and does not reflect a natural mapping relationship that would hold true for future data. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "account",
+      "type": "functional",
+      "column_a": "ACCOUNT_ID",
+      "column_b": "DATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCOUNT_ID": 1,
+          "DATE": "1995-03-24"
+        },
+        {
+          "ACCOUNT_ID": 2,
+          "DATE": "1993-02-26"
+        },
+        {
+          "ACCOUNT_ID": 3,
+          "DATE": "1997-07-07"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ACCOUNT_ID is a primary key, and it consistently maps to a unique DATE for each account, indicating that the creation date of an account is inherently tied to its unique identifier. This is a meaningful dependency as it ensures that each account has a specific creation date, which is important for maintaining data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "card",
+      "type": "functional",
+      "column_a": "CARD_ID",
+      "column_b": "DISP_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CARD_ID": 1,
+          "DISP_ID": 9
+        },
+        {
+          "CARD_ID": 2,
+          "DISP_ID": 19
+        },
+        {
+          "CARD_ID": 3,
+          "DISP_ID": 41
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CARD_ID \u2192 DISP_ID is meaningful as each card should have a unique disposition ID associated with it. Given that CARD_ID is a primary key, this relationship is reliable and consistent across the dataset. Enforcing this constraint would help ensure data integrity and verify query correctness, as it establishes a clear mapping between card identifiers and their corresponding dispositions."
+      }
+    },
+    {
+      "table": "card",
+      "type": "functional",
+      "column_a": "CARD_ID",
+      "column_b": "TYPE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CARD_ID": 1,
+          "TYPE": "gold"
+        },
+        {
+          "CARD_ID": 2,
+          "TYPE": "classic"
+        },
+        {
+          "CARD_ID": 3,
+          "TYPE": "gold"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CARD_ID \u2192 TYPE is meaningful as each unique CARD_ID consistently maps to a specific TYPE of card. This relationship is not coincidental, as it reflects the inherent categorization of card types based on their IDs. Enforcing this constraint would enhance data integrity and help verify query correctness, ensuring that each card ID is associated with the correct type."
+      }
+    },
+    {
+      "table": "card",
+      "type": "functional",
+      "column_a": "CARD_ID",
+      "column_b": "ISSUED",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CARD_ID": 1,
+          "ISSUED": "1998-10-16"
+        },
+        {
+          "CARD_ID": 2,
+          "ISSUED": "1998-03-13"
+        },
+        {
+          "CARD_ID": 3,
+          "ISSUED": "1995-09-03"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "CARD_ID is a unique identifier for each card, and it consistently maps to a single ISSUED date. This is a meaningful functional dependency as it ensures that each card has a specific issuance date, which is important for tracking and validation purposes. Enforcing this constraint would help maintain data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "card",
+      "type": "functional",
+      "column_a": "DISP_ID",
+      "column_b": "TYPE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISP_ID": 9,
+          "TYPE": "gold"
+        },
+        {
+          "DISP_ID": 19,
+          "TYPE": "classic"
+        },
+        {
+          "DISP_ID": 41,
+          "TYPE": "gold"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISP_ID \u2192 TYPE is meaningful as it establishes a clear relationship between a unique identifier (DISP_ID) and the type of card (TYPE). Given that the mapping is 100% consistent across 892 rows, it indicates reliability. This relationship is not trivial since DISP_ID is not a primary key in the context of this analysis, and enforcing this constraint would help ensure data integrity and correctness in queries related to card types."
+      }
+    },
+    {
+      "table": "card",
+      "type": "functional",
+      "column_a": "DISP_ID",
+      "column_b": "ISSUED",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISP_ID": 9,
+          "ISSUED": "1998-10-16"
+        },
+        {
+          "DISP_ID": 19,
+          "ISSUED": "1998-03-13"
+        },
+        {
+          "DISP_ID": 41,
+          "ISSUED": "1995-09-03"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The relationship between DISP_ID and ISSUED is meaningful as each DISP_ID consistently maps to a unique ISSUED date, indicating that each disposition ID corresponds to a specific issuance date of a card. This is not a trivial relationship, as DISP_ID is not a primary key in the context of the CARD table, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "order",
+      "type": "functional",
+      "column_a": "ORDER_ID",
+      "column_b": "ACCOUNT_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ORDER_ID": 29401,
+          "ACCOUNT_ID": 1
+        },
+        {
+          "ORDER_ID": 29402,
+          "ACCOUNT_ID": 2
+        },
+        {
+          "ORDER_ID": 29403,
+          "ACCOUNT_ID": 2
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "ORDER_ID is a unique identifier for each order, and it consistently maps to a single ACCOUNT_ID. This indicates a meaningful relationship where each order is associated with exactly one account, which is important for maintaining data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "order",
+      "type": "functional",
+      "column_a": "ORDER_ID",
+      "column_b": "BANK_TO",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ORDER_ID": 29401,
+          "BANK_TO": "YZ"
+        },
+        {
+          "ORDER_ID": 29402,
+          "BANK_TO": "ST"
+        },
+        {
+          "ORDER_ID": 29403,
+          "BANK_TO": "QR"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "ORDER_ID is a primary key, and it uniquely determines BANK_TO, which is a meaningful relationship as each order should correspond to exactly one bank. This constraint helps ensure data integrity and verifies query correctness."
+      }
+    },
+    {
+      "table": "order",
+      "type": "functional",
+      "column_a": "ORDER_ID",
+      "column_b": "ACCOUNT_TO",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ORDER_ID": 29401,
+          "ACCOUNT_TO": 87144583
+        },
+        {
+          "ORDER_ID": 29402,
+          "ACCOUNT_TO": 89597016
+        },
+        {
+          "ORDER_ID": 29403,
+          "ACCOUNT_TO": 13943797
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "ORDER_ID is a unique identifier for each order, and it consistently maps to a single ACCOUNT_TO value. This indicates a meaningful relationship where each order is associated with exactly one recipient account. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents the possibility of multiple ACCOUNT_TO values for a single ORDER_ID."
+      }
+    },
+    {
+      "table": "order",
+      "type": "functional",
+      "column_a": "ORDER_ID",
+      "column_b": "AMOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ORDER_ID": 29401.0,
+          "AMOUNT": 2452.0
+        },
+        {
+          "ORDER_ID": 29402.0,
+          "AMOUNT": 3372.7
+        },
+        {
+          "ORDER_ID": 29403.0,
+          "AMOUNT": 7266.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "ORDER_ID is a primary key in the ORDER table, and it uniquely determines the AMOUNT for each order. This is a meaningful functional dependency as it ensures that each order has a specific amount associated with it, which is essential for maintaining data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "order",
+      "type": "functional",
+      "column_a": "ORDER_ID",
+      "column_b": "K_SYMBOL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ORDER_ID": 29401,
+          "K_SYMBOL": "SIPO"
+        },
+        {
+          "ORDER_ID": 29402,
+          "K_SYMBOL": "UVER"
+        },
+        {
+          "ORDER_ID": 29403,
+          "K_SYMBOL": "SIPO"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "ORDER_ID is a primary key and uniquely identifies each order, while K_SYMBOL represents the purpose of the payment. The consistent mapping suggests a meaningful relationship where each order has a specific purpose, which can help in verifying query correctness and ensuring data integrity."
+      }
+    },
+    {
+      "table": "disp",
+      "type": "functional",
+      "column_a": "DISP_ID",
+      "column_b": "CLIENT_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISP_ID": 1,
+          "CLIENT_ID": 1
+        },
+        {
+          "DISP_ID": 2,
+          "CLIENT_ID": 2
+        },
+        {
+          "DISP_ID": 3,
+          "CLIENT_ID": 3
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "DISP_ID is a unique identifier for each disposition, and it consistently maps to a unique CLIENT_ID. This indicates a meaningful relationship where each disposition is associated with exactly one client, which is semantically relevant for ensuring data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "disp",
+      "type": "functional",
+      "column_a": "DISP_ID",
+      "column_b": "ACCOUNT_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISP_ID": 1,
+          "ACCOUNT_ID": 1
+        },
+        {
+          "DISP_ID": 2,
+          "ACCOUNT_ID": 2
+        },
+        {
+          "DISP_ID": 3,
+          "ACCOUNT_ID": 2
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISP_ID \u2192 ACCOUNT_ID is meaningful because each DISP_ID uniquely identifies an ACCOUNT_ID, indicating a clear relationship between dispositions and accounts. Although DISP_ID is a unique identifier, enforcing this constraint adds value for query verification and ensures data integrity, as it prevents the possibility of a DISP_ID being associated with multiple ACCOUNT_IDs in the future."
+      }
+    },
+    {
+      "table": "disp",
+      "type": "functional",
+      "column_a": "DISP_ID",
+      "column_b": "TYPE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DISP_ID": 1,
+          "TYPE": "OWNER"
+        },
+        {
+          "DISP_ID": 2,
+          "TYPE": "OWNER"
+        },
+        {
+          "DISP_ID": 3,
+          "TYPE": "DISPONENT"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DISP_ID \u2192 TYPE is meaningful as each DISP_ID uniquely determines a TYPE, which reflects the role of the disposition (e.g., OWNER or DISPONENT). This relationship is consistent across all 5369 rows, indicating reliability. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents invalid TYPE values for given DISP_IDs."
+      }
+    },
+    {
+      "table": "disp",
+      "type": "functional",
+      "column_a": "CLIENT_ID",
+      "column_b": "ACCOUNT_ID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CLIENT_ID": 1,
+          "ACCOUNT_ID": 1
+        },
+        {
+          "CLIENT_ID": 2,
+          "ACCOUNT_ID": 2
+        },
+        {
+          "CLIENT_ID": 3,
+          "ACCOUNT_ID": 2
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While there is a consistent mapping observed between CLIENT_ID and ACCOUNT_ID, the relationship is not one-to-one; multiple CLIENT_IDs can map to the same ACCOUNT_ID. This suggests that CLIENT_ID does not uniquely determine ACCOUNT_ID, making it an unreliable functional dependency. Additionally, enforcing this constraint would not add significant value for query verification, as it does not represent a meaningful semantic relationship."
+      }
+    },
+    {
+      "table": "disp",
+      "type": "functional",
+      "column_a": "CLIENT_ID",
+      "column_b": "TYPE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CLIENT_ID": 1,
+          "TYPE": "OWNER"
+        },
+        {
+          "CLIENT_ID": 2,
+          "TYPE": "OWNER"
+        },
+        {
+          "CLIENT_ID": 3,
+          "TYPE": "DISPONENT"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency CLIENT_ID \u2192 TYPE is meaningful as it establishes a clear relationship between a client and their role regarding account disposition. Given the consistent mapping across 5369 rows, it suggests a reliable pattern rather than a coincidence. This constraint would enhance data integrity and help verify query correctness by ensuring that each client is associated with a specific type of disposition."
+      }
+    }
+  ]
+}

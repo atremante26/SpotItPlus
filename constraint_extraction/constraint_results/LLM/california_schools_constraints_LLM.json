@@ -1,0 +1,1379 @@
+{
+  "california_schools": [
+    [
+      {
+        "primary": [
+          {
+            "value": "FRPM__CDSCODE"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "SATSCORES__CDS"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "SCHOOLS__CDSCODE"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "SATSCORES__CDS"
+          },
+          {
+            "value": "SCHOOLS__CDSCODE"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "FRPM__CDSCODE"
+          },
+          {
+            "value": "SCHOOLS__CDSCODE"
+          }
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SCHOOLS__CHARTER"
+          },
+          0,
+          1
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SCHOOLS__MAGNET"
+          },
+          0,
+          1
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SCHOOLS__LATITUDE"
+          },
+          32.547737,
+          44.219305
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SCHOOLS__LONGITUDE"
+          },
+          -180,
+          180
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SATSCORES__ENROLL12"
+          },
+          0,
+          43324
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SATSCORES__NUMTSTTAKR"
+          },
+          0,
+          24305
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SATSCORES__AVGSCRREAD"
+          },
+          200,
+          800
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SATSCORES__AVGSCRMATH"
+          },
+          200,
+          800
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SATSCORES__AVGSCRWRITE"
+          },
+          200,
+          800
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SATSCORES__NUMGE1500"
+          },
+          0,
+          5837
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "FRPM__DISTRICT_CODE"
+          },
+          10000,
+          80000
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "FRPM__IRC"
+          },
+          0,
+          1
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "FRPM__2013_14_CALPADS_FALL_1_CERTIFICATION_STATUS"
+          },
+          1,
+          1
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SCHOOLS__STATUSTYPE"
+          },
+          [
+            "Active",
+            "Closed",
+            "Merged",
+            "Pending"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SCHOOLS__CHARTER"
+          },
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SCHOOLS__FUNDINGTYPE"
+          },
+          [
+            "Directly funded",
+            "Locally funded",
+            "Not in CS funding model"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SCHOOLS__DOC"
+          },
+          [
+            "00",
+            "31",
+            "34",
+            "42",
+            "54",
+            "56",
+            "52",
+            "58",
+            "98",
+            "02",
+            "99",
+            "03"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SCHOOLS__DOCTYPE"
+          },
+          [
+            "County Office of Education (COE)",
+            "State Special Schools",
+            "Non-School Locations",
+            "Joint Powers Authority (JPA)",
+            "Unified School District",
+            "High School District",
+            "Elementary School District",
+            "Community College District",
+            "Regional Occupation Center/Program (ROC/P)",
+            "State Board of Education",
+            "Administration Only",
+            "Statewide Benefit Charter"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SCHOOLS__SOC"
+          },
+          [
+            "65",
+            "66",
+            "60",
+            "10",
+            "14",
+            "13",
+            "62",
+            "70",
+            "09",
+            "31",
+            "08",
+            "63",
+            "68",
+            "64",
+            "61",
+            "69",
+            "98",
+            "11",
+            "15",
+            "67"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SCHOOLS__SOCTYPE"
+          },
+          [
+            "K-12 Schools (Public)",
+            "High Schools (Public)",
+            "Elementary Schools (Public)",
+            "County Community",
+            "Juvenile Court Schools",
+            "Opportunity Schools",
+            "Intermediate/Middle Schools (Public)",
+            "Adult Education Centers",
+            "Special Education Schools (Public)",
+            "State Special Schools",
+            "Preschool",
+            "Alternative Schools of Choice",
+            "Continuation High Schools",
+            "Junior High Schools (Public)",
+            "Elemen Schools In 1 School Dist. (Public)",
+            "District Community Day Schools",
+            "ROC/ROP",
+            "Youth Authority Facilities",
+            "Other County Or District Programs",
+            "High Schools In 1 School Dist. (Public)"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SCHOOLS__EDOPSCODE"
+          },
+          [
+            "TRAD",
+            "JUV",
+            "COMM",
+            "OPP",
+            "SPEC",
+            "SSS",
+            "ALTSOC",
+            "CON",
+            "COMMDAY",
+            "HOMHOS",
+            "YTH",
+            "ROP",
+            "SPECON"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SCHOOLS__EDOPSNAME"
+          },
+          [
+            "Traditional",
+            "Juvenile Court School",
+            "County Community School",
+            "Opportunity School",
+            "Special Education School",
+            "State Special School",
+            "Alternative School of Choice",
+            "Continuation School",
+            "Community Day School",
+            "Home and Hospital",
+            "Youth Authority School",
+            "ROP",
+            "District Special Education Consortia School"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SCHOOLS__EILCODE"
+          },
+          [
+            "ELEMHIGH",
+            "HS",
+            "ELEM",
+            "UG",
+            "INTMIDJR",
+            "PS",
+            "A"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SCHOOLS__EILNAME"
+          },
+          [
+            "Elementary-High Combination",
+            "High School",
+            "Elementary",
+            "Ungraded",
+            "Intermediate/Middle/Junior High",
+            "Preschool",
+            "Adult"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SCHOOLS__VIRTUAL"
+          },
+          [
+            "P",
+            "N",
+            "F"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SCHOOLS__MAGNET"
+          },
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SATSCORES__RTYPE"
+          },
+          [
+            "D",
+            "S"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "FRPM__DISTRICT_TYPE"
+          },
+          [
+            "County Office of Education (COE)",
+            "State Special Schools",
+            "Unified School District",
+            "Elementary School District",
+            "High School District",
+            "State Board of Education",
+            "Non-School Locations",
+            "Statewide Benefit Charter"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "FRPM__SCHOOL_TYPE"
+          },
+          [
+            "K-12 Schools (Public)",
+            "High Schools (Public)",
+            "Elementary Schools (Public)",
+            "Juvenile Court Schools",
+            "County Community",
+            "State Special Schools",
+            "Alternative Schools of Choice",
+            "Intermediate/Middle Schools (Public)",
+            "Continuation High Schools",
+            "Special Education Schools (Public)",
+            "Elemen Schools In 1 School Dist. (Public)",
+            "District Community Day Schools",
+            "Preschool",
+            "Junior High Schools (Public)",
+            "Opportunity Schools",
+            "High Schools In 1 School Dist. (Public)",
+            "Youth Authority Facilities"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "FRPM__EDUCATIONAL_OPTION_TYPE"
+          },
+          [
+            "Traditional",
+            "Juvenile Court School",
+            "County Community School",
+            "State Special School",
+            "Alternative School of Choice",
+            "Continuation School",
+            "Special Education School",
+            "Community Day School",
+            "Home and Hospital",
+            "Opportunity School",
+            "Youth Authority School",
+            "District Special Education Consortia School"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "FRPM__NSLP_PROVISION_STATUS"
+          },
+          [
+            "Breakfast Provision 2",
+            "Provision 2",
+            "CEP",
+            "Lunch Provision 2",
+            "Provision 1",
+            "Multiple Provision Types",
+            "Provision 3"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "FRPM__CHARTER_FUNDING_TYPE"
+          },
+          [
+            "Directly funded",
+            "Locally funded",
+            "Not in CS funding model"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "FRPM__IRC"
+          },
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "FRPM__LOW_GRADE"
+          },
+          [
+            "K",
+            "9",
+            "1",
+            "P",
+            "6",
+            "10",
+            "7",
+            "3",
+            "5",
+            "Adult",
+            "4",
+            "2",
+            "8",
+            "11",
+            "12"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "FRPM__HIGH_GRADE"
+          },
+          [
+            "12",
+            "8",
+            "5",
+            "Adult",
+            "6",
+            "3",
+            "P",
+            "7",
+            "2",
+            "1",
+            "4",
+            "K",
+            "9",
+            "10",
+            "11",
+            "13",
+            "Post Secondary"
+          ]
+        ]
+      },
+      {
+        "not_null": {
+          "value": "SCHOOLS__CDSCODE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SCHOOLS__STATUSTYPE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SCHOOLS__COUNTY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SCHOOLS__DISTRICT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SCHOOLS__DOC"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SCHOOLS__DOCTYPE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SATSCORES__CDS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SATSCORES__RTYPE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SATSCORES__DNAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SATSCORES__CNAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SATSCORES__ENROLL12"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SATSCORES__NUMTSTTAKR"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FRPM__CDSCODE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FRPM__ACADEMIC_YEAR"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FRPM__COUNTY_CODE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FRPM__DISTRICT_CODE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FRPM__SCHOOL_CODE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FRPM__COUNTY_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FRPM__DISTRICT_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FRPM__SCHOOL_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FRPM__DISTRICT_TYPE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FRPM__LOW_GRADE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FRPM__HIGH_GRADE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "FRPM__2013_14_CALPADS_FALL_1_CERTIFICATION_STATUS"
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__NCESDIST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__NCESSCHOOL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__STATUSTYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__COUNTY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__DISTRICT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__SCHOOL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__STREET"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__STREETABR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__CITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__ZIP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__STATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__MAILSTREET"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__MAILSTRABR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__MAILCITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__MAILZIP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__MAILSTATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__PHONE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__WEBSITE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__OPENDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__CLOSEDDATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__CHARTER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__CHARTERNUM"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__DOC"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__DOCTYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__SOCTYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__EILCODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__GSOFFERED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__GSSERVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__VIRTUAL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__MAGNET"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__LATITUDE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__LONGITUDE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__CDSCODE",
+            "SCHOOLS__ADMEMAIL1"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__NCESDIST",
+            "SCHOOLS__DISTRICT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__NCESDIST",
+            "SCHOOLS__DOC"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__NCESDIST",
+            "SCHOOLS__DOCTYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__ZIP",
+            "SCHOOLS__STATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__ZIP",
+            "SCHOOLS__MAILSTATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__MAILCITY",
+            "SCHOOLS__MAILSTATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__MAILZIP",
+            "SCHOOLS__MAILSTATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__DOC",
+            "SCHOOLS__DOCTYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__SOC",
+            "SCHOOLS__SOCTYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__EDOPSCODE",
+            "SCHOOLS__EDOPSNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__EILCODE",
+            "SCHOOLS__EILNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SCHOOLS__ADMLNAME3",
+            "SCHOOLS__ADMEMAIL3"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SATSCORES__CDS",
+            "SATSCORES__RTYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SATSCORES__CDS",
+            "SATSCORES__SNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SATSCORES__CDS",
+            "SATSCORES__DNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SATSCORES__CDS",
+            "SATSCORES__CNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SATSCORES__CDS",
+            "SATSCORES__ENROLL12"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SATSCORES__CDS",
+            "SATSCORES__NUMTSTTAKR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SATSCORES__CDS",
+            "SATSCORES__AVGSCRREAD"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SATSCORES__CDS",
+            "SATSCORES__AVGSCRMATH"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SATSCORES__CDS",
+            "SATSCORES__AVGSCRWRITE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SATSCORES__CDS",
+            "SATSCORES__NUMGE1500"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__ACADEMIC_YEAR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__COUNTY_CODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__DISTRICT_CODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__SCHOOL_CODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__COUNTY_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__DISTRICT_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__SCHOOL_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__DISTRICT_TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__SCHOOL_TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__EDUCATIONAL_OPTION_TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__CHARTER_SCHOOL_NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__CHARTER_FUNDING_TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__LOW_GRADE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__HIGH_GRADE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CDSCODE",
+            "FRPM__2013_14_CALPADS_FALL_1_CERTIFICATION_STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__COUNTY_CODE",
+            "FRPM__COUNTY_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__DISTRICT_CODE",
+            "FRPM__DISTRICT_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__DISTRICT_CODE",
+            "FRPM__DISTRICT_TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__DISTRICT_CODE",
+            "FRPM__2013_14_CALPADS_FALL_1_CERTIFICATION_STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__SCHOOL_CODE",
+            "FRPM__SCHOOL_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__SCHOOL_CODE",
+            "FRPM__SCHOOL_TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__SCHOOL_CODE",
+            "FRPM__EDUCATIONAL_OPTION_TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__SCHOOL_CODE",
+            "FRPM__NSLP_PROVISION_STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__SCHOOL_CODE",
+            "FRPM__CHARTER_SCHOOL_NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__SCHOOL_CODE",
+            "FRPM__CHARTER_FUNDING_TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__SCHOOL_CODE",
+            "FRPM__2013_14_CALPADS_FALL_1_CERTIFICATION_STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__DISTRICT_NAME",
+            "FRPM__DISTRICT_TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__DISTRICT_TYPE",
+            "FRPM__2013_14_CALPADS_FALL_1_CERTIFICATION_STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__EDUCATIONAL_OPTION_TYPE",
+            "FRPM__2013_14_CALPADS_FALL_1_CERTIFICATION_STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__NSLP_PROVISION_STATUS",
+            "FRPM__2013_14_CALPADS_FALL_1_CERTIFICATION_STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CHARTER_SCHOOL_NUMBER",
+            "FRPM__CHARTER_FUNDING_TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "FRPM__CHARTER_SCHOOL_NUMBER",
+            "FRPM__IRC"
+          ]
+        }
+      }
+    ]
+  ]
+}

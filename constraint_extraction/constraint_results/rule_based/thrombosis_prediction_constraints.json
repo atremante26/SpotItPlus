@@ -1,0 +1,4985 @@
+{
+  "thrombosis_prediction": [
+    [
+      {
+        "primary": [
+          {
+            "value": "PATIENT__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "LABORATORY__ID"
+          },
+          {
+            "value": "LABORATORY__DATE"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "EXAMINATION__ID"
+          },
+          {
+            "value": "PATIENT__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "LABORATORY__ID"
+          },
+          {
+            "value": "PATIENT__ID"
+          }
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__ID"
+          },
+          27654.0,
+          5452747.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__GOT"
+          },
+          3.0,
+          21480.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__GPT"
+          },
+          1.0,
+          4780.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__LDH"
+          },
+          25.0,
+          67080.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__ALP"
+          },
+          11.0,
+          1308.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__TP"
+          },
+          0.0,
+          9.9
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__ALB"
+          },
+          1.0,
+          5.8
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__UA"
+          },
+          0.4,
+          17.3
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__UN"
+          },
+          0.0,
+          152.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__CRE"
+          },
+          0.1,
+          17.1
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__T_BIL"
+          },
+          0.1,
+          7.9
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__T_CHO"
+          },
+          37.0,
+          568.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__TG"
+          },
+          1.0,
+          867.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__CPK"
+          },
+          0.0,
+          10835.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__GLU"
+          },
+          62.0,
+          499.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__WBC"
+          },
+          0.9,
+          35.2
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__RBC"
+          },
+          0.4,
+          6.6
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__HGB"
+          },
+          1.3,
+          18.9
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__HCT"
+          },
+          3.0,
+          56.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__PLT"
+          },
+          5.0,
+          5844.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__PT"
+          },
+          10.1,
+          27.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__APTT"
+          },
+          57.0,
+          146.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__FG"
+          },
+          23.8,
+          106.5
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__PIC"
+          },
+          114.0,
+          700.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__TAT"
+          },
+          63.0,
+          183.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__TAT2"
+          },
+          59.0,
+          155.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__IGG"
+          },
+          3.0,
+          6510.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__IGA"
+          },
+          1.0,
+          1765.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__IGM"
+          },
+          0.0,
+          1573.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__C3"
+          },
+          15.0,
+          196.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LABORATORY__C4"
+          },
+          3.0,
+          80.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "PATIENT__ID"
+          },
+          2110.0,
+          5845877.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "EXAMINATION__ID"
+          },
+          14872.0,
+          9334040.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "EXAMINATION__ACL_IGG"
+          },
+          0.0,
+          2150.3
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "EXAMINATION__ACL_IGM"
+          },
+          0.0,
+          187122.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "EXAMINATION__ANA"
+          },
+          0.0,
+          4096.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "EXAMINATION__ACL_IGA"
+          },
+          0.0,
+          48547.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "EXAMINATION__THROMBOSIS"
+          },
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "LABORATORY__APTT"
+          },
+          [
+            108,
+            84,
+            76,
+            90,
+            120,
+            106,
+            99,
+            101,
+            94,
+            95,
+            96,
+            87,
+            88,
+            93,
+            86,
+            109,
+            111,
+            107,
+            60,
+            57,
+            89,
+            112,
+            146,
+            143,
+            91,
+            100,
+            92
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "LABORATORY__U_PRO"
+          },
+          [
+            "-",
+            "0",
+            "TR",
+            "1",
+            "2",
+            "30",
+            "100",
+            "300",
+            ">=300",
+            "3",
+            "%%",
+            "-15",
+            "4",
+            ">=1000",
+            "+1(30)",
+            "+2(100)"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "LABORATORY__RA"
+          },
+          [
+            "-",
+            "+",
+            "+-",
+            "2+",
+            "7-"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "LABORATORY__RNP"
+          },
+          [
+            "0",
+            "1",
+            "256",
+            "negative",
+            "16",
+            "64",
+            "4",
+            "15"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "LABORATORY__SM"
+          },
+          [
+            "0",
+            "1",
+            "negative",
+            "2",
+            "8"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "LABORATORY__SC170"
+          },
+          [
+            "16",
+            "1",
+            "0",
+            "negative",
+            "4"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "LABORATORY__SSA"
+          },
+          [
+            "0",
+            "negative",
+            "16",
+            "4",
+            "256",
+            "1",
+            "64"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "LABORATORY__SSB"
+          },
+          [
+            "0",
+            "negative",
+            "1",
+            "32",
+            "8",
+            "2"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "LABORATORY__CENTROMEA"
+          },
+          [
+            "0",
+            "negative"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "PATIENT__SEX"
+          },
+          [
+            "F",
+            "M"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "PATIENT__ADMISSION"
+          },
+          [
+            "+",
+            "-",
+            "+("
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EXAMINATION__ANA"
+          },
+          [
+            256,
+            0,
+            16,
+            4,
+            1024,
+            4096,
+            64,
+            4094
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EXAMINATION__ANA_PATTERN"
+          },
+          [
+            "P",
+            "P,S",
+            "S",
+            "D,P,S",
+            "P.S",
+            "S,P",
+            "S,D",
+            "D,P",
+            "P,D",
+            "p",
+            "S,N",
+            "D,S",
+            "D",
+            "N",
+            "P.D"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EXAMINATION__KCT"
+          },
+          [
+            "-",
+            "+"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EXAMINATION__RVVT"
+          },
+          [
+            "-",
+            "+"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EXAMINATION__LAC"
+          },
+          [
+            "-",
+            "+"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EXAMINATION__THROMBOSIS"
+          },
+          [
+            1,
+            0,
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "not_null": {
+          "value": "LABORATORY__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "LABORATORY__DATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PATIENT__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PATIENT__SEX"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PATIENT__ADMISSION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PATIENT__DIAGNOSIS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXAMINATION__ACL_IGG"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXAMINATION__ACL_IGM"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXAMINATION__ACL_IGA"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXAMINATION__THROMBOSIS"
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ID",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__DATE",
+            "LABORATORY__SSB"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__DATE",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GPT",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__SC170"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ALB",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UA",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__SC170"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TG",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TG",
+            "LABORATORY__DNA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CPK",
+            "LABORATORY__SC170"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CPK",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GLU",
+            "LABORATORY__SC170"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GLU",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__WBC",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HGB",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__SC170"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PLT",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PT",
+            "LABORATORY__RNP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PT",
+            "LABORATORY__SM"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PT",
+            "LABORATORY__SC170"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PT",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__APTT",
+            "LABORATORY__RA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__APTT",
+            "LABORATORY__SSA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__APTT",
+            "LABORATORY__SSB"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__RA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__RNP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__SM"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__SC170"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__SSA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__SSB"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__U_PRO"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__IGG"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__IGA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__IGM"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__RA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__RA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__RF"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__RNP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__SM"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__SC170"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__SSA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__SSB"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__RA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__RNP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__SM"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__SC170"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__SSA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__SSB"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGG",
+            "LABORATORY__RNP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGG",
+            "LABORATORY__SM"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGG",
+            "LABORATORY__SC170"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGG",
+            "LABORATORY__SSA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGG",
+            "LABORATORY__SSB"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGG",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGG",
+            "LABORATORY__DNA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__SM"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__SC170"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__SSA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__SSB"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGM",
+            "LABORATORY__SC170"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGM",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RA",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RF",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RF",
+            "LABORATORY__DNA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RNP",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RNP",
+            "LABORATORY__DNA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__DNA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SC170",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SSA",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SSB",
+            "LABORATORY__CENTROMEA"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__PIC"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__SM"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__RBC"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__UA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__WBC"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__TP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__SSB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__CRE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__C4"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C3",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__RBC"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__UA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__HCT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__TAT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__U_PRO"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__WBC"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__TP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__TAT2"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__UN"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__FG"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__CRE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__GLU"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__C4"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PIC",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__RBC"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__DNA"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__T_CHO"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__UA"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__HCT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__TAT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__LDH"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__WBC"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__TP"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__PLT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__ALP"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__TAT2"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__UN"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__GOT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__IGA"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__IGM"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__FG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__SSB"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__GLU"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__C4"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__CPK"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__SSA"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__TG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__GPT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SM",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__T_CHO"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__HCT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__TAT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__LDH"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__PLT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__ALP"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__TAT2"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__FG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__GLU"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RBC",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__DNA",
+            "LABORATORY__T_CHO"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__DNA",
+            "LABORATORY__IGA"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__DNA",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__DNA",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__DNA",
+            "LABORATORY__TG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__DNA",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__UA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__HCT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__WBC"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__TP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__UN"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__FG"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__SSB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__CRE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__C4"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_CHO",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UA",
+            "LABORATORY__HCT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UA",
+            "LABORATORY__TAT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UA",
+            "LABORATORY__LDH"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UA",
+            "LABORATORY__PLT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UA",
+            "LABORATORY__ALP"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UA",
+            "LABORATORY__TAT2"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UA",
+            "LABORATORY__FG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UA",
+            "LABORATORY__GLU"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UA",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UA",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UA",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UA",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__TAT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__TP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__TAT2"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__SSB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__CRE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__GLU"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__HCT",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__LDH"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__U_PRO"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__WBC"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__TP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__UN"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__FG"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__SSB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__CRE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__C4"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__SSA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__WBC"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__TP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__TAT2"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__UN"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__FG"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__SSB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__CRE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__C4"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__RNP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__SSA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__LDH",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__U_PRO",
+            "LABORATORY__TAT2"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__U_PRO",
+            "LABORATORY__SSB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__U_PRO",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__U_PRO",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__U_PRO",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__U_PRO",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__U_PRO",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__WBC",
+            "LABORATORY__ALP"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__WBC",
+            "LABORATORY__TAT2"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__WBC",
+            "LABORATORY__FG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__WBC",
+            "LABORATORY__GLU"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__WBC",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__WBC",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__WBC",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__WBC",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TP",
+            "LABORATORY__ALP"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TP",
+            "LABORATORY__TAT2"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TP",
+            "LABORATORY__FG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TP",
+            "LABORATORY__GLU"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TP",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TP",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TP",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TP",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TP",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TP",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PLT",
+            "LABORATORY__SSB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PLT",
+            "LABORATORY__CRE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PLT",
+            "LABORATORY__C4"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PLT",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PLT",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PLT",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PLT",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PLT",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__PLT",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ALP",
+            "LABORATORY__SSB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ALP",
+            "LABORATORY__CRE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ALP",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ALP",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ALP",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ALP",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ALP",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ALP",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__UN"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__FG"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__SSB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__CRE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__C4"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__SSA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__TAT2",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UN",
+            "LABORATORY__GLU"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UN",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UN",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UN",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UN",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__UN",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GOT",
+            "LABORATORY__CRE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GOT",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GOT",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GOT",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GOT",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__SSB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__CRE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__RNP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGA",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGM",
+            "LABORATORY__SSB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGM",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGM",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGM",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGM",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGM",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__SSB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__CRE"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__FG",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SSB",
+            "LABORATORY__GLU"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SSB",
+            "LABORATORY__CPK"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SSB",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SSB",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SSB",
+            "LABORATORY__TG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SSB",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SSB",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CRE",
+            "LABORATORY__GLU"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CRE",
+            "LABORATORY__C4"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CRE",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CRE",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CRE",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CRE",
+            "LABORATORY__TG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CRE",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CRE",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GLU",
+            "LABORATORY__C4"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GLU",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GLU",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GLU",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GLU",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GLU",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GLU",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GLU",
+            "LABORATORY__SSA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GLU",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__GLU",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C4",
+            "LABORATORY__T_BIL"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C4",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C4",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C4",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C4",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__C4",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_BIL",
+            "LABORATORY__CENTROMEA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_BIL",
+            "LABORATORY__APTT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_BIL",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_BIL",
+            "LABORATORY__TG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_BIL",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_BIL",
+            "LABORATORY__GPT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__T_BIL",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CENTROMEA",
+            "LABORATORY__CPK"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CENTROMEA",
+            "LABORATORY__RNP"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CENTROMEA",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CENTROMEA",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CENTROMEA",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CENTROMEA",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CENTROMEA",
+            "LABORATORY__SSA"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CENTROMEA",
+            "LABORATORY__TG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CENTROMEA",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CENTROMEA",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CENTROMEA",
+            "LABORATORY__GPT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CENTROMEA",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CPK",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CPK",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RNP",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__RNP",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__APTT",
+            "LABORATORY__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__APTT",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__APTT",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__APTT",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__APTT",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__APTT",
+            "LABORATORY__GPT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__APTT",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ID",
+            "LABORATORY__CRP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ID",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ID",
+            "LABORATORY__ALB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ID",
+            "LABORATORY__SSA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ID",
+            "LABORATORY__TG"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ID",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ID",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ID",
+            "LABORATORY__GPT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ID",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CRP",
+            "LABORATORY__SC170"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CRP",
+            "LABORATORY__TG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CRP",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__CRP",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SC170",
+            "LABORATORY__TG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SC170",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SC170",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ALB",
+            "LABORATORY__TG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ALB",
+            "LABORATORY__HGB"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__ALB",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__SSA",
+            "LABORATORY__IGG"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LABORATORY__IGG",
+            "LABORATORY__PT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PATIENT__ID",
+            "PATIENT__SEX"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PATIENT__ID",
+            "PATIENT__BIRTHDAY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PATIENT__ID",
+            "PATIENT__DESCRIPTION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PATIENT__ID",
+            "PATIENT__FIRST_DATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PATIENT__ID",
+            "PATIENT__ADMISSION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PATIENT__ID",
+            "PATIENT__DIAGNOSIS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXAMINATION__ID",
+            "EXAMINATION__KCT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXAMINATION__ID",
+            "EXAMINATION__RVVT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXAMINATION__ID",
+            "EXAMINATION__LAC"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXAMINATION__ID",
+            "EXAMINATION__SYMPTOMS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXAMINATION__ID",
+            "EXAMINATION__THROMBOSIS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXAMINATION__SYMPTOMS",
+            "EXAMINATION__THROMBOSIS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXAMINATION__ACL_IGG",
+            "EXAMINATION__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXAMINATION__ID",
+            "EXAMINATION__ACL_IGM"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXAMINATION__ID",
+            "EXAMINATION__ANA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXAMINATION__ID",
+            "EXAMINATION__THROMBOSIS"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXAMINATION__ID",
+            "EXAMINATION__ACL_IGA"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      }
+    ]
+  ]
+}

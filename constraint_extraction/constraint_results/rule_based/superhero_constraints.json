@@ -1,0 +1,1006 @@
+{
+  "superhero": [
+    [
+      {
+        "primary": [
+          {
+            "value": "ALIGNMENT__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "ATTRIBUTE__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "COLOUR__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "GENDER__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "PUBLISHER__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "RACE__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "SUPERHERO__ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "SUPERPOWER__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "SUPERHERO__SKIN_COLOUR_ID"
+          },
+          {
+            "value": "COLOUR__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "SUPERHERO__RACE_ID"
+          },
+          {
+            "value": "RACE__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "SUPERHERO__PUBLISHER_ID"
+          },
+          {
+            "value": "PUBLISHER__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "SUPERHERO__HAIR_COLOUR_ID"
+          },
+          {
+            "value": "COLOUR__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "SUPERHERO__GENDER_ID"
+          },
+          {
+            "value": "GENDER__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "SUPERHERO__EYE_COLOUR_ID"
+          },
+          {
+            "value": "COLOUR__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "SUPERHERO__ALIGNMENT_ID"
+          },
+          {
+            "value": "ALIGNMENT__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "HERO_ATTRIBUTE__HERO_ID"
+          },
+          {
+            "value": "SUPERHERO__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "HERO_ATTRIBUTE__ATTRIBUTE_ID"
+          },
+          {
+            "value": "ATTRIBUTE__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "HERO_POWER__POWER_ID"
+          },
+          {
+            "value": "SUPERPOWER__ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "HERO_POWER__HERO_ID"
+          },
+          {
+            "value": "SUPERHERO__ID"
+          }
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "GENDER__ID"
+          },
+          1.0,
+          3.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SUPERPOWER__ID"
+          },
+          1.0,
+          167.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "PUBLISHER__ID"
+          },
+          1.0,
+          25.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SUPERHERO__ID"
+          },
+          1.0,
+          756.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SUPERHERO__GENDER_ID"
+          },
+          1.0,
+          3.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SUPERHERO__EYE_COLOUR_ID"
+          },
+          1.0,
+          35.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SUPERHERO__HAIR_COLOUR_ID"
+          },
+          1.0,
+          33.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SUPERHERO__SKIN_COLOUR_ID"
+          },
+          1.0,
+          33.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SUPERHERO__RACE_ID"
+          },
+          1.0,
+          61.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SUPERHERO__PUBLISHER_ID"
+          },
+          1.0,
+          25.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SUPERHERO__ALIGNMENT_ID"
+          },
+          1.0,
+          3.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SUPERHERO__HEIGHT_CM"
+          },
+          0.0,
+          30480.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SUPERHERO__WEIGHT_KG"
+          },
+          0.0,
+          90000000.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "COLOUR__ID"
+          },
+          1.0,
+          35.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "ATTRIBUTE__ID"
+          },
+          1.0,
+          6.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "HERO_POWER__HERO_ID"
+          },
+          1.0,
+          756.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "HERO_POWER__POWER_ID"
+          },
+          1.0,
+          167.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RACE__ID"
+          },
+          1.0,
+          61.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "ALIGNMENT__ID"
+          },
+          1.0,
+          4.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "HERO_ATTRIBUTE__HERO_ID"
+          },
+          1.0,
+          756.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "HERO_ATTRIBUTE__ATTRIBUTE_ID"
+          },
+          1.0,
+          6.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "HERO_ATTRIBUTE__ATTRIBUTE_VALUE"
+          },
+          5.0,
+          100.0
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "GENDER__ID"
+          },
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "GENDER__GENDER"
+          },
+          [
+            "Male",
+            "Female",
+            "N/A"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "PUBLISHER__ID"
+          },
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "PUBLISHER__PUBLISHER_NAME"
+          },
+          [
+            "ABC Studios",
+            "Dark Horse Comics",
+            "DC Comics",
+            "George Lucas",
+            "Hanna-Barbera",
+            "HarperCollins",
+            "Icon Comics",
+            "IDW Publishing",
+            "Image Comics",
+            "J. K. Rowling",
+            "J. R. R. Tolkien",
+            "Marvel Comics",
+            "Microsoft",
+            "NBC - Heroes",
+            "Rebellion",
+            "Shueisha",
+            "Sony Pictures",
+            "South Park",
+            "Star Trek",
+            "SyFy",
+            "Team Epic TV",
+            "Titan Books",
+            "Universal Studios",
+            "Wildstorm"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SUPERHERO__GENDER_ID"
+          },
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SUPERHERO__EYE_COLOUR_ID"
+          },
+          [
+            9,
+            33,
+            7,
+            14,
+            1,
+            23,
+            30,
+            31,
+            22,
+            4,
+            13,
+            28,
+            35,
+            12,
+            8,
+            16,
+            15,
+            2,
+            32,
+            17,
+            34
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SUPERHERO__HAIR_COLOUR_ID"
+          },
+          [
+            13,
+            1,
+            4,
+            6,
+            9,
+            31,
+            22,
+            19,
+            21,
+            23,
+            3,
+            29,
+            7,
+            14,
+            18,
+            10,
+            11,
+            28,
+            25,
+            20,
+            33,
+            12,
+            26,
+            17,
+            27,
+            5
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SUPERHERO__SKIN_COLOUR_ID"
+          },
+          [
+            1,
+            7,
+            23,
+            4,
+            13,
+            12,
+            14,
+            31,
+            21,
+            28,
+            24,
+            33,
+            22,
+            20,
+            8,
+            19
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SUPERHERO__PUBLISHER_ID"
+          },
+          [
+            13,
+            3,
+            4,
+            15,
+            25,
+            10,
+            1,
+            8,
+            21,
+            6,
+            5,
+            22,
+            19,
+            7,
+            2,
+            24,
+            20,
+            9,
+            17,
+            18,
+            11,
+            23,
+            16,
+            14,
+            12
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "SUPERHERO__ALIGNMENT_ID"
+          },
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "ATTRIBUTE__ID"
+          },
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "ATTRIBUTE__ATTRIBUTE_NAME"
+          },
+          [
+            "Intelligence",
+            "Strength",
+            "Speed",
+            "Durability",
+            "Power",
+            "Combat"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "ALIGNMENT__ID"
+          },
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "ALIGNMENT__ALIGNMENT"
+          },
+          [
+            "Good",
+            "Bad",
+            "Neutral",
+            "N/A"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "HERO_ATTRIBUTE__ATTRIBUTE_ID"
+          },
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "HERO_ATTRIBUTE__ATTRIBUTE_VALUE"
+          },
+          [
+            80,
+            75,
+            95,
+            85,
+            100,
+            60,
+            90,
+            55,
+            35,
+            65,
+            70,
+            50,
+            30,
+            10,
+            40,
+            45,
+            25,
+            20,
+            15,
+            5
+          ]
+        ]
+      },
+      {
+        "not_null": {
+          "value": "GENDER__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "GENDER__GENDER"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SUPERPOWER__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SUPERPOWER__POWER_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PUBLISHER__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PUBLISHER__PUBLISHER_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SUPERHERO__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SUPERHERO__SUPERHERO_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SUPERHERO__GENDER_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SUPERHERO__EYE_COLOUR_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SUPERHERO__HAIR_COLOUR_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SUPERHERO__SKIN_COLOUR_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "COLOUR__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "COLOUR__COLOUR"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ATTRIBUTE__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ATTRIBUTE__ATTRIBUTE_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "HERO_POWER__HERO_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "HERO_POWER__POWER_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RACE__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RACE__RACE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ALIGNMENT__ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ALIGNMENT__ALIGNMENT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "HERO_ATTRIBUTE__HERO_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "HERO_ATTRIBUTE__ATTRIBUTE_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "HERO_ATTRIBUTE__ATTRIBUTE_VALUE"
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "GENDER__ID",
+            "GENDER__GENDER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERPOWER__ID",
+            "SUPERPOWER__POWER_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PUBLISHER__ID",
+            "PUBLISHER__PUBLISHER_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__ID",
+            "SUPERHERO__SUPERHERO_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__ID",
+            "SUPERHERO__FULL_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__ID",
+            "SUPERHERO__GENDER_ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__ID",
+            "SUPERHERO__EYE_COLOUR_ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__ID",
+            "SUPERHERO__HAIR_COLOUR_ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__ID",
+            "SUPERHERO__SKIN_COLOUR_ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__ID",
+            "SUPERHERO__RACE_ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__ID",
+            "SUPERHERO__PUBLISHER_ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__ID",
+            "SUPERHERO__ALIGNMENT_ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__ID",
+            "SUPERHERO__HEIGHT_CM"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__ID",
+            "SUPERHERO__WEIGHT_KG"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__SUPERHERO_NAME",
+            "SUPERHERO__SKIN_COLOUR_ID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__GENDER_ID",
+            "SUPERHERO__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SUPERHERO__ALIGNMENT_ID",
+            "SUPERHERO__ID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "COLOUR__ID",
+            "COLOUR__COLOUR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ATTRIBUTE__ID",
+            "ATTRIBUTE__ATTRIBUTE_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACE__ID",
+            "RACE__RACE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ALIGNMENT__ID",
+            "ALIGNMENT__ALIGNMENT"
+          ]
+        }
+      }
+    ]
+  ]
+}

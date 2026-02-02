@@ -1,0 +1,1617 @@
+{
+  "student_club": [
+    [
+      {
+        "primary": [
+          {
+            "value": "EVENT__EVENT_ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "MAJOR__MAJOR_ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "ZIP_CODE__ZIP_CODE"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "ATTENDANCE__LINK_TO_EVENT"
+          },
+          {
+            "value": "ATTENDANCE__LINK_TO_MEMBER"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "BUDGET__BUDGET_ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "EXPENSE__EXPENSE_ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "INCOME__INCOME_ID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "MEMBER__MEMBER_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "ATTENDANCE__LINK_TO_MEMBER"
+          },
+          {
+            "value": "MEMBER__MEMBER_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "ATTENDANCE__LINK_TO_EVENT"
+          },
+          {
+            "value": "EVENT__EVENT_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "BUDGET__LINK_TO_EVENT"
+          },
+          {
+            "value": "EVENT__EVENT_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "EXPENSE__LINK_TO_MEMBER"
+          },
+          {
+            "value": "MEMBER__MEMBER_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "EXPENSE__LINK_TO_BUDGET"
+          },
+          {
+            "value": "BUDGET__BUDGET_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "INCOME__LINK_TO_MEMBER"
+          },
+          {
+            "value": "MEMBER__MEMBER_ID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "MEMBER__ZIP"
+          },
+          {
+            "value": "ZIP_CODE__ZIP_CODE"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "MEMBER__LINK_TO_MAJOR"
+          },
+          {
+            "value": "MAJOR__MAJOR_ID"
+          }
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "INCOME__AMOUNT"
+          },
+          50.0,
+          3000.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "BUDGET__SPENT"
+          },
+          0.0,
+          327.07
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "BUDGET__REMAINING"
+          },
+          -24.25,
+          150.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "BUDGET__AMOUNT"
+          },
+          10.0,
+          350.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "ZIP_CODE__ZIP_CODE"
+          },
+          501.0,
+          99950.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "EXPENSE__COST"
+          },
+          6.0,
+          295.12
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "MEMBER__ZIP"
+          },
+          1020.0,
+          98290.0
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "INCOME__DATE_RECEIVED"
+          },
+          [
+            "2019-10-17",
+            "2019-09-04",
+            "2019-10-08",
+            "2019-10-02",
+            "2019-09-18",
+            "2019-10-31",
+            "2019-09-25",
+            "2019-09-14",
+            "2019-09-16",
+            "2019-09-29",
+            "2019-09-08",
+            "2019-09-21",
+            "2019-10-24",
+            "2019-09-27",
+            "2019-09-24",
+            "2019-09-01",
+            "2019-10-10",
+            "2019-10-14",
+            "2019-10-13",
+            "2019-09-09",
+            "2019-09-11",
+            "2019-09-22",
+            "2019-09-23",
+            "2019-10-05",
+            "2019-10-04",
+            "2019-09-28",
+            "2019-09-06",
+            "2019-09-13",
+            "2019-09-12"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "INCOME__AMOUNT"
+          },
+          [
+            50,
+            200,
+            3000,
+            1000
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "INCOME__SOURCE"
+          },
+          [
+            "Dues",
+            "Fundraising",
+            "School Appropration",
+            "Sponsorship"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "INCOME__NOTES"
+          },
+          [
+            "Secured donations to help pay for speaker gifts.",
+            "Annual funding from Student Government.",
+            "Ad revenue for use on flyers used to advertise upcoming events."
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "BUDGET__CATEGORY"
+          },
+          [
+            "Advertisement",
+            "Food",
+            "Speaker Gifts",
+            "Parking",
+            "Club T-Shirts"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "BUDGET__SPENT"
+          },
+          [
+            67.81,
+            121.14,
+            20.2,
+            0.0,
+            173.06,
+            6.0,
+            54.25,
+            74.59,
+            295.12,
+            13.45,
+            327.07,
+            174.25,
+            154.34,
+            16.28,
+            122.06,
+            101.94,
+            122.33
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "BUDGET__REMAINING"
+          },
+          [
+            7.19,
+            28.86,
+            -0.199999999999999,
+            25.0,
+            150.0,
+            10.0,
+            55.0,
+            -23.06,
+            75.0,
+            4.0,
+            0.75,
+            20.0,
+            0.409999999999997,
+            4.88,
+            11.55,
+            22.9299999999999,
+            -24.25,
+            0.659999999999997,
+            8.72,
+            27.94,
+            48.06,
+            27.67
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "BUDGET__AMOUNT"
+          },
+          [
+            75,
+            150,
+            20,
+            25,
+            10,
+            55,
+            300,
+            350,
+            155
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "BUDGET__EVENT_STATUS"
+          },
+          [
+            "Closed",
+            "Open",
+            "Planning"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "BUDGET__LINK_TO_EVENT"
+          },
+          [
+            "recI43CzsZ0Q625ma",
+            "recggMW2eyCYceNcy",
+            "recJ4Witp9tpjaugn",
+            "recHaMmaKyfktt5fW",
+            "recs4x1BYWAsU2SKg",
+            "recwM7GMBSLDlb1Ix",
+            "rec2mJrCofveboaz6",
+            "recEVTik3MlqbvLFi",
+            "recmbOVHSyzXQZpQr",
+            "rec180D2MI4EpckHy",
+            "reczhS8wix6Kzbp9P",
+            "reciRZdAqNIKuMC96",
+            "rec0Si5cQ4rJRVzd6",
+            "recLKj8BbTNqxFbTb",
+            "recAlAwtBZ0Fqbr5K",
+            "recerGvehRmgO0obW",
+            "recMKjJbWRgSQqf4Y",
+            "recykdvf4LgsyA3wZ",
+            "rec0akZnLLpGUloLH",
+            "recWJFyajeK4jCNYz",
+            "recY3Yesu24bRK7tr",
+            "recc8dizaKrSz3GmH",
+            "recLrY8kyOR1PcZeF"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "ZIP_CODE__TYPE"
+          },
+          [
+            "Unique",
+            "Standard",
+            "PO Box"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EXPENSE__EXPENSE_DESCRIPTION"
+          },
+          [
+            "Post Cards, Posters",
+            "Water, Cookies",
+            "Pizza",
+            "Posters",
+            "Parking",
+            "Water, chips, cookies",
+            "Club shirts",
+            "Travel Mug",
+            "Alumni Glass",
+            "Water, Veggie tray, supplies",
+            "Water, cookies, chips",
+            "Bakery - Donuts, muffins"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EXPENSE__EXPENSE_DATE"
+          },
+          [
+            "2019-08-20",
+            "2019-10-08",
+            "2019-09-10",
+            "2019-10-10",
+            "2019-11-19",
+            "2019-10-22",
+            "2019-09-01",
+            "2019-10-01",
+            "2019-09-03",
+            "2019-11-05",
+            "2019-11-04",
+            "2019-09-24",
+            "2019-09-18",
+            "2019-09-15",
+            "2019-11-14",
+            "2019-09-04",
+            "2019-10-15"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EXPENSE__COST"
+          },
+          [
+            122.06,
+            20.2,
+            51.81,
+            67.81,
+            6.0,
+            92.82,
+            62.6,
+            54.25,
+            103.62,
+            50.13,
+            74.59,
+            59.73,
+            69.33,
+            295.12,
+            124.12,
+            61.52,
+            13.45,
+            16.28,
+            28.15,
+            113.33,
+            195.3
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EXPENSE__LINK_TO_MEMBER"
+          },
+          [
+            "rec4BLdZHS2Blfp4v",
+            "recro8T1MPMwRadVH",
+            "recD078PnS3x2doBe"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EXPENSE__LINK_TO_BUDGET"
+          },
+          [
+            "recvKTAWAFKkVNnXQ",
+            "recy8KY5bUdzF81vv",
+            "recwXIiKoBMjXJsGZ",
+            "recsI0IzpUuxl2bPh",
+            "recTUGXxhTaFZ2qkg",
+            "recZAjcliIUo4BCKW",
+            "recr60T1tLsfdICV8",
+            "reczf4LoOK6z7oOec",
+            "recMc8TbR76rmUSHG",
+            "recTxecmwIhCdIKvl",
+            "recca5tkvdQgoLKZz",
+            "recJOc7f9KgpgJm5q",
+            "recexNBMuCY9emh6y",
+            "recN9yY7okNrFps0Y",
+            "rec5V70sIuIgpOzDT",
+            "rec1bG6HSft7XIvTP",
+            "recRQdaiKCxFAlPCy",
+            "recKjd7dcURsmP0KY",
+            "rectLnkwVg4AIgY0R",
+            "recutlCwBNym7tS12",
+            "rec0QmEc3cSQFQ6V2",
+            "recZuCiQzCDAs4zDQ",
+            "rec1z6ISJU2HdIsVm",
+            "recZdw5TjWrRTj4kp"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "MEMBER__POSITION"
+          },
+          [
+            "Member",
+            "Inactive",
+            "President",
+            "Vice President",
+            "Treasurer",
+            "Secretary"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "MEMBER__T_SHIRT_SIZE"
+          },
+          [
+            "Medium",
+            "X-Large",
+            "Large",
+            "Small"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "MEMBER__LINK_TO_MAJOR"
+          },
+          [
+            "recxK3MHQFbR9J5uO",
+            "rec7BxKpjJ7bNph3O",
+            "recdIBgeU38UbV2sy",
+            "recaJdSK83k6ekRJL",
+            "recCk8lCDOTRp6rKN",
+            "rectOU2QnznthfWv7",
+            "recf3mPmWq4JXKf4L",
+            "rec9CqGCGV8Y8rOSY",
+            "recxRBSgVYeSEGvyo",
+            "recR2UFppcwddeAkz",
+            "recuN6taqCVkaZMZS",
+            "recAiT3yTABWypvHu",
+            "recObV24Ass2ouQHK",
+            "rec1N0upiVLy5esTO",
+            "recXLfKqMqRArcKNg",
+            "recRA9IxLl6eKPsJX",
+            "rec09LedkREyskCNv",
+            "recIzqYuV3wMONTgB",
+            "recB3VldnYdFtttTk",
+            "reclQ8BVvj2w4cQ4V",
+            "recT9LoDnC8ZvdPqM",
+            "recKJHO1P6ZC5m567",
+            "recVNDNQrJxsXPFXa",
+            "recVeoVlIsO6k6iUM",
+            "rectez0Ce1okUhv8w",
+            "recVYIFAwjT91pnv7"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "ATTENDANCE__LINK_TO_EVENT"
+          },
+          [
+            "rec2N69DMcrqN9PJC",
+            "rec5XDvJLyxDsGZWc",
+            "recEVTik3MlqbvLFi",
+            "recGxVCwaLW3mDIa3",
+            "recI43CzsZ0Q625ma",
+            "recIuIXdbLe5j5vCA",
+            "recLKj8BbTNqxFbTb",
+            "recLrY8kyOR1PcZeF",
+            "recggMW2eyCYceNcy",
+            "reciRZdAqNIKuMC96",
+            "reckYL4xtQWpkTJ8k",
+            "recmbOVHSyzXQZpQr",
+            "recoVo6dFSzG1ypX7",
+            "recsgSUqFCJqekzL5",
+            "recvCUOytx5jPw7kh",
+            "recykdvf4LgsyA3wZ",
+            "reczhS8wix6Kzbp9P"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "ATTENDANCE__LINK_TO_MEMBER"
+          },
+          [
+            "recD078PnS3x2doBe",
+            "recP6DJPyi5donvXL",
+            "rec28ORZgcm1dtqBZ",
+            "recTjHY5xXhvkCdVT",
+            "recZ4PkGERzl9ziHO",
+            "recEFd8s6pkrTt4Pz",
+            "recEymrwCUKxiiosI",
+            "recQaxyXBQG5BBtD0",
+            "recT92PyyZCGq1R68",
+            "recJMazpPVexyFYTc",
+            "reccW7q1KkhSKZsea",
+            "recjHj4BS5A541n9v",
+            "recL94zpn6Xh6kQii",
+            "reccSUPwy30AeZLEb",
+            "recttfySfQnYb68u3",
+            "recf4UKTfipCzgcSA",
+            "recro8T1MPMwRadVH",
+            "recsTO4OZIF9rbubk",
+            "rec75vvFxgYtHmqxY",
+            "reco0mr8dXTgs5wWA",
+            "recuSfhAZIlKba4s2",
+            "recxBj3tjKTGHqucS",
+            "recUdRhbhcEO1Hk5r",
+            "recVsoJJHFI8bgtfw",
+            "rec4BLdZHS2Blfp4v",
+            "recL4aEZBZoPk9NYx",
+            "recWh2lJVOT6HjChK",
+            "rec280Sk7o31iG0Tx",
+            "rec3pH4DxMcWHMRB7",
+            "rec2a03QXbFQAUZ7X"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EVENT__TYPE"
+          },
+          [
+            "Meeting",
+            "Election",
+            "Game",
+            "Guest Speaker",
+            "Social",
+            "Registration",
+            "Community Service",
+            "Budget"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EVENT__NOTES"
+          },
+          [
+            "All active members can vote for new officers between 4pm-8pm.",
+            "Attend Women's soccer game as a group.",
+            "Semester social event. Optional attendance.",
+            "Attend school football game as a group.",
+            "Students can stop by the table to get information on the club and register.",
+            "Monthly officers meeting",
+            "Attend school Woman's Lacrosse game as a group.",
+            "Volunteer opportunity to help paint new home.",
+            "Attend school teams Lacrosse game as a group.",
+            "Officers and Budget Committee only",
+            "Volunteer opportunity to remove graffiti in town.",
+            "Volunteer opportunity to pack backpacks for underprivileged youth.",
+            "Members and alumni can attend a community theater play at a reduced price. Active membership required.",
+            "Volunteer opportunity to sort donations for distribution.",
+            "Attend school teams baseball game as a group."
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EVENT__LOCATION"
+          },
+          [
+            "MU 215",
+            "Campus Soccer/Lacrosse stadium",
+            "900 E. Washington St.",
+            "Campus Football stadium",
+            "Campus Common",
+            "258 S. Maple St.",
+            "Conference Room BA 452",
+            "Various locations",
+            "45 N. Smith St.",
+            "100 W. Main Street",
+            "1308 106th Ave.",
+            "Campus Baseball Stadium"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "EVENT__STATUS"
+          },
+          [
+            "Open",
+            "Planning",
+            "Closed"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "MAJOR__COLLEGE"
+          },
+          [
+            "College of Agriculture and Applied Sciences",
+            "College of Natural Resources",
+            "School of Business",
+            "College of Engineering",
+            "College of Humanities and Social Sciences",
+            "College of Science",
+            "College of Education & Human Services",
+            "College of the Arts"
+          ]
+        ]
+      },
+      {
+        "not_null": {
+          "value": "INCOME__INCOME_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "INCOME__DATE_RECEIVED"
+        }
+      },
+      {
+        "not_null": {
+          "value": "INCOME__AMOUNT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "INCOME__SOURCE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__BUDGET_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__CATEGORY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__SPENT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__REMAINING"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__AMOUNT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__EVENT_STATUS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "BUDGET__LINK_TO_EVENT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ZIP_CODE__ZIP_CODE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ZIP_CODE__TYPE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ZIP_CODE__CITY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ZIP_CODE__STATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ZIP_CODE__SHORT_STATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXPENSE__EXPENSE_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXPENSE__EXPENSE_DESCRIPTION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXPENSE__EXPENSE_DATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXPENSE__COST"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXPENSE__LINK_TO_MEMBER"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EXPENSE__LINK_TO_BUDGET"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__MEMBER_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__FIRST_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__LAST_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__EMAIL"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__POSITION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__T_SHIRT_SIZE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__PHONE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MEMBER__ZIP"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ATTENDANCE__LINK_TO_EVENT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "ATTENDANCE__LINK_TO_MEMBER"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EVENT__EVENT_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EVENT__EVENT_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EVENT__EVENT_DATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EVENT__TYPE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "EVENT__STATUS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MAJOR__MAJOR_ID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MAJOR__MAJOR_NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MAJOR__DEPARTMENT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "MAJOR__COLLEGE"
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__INCOME_ID",
+            "INCOME__DATE_RECEIVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__INCOME_ID",
+            "INCOME__AMOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__INCOME_ID",
+            "INCOME__SOURCE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__INCOME_ID",
+            "INCOME__NOTES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__INCOME_ID",
+            "INCOME__LINK_TO_MEMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__DATE_RECEIVED",
+            "INCOME__AMOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__DATE_RECEIVED",
+            "INCOME__SOURCE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__DATE_RECEIVED",
+            "INCOME__NOTES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__AMOUNT",
+            "INCOME__SOURCE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__AMOUNT",
+            "INCOME__NOTES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "INCOME__SOURCE",
+            "INCOME__NOTES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__BUDGET_ID",
+            "BUDGET__CATEGORY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__BUDGET_ID",
+            "BUDGET__SPENT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__BUDGET_ID",
+            "BUDGET__REMAINING"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__BUDGET_ID",
+            "BUDGET__AMOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__BUDGET_ID",
+            "BUDGET__EVENT_STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__BUDGET_ID",
+            "BUDGET__LINK_TO_EVENT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__REMAINING",
+            "BUDGET__AMOUNT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "BUDGET__AMOUNT",
+            "BUDGET__REMAINING"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ZIP_CODE__ZIP_CODE",
+            "ZIP_CODE__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ZIP_CODE__ZIP_CODE",
+            "ZIP_CODE__CITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ZIP_CODE__ZIP_CODE",
+            "ZIP_CODE__COUNTY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ZIP_CODE__ZIP_CODE",
+            "ZIP_CODE__STATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ZIP_CODE__ZIP_CODE",
+            "ZIP_CODE__SHORT_STATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "ZIP_CODE__STATE",
+            "ZIP_CODE__SHORT_STATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__EXPENSE_ID",
+            "EXPENSE__EXPENSE_DESCRIPTION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__EXPENSE_ID",
+            "EXPENSE__EXPENSE_DATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__EXPENSE_ID",
+            "EXPENSE__COST"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__EXPENSE_ID",
+            "EXPENSE__APPROVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__EXPENSE_ID",
+            "EXPENSE__LINK_TO_MEMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__EXPENSE_ID",
+            "EXPENSE__LINK_TO_BUDGET"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__EXPENSE_DESCRIPTION",
+            "EXPENSE__APPROVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__EXPENSE_DATE",
+            "EXPENSE__APPROVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EXPENSE__COST",
+            "EXPENSE__APPROVED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__FIRST_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__LAST_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__EMAIL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__POSITION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__T_SHIRT_SIZE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__PHONE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__ZIP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__MEMBER_ID",
+            "MEMBER__LINK_TO_MAJOR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__FIRST_NAME",
+            "MEMBER__LAST_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__FIRST_NAME",
+            "MEMBER__EMAIL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__FIRST_NAME",
+            "MEMBER__POSITION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__FIRST_NAME",
+            "MEMBER__T_SHIRT_SIZE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__FIRST_NAME",
+            "MEMBER__PHONE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__FIRST_NAME",
+            "MEMBER__ZIP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__FIRST_NAME",
+            "MEMBER__LINK_TO_MAJOR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__LAST_NAME",
+            "MEMBER__EMAIL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__LAST_NAME",
+            "MEMBER__POSITION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__LAST_NAME",
+            "MEMBER__T_SHIRT_SIZE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__LAST_NAME",
+            "MEMBER__PHONE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__LAST_NAME",
+            "MEMBER__ZIP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__LAST_NAME",
+            "MEMBER__LINK_TO_MAJOR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__EMAIL",
+            "MEMBER__POSITION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__EMAIL",
+            "MEMBER__T_SHIRT_SIZE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__EMAIL",
+            "MEMBER__PHONE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__EMAIL",
+            "MEMBER__ZIP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__EMAIL",
+            "MEMBER__LINK_TO_MAJOR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__PHONE",
+            "MEMBER__ZIP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__PHONE",
+            "MEMBER__LINK_TO_MAJOR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MEMBER__ZIP",
+            "MEMBER__LINK_TO_MAJOR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_ID",
+            "EVENT__EVENT_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_ID",
+            "EVENT__EVENT_DATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_ID",
+            "EVENT__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_ID",
+            "EVENT__NOTES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_ID",
+            "EVENT__LOCATION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_ID",
+            "EVENT__STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_NAME",
+            "EVENT__TYPE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_NAME",
+            "EVENT__NOTES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_NAME",
+            "EVENT__LOCATION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__EVENT_DATE",
+            "EVENT__NOTES"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "EVENT__NOTES",
+            "EVENT__LOCATION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MAJOR__MAJOR_ID",
+            "MAJOR__MAJOR_NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MAJOR__MAJOR_ID",
+            "MAJOR__DEPARTMENT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MAJOR__MAJOR_ID",
+            "MAJOR__COLLEGE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MAJOR__MAJOR_NAME",
+            "MAJOR__DEPARTMENT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MAJOR__MAJOR_NAME",
+            "MAJOR__COLLEGE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "MAJOR__DEPARTMENT",
+            "MAJOR__COLLEGE"
+          ]
+        }
+      }
+    ]
+  ]
+}

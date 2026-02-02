@@ -1,0 +1,3084 @@
+{
+  "formula_1": [
+    [
+      {
+        "primary": [
+          {
+            "value": "CIRCUITS__CIRCUITID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "CONSTRUCTORS__CONSTRUCTORID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "DRIVERS__DRIVERID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "SEASONS__YEAR"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "RACES__RACEID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "CONSTRUCTORRESULTS__CONSTRUCTORRESULTSID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "CONSTRUCTORSTANDINGS__CONSTRUCTORSTANDINGSID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "DRIVERSTANDINGS__DRIVERSTANDINGSID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "LAPTIMES__RACEID"
+          },
+          {
+            "value": "LAPTIMES__DRIVERID"
+          },
+          {
+            "value": "LAPTIMES__LAP"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "PITSTOPS__RACEID"
+          },
+          {
+            "value": "PITSTOPS__DRIVERID"
+          },
+          {
+            "value": "PITSTOPS__STOP"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "QUALIFYING__QUALIFYID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "STATUS__STATUSID"
+          }
+        ]
+      },
+      {
+        "primary": [
+          {
+            "value": "RESULTS__RESULTID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "RACES__CIRCUITID"
+          },
+          {
+            "value": "CIRCUITS__CIRCUITID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "RACES__YEAR"
+          },
+          {
+            "value": "SEASONS__YEAR"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "CONSTRUCTORRESULTS__CONSTRUCTORID"
+          },
+          {
+            "value": "CONSTRUCTORS__CONSTRUCTORID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "CONSTRUCTORRESULTS__RACEID"
+          },
+          {
+            "value": "RACES__RACEID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "CONSTRUCTORSTANDINGS__CONSTRUCTORID"
+          },
+          {
+            "value": "CONSTRUCTORS__CONSTRUCTORID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "CONSTRUCTORSTANDINGS__RACEID"
+          },
+          {
+            "value": "RACES__RACEID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "DRIVERSTANDINGS__DRIVERID"
+          },
+          {
+            "value": "DRIVERS__DRIVERID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "DRIVERSTANDINGS__RACEID"
+          },
+          {
+            "value": "RACES__RACEID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "LAPTIMES__DRIVERID"
+          },
+          {
+            "value": "DRIVERS__DRIVERID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "LAPTIMES__RACEID"
+          },
+          {
+            "value": "RACES__RACEID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "PITSTOPS__DRIVERID"
+          },
+          {
+            "value": "DRIVERS__DRIVERID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "PITSTOPS__RACEID"
+          },
+          {
+            "value": "RACES__RACEID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "QUALIFYING__CONSTRUCTORID"
+          },
+          {
+            "value": "CONSTRUCTORS__CONSTRUCTORID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "QUALIFYING__DRIVERID"
+          },
+          {
+            "value": "DRIVERS__DRIVERID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "QUALIFYING__RACEID"
+          },
+          {
+            "value": "RACES__RACEID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "RESULTS__STATUSID"
+          },
+          {
+            "value": "STATUS__STATUSID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "RESULTS__CONSTRUCTORID"
+          },
+          {
+            "value": "CONSTRUCTORS__CONSTRUCTORID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "RESULTS__DRIVERID"
+          },
+          {
+            "value": "DRIVERS__DRIVERID"
+          }
+        ]
+      },
+      {
+        "foreign": [
+          {
+            "value": "RESULTS__RACEID"
+          },
+          {
+            "value": "RACES__RACEID"
+          }
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CIRCUITS__CIRCUITID"
+          },
+          2.0,
+          73.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CIRCUITS__LAT"
+          },
+          -34.9272,
+          57.2653
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CIRCUITS__LNG"
+          },
+          -118.189,
+          138.927
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "STATUS__STATUSID"
+          },
+          1.0,
+          136.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "DRIVERS__DRIVERID"
+          },
+          1.0,
+          841.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "DRIVERS__NUMBER"
+          },
+          2.0,
+          99.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "DRIVERSTANDINGS__DRIVERSTANDINGSID"
+          },
+          1.0,
+          68460.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "DRIVERSTANDINGS__RACEID"
+          },
+          1.0,
+          982.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "DRIVERSTANDINGS__DRIVERID"
+          },
+          1.0,
+          841.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "DRIVERSTANDINGS__POINTS"
+          },
+          0.0,
+          397.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "DRIVERSTANDINGS__POSITION"
+          },
+          1.0,
+          108.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "DRIVERSTANDINGS__WINS"
+          },
+          0.0,
+          13.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RACES__RACEID"
+          },
+          1.0,
+          988.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RACES__YEAR"
+          },
+          1950.0,
+          2017.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RACES__ROUND"
+          },
+          1.0,
+          21.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RACES__CIRCUITID"
+          },
+          1.0,
+          73.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CONSTRUCTORS__CONSTRUCTORID"
+          },
+          1.0,
+          210.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CONSTRUCTORRESULTS__CONSTRUCTORRESULTSID"
+          },
+          1.0,
+          15579.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CONSTRUCTORRESULTS__RACEID"
+          },
+          1.0,
+          982.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CONSTRUCTORRESULTS__CONSTRUCTORID"
+          },
+          1.0,
+          210.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CONSTRUCTORRESULTS__POINTS"
+          },
+          0.0,
+          66.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LAPTIMES__RACEID"
+          },
+          1.0,
+          982.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LAPTIMES__DRIVERID"
+          },
+          1.0,
+          841.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LAPTIMES__LAP"
+          },
+          1.0,
+          78.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LAPTIMES__POSITION"
+          },
+          1.0,
+          24.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "LAPTIMES__MILLISECONDS"
+          },
+          67411.0,
+          7507547.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "QUALIFYING__QUALIFYID"
+          },
+          1.0,
+          7419.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "QUALIFYING__RACEID"
+          },
+          1.0,
+          982.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "QUALIFYING__DRIVERID"
+          },
+          1.0,
+          841.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "QUALIFYING__CONSTRUCTORID"
+          },
+          1.0,
+          210.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "QUALIFYING__NUMBER"
+          },
+          0.0,
+          99.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "QUALIFYING__POSITION"
+          },
+          1.0,
+          28.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "PITSTOPS__RACEID"
+          },
+          841.0,
+          982.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "PITSTOPS__DRIVERID"
+          },
+          1.0,
+          841.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "PITSTOPS__STOP"
+          },
+          1.0,
+          6.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "PITSTOPS__LAP"
+          },
+          1.0,
+          74.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "PITSTOPS__MILLISECONDS"
+          },
+          12897.0,
+          2011266.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "SEASONS__YEAR"
+          },
+          1950.0,
+          2017.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CONSTRUCTORSTANDINGS__CONSTRUCTORSTANDINGSID"
+          },
+          1.0,
+          26872.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CONSTRUCTORSTANDINGS__RACEID"
+          },
+          1.0,
+          982.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CONSTRUCTORSTANDINGS__CONSTRUCTORID"
+          },
+          1.0,
+          210.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CONSTRUCTORSTANDINGS__POINTS"
+          },
+          0.0,
+          765.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CONSTRUCTORSTANDINGS__POSITION"
+          },
+          1.0,
+          22.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "CONSTRUCTORSTANDINGS__WINS"
+          },
+          0.0,
+          19.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__RESULTID"
+          },
+          1.0,
+          23661.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__RACEID"
+          },
+          1.0,
+          982.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__DRIVERID"
+          },
+          1.0,
+          841.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__CONSTRUCTORID"
+          },
+          1.0,
+          210.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__NUMBER"
+          },
+          0.0,
+          208.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__GRID"
+          },
+          0.0,
+          34.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__POSITION"
+          },
+          1.0,
+          33.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__POSITIONORDER"
+          },
+          1.0,
+          39.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__POINTS"
+          },
+          0.0,
+          50.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__LAPS"
+          },
+          0.0,
+          200.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__MILLISECONDS"
+          },
+          1474899.0,
+          15090540.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__FASTESTLAP"
+          },
+          2.0,
+          78.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__RANK"
+          },
+          0.0,
+          24.0
+        ]
+      },
+      {
+        "between": [
+          {
+            "value": "RESULTS__STATUSID"
+          },
+          1.0,
+          136.0
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "DRIVERSTANDINGS__WINS"
+          },
+          [
+            1,
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "RACES__ROUND"
+          },
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "RACES__TIME"
+          },
+          [
+            "06:00:00",
+            "09:00:00",
+            "07:00:00",
+            "12:00:00",
+            "05:00:00",
+            "16:00:00",
+            "11:00:00",
+            "04:30:00",
+            "11:30:00",
+            "17:00:00",
+            "03:00:00",
+            "14:30:00",
+            "15:00:00",
+            "14:00:00",
+            "13:00:00",
+            "08:00:00",
+            "09:30:00",
+            "18:00:00",
+            "19:00:00",
+            "20:00:00"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CONSTRUCTORS__NATIONALITY"
+          },
+          [
+            "British",
+            "German",
+            "French",
+            "Italian",
+            "Japanese",
+            "Austrian",
+            "Indian",
+            "Dutch",
+            "Russian",
+            "Swiss",
+            "Irish",
+            "Hong Kong",
+            "Brazilian",
+            "Canadian",
+            "Mexican",
+            "American",
+            "Australian",
+            "New Zealand",
+            "South African",
+            "Rhodesian",
+            "Belgium",
+            "East German",
+            "Spanish",
+            "Malaysian"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "LAPTIMES__POSITION"
+          },
+          [
+            13,
+            12,
+            11,
+            10,
+            9,
+            8,
+            14,
+            15,
+            7,
+            6,
+            5,
+            3,
+            4,
+            17,
+            16,
+            18,
+            19,
+            1,
+            2,
+            20,
+            21,
+            22,
+            23,
+            24
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "QUALIFYING__POSITION"
+          },
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "PITSTOPS__STOP"
+          },
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CONSTRUCTORSTANDINGS__POSITION"
+          },
+          [
+            1,
+            3,
+            2,
+            4,
+            5,
+            6,
+            8,
+            7,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            22,
+            21
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CONSTRUCTORSTANDINGS__POSITIONTEXT"
+          },
+          [
+            "1",
+            "3",
+            "2",
+            "4",
+            "5",
+            "6",
+            "8",
+            "7",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "22",
+            "21",
+            "E"
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "CONSTRUCTORSTANDINGS__WINS"
+          },
+          [
+            1,
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        ]
+      },
+      {
+        "in": [
+          {
+            "value": "RESULTS__RANK"
+          },
+          [
+            2,
+            3,
+            5,
+            7,
+            1,
+            14,
+            12,
+            4,
+            9,
+            13,
+            15,
+            16,
+            6,
+            11,
+            10,
+            17,
+            8,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            0
+          ]
+        ]
+      },
+      {
+        "not_null": {
+          "value": "CIRCUITS__CIRCUITID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CIRCUITS__CIRCUITREF"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CIRCUITS__NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CIRCUITS__LOCATION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CIRCUITS__COUNTRY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CIRCUITS__LAT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CIRCUITS__LNG"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CIRCUITS__URL"
+        }
+      },
+      {
+        "not_null": {
+          "value": "STATUS__STATUSID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "STATUS__STATUS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "DRIVERS__DRIVERID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "DRIVERS__DRIVERREF"
+        }
+      },
+      {
+        "not_null": {
+          "value": "DRIVERS__FORENAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "DRIVERS__SURNAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "DRIVERS__NATIONALITY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "DRIVERS__URL"
+        }
+      },
+      {
+        "not_null": {
+          "value": "DRIVERSTANDINGS__DRIVERSTANDINGSID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "DRIVERSTANDINGS__RACEID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "DRIVERSTANDINGS__DRIVERID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "DRIVERSTANDINGS__POINTS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "DRIVERSTANDINGS__POSITION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "DRIVERSTANDINGS__POSITIONTEXT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "DRIVERSTANDINGS__WINS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RACES__RACEID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RACES__YEAR"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RACES__ROUND"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RACES__CIRCUITID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RACES__NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RACES__DATE"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RACES__URL"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORS__CONSTRUCTORID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORS__CONSTRUCTORREF"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORS__NAME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORS__NATIONALITY"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORS__URL"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORRESULTS__CONSTRUCTORRESULTSID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORRESULTS__RACEID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORRESULTS__CONSTRUCTORID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORRESULTS__POINTS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "LAPTIMES__RACEID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "LAPTIMES__DRIVERID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "LAPTIMES__LAP"
+        }
+      },
+      {
+        "not_null": {
+          "value": "LAPTIMES__POSITION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "LAPTIMES__TIME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "LAPTIMES__MILLISECONDS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "QUALIFYING__QUALIFYID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "QUALIFYING__RACEID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "QUALIFYING__DRIVERID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "QUALIFYING__CONSTRUCTORID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "QUALIFYING__NUMBER"
+        }
+      },
+      {
+        "not_null": {
+          "value": "QUALIFYING__POSITION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PITSTOPS__RACEID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PITSTOPS__DRIVERID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PITSTOPS__STOP"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PITSTOPS__LAP"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PITSTOPS__TIME"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PITSTOPS__DURATION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "PITSTOPS__MILLISECONDS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SEASONS__YEAR"
+        }
+      },
+      {
+        "not_null": {
+          "value": "SEASONS__URL"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORSTANDINGS__CONSTRUCTORSTANDINGSID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORSTANDINGS__RACEID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORSTANDINGS__CONSTRUCTORID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORSTANDINGS__POINTS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORSTANDINGS__POSITION"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORSTANDINGS__POSITIONTEXT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "CONSTRUCTORSTANDINGS__WINS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RESULTS__RESULTID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RESULTS__RACEID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RESULTS__DRIVERID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RESULTS__CONSTRUCTORID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RESULTS__GRID"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RESULTS__POSITIONTEXT"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RESULTS__POSITIONORDER"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RESULTS__POINTS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RESULTS__LAPS"
+        }
+      },
+      {
+        "not_null": {
+          "value": "RESULTS__STATUSID"
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__CIRCUITID",
+            "CIRCUITS__CIRCUITREF"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__CIRCUITID",
+            "CIRCUITS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__CIRCUITID",
+            "CIRCUITS__LOCATION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__CIRCUITID",
+            "CIRCUITS__COUNTRY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__CIRCUITID",
+            "CIRCUITS__LAT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__CIRCUITID",
+            "CIRCUITS__LNG"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__CIRCUITID",
+            "CIRCUITS__URL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__CIRCUITREF",
+            "CIRCUITS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__CIRCUITREF",
+            "CIRCUITS__LOCATION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__CIRCUITREF",
+            "CIRCUITS__COUNTRY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__CIRCUITREF",
+            "CIRCUITS__LAT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__CIRCUITREF",
+            "CIRCUITS__LNG"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__CIRCUITREF",
+            "CIRCUITS__URL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__NAME",
+            "CIRCUITS__LOCATION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__NAME",
+            "CIRCUITS__COUNTRY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__NAME",
+            "CIRCUITS__LAT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__NAME",
+            "CIRCUITS__LNG"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__NAME",
+            "CIRCUITS__URL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__LOCATION",
+            "CIRCUITS__COUNTRY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CIRCUITS__LAT",
+            "CIRCUITS__LNG"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "STATUS__STATUSID",
+            "STATUS__STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERID",
+            "DRIVERS__DRIVERREF"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERID",
+            "DRIVERS__NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERID",
+            "DRIVERS__CODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERID",
+            "DRIVERS__FORENAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERID",
+            "DRIVERS__SURNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERID",
+            "DRIVERS__DOB"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERID",
+            "DRIVERS__NATIONALITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERID",
+            "DRIVERS__URL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERREF",
+            "DRIVERS__NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERREF",
+            "DRIVERS__CODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERREF",
+            "DRIVERS__FORENAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERREF",
+            "DRIVERS__SURNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERREF",
+            "DRIVERS__DOB"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERREF",
+            "DRIVERS__NATIONALITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__DRIVERREF",
+            "DRIVERS__URL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__NUMBER",
+            "DRIVERS__CODE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__NUMBER",
+            "DRIVERS__FORENAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__NUMBER",
+            "DRIVERS__SURNAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__NUMBER",
+            "DRIVERS__DOB"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__NUMBER",
+            "DRIVERS__NATIONALITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERS__NUMBER",
+            "DRIVERS__URL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERSTANDINGS__DRIVERSTANDINGSID",
+            "DRIVERSTANDINGS__RACEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERSTANDINGS__DRIVERSTANDINGSID",
+            "DRIVERSTANDINGS__DRIVERID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERSTANDINGS__DRIVERSTANDINGSID",
+            "DRIVERSTANDINGS__POINTS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERSTANDINGS__DRIVERSTANDINGSID",
+            "DRIVERSTANDINGS__POSITION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERSTANDINGS__DRIVERSTANDINGSID",
+            "DRIVERSTANDINGS__POSITIONTEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERSTANDINGS__DRIVERSTANDINGSID",
+            "DRIVERSTANDINGS__WINS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERSTANDINGS__WINS",
+            "DRIVERSTANDINGS__POINTS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERSTANDINGS__WINS",
+            "DRIVERSTANDINGS__DRIVERSTANDINGSID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERSTANDINGS__WINS",
+            "DRIVERSTANDINGS__RACEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERSTANDINGS__DRIVERSTANDINGSID",
+            "DRIVERSTANDINGS__DRIVERID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERSTANDINGS__DRIVERSTANDINGSID",
+            "DRIVERSTANDINGS__POSITIONTEXT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERSTANDINGS__DRIVERSTANDINGSID",
+            "DRIVERSTANDINGS__POSITION"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "DRIVERSTANDINGS__POSITIONTEXT",
+            "DRIVERSTANDINGS__POSITION"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACES__RACEID",
+            "RACES__YEAR"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACES__RACEID",
+            "RACES__ROUND"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACES__RACEID",
+            "RACES__CIRCUITID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACES__RACEID",
+            "RACES__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACES__RACEID",
+            "RACES__DATE"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACES__RACEID",
+            "RACES__TIME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACES__RACEID",
+            "RACES__URL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACES__DATE",
+            "RACES__TIME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACES__DATE",
+            "RACES__URL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACES__CIRCUITID",
+            "RACES__YEAR"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACES__YEAR",
+            "RACES__RACEID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACES__YEAR",
+            "RACES__ROUND"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RACES__RACEID",
+            "RACES__ROUND"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORS__CONSTRUCTORID",
+            "CONSTRUCTORS__CONSTRUCTORREF"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORS__CONSTRUCTORID",
+            "CONSTRUCTORS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORS__CONSTRUCTORID",
+            "CONSTRUCTORS__NATIONALITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORS__CONSTRUCTORID",
+            "CONSTRUCTORS__URL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORS__CONSTRUCTORREF",
+            "CONSTRUCTORS__NAME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORS__CONSTRUCTORREF",
+            "CONSTRUCTORS__NATIONALITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORS__CONSTRUCTORREF",
+            "CONSTRUCTORS__URL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORS__NAME",
+            "CONSTRUCTORS__NATIONALITY"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORS__NAME",
+            "CONSTRUCTORS__URL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORRESULTS__CONSTRUCTORRESULTSID",
+            "CONSTRUCTORRESULTS__RACEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORRESULTS__CONSTRUCTORRESULTSID",
+            "CONSTRUCTORRESULTS__CONSTRUCTORID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORRESULTS__CONSTRUCTORRESULTSID",
+            "CONSTRUCTORRESULTS__POINTS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORRESULTS__CONSTRUCTORRESULTSID",
+            "CONSTRUCTORRESULTS__STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORRESULTS__RACEID",
+            "CONSTRUCTORRESULTS__STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORRESULTS__CONSTRUCTORID",
+            "CONSTRUCTORRESULTS__STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORRESULTS__POINTS",
+            "CONSTRUCTORRESULTS__STATUS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORRESULTS__CONSTRUCTORRESULTSID",
+            "CONSTRUCTORRESULTS__CONSTRUCTORID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LAPTIMES__TIME",
+            "LAPTIMES__MILLISECONDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LAPTIMES__LAP",
+            "LAPTIMES__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LAPTIMES__DRIVERID",
+            "LAPTIMES__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LAPTIMES__POSITION",
+            "LAPTIMES__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "LAPTIMES__MILLISECONDS",
+            "LAPTIMES__RACEID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "QUALIFYING__QUALIFYID",
+            "QUALIFYING__RACEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "QUALIFYING__QUALIFYID",
+            "QUALIFYING__DRIVERID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "QUALIFYING__QUALIFYID",
+            "QUALIFYING__CONSTRUCTORID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "QUALIFYING__QUALIFYID",
+            "QUALIFYING__NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "QUALIFYING__QUALIFYID",
+            "QUALIFYING__POSITION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "QUALIFYING__QUALIFYID",
+            "QUALIFYING__Q1"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "QUALIFYING__QUALIFYID",
+            "QUALIFYING__Q2"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "QUALIFYING__QUALIFYID",
+            "QUALIFYING__Q3"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "QUALIFYING__QUALIFYID",
+            "QUALIFYING__POSITION"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PITSTOPS__DURATION",
+            "PITSTOPS__MILLISECONDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PITSTOPS__LAP",
+            "PITSTOPS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PITSTOPS__LAP",
+            "PITSTOPS__STOP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PITSTOPS__LAP",
+            "PITSTOPS__RACEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PITSTOPS__DRIVERID",
+            "PITSTOPS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PITSTOPS__DRIVERID",
+            "PITSTOPS__RACEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PITSTOPS__MILLISECONDS",
+            "PITSTOPS__STOP"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PITSTOPS__MILLISECONDS",
+            "PITSTOPS__RACEID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PITSTOPS__MILLISECONDS",
+            "PITSTOPS__DURATION"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PITSTOPS__STOP",
+            "PITSTOPS__RACEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PITSTOPS__STOP",
+            "PITSTOPS__DURATION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "PITSTOPS__RACEID",
+            "PITSTOPS__DURATION"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "SEASONS__YEAR",
+            "SEASONS__URL"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORSTANDINGS__CONSTRUCTORSTANDINGSID",
+            "CONSTRUCTORSTANDINGS__RACEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORSTANDINGS__CONSTRUCTORSTANDINGSID",
+            "CONSTRUCTORSTANDINGS__CONSTRUCTORID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORSTANDINGS__CONSTRUCTORSTANDINGSID",
+            "CONSTRUCTORSTANDINGS__POINTS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORSTANDINGS__CONSTRUCTORSTANDINGSID",
+            "CONSTRUCTORSTANDINGS__POSITION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORSTANDINGS__CONSTRUCTORSTANDINGSID",
+            "CONSTRUCTORSTANDINGS__POSITIONTEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORSTANDINGS__CONSTRUCTORSTANDINGSID",
+            "CONSTRUCTORSTANDINGS__WINS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORSTANDINGS__WINS",
+            "CONSTRUCTORSTANDINGS__POINTS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORSTANDINGS__WINS",
+            "CONSTRUCTORSTANDINGS__CONSTRUCTORSTANDINGSID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORSTANDINGS__WINS",
+            "CONSTRUCTORSTANDINGS__RACEID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORSTANDINGS__CONSTRUCTORID",
+            "CONSTRUCTORSTANDINGS__CONSTRUCTORSTANDINGSID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "CONSTRUCTORSTANDINGS__POSITIONTEXT",
+            "CONSTRUCTORSTANDINGS__POSITION"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__RACEID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__DRIVERID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__CONSTRUCTORID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__NUMBER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__GRID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__POSITION"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__POSITIONTEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__POSITIONORDER"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__POINTS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__LAPS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__TIME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__MILLISECONDS"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__FASTESTLAP"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__RANK"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__FASTESTLAPTIME"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__FASTESTLAPSPEED"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__STATUSID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__POSITION",
+            "RESULTS__POSITIONTEXT"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__MILLISECONDS",
+            "RESULTS__STATUSID"
+          ]
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RANK",
+            "RESULTS__FASTESTLAPSPEED"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RANK",
+            "RESULTS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__CONSTRUCTORID",
+            "RESULTS__RESULTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__CONSTRUCTORID",
+            "RESULTS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__GRID",
+            "RESULTS__FASTESTLAPSPEED"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__GRID",
+            "RESULTS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__POSITIONORDER",
+            "RESULTS__FASTESTLAPSPEED"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__POSITIONORDER",
+            "RESULTS__RESULTID"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__POSITIONORDER",
+            "RESULTS__POSITIONTEXT"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__POSITIONORDER",
+            "RESULTS__POSITION"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__POSITIONORDER",
+            "RESULTS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__POINTS",
+            "RESULTS__LAPS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__POINTS",
+            "RESULTS__FASTESTLAPSPEED"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__POINTS",
+            "RESULTS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__LAPS",
+            "RESULTS__FASTESTLAPSPEED"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__LAPS",
+            "RESULTS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__FASTESTLAP",
+            "RESULTS__FASTESTLAPSPEED"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__FASTESTLAP",
+            "RESULTS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__FASTESTLAPSPEED",
+            "RESULTS__POSITIONTEXT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__FASTESTLAPSPEED",
+            "RESULTS__POSITION"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__FASTESTLAPSPEED",
+            "RESULTS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__FASTESTLAPSPEED",
+            "RESULTS__TIME"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__FASTESTLAPSPEED",
+            "RESULTS__NUMBER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__DRIVERID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__POSITIONTEXT"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__POSITION"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__RESULTID",
+            "RESULTS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__DRIVERID",
+            "RESULTS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__STATUSID",
+            "RESULTS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__POSITIONTEXT",
+            "RESULTS__POSITION"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__POSITIONTEXT",
+            "RESULTS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__POSITION",
+            "RESULTS__MILLISECONDS"
+          ],
+          "type": "ordering",
+          "operator": "<="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__MILLISECONDS",
+            "RESULTS__TIME"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__MILLISECONDS",
+            "RESULTS__RACEID"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      },
+      {
+        "dependency": {
+          "values": [
+            "RESULTS__MILLISECONDS",
+            "RESULTS__NUMBER"
+          ],
+          "type": "ordering",
+          "operator": ">="
+        }
+      }
+    ]
+  ]
+}

@@ -1,0 +1,4404 @@
+{
+  "database": "codebase_community",
+  "between": [
+    {
+      "table": "postLinks",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        108,
+        3356789
+      ],
+      "custom_bounds": [
+        0,
+        6336120
+      ],
+      "custom_bounds_type": "loose",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ID column is a unique identifier for post links, which should have a strict range based on observed data. The strict bounds [108, 3356789] are realistic and appropriate for this column, as IDs are typically sequential and should not fall below 1 or exceed the maximum observed value.",
+        "chosen_bounds": [
+          108,
+          3356789
+        ]
+      }
+    },
+    {
+      "table": "postLinks",
+      "column": "POSTID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        4,
+        115360
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The POSTID column represents unique identifiers for posts, which are naturally bounded by the observed data range. The strict bounds [4, 115360] accurately reflect the existing data, and since POSTID should not be less than 1, using the observed range is appropriate. Custom bounds are not necessary as the strict bounds are realistic and cover all current data.",
+        "chosen_bounds": [
+          4,
+          115360
+        ]
+      }
+    },
+    {
+      "table": "postLinks",
+      "column": "RELATEDPOSTID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        115163
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The RELATEDPOSTID column represents IDs of related posts, which are naturally bounded to positive integers. While the observed data range is [1, 115163], using custom bounds [1, +\u221e] is more appropriate as it accounts for potential future post IDs that may exceed the current maximum. This ensures that the constraint remains valid as new posts are added.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "postLinks",
+      "column": "LINKTYPEID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        3
+      ],
+      "custom_bounds": [
+        1,
+        3
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The LINKTYPEID column has a clearly defined observed data range of [1, 3], which matches the semantic bounds. Since the values are limited to a small set of integers representing specific link types, using strict bounds is appropriate to ensure valid data entries.",
+        "chosen_bounds": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "table": "postHistory",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        386848
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ID column is a unique identifier for each post history entry, which should logically start from 1 and can increase indefinitely as new entries are added. While the observed data range is [1, 386848], using custom bounds [1, +\u221e] is more appropriate to accommodate future entries beyond the current maximum.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "postHistory",
+      "column": "POSTHISTORYTYPEID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        38
+      ],
+      "custom_bounds": [
+        1,
+        38
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The POSTHISTORYTYPEID column has a clearly defined observed data range of [1, 38], which is consistent with its semantic meaning as an identifier for post history types. Since the observed bounds are realistic and cover all existing values, strict bounds are appropriate.",
+        "chosen_bounds": [
+          1,
+          38
+        ]
+      }
+    },
+    {
+      "table": "postHistory",
+      "column": "POSTID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        115378
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The POSTID column represents unique identifiers for posts, which are naturally unbounded as new posts can be created indefinitely. While the observed data range is [1, 115378], using custom bounds [1, +\u221e] is more appropriate to accommodate future entries and ensure that the constraint remains valid as the dataset grows.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "postHistory",
+      "column": "USERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        -1,
+        55746
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The USERID column represents user identifiers, which are typically non-negative integers. While the observed data range includes a negative value (-1), it is likely an anomaly or a placeholder for 'no user'. Therefore, using custom bounds [0, +\u221e] is more appropriate to ensure valid user IDs are considered, as user IDs should not be negative.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "badges",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        92240
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ID column in the BADGES table is a unique identifier for each badge, which should logically be a positive integer starting from 1. While the observed data range is [1, 92240], using custom bounds [1, +\u221e] is more appropriate as it allows for future badge IDs beyond the current maximum, ensuring that the constraint remains valid as new data is added.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "badges",
+      "column": "USERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        2,
+        55746
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The USERID column represents unique identifiers for users, which should logically start from 1 and can extend indefinitely as new users are added. The observed data range shows a lower bound of 2, but using custom bounds of [1, +\u221e] is more appropriate to account for potential future user IDs and ensure that all valid user IDs are included.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "posts",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        115378
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ID column in the POSTS table is a unique identifier for each post, which should logically start from 1 and can extend indefinitely as new posts are created. While the observed data range is [1, 115378], using custom bounds [1, +\u221e] is more appropriate to accommodate future entries without needing to adjust constraints.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "posts",
+      "column": "POSTTYPEID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        7
+      ],
+      "custom_bounds": [
+        1,
+        7
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The POSTTYPEID column has a well-defined observed range of [1, 7] based on the sample values and the total number of rows. Since the values are naturally bounded and the observed data range matches the semantic bounds, strict bounds are appropriate.",
+        "chosen_bounds": [
+          1,
+          7
+        ]
+      }
+    },
+    {
+      "table": "posts",
+      "column": "ACCEPTEDANSWERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        5,
+        115345
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ACCEPTEDANSWERID column represents the ID of an accepted answer, which should logically be a positive integer. The observed data range indicates that the minimum value is 5, but since IDs are typically assigned starting from 1, using custom bounds of [1, +\u221e] is more semantically appropriate. This ensures that any valid ID is included, even if the current data does not reflect the full range of possible IDs.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "posts",
+      "column": "SCORE",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        -19,
+        192
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The SCORE column represents a rating score, which semantically should be non-negative. While the observed data range includes negative values, these may indicate data entry errors or outliers. Therefore, using custom bounds of [0, +\u221e] is more appropriate to ensure valid scores, as negative scores do not align with the expected meaning of a score.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "posts",
+      "column": "VIEWCOUNT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        175495
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The VIEWCOUNT column represents the number of views a post has received, which is a naturally bounded value that should not be negative. While the observed data range shows a minimum of 1, it is semantically correct to allow for a custom lower bound of 0 to account for posts that may not have been viewed yet. Therefore, using custom bounds [0, +\u221e] is appropriate to handle potential edge cases.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "posts",
+      "column": "OWNERUSERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        -1,
+        55746
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The OWNERUSERID column represents user IDs, which are naturally non-negative integers. While the observed data range includes -1 (possibly indicating a special case like 'no owner'), the semantic meaning of user IDs suggests they should start from 0 and go upwards. Therefore, using custom bounds [0, +\u221e] is more appropriate to account for potential future user IDs beyond the current maximum.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "posts",
+      "column": "ANSWERCOUNT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        136
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ANSWERCOUNT column represents the number of answers a post can have, which is naturally bounded at the lower end (0) but can theoretically be unbounded at the upper end. While the strict observed range is [0, 136], using custom bounds [0, +\u221e] is more appropriate as it accounts for future posts that may receive more answers than currently observed, ensuring the constraint remains valid as the dataset grows.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "posts",
+      "column": "COMMENTCOUNT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        45
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The COMMENTCOUNT column represents the number of comments on a post, which is naturally unbounded as a post can receive an unlimited number of comments. While the observed data range is [0, 45], using custom bounds [0, +\u221e] is more appropriate to account for future posts that may receive more comments than currently observed.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "posts",
+      "column": "FAVORITECOUNT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        233
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The FAVORITECOUNT column represents the number of times a post has been favorited, which is a naturally non-negative count. While the observed data range is [0, 233], it is semantically correct to allow for custom bounds of [0, +\u221e] since there is no theoretical upper limit to how many times a post can be favorited. This ensures that future data entries that exceed the current maximum are still valid.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "posts",
+      "column": "LASTEDITORUSERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        -1,
+        55733
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The LASTEDITORUSERID column should have a BETWEEN constraint because it represents user IDs, which are naturally non-negative integers. The strict bounds observed are [-1, 55733], but the value -1 is not a valid user ID, indicating that it may represent a special case (e.g., no editor). Therefore, using custom bounds [0, +\u221e] is more appropriate to ensure that only valid user IDs are considered.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "posts",
+      "column": "PARENTID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        115375
+      ],
+      "custom_bounds": [
+        null,
+        115375
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The PARENTID column represents a relationship between posts, where it references the ID of a parent post. While the observed data range is [1, 115375], using custom bounds of [-\u221e, 115375] is more appropriate because PARENTID can be null for root posts (which do not have a parent). This allows for the inclusion of root posts while still maintaining a logical upper limit based on the observed data.",
+        "chosen_bounds": [
+          null,
+          115375
+        ]
+      }
+    },
+    {
+      "table": "users",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        -1,
+        55747
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ID column is a unique identifier for users, which should logically start from 0 and go up to any positive integer, making it semantically unbounded above. The observed range includes a negative value (-1), which is not valid for an ID. Therefore, custom bounds [0, +\u221e] are more appropriate to ensure valid IDs.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "users",
+      "column": "REPUTATION",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        87393
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The REPUTATION column is a naturally bounded value that should not be negative, and while the observed data range is [1, 87393], it is semantically correct to allow for potential future values beyond this range. Therefore, custom bounds [1, +\u221e] are appropriate to accommodate growth in user reputation.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "users",
+      "column": "VIEWS",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        20932
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The VIEWS column represents the number of views a user has received, which is a naturally unbounded value. While the observed data range shows a maximum of 20932, it is semantically correct to allow for the possibility of an infinite number of views in the future. Therefore, custom bounds [0, +\u221e] are appropriate to accommodate potential growth.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "users",
+      "column": "UPVOTES",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        11442
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The UPVOTES column represents a count of upvotes, which is naturally unbounded in theory (can be 0 or more). However, the observed data shows a maximum of 11442, indicating a practical upper limit based on current data. Using custom bounds [0, +\u221e] is appropriate to account for future growth and edge cases, as upvotes can increase indefinitely.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "users",
+      "column": "DOWNVOTES",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        1920
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The DOWNVOTES column represents a count of downvotes, which is naturally bounded at the lower end (0) since negative counts are not possible. The strict observed range [0, 1920] is realistic given the data, but since downvotes can theoretically be unbounded, custom bounds [0, +\u221e] would also be appropriate. However, using strict bounds is safer as it reflects the actual observed data range.",
+        "chosen_bounds": [
+          0,
+          1920
+        ]
+      }
+    },
+    {
+      "table": "users",
+      "column": "ACCOUNTID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        -1,
+        5027354
+      ],
+      "custom_bounds": [
+        -8239568,
+        12054447
+      ],
+      "custom_bounds_type": "loose",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ACCOUNTID column is an identifier and should have a strict range based on observed data. The strict bounds of [-1, 5027354] are realistic and appropriate for this column, as negative values are not semantically correct for account IDs. Custom bounds are not necessary as the observed range is sufficient.",
+        "chosen_bounds": [
+          -1,
+          5027354
+        ]
+      }
+    },
+    {
+      "table": "users",
+      "column": "AGE",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        13,
+        94
+      ],
+      "custom_bounds": [
+        13,
+        120
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The AGE column represents a naturally bounded value, as ages typically fall within a certain range. The strict bounds observed (13 to 94) are realistic based on the current data, but the custom bounds (13 to 120) are safer to account for potential future data and edge cases, as they reflect a more comprehensive understanding of human lifespan.",
+        "chosen_bounds": [
+          13,
+          120
+        ]
+      }
+    },
+    {
+      "table": "tags",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        1869
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ID column in the TAGS table represents unique identifiers for tags, which are naturally unbounded as new tags can be added over time. While the observed data range is [1, 1869], using custom bounds [1, +\u221e] is more appropriate to accommodate future entries without violating constraints.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "tags",
+      "column": "COUNT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        7244
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The COUNT column represents the number of posts associated with a tag, which can logically be zero or more. While the observed data range is [1, 7244], it is semantically correct to allow for a count of zero, as a tag may not be associated with any posts. Therefore, custom bounds of [0, +\u221e] are appropriate to account for potential edge cases.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "tags",
+      "column": "EXCERPTPOSTID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        2331,
+        114058
+      ],
+      "custom_bounds": [
+        null,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The EXCERPTPOSTID column is an identifier for posts, which are typically positive integers. The observed data range is realistic and reflects the actual data present in the database. Since the values are bounded between 2331 and 114058, using strict bounds is appropriate to ensure valid post IDs are referenced.",
+        "chosen_bounds": [
+          2331,
+          114058
+        ]
+      }
+    },
+    {
+      "table": "tags",
+      "column": "WIKIPOSTID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        2254,
+        114057
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The WIKIPOSTID column is an identifier that should logically be a positive integer. The observed data range is realistic and indicates that all values fall within a specific range. Since the strict bounds [2254, 114057] accurately reflect the existing data, it is appropriate to use these bounds for the BETWEEN constraint.",
+        "chosen_bounds": [
+          2254,
+          114057
+        ]
+      }
+    },
+    {
+      "table": "votes",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        43538
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ID column in the VOTES table is a unique identifier for each vote, which is naturally bounded to positive integers starting from 1. While the observed data range is [1, 43538], using custom bounds [1, +\u221e] is more appropriate as it allows for future entries beyond the current maximum observed value, ensuring that the constraint remains valid as new data is added.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "votes",
+      "column": "POSTID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        16921
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The POSTID column represents the ID of the post that is voted on, which is a naturally bounded value starting from 1 and going upwards. While the strict observed range is [1, 16921], using custom bounds [1, +\u221e] is more appropriate as it accounts for potential future posts that may be added beyond the current maximum observed value. This ensures that the constraint remains valid as new data is introduced.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "votes",
+      "column": "VOTETYPEID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        16
+      ],
+      "custom_bounds": [
+        1,
+        16
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The VOTETYPEID column represents a specific set of vote types, which are naturally bounded between 1 and 16. The observed data range is consistent with the semantic meaning of the column, and since the sample size is large enough (38930 rows), we can trust the strict bounds. Therefore, a BETWEEN constraint with strict bounds [1, 16] is appropriate.",
+        "chosen_bounds": [
+          1,
+          16
+        ]
+      }
+    },
+    {
+      "table": "votes",
+      "column": "USERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        5,
+        11954
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The USERID column should have a BETWEEN constraint because it represents user identifiers, which are naturally bounded to positive integers. While the observed data range is [5, 11954], using custom bounds [1, +\u221e] is safer as it accounts for potential new users being added in the future, ensuring that all valid USERIDs are included.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "votes",
+      "column": "BOUNTYAMOUNT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        200
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The BOUNTYAMOUNT column represents a monetary value that can logically be zero or more, making it naturally bounded at the lower end (0). The observed data range shows a maximum of 200, which is realistic given the context of bounties. However, since bounties can theoretically be unlimited, custom bounds would suggest [0, +\u221e]. Given the strict bounds are based on actual data and the sample size is large enough, using strict bounds is appropriate to ensure valid data entry while still allowing for future increases in bounty amounts.",
+        "chosen_bounds": [
+          0,
+          200
+        ]
+      }
+    },
+    {
+      "table": "comments",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        221292
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The ID column is a unique identifier for comments, which is naturally bounded to positive integers starting from 1. The observed data range is realistic and reflects the actual data present in the table. Therefore, strict bounds [1, 221292] are appropriate to ensure valid IDs are used.",
+        "chosen_bounds": [
+          1,
+          221292
+        ]
+      }
+    },
+    {
+      "table": "comments",
+      "column": "POSTID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1,
+        115376
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The POSTID column represents the unique identifier for posts, which is naturally unbounded as new posts can be created indefinitely. While the observed data range is [1, 115376], using custom bounds [1, +\u221e] is more appropriate to account for future posts that may exceed the current maximum observed value.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    },
+    {
+      "table": "comments",
+      "column": "SCORE",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        0,
+        90
+      ],
+      "custom_bounds": [
+        0,
+        100
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The SCORE column represents a rating score, which is naturally bounded between 0 and 100. Although the strict observed range is [0, 90], using custom bounds of [0, 100] is safer to account for potential future data entries that may reach the maximum score. This ensures that the constraint remains valid even if the data changes.",
+        "chosen_bounds": [
+          0,
+          100
+        ]
+      }
+    },
+    {
+      "table": "comments",
+      "column": "USERID",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        3,
+        55746
+      ],
+      "custom_bounds": [
+        1,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The USERID column represents unique identifiers for users, which are naturally bounded to positive integers. While the strict observed range is [3, 55746], using custom bounds [1, +\u221e] is more appropriate as it accounts for potential future user IDs that may not yet be present in the current dataset. This ensures that the constraint remains valid as new users are added.",
+        "chosen_bounds": [
+          1,
+          null
+        ]
+      }
+    }
+  ],
+  "in": [
+    {
+      "table": "postLinks",
+      "column": "LINKTYPEID",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        3
+      ],
+      "category_count": 2,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LINKTYPEID column has only 2 unique values across 11102 rows, suggesting it is a categorical column. Given the limited number of unique values, it is reasonable to assume that these are the only valid values, making an IN constraint appropriate."
+      }
+    },
+    {
+      "table": "postHistory",
+      "column": "POSTHISTORYTYPEID",
+      "data_type": "INTEGER",
+      "categories": [
+        2,
+        1,
+        3,
+        16,
+        6,
+        5,
+        4,
+        10,
+        8,
+        12,
+        9,
+        13,
+        11,
+        37,
+        38,
+        14,
+        7,
+        19,
+        15,
+        36,
+        25,
+        24,
+        35,
+        33,
+        34
+      ],
+      "category_count": 25,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSTHISTORYTYPEID column has a limited and defined set of unique values (25), suggesting it is a categorical column. Given that these values represent specific types of post history, it is reasonable to enforce an IN constraint to restrict values to this known set, as it is unlikely that new types will emerge frequently."
+      }
+    },
+    {
+      "table": "posts",
+      "column": "POSTTYPEID",
+      "data_type": "INTEGER",
+      "categories": [
+        1,
+        2,
+        7,
+        5,
+        4,
+        6,
+        3
+      ],
+      "category_count": 7,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSTTYPEID column has a limited and known set of unique values (1 to 7), indicating it is a true categorical column. Since these values represent distinct post types, an IN constraint is appropriate to ensure data integrity and restrict entries to these valid types."
+      }
+    },
+    {
+      "table": "votes",
+      "column": "VOTETYPEID",
+      "data_type": "INTEGER",
+      "categories": [
+        2,
+        5,
+        3,
+        1,
+        8,
+        11,
+        9,
+        15,
+        16,
+        10
+      ],
+      "category_count": 10,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The VOTETYPEID column appears to represent a set of defined vote types, which are likely limited and known. Given that there are only 10 unique values out of 38930 total rows, it suggests that this is a controlled vocabulary. It is reasonable to assume that these values are the only valid ones, making an IN constraint appropriate to enforce data integrity."
+      }
+    },
+    {
+      "table": "votes",
+      "column": "BOUNTYAMOUNT",
+      "data_type": "INTEGER",
+      "categories": [
+        50,
+        25,
+        0,
+        100,
+        150,
+        200
+      ],
+      "category_count": 6,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The BOUNTYAMOUNT column has a limited and known set of unique values (6 distinct amounts), which suggests it is a categorical column. Given that these values represent specific bounty amounts that can be assigned, it makes sense to enforce an IN constraint to restrict entries to these valid amounts. While new values could theoretically be introduced in the future, the current dataset indicates a controlled vocabulary for bounty amounts."
+      }
+    }
+  ],
+  "not_null": [
+    {
+      "table": "postLinks",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 11102,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is likely a primary key for the postLinks table, which is logically required for every record to uniquely identify each link. The consistent non-null data across all existing records further supports the necessity of this constraint."
+      }
+    },
+    {
+      "table": "postLinks",
+      "column": "CREATIONDATE",
+      "data_type": "DATE",
+      "total_rows": 11102,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CREATIONDATE field is logically required as it indicates when the post link was created. This timestamp is essential for tracking the history and relevance of the post link, and it is unlikely that future records would be valid without a creation date."
+      }
+    },
+    {
+      "table": "postLinks",
+      "column": "POSTID",
+      "data_type": "INTEGER",
+      "total_rows": 11102,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSTID column is logically required as it serves as a foreign key linking to the posts table, indicating that every post link must be associated with a valid post. The column description and its role in the database schema suggest that it is essential for maintaining the integrity of the relationships between posts and their links."
+      }
+    },
+    {
+      "table": "postLinks",
+      "column": "RELATEDPOSTID",
+      "data_type": "INTEGER",
+      "total_rows": 11102,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The RELATEDPOSTID field is logically required as it represents the id of a related post, which is essential for establishing the relationship between posts. The column description indicates that it is a key identifier for linking posts, and without it, the integrity of the post linking structure would be compromised. Although current data shows no nulls, the nature of the field suggests it should always have a value to maintain relational integrity."
+      }
+    },
+    {
+      "table": "postLinks",
+      "column": "LINKTYPEID",
+      "data_type": "INTEGER",
+      "total_rows": 11102,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LINKTYPEID is likely a foreign key that categorizes the type of link, which is essential for understanding the relationship between posts. Given that it is integral to the functionality of the post links and the column description does not suggest it is optional, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "postHistory",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 303155,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is the primary key for the POSTHISTORY table, which logically requires it to be unique and non-null for every record. Since it serves as a unique identifier for each entry, it must have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "postHistory",
+      "column": "POSTHISTORYTYPEID",
+      "data_type": "INTEGER",
+      "total_rows": 303155,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSTHISTORYTYPEID is likely a foreign key that identifies the type of post history, which is essential for understanding the context of each record. Given that it is logically required for every post history entry to have a type, and the column description suggests it is an identifier, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "postHistory",
+      "column": "POSTID",
+      "data_type": "INTEGER",
+      "total_rows": 303155,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSTID column is logically required as it serves as a foreign key linking to the unique id of the post. Every entry in the POSTHISTORY table must reference a valid post, making this field essential for maintaining data integrity."
+      }
+    },
+    {
+      "table": "postHistory",
+      "column": "REVISIONGUID",
+      "data_type": "VARCHAR",
+      "total_rows": 303155,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The REVISIONGUID is a unique identifier for the revision of a post, which is essential for tracking changes and maintaining data integrity. Given that it serves as a unique reference for each revision, it should logically be required for every record, and future records would also need this field to ensure proper identification of revisions."
+      }
+    },
+    {
+      "table": "postHistory",
+      "column": "CREATIONDATE",
+      "data_type": "DATE",
+      "total_rows": 303155,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CREATIONDATE field is logically required as it indicates when a post history entry was created. This timestamp is essential for tracking changes and revisions over time, making it necessary for every record. The column description supports this requirement, and future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "postHistory",
+      "column": "TEXT",
+      "data_type": "VARCHAR",
+      "total_rows": 303155,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TEXT column in POSTHISTORY is essential for capturing the detailed content of the post, which is a fundamental aspect of the post history. Given that it is logically required for every record to provide context and information about the changes made to the post, it should have a NOT NULL constraint. The current data being 100% non-null further supports the necessity of this field."
+      }
+    },
+    {
+      "table": "postHistory",
+      "column": "COMMENT",
+      "data_type": "VARCHAR",
+      "total_rows": 303155,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The COMMENT field in the POSTHISTORY table is essential for providing context about the changes made to a post. Given that it describes the nature of the edits or actions taken, it is logically required for every record to ensure clarity and understanding of the post's history. Although current data shows no nulls, the nature of the field suggests it should always contain information about the edits, making it appropriate to enforce a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "postHistory",
+      "column": "USERDISPLAYNAME",
+      "data_type": "VARCHAR",
+      "total_rows": 303155,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The USERDISPLAYNAME field is essential for identifying the user associated with the post history. Although current data shows 100% non-null values, the column's description indicates it represents the user's display name, which is logically required for clarity and context in post history records. Future records should also include this information to maintain consistency and usability."
+      }
+    },
+    {
+      "table": "badges",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 79851,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is the primary key for the BADGES table, which logically requires it to be unique and non-null for every record. Since it serves as a unique identifier for each badge, it must have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "badges",
+      "column": "USERID",
+      "data_type": "INTEGER",
+      "total_rows": 79851,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The USERID column is logically required as it serves as a foreign key linking to the USERS table, indicating which user obtained the badge. Since every badge must be associated with a user, it is essential for the integrity of the data. The column description supports this requirement, and the current data being 100% non-null further reinforces that this field should always have a value."
+      }
+    },
+    {
+      "table": "badges",
+      "column": "NAME",
+      "data_type": "VARCHAR",
+      "total_rows": 79851,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The NAME column in the BADGES table is logically required as it represents the badge name that a user obtained. Since it is essential for identifying the type of badge, it should not be nullable. The column description indicates that it is a key attribute of the badge, and future records should always have a valid badge name."
+      }
+    },
+    {
+      "table": "badges",
+      "column": "DATE",
+      "data_type": "DATE",
+      "total_rows": 79851,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DATE column in the BADGES table is logically required as it indicates when a user obtained a badge. This information is essential for tracking user achievements over time. Given that it is a timestamp related to an event (badge acquisition), it should not be nullable, as future records will also need to capture this date."
+      }
+    },
+    {
+      "table": "posts",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 91966,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is the primary key for the POSTS table, which means it is logically required for every record to uniquely identify each post. It cannot be null as it serves as a unique identifier, and the column description supports this requirement."
+      }
+    },
+    {
+      "table": "posts",
+      "column": "POSTTYPEID",
+      "data_type": "INTEGER",
+      "total_rows": 91966,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSTTYPEID is likely a foreign key that categorizes the type of post, making it essential for every record to identify the post type. The column description indicates it is an identifier for the post type, suggesting it is logically required for the integrity of the data. Future records should not reasonably omit this field, as it is fundamental to the classification of posts."
+      }
+    },
+    {
+      "table": "posts",
+      "column": "CREAIONDATE",
+      "data_type": "DATE",
+      "total_rows": 91966,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CREAIONDATE field is essential for tracking when each post was created. It serves as a timestamp for the post's creation, which is logically required for every record to maintain the integrity of the data. The column description indicates it is a creation date, further supporting the necessity of this field. Future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "posts",
+      "column": "SCORE",
+      "data_type": "INTEGER",
+      "total_rows": 91966,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SCORE field is logically required as it represents the score of the post, which is essential for evaluating the post's popularity and engagement. The column description indicates it is a key metric for posts, and while current data shows no nulls, it is reasonable to enforce a NOT NULL constraint to ensure future records maintain this essential information."
+      }
+    },
+    {
+      "table": "posts",
+      "column": "LASACTIVITYDATE",
+      "data_type": "DATE",
+      "total_rows": 91966,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LASACTIVITYDATE field represents the last activity date of a post, which is logically required for tracking engagement and activity. It is essential for understanding the recency of interactions with the post. Given that it is a date field that is likely to be updated with each interaction, it should not be nullable to ensure data integrity and consistency."
+      }
+    },
+    {
+      "table": "posts",
+      "column": "COMMENTCOUNT",
+      "data_type": "INTEGER",
+      "total_rows": 91966,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The COMMENTCOUNT field represents the total number of comments on a post, which is essential for understanding post engagement. It is logically required for every record, as it provides important context about the post's interaction. Even if a post has no comments, the count should be zero rather than null, indicating that the field should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "users",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 40325,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is the primary key for the USERS table, which logically requires it to be non-null for every record. It serves as a unique identifier for each user, making it essential for the integrity of the database. Future records must have a unique ID, so a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "users",
+      "column": "REPUTATION",
+      "data_type": "INTEGER",
+      "total_rows": 40325,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The REPUTATION field is logically required as it represents the user's reputation, which is essential for identifying user influence. The column description indicates its importance, and it is reasonable to assume that every user should have a reputation value, making it necessary to enforce a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "users",
+      "column": "CREATIONDATE",
+      "data_type": "DATE",
+      "total_rows": 40325,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CREATIONDATE field is logically required as it indicates when a user account was created. This is essential for tracking user activity and account lifecycle. Future records should always have a creation date, making it necessary to enforce a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "users",
+      "column": "DISPLAYNAME",
+      "data_type": "VARCHAR",
+      "total_rows": 40325,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DISPLAYNAME field is essential for user identification and interaction within the system. It is logically required for every user record, as it serves as a primary means of displaying user identity. The column description indicates it is a display name, which suggests it should always be present. Future records should not reasonably omit this field, as it is critical for user engagement."
+      }
+    },
+    {
+      "table": "users",
+      "column": "LASTACCESSDATE",
+      "data_type": "DATE",
+      "total_rows": 40325,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The LASTACCESSDATE field, while currently non-null for all existing records, is not logically required for every user. It represents the last time a user accessed their account, which could reasonably be null for new users or users who have never accessed their account. Therefore, it should not have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "users",
+      "column": "VIEWS",
+      "data_type": "INTEGER",
+      "total_rows": 40325,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The VIEWS column tracks the number of views a user has received, which is not essential for every user record. It is possible for a new user to have zero views, and thus this field could reasonably be null for future records. The current non-null data does not indicate a true requirement, as it may simply reflect the existing user base's activity."
+      }
+    },
+    {
+      "table": "users",
+      "column": "UPVOTES",
+      "data_type": "INTEGER",
+      "total_rows": 40325,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The UPVOTES column tracks the number of upvotes a user has received, which is not logically required for every user record. It is possible for a user to have zero upvotes, and future records could reasonably have this field omitted if a user has not received any upvotes. The current non-null data does not indicate a true requirement, as it could simply reflect the existing user base's activity."
+      }
+    },
+    {
+      "table": "users",
+      "column": "DOWNVOTES",
+      "data_type": "INTEGER",
+      "total_rows": 40325,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The DOWNVOTES column tracks the number of downvotes a user has received, which is not essential for every user record. It is possible for a user to have zero downvotes, and future records could reasonably have this field empty if a user has not received any downvotes. The current non-null data does not indicate a true requirement, as it could simply reflect the current state of users rather than a logical necessity."
+      }
+    },
+    {
+      "table": "users",
+      "column": "ACCOUNTID",
+      "data_type": "INTEGER",
+      "total_rows": 40325,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ACCOUNTID is a unique identifier for the user account, which logically should be required for every user record. Given that it is essential for identifying users and is consistently non-null in the current dataset, it is appropriate to enforce a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "tags",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 1032,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is the primary key for the TAGS table, which logically requires it to be non-null for every record. It serves as a unique identifier for each tag, making it essential for the integrity of the table. The column description indicates it is the tag id, further supporting the necessity of this field."
+      }
+    },
+    {
+      "table": "tags",
+      "column": "TAGNAME",
+      "data_type": "VARCHAR",
+      "total_rows": 1032,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TAGNAME field is logically required as it serves as the primary identifier for tags. The column description indicates that it is the name of the tag, which is essential for the functionality of the tagging system. Future records should not reasonably omit this field, as every tag must have a name to be meaningful."
+      }
+    },
+    {
+      "table": "tags",
+      "column": "COUNT",
+      "data_type": "INTEGER",
+      "total_rows": 1032,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The COUNT field represents the number of posts associated with a tag, which is logically required for the integrity of the data. It serves as an essential metric for understanding tag popularity and relevance. Future records should always have a count value, as it is fundamental to the purpose of the TAGS table."
+      }
+    },
+    {
+      "table": "votes",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 38930,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is the primary key for the VOTES table, which logically requires it to be unique and non-null for every record. Since it serves as a unique identifier for each vote, it must have a NOT NULL constraint to ensure data integrity."
+      }
+    },
+    {
+      "table": "votes",
+      "column": "POSTID",
+      "data_type": "INTEGER",
+      "total_rows": 38930,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSTID column is essential as it serves as a foreign key linking votes to specific posts. Every vote must be associated with a post, making this field logically required for every record."
+      }
+    },
+    {
+      "table": "votes",
+      "column": "VOTETYPEID",
+      "data_type": "INTEGER",
+      "total_rows": 38930,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The VOTETYPEID column is essential for identifying the type of vote being recorded. As a foreign key or identifier for the vote type, it is logically required for every record to ensure the integrity and meaning of the voting data. The column description indicates it is a necessary identifier, and future records would not make sense without this information."
+      }
+    },
+    {
+      "table": "votes",
+      "column": "CREATIONDATE",
+      "data_type": "DATE",
+      "total_rows": 38930,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CREATIONDATE field is logically required as it indicates when a vote was cast, which is essential for tracking the timeline of votes. The column description suggests that it is a timestamp for the vote, making it necessary for every record. Future records should also have this field populated to maintain data integrity."
+      }
+    },
+    {
+      "table": "comments",
+      "column": "ID",
+      "data_type": "INTEGER",
+      "total_rows": 174285,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is the primary key for the COMMENTS table, which logically requires it to be unique and non-null for every record. Since it serves as a unique identifier for each comment, it must have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "comments",
+      "column": "POSTID",
+      "data_type": "INTEGER",
+      "total_rows": 174285,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSTID column is logically required as it serves as a foreign key linking comments to their respective posts. Every comment must be associated with a post, making this field essential for the integrity of the data. The column description indicates that it is the unique id of the post, further supporting the need for a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "comments",
+      "column": "SCORE",
+      "data_type": "INTEGER",
+      "total_rows": 174285,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SCORE field is essential for evaluating the quality of comments, as indicated by its description. It serves as a rating score, which is logically required for every comment to assess its positivity or negativity. Future records should also have this field populated to maintain consistency in comment evaluation."
+      }
+    },
+    {
+      "table": "comments",
+      "column": "TEXT",
+      "data_type": "VARCHAR",
+      "total_rows": 174285,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TEXT column in the COMMENTS table is essential for the purpose of the comments, as it contains the detailed content of each comment. Given that comments are meant to convey information or opinions, it is logically required for every record to have a non-null value in this field. The column description indicates that it holds the detailed content, reinforcing the necessity of this field. Future records would not make sense without this content, thus a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "comments",
+      "column": "CREATIONDATE",
+      "data_type": "DATE",
+      "total_rows": 174285,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CREATIONDATE field is logically required for every comment record as it indicates when the comment was made. This is essential for tracking the timeline of comments and understanding their context. The column description supports this necessity, and it is unlikely that future records would reasonably omit this field."
+      }
+    }
+  ],
+  "dependency": [
+    {
+      "table": "postLinks",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "CREATIONDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 108,
+          "CREATIONDATE": "2010-07-21 14:47:33.0"
+        },
+        {
+          "ID": 145,
+          "CREATIONDATE": "2010-07-23 16:30:41.0"
+        },
+        {
+          "ID": 217,
+          "CREATIONDATE": "2010-07-26 20:12:15.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column serves as a unique identifier for each post link, and it consistently maps to a single CREATIONDATE. This indicates a meaningful functional dependency where each post link ID corresponds to exactly one creation date, which is semantically relevant for tracking when each link was created. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "postLinks",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "POSTID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 108,
+          "POSTID": 395
+        },
+        {
+          "ID": 145,
+          "POSTID": 548
+        },
+        {
+          "ID": 217,
+          "POSTID": 375
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column serves as a unique identifier for each post link, and it consistently maps to a single POSTID across all rows. This indicates a meaningful relationship where each post link ID corresponds to exactly one post ID, which is semantically relevant for maintaining data integrity and ensuring that each link is correctly associated with its respective post."
+      }
+    },
+    {
+      "table": "postLinks",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "RELATEDPOSTID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 108,
+          "RELATEDPOSTID": 173
+        },
+        {
+          "ID": 145,
+          "RELATEDPOSTID": 539
+        },
+        {
+          "ID": 217,
+          "RELATEDPOSTID": 30
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a unique identifier for each post link, and it consistently maps to a single RELATEDPOSTID across all rows. This indicates a meaningful relationship where each post link ID corresponds to exactly one related post ID, which is semantically significant for understanding post relationships. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "postLinks",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "LINKTYPEID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 108,
+          "LINKTYPEID": 1
+        },
+        {
+          "ID": 145,
+          "LINKTYPEID": 1
+        },
+        {
+          "ID": 217,
+          "LINKTYPEID": 1
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 LINKTYPEID is not meaningful as LINKTYPEID is likely to represent a type of link that can be shared among multiple IDs. The observed mapping shows that multiple IDs map to the same LINKTYPEID, indicating that LINKTYPEID is not uniquely determined by ID. Therefore, enforcing this as a constraint would not add value and could lead to incorrect assumptions about the data."
+      }
+    },
+    {
+      "table": "postHistory",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "POSTHISTORYTYPEID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "POSTHISTORYTYPEID": 2
+        },
+        {
+          "ID": 2,
+          "POSTHISTORYTYPEID": 1
+        },
+        {
+          "ID": 3,
+          "POSTHISTORYTYPEID": 3
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 POSTHISTORYTYPEID is trivial because ID is the primary key of the POSTHISTORY table. While the mapping is consistent, it does not provide meaningful semantic value beyond the inherent uniqueness of the primary key."
+      }
+    },
+    {
+      "table": "postHistory",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "POSTID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "POSTID": 1
+        },
+        {
+          "ID": 2,
+          "POSTID": 1
+        },
+        {
+          "ID": 3,
+          "POSTID": 1
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 POSTID is not meaningful as ID is the primary key of the POSTHISTORY table, which already ensures uniqueness for each ID. This makes the dependency trivial and does not add semantic value or help in query verification."
+      }
+    },
+    {
+      "table": "postHistory",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "REVISIONGUID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "REVISIONGUID": "e58bf7fd-e60f-4c58-a6e4-dfc91cf98a69"
+        },
+        {
+          "ID": 2,
+          "REVISIONGUID": "e58bf7fd-e60f-4c58-a6e4-dfc91cf98a69"
+        },
+        {
+          "ID": 3,
+          "REVISIONGUID": "e58bf7fd-e60f-4c58-a6e4-dfc91cf98a69"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a unique identifier for each post history entry, and it consistently maps to a unique REVISIONGUID. This indicates a meaningful relationship where each post history entry has a distinct revision identifier. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents the possibility of multiple entries sharing the same revision GUID, which could lead to confusion in tracking post revisions."
+      }
+    },
+    {
+      "table": "postHistory",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "CREATIONDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "CREATIONDATE": "2010-07-19 19:12:12.0"
+        },
+        {
+          "ID": 2,
+          "CREATIONDATE": "2010-07-19 19:12:12.0"
+        },
+        {
+          "ID": 3,
+          "CREATIONDATE": "2010-07-19 19:12:12.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a unique identifier for each post history entry, and it consistently maps to a single CREATIONDATE. This indicates a meaningful functional dependency where each post history ID corresponds to exactly one creation date. Enforcing this constraint would help ensure data integrity and verify query correctness, as it reflects a natural relationship between the ID and its creation date."
+      }
+    },
+    {
+      "table": "postHistory",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "USERID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "USERID": 8.0
+        },
+        {
+          "ID": 2.0,
+          "USERID": 8.0
+        },
+        {
+          "ID": 3.0,
+          "USERID": 8.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The ID column is the primary key of the POSTHISTORY table, which means it already uniquely identifies each row. Therefore, the dependency of USERID on ID is trivial and does not add meaningful semantic value. Enforcing this as a constraint would not provide additional verification for query correctness."
+      }
+    },
+    {
+      "table": "postHistory",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "TEXT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "TEXT": "How should I elicit prior distributions from experts when fitting a Bayesian model?"
+        },
+        {
+          "ID": 2,
+          "TEXT": "Eliciting priors from experts"
+        },
+        {
+          "ID": 3,
+          "TEXT": "<bayesian><prior><elicitation>"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a primary key, and it uniquely determines the TEXT column, which contains meaningful content related to each post history entry. This functional dependency is reliable given the large number of rows (303155) and is not just a coincidence. Enforcing this constraint would help ensure data integrity and verify query correctness, as each ID should consistently map to a specific TEXT value."
+      }
+    },
+    {
+      "table": "postHistory",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "COMMENT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "COMMENT": ""
+        },
+        {
+          "ID": 2,
+          "COMMENT": ""
+        },
+        {
+          "ID": 3,
+          "COMMENT": ""
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 COMMENT is trivial because ID is the primary key of the POSTHISTORY table. While the mapping is consistent, it does not provide meaningful semantic value beyond the inherent uniqueness of the primary key. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "postHistory",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "USERDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "USERDISPLAYNAME": ""
+        },
+        {
+          "ID": 2,
+          "USERDISPLAYNAME": ""
+        },
+        {
+          "ID": 3,
+          "USERDISPLAYNAME": ""
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the mapping is consistent, the USERDISPLAYNAME is empty for all observed IDs, suggesting that this dependency is not meaningful or reliable. It does not represent a semantic relationship, and enforcing this constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "badges",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "USERID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "USERID": 5
+        },
+        {
+          "ID": 2,
+          "USERID": 6
+        },
+        {
+          "ID": 3,
+          "USERID": 8
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 USERID is trivial because ID is the primary key of the BADGES table. Primary keys inherently determine all other columns, so enforcing this as a functional dependency constraint does not add meaningful value or verification for query correctness."
+      }
+    },
+    {
+      "table": "badges",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "NAME": "Teacher"
+        },
+        {
+          "ID": 2,
+          "NAME": "Teacher"
+        },
+        {
+          "ID": 3,
+          "NAME": "Teacher"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 NAME is not meaningful because multiple IDs map to the same NAME (e.g., multiple IDs correspond to 'Teacher'). This indicates that NAME is not uniquely determined by ID, making it unsuitable for a functional dependency constraint. Additionally, ID is a primary key, which already implies uniqueness for other columns, thus adding this constraint would be redundant."
+      }
+    },
+    {
+      "table": "badges",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "DATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "DATE": "2010-07-19 19:39:07.0"
+        },
+        {
+          "ID": 2,
+          "DATE": "2010-07-19 19:39:07.0"
+        },
+        {
+          "ID": 3,
+          "DATE": "2010-07-19 19:39:07.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 DATE is not meaningful as it appears that all IDs are associated with the same DATE value, suggesting a coincidence rather than a semantic relationship. Additionally, ID is a primary key, making this dependency trivial and not useful for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "POSTTYPEID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "POSTTYPEID": 1
+        },
+        {
+          "ID": 2,
+          "POSTTYPEID": 1
+        },
+        {
+          "ID": 3,
+          "POSTTYPEID": 1
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 POSTTYPEID is meaningful as each post ID corresponds to a specific post type, which is a semantic relationship. Given the large number of rows (91966) and the consistent mapping observed, this dependency is reliable. Enforcing this constraint would help ensure data integrity and verify query correctness regarding post types."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "ACCEPTEDANSWERID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "ACCEPTEDANSWERID": 15.0
+        },
+        {
+          "ID": 2.0,
+          "ACCEPTEDANSWERID": 59.0
+        },
+        {
+          "ID": 3.0,
+          "ACCEPTEDANSWERID": 5.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 ACCEPTEDANSWERID is meaningful because each post (identified by ID) can have at most one accepted answer (ACCEPTEDANSWERID). This relationship is semantically significant in the context of posts and answers, as it reflects the structure of a Q&A system. The presence of null values for ACCEPTEDANSWERID indicates that not all posts have an accepted answer, but this does not negate the functional dependency. Enforcing this constraint would help ensure data integrity and verify that each post can only point to one accepted answer."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "CREAIONDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "CREAIONDATE": "2010-07-19 19:12:12.0"
+        },
+        {
+          "ID": 2,
+          "CREAIONDATE": "2010-07-19 19:12:57.0"
+        },
+        {
+          "ID": 3,
+          "CREAIONDATE": "2010-07-19 19:13:28.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 CREAIONDATE is trivial because ID is the primary key of the POSTS table, which inherently ensures that each ID maps to exactly one CREAIONDATE. Enforcing this as a constraint does not add meaningful semantic value or help verify query correctness, as it is already guaranteed by the primary key constraint."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "SCORE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "SCORE": 23
+        },
+        {
+          "ID": 2,
+          "SCORE": 22
+        },
+        {
+          "ID": 3,
+          "SCORE": 54
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a primary key, and it uniquely determines the SCORE for each post. This is a meaningful functional dependency as it ensures that each post has a specific score associated with its unique ID. Enforcing this constraint would help maintain data integrity and verify query correctness, as it confirms that each post's score is consistently linked to its ID."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "VIEWCOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "VIEWCOUNT": 1278.0
+        },
+        {
+          "ID": 2.0,
+          "VIEWCOUNT": 8198.0
+        },
+        {
+          "ID": 3.0,
+          "VIEWCOUNT": 3613.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a primary key, and it uniquely identifies each post. The VIEWCOUNT is consistently mapped to each ID, indicating a meaningful relationship where each post has a specific view count. Enforcing this dependency as a constraint would help ensure data integrity and verify query correctness, as it confirms that each post ID corresponds to exactly one view count."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "BODY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "BODY": "<p>How should I elicit prior distributions from experts when fitting a Bayesian model?</p>\n"
+        },
+        {
+          "ID": 2,
+          "BODY": "<p>In many different statistical methods there is an \"assumption of normality\".  What is \"normality\" and how do I know if there is normality?</p>\n"
+        },
+        {
+          "ID": 3,
+          "BODY": "<p>What are some valuable Statistical Analysis open source projects available right now?</p>\n\n<p>Edit: as pointed out by Sharpie, valuable could mean helping you get things done faster or more cheaply.</p>\n"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 BODY is meaningful as each post ID uniquely corresponds to its body content, which is a natural mapping relationship. Given the large number of rows (91966), this dependency is reliable and not just a coincidence. The ID is a primary key, but enforcing this constraint adds value for query verification, ensuring that each post ID consistently maps to its respective body content."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "OWNERUSERID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "OWNERUSERID": 8.0
+        },
+        {
+          "ID": 2.0,
+          "OWNERUSERID": 24.0
+        },
+        {
+          "ID": 3.0,
+          "OWNERUSERID": 18.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 OWNERUSERID is meaningful as it establishes a clear relationship between a post and its owner. Given that ID is a primary key, it uniquely identifies each post, and the consistent mapping across 91966 rows indicates reliability. Enforcing this constraint would help ensure data integrity and verify that each post is associated with a valid owner."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "LASACTIVITYDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "LASACTIVITYDATE": "2010-09-15 21:08:26.0"
+        },
+        {
+          "ID": 2,
+          "LASACTIVITYDATE": "2012-11-12 09:21:54.0"
+        },
+        {
+          "ID": 3,
+          "LASACTIVITYDATE": "2013-05-27 14:48:36.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a primary key, and it naturally determines the LASACTIVITYDATE for each post. This is a meaningful functional dependency as it ensures that each post ID corresponds to exactly one last activity date, which is crucial for maintaining data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "TITLE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "TITLE": "Eliciting priors from experts"
+        },
+        {
+          "ID": 2,
+          "TITLE": "What is normality?"
+        },
+        {
+          "ID": 3,
+          "TITLE": "What are some valuable Statistical Analysis open source projects?"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the ID is a primary key and uniquely identifies each post, the TITLE can be null for some IDs, which breaks the functional dependency. Therefore, enforcing a constraint would not be meaningful or reliable."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "TAGS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "TAGS": "<bayesian><prior><elicitation>"
+        },
+        {
+          "ID": 2,
+          "TAGS": "<distributions><normality>"
+        },
+        {
+          "ID": 3,
+          "TAGS": "<software><open-source>"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 TAGS is meaningful because each post ID uniquely corresponds to its tags, which are semantically relevant to the content of the post. This relationship is consistent across a large dataset of 91966 rows, indicating reliability. Enforcing this constraint would help ensure data integrity and verify that each post is associated with its appropriate tags, enhancing query correctness."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "ANSWERCOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "ANSWERCOUNT": 5.0
+        },
+        {
+          "ID": 2.0,
+          "ANSWERCOUNT": 7.0
+        },
+        {
+          "ID": 3.0,
+          "ANSWERCOUNT": 19.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a primary key, and it uniquely identifies each post. The ANSWERCOUNT is a meaningful attribute that represents the number of answers associated with each post. Since the mapping is consistent across a large dataset (91966 rows), enforcing this functional dependency would help ensure data integrity and verify query correctness regarding the relationship between posts and their answer counts."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "COMMENTCOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "COMMENTCOUNT": 1
+        },
+        {
+          "ID": 2,
+          "COMMENTCOUNT": 1
+        },
+        {
+          "ID": 3,
+          "COMMENTCOUNT": 4
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 COMMENTCOUNT is meaningful because each post ID uniquely determines the number of comments associated with that post. This relationship is reliable given the large dataset of 91966 rows, and enforcing this constraint would help ensure data integrity and verify query correctness regarding comment counts for posts."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "FAVORITECOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "FAVORITECOUNT": 14.0
+        },
+        {
+          "ID": 2.0,
+          "FAVORITECOUNT": 8.0
+        },
+        {
+          "ID": 3.0,
+          "FAVORITECOUNT": 36.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a primary key, and it uniquely identifies each post. The FAVORITECOUNT is a count of how many times a post has been favorited, which is inherently dependent on the post's ID. This is a meaningful functional dependency as it reflects a natural relationship between a post and its favorite count. Enforcing this constraint would help ensure data integrity and verify query correctness, especially in scenarios where favorite counts are expected to be consistent with their respective posts."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "LASTEDITORUSERID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "LASTEDITORUSERID": null
+        },
+        {
+          "ID": 2.0,
+          "LASTEDITORUSERID": 88.0
+        },
+        {
+          "ID": 3.0,
+          "LASTEDITORUSERID": 183.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 LASTEDITORUSERID is meaningful as it indicates which user last edited a post. Given that ID is a primary key, it naturally determines LASTEDITORUSERID, but enforcing this constraint can help ensure data integrity and verify that each post has a consistent last editor, which is important for tracking changes in posts."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "LASTEDITDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "LASTEDITDATE": null
+        },
+        {
+          "ID": 2,
+          "LASTEDITDATE": "2010-08-07 17:56:44.0"
+        },
+        {
+          "ID": 3,
+          "LASTEDITDATE": "2011-02-12 05:50:03.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 LASTEDITDATE is trivial because ID is the primary key of the POSTS table. While the mapping is consistent, it does not provide meaningful semantic value beyond the inherent properties of primary keys, which already enforce uniqueness. Therefore, enforcing this as a functional dependency constraint would add noise without additional verification value."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "COMMUNITYOWNEDDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "COMMUNITYOWNEDDATE": null
+        },
+        {
+          "ID": 2,
+          "COMMUNITYOWNEDDATE": null
+        },
+        {
+          "ID": 3,
+          "COMMUNITYOWNEDDATE": "2010-07-19 19:13:28.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 COMMUNITYOWNEDDATE is meaningful because each post ID uniquely determines its community owned date. Although COMMUNITYOWNEDDATE can be null, the relationship is consistent across the dataset, indicating a reliable mapping. This constraint would help ensure data integrity and verify query correctness regarding the ownership status of posts."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "PARENTID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "PARENTID": null
+        },
+        {
+          "ID": 2.0,
+          "PARENTID": null
+        },
+        {
+          "ID": 3.0,
+          "PARENTID": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 PARENTID is meaningful as it establishes a hierarchical relationship between posts, where each post can have a parent post. This relationship is consistent across a large dataset (91966 rows), indicating reliability. Enforcing this constraint would help maintain the integrity of the post hierarchy and verify query correctness, ensuring that any child post correctly references an existing parent post."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "CLOSEDDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "CLOSEDDATE": null
+        },
+        {
+          "ID": 2,
+          "CLOSEDDATE": null
+        },
+        {
+          "ID": 3,
+          "CLOSEDDATE": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 CLOSEDDATE is trivial because ID is the primary key of the POSTS table. While the observed mapping is consistent, it does not provide meaningful semantic value beyond the inherent primary key constraint. Therefore, enforcing this as a functional dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "OWNERDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "ID": 2,
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "ID": 3,
+          "OWNERDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the ID is a primary key and uniquely identifies each post, the OWNERDISPLAYNAME being consistently null suggests that this relationship is not meaningful. It does not represent a valid mapping of user IDs to display names, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "LASTEDITORDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "ID": 2,
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "ID": 3,
+          "LASTEDITORDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 LASTEDITORDISPLAYNAME is not meaningful as it consistently maps to null values, indicating that there is no actual relationship or semantic value. This suggests that the LASTEDITORDISPLAYNAME does not depend on ID in a meaningful way, and enforcing this constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "CREAIONDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "CREAIONDATE": "2010-07-19 19:12:12.0"
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "CREAIONDATE": "2010-07-19 19:12:57.0"
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "CREAIONDATE": "2010-07-19 19:13:28.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency of ACCEPTEDANSWERID on CREAIONDATE does not represent a meaningful semantic relationship. ACCEPTEDANSWERID is not a unique identifier and can be null, which indicates that it does not consistently determine a unique CREAIONDATE. Additionally, the relationship appears coincidental rather than a natural mapping, as the creation date of a post does not logically depend on the accepted answer ID."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "SCORE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "SCORE": 23.0
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "SCORE": 22.0
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "SCORE": 54.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between ACCEPTEDANSWERID and SCORE does not represent a meaningful functional dependency. The ACCEPTEDANSWERID can be null and does not uniquely determine the SCORE, as multiple rows with null ACCEPTEDANSWERID have different SCORE values. Additionally, ACCEPTEDANSWERID is not a primary or unique key, and the observed mapping does not suggest a consistent semantic relationship that would hold in future data."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "VIEWCOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "VIEWCOUNT": 1278.0
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "VIEWCOUNT": 8198.0
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "VIEWCOUNT": 3613.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between ACCEPTEDANSWERID and VIEWCOUNT does not represent a meaningful functional dependency. While the observed mapping is consistent, the presence of null values for ACCEPTEDANSWERID and the variability in VIEWCOUNT suggests that this is not a reliable or semantic relationship. VIEWCOUNT is likely influenced by other factors beyond just the accepted answer, making this dependency coincidental rather than a true functional mapping."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "BODY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "BODY": "<p>How should I elicit prior distributions from experts when fitting a Bayesian model?</p>\n"
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "BODY": "<p>In many different statistical methods there is an \"assumption of normality\".  What is \"normality\" and how do I know if there is normality?</p>\n"
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "BODY": "<p>What are some valuable Statistical Analysis open source projects available right now?</p>\n\n<p>Edit: as pointed out by Sharpie, valuable could mean helping you get things done faster or more cheaply.</p>\n"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency of ACCEPTEDANSWERID on BODY is not meaningful as a functional dependency because ACCEPTEDANSWERID is not a unique identifier for the BODY content. Multiple posts can have the same ACCEPTEDANSWERID, and the presence of null values indicates that it does not consistently map to a unique BODY. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "OWNERUSERID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "OWNERUSERID": 8.0
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "OWNERUSERID": 24.0
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "OWNERUSERID": 18.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the observed mapping is consistent, the relationship between ACCEPTEDANSWERID and OWNERUSERID does not represent a meaningful semantic dependency. ACCEPTEDANSWERID is not a unique identifier and can be null, indicating that it does not consistently determine a single OWNERUSERID. This suggests that the relationship may not hold in future data, and enforcing this as a constraint could lead to unnecessary complications without adding significant value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "LASACTIVITYDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "LASACTIVITYDATE": "2010-09-15 21:08:26.0"
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "LASACTIVITYDATE": "2012-11-12 09:21:54.0"
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "LASACTIVITYDATE": "2013-05-27 14:48:36.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between ACCEPTEDANSWERID and LASACTIVITYDATE does not represent a meaningful semantic dependency. ACCEPTEDANSWERID is not a unique identifier, as it can be null and does not consistently map to a single LASACTIVITYDATE. This suggests that the observed mapping may be coincidental rather than a reliable functional dependency. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "TITLE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "TITLE": "Eliciting priors from experts"
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "TITLE": "What is normality?"
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "TITLE": "What are some valuable Statistical Analysis open source projects?"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ACCEPTEDANSWERID \u2192 TITLE is not meaningful as a functional dependency because ACCEPTEDANSWERID is not a unique identifier for TITLE. The presence of null values and the fact that multiple titles can exist for the same accepted answer ID suggests that this relationship is coincidental rather than a reliable mapping. Additionally, ACCEPTEDANSWERID is not a primary key, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "TAGS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "TAGS": "<bayesian><prior><elicitation>"
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "TAGS": "<distributions><normality>"
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "TAGS": "<software><open-source>"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency of TAGS on ACCEPTEDANSWERID is not meaningful as ACCEPTEDANSWERID is not a unique identifier for posts, and the presence of null values indicates that the relationship is not consistent. Additionally, TAGS can vary independently of ACCEPTEDANSWERID, making this dependency coincidental rather than a reliable semantic relationship."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "ANSWERCOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "ANSWERCOUNT": 5.0
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "ANSWERCOUNT": 7.0
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "ANSWERCOUNT": 19.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The relationship between ACCEPTEDANSWERID and ANSWERCOUNT is meaningful because the accepted answer ID should logically correspond to the number of answers for that post. This dependency is consistent across a large dataset (91966 rows), suggesting it is not just a coincidence. Enforcing this constraint would help ensure data integrity and verify query correctness, as it reflects a natural mapping in the context of posts and their answers."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "COMMENTCOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "COMMENTCOUNT": 1.0
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "COMMENTCOUNT": 1.0
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "COMMENTCOUNT": 4.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between ACCEPTEDANSWERID and COMMENTCOUNT does not represent a meaningful semantic dependency. ACCEPTEDANSWERID is not a unique identifier, as multiple posts can have the same accepted answer ID, leading to varying comment counts. Additionally, the presence of null values for ACCEPTEDANSWERID indicates that it does not consistently determine COMMENTCOUNT. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "FAVORITECOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "FAVORITECOUNT": 14.0
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "FAVORITECOUNT": 8.0
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "FAVORITECOUNT": 36.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between ACCEPTEDANSWERID and FAVORITECOUNT does not represent a meaningful functional dependency. ACCEPTEDANSWERID is not a unique identifier, as it can be null or repeated across different posts, leading to varying FAVORITECOUNT values. This suggests that the mapping is coincidental rather than a reliable semantic relationship. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "LASTEDITORUSERID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "LASTEDITORUSERID": null
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "LASTEDITORUSERID": 88.0
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "LASTEDITORUSERID": 183.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between ACCEPTEDANSWERID and LASTEDITORUSERID does not represent a meaningful functional dependency. ACCEPTEDANSWERID is not a unique identifier, as it can be null or associated with multiple LASTEDITORUSERID values. Additionally, the presence of null values in both columns indicates that this dependency is not reliable and may not hold in future data. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "LASTEDITDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "LASTEDITDATE": null
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "LASTEDITDATE": "2010-08-07 17:56:44.0"
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "LASTEDITDATE": "2011-02-12 05:50:03.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between ACCEPTEDANSWERID and LASTEDITDATE does not represent a meaningful functional dependency. ACCEPTEDANSWERID can be null, and there are multiple instances where it does not correspond to a unique LASTEDITDATE. This suggests that the relationship is coincidental rather than a reliable mapping, and enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "COMMUNITYOWNEDDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "COMMUNITYOWNEDDATE": null
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "COMMUNITYOWNEDDATE": null
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "COMMUNITYOWNEDDATE": "2010-07-19 19:13:28.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between ACCEPTEDANSWERID and COMMUNITYOWNEDDATE does not represent a meaningful functional dependency. The presence of null values for both columns indicates that there is no consistent mapping. Additionally, ACCEPTEDANSWERID is not a primary or unique key, and the observed data suggests that the dependency is coincidental rather than a reliable semantic relationship. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "CLOSEDDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "CLOSEDDATE": null
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "CLOSEDDATE": null
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "CLOSEDDATE": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between ACCEPTEDANSWERID and CLOSEDDATE is not meaningful as it appears to be coincidental. The CLOSEDDATE is consistently null for most ACCEPTEDANSWERID values, and when ACCEPTEDANSWERID is null, CLOSEDDATE can have a value. This suggests that there is no reliable semantic relationship that would justify enforcing a functional dependency constraint."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "OWNERDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "OWNERDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that for multiple values of ACCEPTEDANSWERID, the OWNERDISPLAYNAME is consistently null, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is not reliable or semantically meaningful, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "ACCEPTEDANSWERID",
+      "column_b": "LASTEDITORDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCEPTEDANSWERID": 15.0,
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "ACCEPTEDANSWERID": 59.0,
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "ACCEPTEDANSWERID": 5.0,
+          "LASTEDITORDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all values of LASTEDITORDISPLAYNAME are null for all values of ACCEPTEDANSWERID, indicating that there is no meaningful relationship between these columns. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "CREAIONDATE",
+      "column_b": "CLOSEDDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CREAIONDATE": "2010-07-19 19:12:12.0",
+          "CLOSEDDATE": null
+        },
+        {
+          "CREAIONDATE": "2010-07-19 19:12:57.0",
+          "CLOSEDDATE": null
+        },
+        {
+          "CREAIONDATE": "2010-07-19 19:13:28.0",
+          "CLOSEDDATE": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency between CREAIONDATE and CLOSEDDATE is not meaningful as it does not represent a consistent semantic relationship. The CLOSEDDATE can be null for many CREAIONDATE values, indicating that the relationship is not reliable or unique. This suggests that the mapping is coincidental rather than a true functional dependency, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "CREAIONDATE",
+      "column_b": "OWNERDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CREAIONDATE": "2010-07-19 19:12:12.0",
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "CREAIONDATE": "2010-07-19 19:12:57.0",
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "CREAIONDATE": "2010-07-19 19:13:28.0",
+          "OWNERDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency CREAIONDATE \u2192 OWNERDISPLAYNAME is not meaningful as it consistently maps to null values, indicating that there is no actual relationship between the creation date of a post and the owner's display name. This suggests that the observed pattern is coincidental rather than a reliable functional dependency. Additionally, CREAIONDATE is not a unique identifier, which further diminishes the significance of this dependency."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "CREAIONDATE",
+      "column_b": "LASTEDITORDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CREAIONDATE": "2010-07-19 19:12:12.0",
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "CREAIONDATE": "2010-07-19 19:12:57.0",
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "CREAIONDATE": "2010-07-19 19:13:28.0",
+          "LASTEDITORDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency CREAIONDATE \u2192 LASTEDITORDISPLAYNAME is not meaningful as it consistently maps to null values, indicating no actual relationship. The CREAIONDATE is not a unique identifier for posts, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "BODY",
+      "column_b": "FAVORITECOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "BODY": "<p>How should I elicit prior distributions from experts when fitting a Bayesian model?</p>\n",
+          "FAVORITECOUNT": 14.0
+        },
+        {
+          "BODY": "<p>In many different statistical methods there is an \"assumption of normality\".  What is \"normality\" and how do I know if there is normality?</p>\n",
+          "FAVORITECOUNT": 8.0
+        },
+        {
+          "BODY": "<p>What are some valuable Statistical Analysis open source projects available right now?</p>\n\n<p>Edit: as pointed out by Sharpie, valuable could mean helping you get things done faster or more cheaply.</p>\n",
+          "FAVORITECOUNT": 36.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the observed mapping is consistent across the current dataset, the relationship between BODY and FAVORITECOUNT is not inherently meaningful or semantic. The BODY content can vary widely, and different posts with similar or identical content can have different favorite counts based on user engagement, trends, or other factors. This suggests that the dependency may not hold in future data, making it unreliable as a functional dependency. Additionally, BODY is not a primary or unique key, and enforcing this constraint would not add significant value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "BODY",
+      "column_b": "CLOSEDDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "BODY": "<p>How should I elicit prior distributions from experts when fitting a Bayesian model?</p>\n",
+          "CLOSEDDATE": null
+        },
+        {
+          "BODY": "<p>In many different statistical methods there is an \"assumption of normality\".  What is \"normality\" and how do I know if there is normality?</p>\n",
+          "CLOSEDDATE": null
+        },
+        {
+          "BODY": "<p>What are some valuable Statistical Analysis open source projects available right now?</p>\n\n<p>Edit: as pointed out by Sharpie, valuable could mean helping you get things done faster or more cheaply.</p>\n",
+          "CLOSEDDATE": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency BODY \u2192 CLOSEDDATE is not meaningful as it suggests that the content of a post (BODY) determines whether it is closed (CLOSEDDATE). However, the observed data shows that many posts with different BODY values have the same CLOSEDDATE (null), indicating that the relationship is coincidental rather than a true functional dependency. Additionally, the BODY column is not a unique identifier, and the closure of a post is likely influenced by factors unrelated to its content. Therefore, enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "BODY",
+      "column_b": "OWNERDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "BODY": "<p>How should I elicit prior distributions from experts when fitting a Bayesian model?</p>\n",
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "BODY": "<p>In many different statistical methods there is an \"assumption of normality\".  What is \"normality\" and how do I know if there is normality?</p>\n",
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "BODY": "<p>What are some valuable Statistical Analysis open source projects available right now?</p>\n\n<p>Edit: as pointed out by Sharpie, valuable could mean helping you get things done faster or more cheaply.</p>\n",
+          "OWNERDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency BODY \u2192 OWNERDISPLAYNAME is not meaningful as it consistently maps to null for all observed rows. This indicates that there is no semantic relationship between the body of the post and the owner's display name, making it a coincidental pattern rather than a reliable functional dependency. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "BODY",
+      "column_b": "LASTEDITORDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "BODY": "<p>How should I elicit prior distributions from experts when fitting a Bayesian model?</p>\n",
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "BODY": "<p>In many different statistical methods there is an \"assumption of normality\".  What is \"normality\" and how do I know if there is normality?</p>\n",
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "BODY": "<p>What are some valuable Statistical Analysis open source projects available right now?</p>\n\n<p>Edit: as pointed out by Sharpie, valuable could mean helping you get things done faster or more cheaply.</p>\n",
+          "LASTEDITORDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency BODY \u2192 LASTEDITORDISPLAYNAME is not meaningful as it does not represent a consistent semantic relationship. The observed data shows that multiple BODY values map to a null LASTEDITORDISPLAYNAME, indicating that there is no unique or reliable mapping. This suggests that the relationship is coincidental rather than a true functional dependency, and enforcing such a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "LASACTIVITYDATE",
+      "column_b": "CLOSEDDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LASACTIVITYDATE": "2010-09-15 21:08:26.0",
+          "CLOSEDDATE": null
+        },
+        {
+          "LASACTIVITYDATE": "2012-11-12 09:21:54.0",
+          "CLOSEDDATE": null
+        },
+        {
+          "LASACTIVITYDATE": "2013-05-27 14:48:36.0",
+          "CLOSEDDATE": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between LASACTIVITYDATE and CLOSEDDATE is not meaningful as a functional dependency. While there is a consistent pattern in the current data, LASACTIVITYDATE does not uniquely determine CLOSEDDATE, as evidenced by multiple instances where LASACTIVITYDATE has a null CLOSEDDATE. This suggests that the relationship is coincidental rather than a reliable semantic mapping. Additionally, LASACTIVITYDATE is not a primary or unique key, further indicating that this dependency does not hold in a meaningful way across the dataset."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "LASACTIVITYDATE",
+      "column_b": "LASTEDITORDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LASACTIVITYDATE": "2010-09-15 21:08:26.0",
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "LASACTIVITYDATE": "2012-11-12 09:21:54.0",
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "LASACTIVITYDATE": "2013-05-27 14:48:36.0",
+          "LASTEDITORDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency LASACTIVITYDATE \u2192 LASTEDITORDISPLAYNAME is not meaningful as it consistently maps to null values, indicating no actual relationship. This suggests that the dependency is coincidental rather than a semantic relationship. Additionally, LASACTIVITYDATE is not a primary or unique key, and enforcing this constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "TITLE",
+      "column_b": "COMMUNITYOWNEDDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TITLE": "Eliciting priors from experts",
+          "COMMUNITYOWNEDDATE": null
+        },
+        {
+          "TITLE": "What is normality?",
+          "COMMUNITYOWNEDDATE": null
+        },
+        {
+          "TITLE": "What are some valuable Statistical Analysis open source projects?",
+          "COMMUNITYOWNEDDATE": "2010-07-19 19:13:28.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency TITLE \u2192 COMMUNITYOWNEDDATE does not represent a meaningful semantic relationship. The presence of null values for COMMUNITYOWNEDDATE, even with consistent mapping, suggests that the relationship is not reliable or significant. Additionally, TITLE is not a unique identifier, as multiple posts can have the same title, leading to potential future inconsistencies. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "TITLE",
+      "column_b": "CLOSEDDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TITLE": "Eliciting priors from experts",
+          "CLOSEDDATE": null
+        },
+        {
+          "TITLE": "What is normality?",
+          "CLOSEDDATE": null
+        },
+        {
+          "TITLE": "What are some valuable Statistical Analysis open source projects?",
+          "CLOSEDDATE": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency TITLE \u2192 CLOSEDDATE is not meaningful as a functional dependency because the TITLE is not unique; multiple posts can have the same TITLE, leading to potential inconsistencies in CLOSEDDATE. Additionally, the observed data shows that many titles have a CLOSEDDATE of null, indicating that the relationship is not reliable or semantically significant. This dependency does not provide a unique mapping and would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "TITLE",
+      "column_b": "OWNERDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TITLE": "Eliciting priors from experts",
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "TITLE": "What is normality?",
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "TITLE": "What are some valuable Statistical Analysis open source projects?",
+          "OWNERDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that the OWNERDISPLAYNAME is consistently null for all titles, indicating that there is no meaningful relationship between TITLE and OWNERDISPLAYNAME. This suggests that the dependency is coincidental rather than semantic, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "TITLE",
+      "column_b": "LASTEDITORDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TITLE": "Eliciting priors from experts",
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "TITLE": "What is normality?",
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "TITLE": "What are some valuable Statistical Analysis open source projects?",
+          "LASTEDITORDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency TITLE \u2192 LASTEDITORDISPLAYNAME is not meaningful as LASTEDITORDISPLAYNAME is consistently null for all observed titles. This suggests that there is no actual relationship between TITLE and LASTEDITORDISPLAYNAME, making it a coincidental pattern rather than a reliable functional dependency. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "LASTEDITDATE",
+      "column_b": "COMMUNITYOWNEDDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LASTEDITDATE": null,
+          "COMMUNITYOWNEDDATE": null
+        },
+        {
+          "LASTEDITDATE": "2010-08-07 17:56:44.0",
+          "COMMUNITYOWNEDDATE": null
+        },
+        {
+          "LASTEDITDATE": "2011-02-12 05:50:03.0",
+          "COMMUNITYOWNEDDATE": "2010-07-19 19:13:28.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between LASTEDITDATE and COMMUNITYOWNEDDATE does not represent a meaningful functional dependency. While the observed mapping is consistent, it appears to be coincidental rather than a semantic relationship. The presence of null values in both columns suggests that the dependency is not reliable and could break with future data. Additionally, LASTEDITDATE is not a primary or unique key, further indicating that this dependency does not provide significant value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "LASTEDITDATE",
+      "column_b": "CLOSEDDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LASTEDITDATE": null,
+          "CLOSEDDATE": null
+        },
+        {
+          "LASTEDITDATE": "2010-08-07 17:56:44.0",
+          "CLOSEDDATE": null
+        },
+        {
+          "LASTEDITDATE": "2011-02-12 05:50:03.0",
+          "CLOSEDDATE": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency LASTEDITDATE \u2192 CLOSEDDATE does not represent a meaningful semantic relationship. While there is a consistent pattern in the current data, it appears to be coincidental rather than a reliable mapping. The CLOSEDDATE being null for many LASTEDITDATE values suggests that the relationship is not inherently valid across all potential future data. Additionally, LASTEDITDATE is not a primary or unique key, which further indicates that this dependency may not hold in all cases."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "LASTEDITDATE",
+      "column_b": "OWNERDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LASTEDITDATE": null,
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "LASTEDITDATE": "2010-08-07 17:56:44.0",
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "LASTEDITDATE": "2011-02-12 05:50:03.0",
+          "OWNERDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency LASTEDITDATE \u2192 OWNERDISPLAYNAME is not meaningful as it does not represent a semantic relationship; the OWNERDISPLAYNAME is consistently null for all observed LASTEDITDATE values. This suggests that the relationship is coincidental rather than a reliable mapping. Additionally, LASTEDITDATE is not a unique identifier, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "LASTEDITDATE",
+      "column_b": "LASTEDITORDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LASTEDITDATE": null,
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "LASTEDITDATE": "2010-08-07 17:56:44.0",
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "LASTEDITDATE": "2011-02-12 05:50:03.0",
+          "LASTEDITORDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency LASTEDITDATE \u2192 LASTEDITORDISPLAYNAME is not meaningful as it does not represent a semantic relationship; the LASTEDITORDISPLAYNAME is consistently null for all non-null LASTEDITDATE values. This suggests that there is no actual mapping or relationship between these columns, making it a coincidental pattern rather than a reliable functional dependency. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "COMMUNITYOWNEDDATE",
+      "column_b": "CLOSEDDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "COMMUNITYOWNEDDATE": null,
+          "CLOSEDDATE": null
+        },
+        {
+          "COMMUNITYOWNEDDATE": "2010-07-19 19:13:28.0",
+          "CLOSEDDATE": null
+        },
+        {
+          "COMMUNITYOWNEDDATE": "2010-07-19 19:14:43.0",
+          "CLOSEDDATE": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between COMMUNITYOWNEDDATE and CLOSEDDATE appears to be coincidental rather than a meaningful semantic dependency. The observed data shows that CLOSEDDATE can exist independently of COMMUNITYOWNEDDATE, as evidenced by rows where CLOSEDDATE is not null while COMMUNITYOWNEDDATE is null. This suggests that the two columns do not have a consistent mapping relationship that would warrant a functional dependency constraint."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "COMMUNITYOWNEDDATE",
+      "column_b": "LASTEDITORDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "COMMUNITYOWNEDDATE": null,
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "COMMUNITYOWNEDDATE": "2010-07-19 19:13:28.0",
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "COMMUNITYOWNEDDATE": "2010-07-19 19:14:43.0",
+          "LASTEDITORDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that for all values of COMMUNITYOWNEDDATE, the corresponding LASTEDITORDISPLAYNAME is consistently null. This suggests that there is no meaningful relationship between these two columns, as the dependency does not provide any useful information or semantic value. It appears to be a coincidence rather than a reliable functional dependency, and enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "PARENTID",
+      "column_b": "LASTEDITORDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PARENTID": null,
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "PARENTID": 3.0,
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "PARENTID": 7.0,
+          "LASTEDITORDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency PARENTID \u2192 LASTEDITORDISPLAYNAME is not meaningful as it consistently maps to null values. This suggests that there is no semantic relationship between PARENTID and LASTEDITORDISPLAYNAME, making it a coincidental pattern rather than a reliable functional dependency. Additionally, PARENTID is not a primary or unique key, and enforcing this constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "CLOSEDDATE",
+      "column_b": "OWNERDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CLOSEDDATE": null,
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "CLOSEDDATE": "2010-07-19 20:19:46.0",
+          "OWNERDISPLAYNAME": null
+        },
+        {
+          "CLOSEDDATE": null,
+          "OWNERDISPLAYNAME": "user28"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between CLOSEDDATE and OWNERDISPLAYNAME appears to be coincidental rather than meaningful. The presence of multiple null values for OWNERDISPLAYNAME when CLOSEDDATE is not null suggests that there is no consistent mapping between these columns. Additionally, CLOSEDDATE is not a unique identifier, and the dependency does not provide a reliable semantic relationship that would enhance query verification."
+      }
+    },
+    {
+      "table": "posts",
+      "type": "functional",
+      "column_a": "CLOSEDDATE",
+      "column_b": "LASTEDITORDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CLOSEDDATE": null,
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "CLOSEDDATE": "2010-07-19 20:19:46.0",
+          "LASTEDITORDISPLAYNAME": null
+        },
+        {
+          "CLOSEDDATE": null,
+          "LASTEDITORDISPLAYNAME": "user28"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between CLOSEDDATE and LASTEDITORDISPLAYNAME appears to be coincidental rather than a meaningful functional dependency. The presence of multiple null values for LASTEDITORDISPLAYNAME when CLOSEDDATE is not null suggests that there is no consistent mapping. Additionally, CLOSEDDATE is not a unique identifier, and enforcing this dependency would not add value for query verification."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "REPUTATION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": -1,
+          "REPUTATION": 1
+        },
+        {
+          "ID": 2,
+          "REPUTATION": 101
+        },
+        {
+          "ID": 3,
+          "REPUTATION": 101
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 REPUTATION is meaningful as it establishes a clear relationship between a user's unique ID and their reputation score. Given that ID is a primary key, it ensures that each user has a unique reputation value. The observed mapping is consistent across a large dataset (40325 rows), indicating reliability. Enforcing this constraint would help verify query correctness by ensuring that each user ID corresponds to exactly one reputation score."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "CREATIONDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": -1,
+          "CREATIONDATE": "2010-07-19 06:55:26.0"
+        },
+        {
+          "ID": 2,
+          "CREATIONDATE": "2010-07-19 14:01:36.0"
+        },
+        {
+          "ID": 3,
+          "CREATIONDATE": "2010-07-19 15:34:50.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a primary key, and it uniquely determines the CREATIONDATE for each user. This is a meaningful functional dependency as it establishes a clear relationship between a user's ID and their account creation date, which is relevant for tracking user activity and account management. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "DISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": -1,
+          "DISPLAYNAME": "Community"
+        },
+        {
+          "ID": 2,
+          "DISPLAYNAME": "Geoff Dalgas"
+        },
+        {
+          "ID": 3,
+          "DISPLAYNAME": "Jarrod Dixon"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID is a primary key and uniquely identifies each user, which means it naturally determines the DISPLAYNAME. This is a meaningful dependency as it establishes a clear relationship between user IDs and their corresponding display names. Enforcing this constraint would help ensure data integrity and verify query correctness, even though it may seem trivial due to the primary key nature."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "LASTACCESSDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": -1,
+          "LASTACCESSDATE": "2010-07-19 06:55:26.0"
+        },
+        {
+          "ID": 2,
+          "LASTACCESSDATE": "2013-11-12 22:07:23.0"
+        },
+        {
+          "ID": 3,
+          "LASTACCESSDATE": "2014-08-08 06:42:58.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 LASTACCESSDATE is meaningful as it establishes a clear relationship between a unique user ID and their last access date. Given that ID is a primary key, this relationship is reliable and consistent across all rows. Enforcing this constraint would help ensure data integrity and verify query correctness regarding user activity."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "WEBSITEURL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": -1,
+          "WEBSITEURL": "http://meta.stackexchange.com/"
+        },
+        {
+          "ID": 2,
+          "WEBSITEURL": "http://stackoverflow.com"
+        },
+        {
+          "ID": 3,
+          "WEBSITEURL": "http://stackoverflow.com"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 WEBSITEURL is meaningful as each user ID should uniquely correspond to a specific website URL. This relationship is reliable given the large number of rows (40325) and the observed consistency in the data. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents multiple users from having the same ID with different website URLs."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "LOCATION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": -1,
+          "LOCATION": "on the server farm"
+        },
+        {
+          "ID": 2,
+          "LOCATION": "Corvallis, OR"
+        },
+        {
+          "ID": 3,
+          "LOCATION": "New York, NY"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 LOCATION is meaningful as each user ID uniquely corresponds to a specific location, which is a semantic relationship. Given the large number of rows (40325) and the consistent mapping observed, this dependency is reliable and should be enforced to ensure data integrity and correctness in queries."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "ABOUTME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": -1,
+          "ABOUTME": "<p>Hi, I'm not really a person.</p>\n\n<p>I'm a background process that helps keep this site clean!</p>\n\n<p>I do things like</p>\n\n<ul>\n<li>Randomly poke old unanswered questions every hour so they get some attention</li>\n<li>Own community questions and answers so nobody gets unnecessary reputation from them</li>\n<li>Own downvotes on spam/evil posts that get permanently deleted</li>\n<li>Own suggested edits from anonymous users</li>\n<li><a href=\"http://meta.stackexchange.com/a/92006\">Remove abandoned questions</a></li>\n</ul>\n"
+        },
+        {
+          "ID": 2,
+          "ABOUTME": "<p>Developer on the StackOverflow team.  Find me on</p>\n\n<p><a href=\"http://www.twitter.com/SuperDalgas\" rel=\"nofollow\">Twitter</a>\n<br><br>\n<a href=\"http://blog.stackoverflow.com/2009/05/welcome-stack-overflow-valued-associate-00003/\">Stack Overflow Valued Associate #00003</a></p>\n"
+        },
+        {
+          "ID": 3,
+          "ABOUTME": "<p><a href=\"http://blog.stackoverflow.com/2009/01/welcome-stack-overflow-valued-associate-00002/\">Developer on the Stack Overflow team</a>.</p>\n\n<p>Was dubbed <strong>SALTY SAILOR</strong> by Jeff Atwood, as filth and flarn would oft-times fly when dealing with a particularly nasty bug!</p>\n\n<ul>\n<li>Twitter me: <a href=\"http://twitter.com/jarrod_dixon\" rel=\"nofollow\">jarrod_dixon</a></li>\n<li>Email me: jarrod.m.dixon@gmail.com</li>\n</ul>\n"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 ABOUTME is meaningful as each user ID uniquely corresponds to a specific ABOUTME description, which is a semantic relationship. Given the large number of rows (40325), this dependency is reliable and not just a coincidence. Enforcing this constraint would help ensure data integrity and verify query correctness regarding user profiles."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "VIEWS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": -1,
+          "VIEWS": 0
+        },
+        {
+          "ID": 2,
+          "VIEWS": 25
+        },
+        {
+          "ID": 3,
+          "VIEWS": 22
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 VIEWS is meaningful because each user ID uniquely corresponds to a specific view count, which is a relevant metric for user engagement. This relationship is consistent across a large dataset of 40325 rows, indicating reliability. Enforcing this constraint would help ensure data integrity and verify that each user ID maintains a valid view count, thus adding value for query verification."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "UPVOTES",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": -1,
+          "UPVOTES": 5007
+        },
+        {
+          "ID": 2,
+          "UPVOTES": 3
+        },
+        {
+          "ID": 3,
+          "UPVOTES": 19
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 UPVOTES is meaningful as it establishes a clear relationship between a user ID and their corresponding upvote count. Given that ID is a primary key, this relationship is reliable and consistent across all rows. Enforcing this constraint would help ensure data integrity and verify query correctness, as each user should have a unique upvote count associated with their ID."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "DOWNVOTES",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": -1,
+          "DOWNVOTES": 1920
+        },
+        {
+          "ID": 2,
+          "DOWNVOTES": 0
+        },
+        {
+          "ID": 3,
+          "DOWNVOTES": 0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the mapping of ID to DOWNVOTES is consistent in the current data, this is a trivial dependency since ID is a primary key. It does not represent a meaningful semantic relationship beyond the inherent nature of primary keys determining other columns. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "ACCOUNTID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": -1,
+          "ACCOUNTID": -1
+        },
+        {
+          "ID": 2,
+          "ACCOUNTID": 2
+        },
+        {
+          "ID": 3,
+          "ACCOUNTID": 3
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 ACCOUNTID is meaningful as it establishes a relationship between the user ID and their corresponding account ID. Given that ID is a primary key, it ensures uniqueness, and the observed mapping is consistent across a large dataset of 40325 rows. This constraint would help verify query correctness by ensuring that each user ID maps to a valid account ID, which is important for maintaining data integrity."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "AGE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": -1.0,
+          "AGE": null
+        },
+        {
+          "ID": 2.0,
+          "AGE": 37.0
+        },
+        {
+          "ID": 3.0,
+          "AGE": 35.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 AGE is meaningful as it establishes a relationship between a user's unique identifier and their age. Given that ID is a primary key, it ensures that each user has a unique age associated with their ID. Although the presence of null values for AGE may suggest some users do not have an age recorded, the consistent mapping for those who do indicates a reliable relationship. Enforcing this constraint would help maintain data integrity and verify query correctness regarding user age."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "PROFILEIMAGEURL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": -1,
+          "PROFILEIMAGEURL": null
+        },
+        {
+          "ID": 2,
+          "PROFILEIMAGEURL": null
+        },
+        {
+          "ID": 3,
+          "PROFILEIMAGEURL": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 PROFILEIMAGEURL is meaningful because each user ID uniquely corresponds to a profile image URL, even if many users do not have a profile image (null values). This relationship is reliable given the large number of rows (40325), and enforcing this constraint would help ensure data integrity and verify query correctness regarding user profiles."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "CREATIONDATE",
+      "column_b": "LOCATION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CREATIONDATE": "2010-07-19 06:55:26.0",
+          "LOCATION": "on the server farm"
+        },
+        {
+          "CREATIONDATE": "2010-07-19 14:01:36.0",
+          "LOCATION": "Corvallis, OR"
+        },
+        {
+          "CREATIONDATE": "2010-07-19 15:34:50.0",
+          "LOCATION": "New York, NY"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency CREATIONDATE \u2192 LOCATION is not meaningful as a functional dependency because the same CREATIONDATE can correspond to multiple LOCATIONS, indicating that it is not a unique mapping. This suggests that the relationship is coincidental rather than a reliable semantic mapping. Additionally, CREATIONDATE is not a primary or unique key, further supporting that this dependency does not hold."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "CREATIONDATE",
+      "column_b": "ABOUTME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CREATIONDATE": "2010-07-19 06:55:26.0",
+          "ABOUTME": "<p>Hi, I'm not really a person.</p>\n\n<p>I'm a background process that helps keep this site clean!</p>\n\n<p>I do things like</p>\n\n<ul>\n<li>Randomly poke old unanswered questions every hour so they get some attention</li>\n<li>Own community questions and answers so nobody gets unnecessary reputation from them</li>\n<li>Own downvotes on spam/evil posts that get permanently deleted</li>\n<li>Own suggested edits from anonymous users</li>\n<li><a href=\"http://meta.stackexchange.com/a/92006\">Remove abandoned questions</a></li>\n</ul>\n"
+        },
+        {
+          "CREATIONDATE": "2010-07-19 14:01:36.0",
+          "ABOUTME": "<p>Developer on the StackOverflow team.  Find me on</p>\n\n<p><a href=\"http://www.twitter.com/SuperDalgas\" rel=\"nofollow\">Twitter</a>\n<br><br>\n<a href=\"http://blog.stackoverflow.com/2009/05/welcome-stack-overflow-valued-associate-00003/\">Stack Overflow Valued Associate #00003</a></p>\n"
+        },
+        {
+          "CREATIONDATE": "2010-07-19 15:34:50.0",
+          "ABOUTME": "<p><a href=\"http://blog.stackoverflow.com/2009/01/welcome-stack-overflow-valued-associate-00002/\">Developer on the Stack Overflow team</a>.</p>\n\n<p>Was dubbed <strong>SALTY SAILOR</strong> by Jeff Atwood, as filth and flarn would oft-times fly when dealing with a particularly nasty bug!</p>\n\n<ul>\n<li>Twitter me: <a href=\"http://twitter.com/jarrod_dixon\" rel=\"nofollow\">jarrod_dixon</a></li>\n<li>Email me: jarrod.m.dixon@gmail.com</li>\n</ul>\n"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the observed mapping is consistent, the relationship between CREATIONDATE and ABOUTME is not semantically meaningful. The ABOUTME field is likely to vary independently of the creation date, as users can have different descriptions regardless of when their accounts were created. This dependency does not represent a natural mapping relationship and could easily break with future data, making it unreliable as a constraint."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "CREATIONDATE",
+      "column_b": "AGE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CREATIONDATE": "2010-07-19 06:55:26.0",
+          "AGE": null
+        },
+        {
+          "CREATIONDATE": "2010-07-19 14:01:36.0",
+          "AGE": 37.0
+        },
+        {
+          "CREATIONDATE": "2010-07-19 15:34:50.0",
+          "AGE": 35.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency CREATIONDATE \u2192 AGE is not meaningful as a functional dependency because the age of a user is not determined by their creation date. Age is a dynamic attribute that changes over time, while the creation date is static. Additionally, there are null values for AGE, indicating that the relationship is not reliable or consistent. This dependency does not represent a semantic relationship and would not add value for query verification."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "LASTACCESSDATE",
+      "column_b": "WEBSITEURL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LASTACCESSDATE": "2010-07-19 06:55:26.0",
+          "WEBSITEURL": "http://meta.stackexchange.com/"
+        },
+        {
+          "LASTACCESSDATE": "2013-11-12 22:07:23.0",
+          "WEBSITEURL": "http://stackoverflow.com"
+        },
+        {
+          "LASTACCESSDATE": "2014-08-08 06:42:58.0",
+          "WEBSITEURL": "http://stackoverflow.com"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency LASTACCESSDATE \u2192 WEBSITEURL is not meaningful as LASTACCESSDATE is not a unique identifier for users; multiple users can have the same last access date, leading to potential future violations of this dependency. Additionally, the relationship appears coincidental rather than semantically significant, as the last access date does not inherently determine a specific website URL."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "LASTACCESSDATE",
+      "column_b": "DOWNVOTES",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LASTACCESSDATE": "2010-07-19 06:55:26.0",
+          "DOWNVOTES": 1920
+        },
+        {
+          "LASTACCESSDATE": "2013-11-12 22:07:23.0",
+          "DOWNVOTES": 0
+        },
+        {
+          "LASTACCESSDATE": "2014-08-08 06:42:58.0",
+          "DOWNVOTES": 0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the observed mapping is consistent, LASTACCESSDATE is not a unique identifier for users, and the relationship between LASTACCESSDATE and DOWNVOTES does not represent a meaningful semantic dependency. It is likely coincidental and could break with future data, as multiple users can have the same LASTACCESSDATE but different DOWNVOTES."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "LASTACCESSDATE",
+      "column_b": "AGE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LASTACCESSDATE": "2010-07-19 06:55:26.0",
+          "AGE": null
+        },
+        {
+          "LASTACCESSDATE": "2013-11-12 22:07:23.0",
+          "AGE": 37.0
+        },
+        {
+          "LASTACCESSDATE": "2014-08-08 06:42:58.0",
+          "AGE": 35.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency LASTACCESSDATE \u2192 AGE is not meaningful as LASTACCESSDATE is not a unique identifier for users and can be shared among multiple users. Additionally, the presence of null values for AGE indicates that this relationship is not reliable or consistent across all records. This suggests that the mapping is coincidental rather than a true functional dependency."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ACCOUNTID",
+      "column_b": "AGE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCOUNTID": -1.0,
+          "AGE": null
+        },
+        {
+          "ACCOUNTID": 2.0,
+          "AGE": 37.0
+        },
+        {
+          "ACCOUNTID": 3.0,
+          "AGE": 35.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ACCOUNTID \u2192 AGE is meaningful as it establishes a relationship between a unique account identifier and the age of the user. Given the observed mapping is consistent across 40,325 rows, it suggests a reliable pattern. While ACCOUNTID is a unique identifier, the relationship between ACCOUNTID and AGE is not trivial, as it provides valuable demographic information that can enhance query correctness and data integrity."
+      }
+    },
+    {
+      "table": "users",
+      "type": "functional",
+      "column_a": "ACCOUNTID",
+      "column_b": "PROFILEIMAGEURL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ACCOUNTID": -1,
+          "PROFILEIMAGEURL": null
+        },
+        {
+          "ACCOUNTID": 2,
+          "PROFILEIMAGEURL": null
+        },
+        {
+          "ACCOUNTID": 3,
+          "PROFILEIMAGEURL": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ACCOUNTID is a unique identifier for users, and it consistently maps to a single PROFILEIMAGEURL. This indicates a meaningful relationship where each account can have one associated profile image URL, which is relevant for user identification. Enforcing this constraint would help ensure data integrity and verify query correctness regarding user profiles."
+      }
+    },
+    {
+      "table": "tags",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "TAGNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "TAGNAME": "bayesian"
+        },
+        {
+          "ID": 2,
+          "TAGNAME": "prior"
+        },
+        {
+          "ID": 3,
+          "TAGNAME": "elicitation"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 TAGNAME is meaningful as each unique ID corresponds to exactly one TAGNAME, establishing a clear semantic relationship. This is not a trivial dependency since ID is a primary key, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "tags",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "COUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "COUNT": 1342
+        },
+        {
+          "ID": 2,
+          "COUNT": 168
+        },
+        {
+          "ID": 3,
+          "COUNT": 6
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 COUNT is meaningful because each tag ID uniquely corresponds to a count of posts associated with that tag. This relationship is not trivial as ID is a primary key, and enforcing this constraint would help ensure data integrity and verify query correctness regarding tag usage."
+      }
+    },
+    {
+      "table": "tags",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "EXCERPTPOSTID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "EXCERPTPOSTID": 20258.0
+        },
+        {
+          "ID": 2.0,
+          "EXCERPTPOSTID": 62158.0
+        },
+        {
+          "ID": 3.0,
+          "EXCERPTPOSTID": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 EXCERPTPOSTID is meaningful as it establishes a relationship between a tag and its associated excerpt post. Given that the mapping is 100% consistent across 1032 rows, it indicates a reliable relationship. Although EXCERPTPOSTID can be null, the presence of a consistent mapping suggests that when an ID is present, it reliably points to a specific EXCERPTPOSTID. This constraint would help verify query correctness by ensuring that each tag ID corresponds to a valid excerpt post ID, enhancing data integrity."
+      }
+    },
+    {
+      "table": "tags",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "WIKIPOSTID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "WIKIPOSTID": 20257.0
+        },
+        {
+          "ID": 2.0,
+          "WIKIPOSTID": 62157.0
+        },
+        {
+          "ID": 3.0,
+          "WIKIPOSTID": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 WIKIPOSTID is meaningful as it establishes a relationship between a tag and its associated wiki post. Although some WIKIPOSTID values are null, the consistent mapping of IDs to WIKIPOSTIDs suggests a reliable relationship. Enforcing this constraint would help ensure data integrity and verify that each tag ID corresponds to a unique wiki post, enhancing query correctness."
+      }
+    },
+    {
+      "table": "tags",
+      "type": "functional",
+      "column_a": "TAGNAME",
+      "column_b": "COUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAGNAME": "bayesian",
+          "COUNT": 1342
+        },
+        {
+          "TAGNAME": "prior",
+          "COUNT": 168
+        },
+        {
+          "TAGNAME": "elicitation",
+          "COUNT": 6
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency TAGNAME \u2192 COUNT is meaningful as each tag name consistently maps to a specific count of posts associated with that tag. This relationship is not trivial, as TAGNAME is not a primary key, and enforcing this constraint would help ensure data integrity and verify query correctness regarding tag popularity."
+      }
+    },
+    {
+      "table": "tags",
+      "type": "functional",
+      "column_a": "TAGNAME",
+      "column_b": "EXCERPTPOSTID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAGNAME": "bayesian",
+          "EXCERPTPOSTID": 20258.0
+        },
+        {
+          "TAGNAME": "prior",
+          "EXCERPTPOSTID": 62158.0
+        },
+        {
+          "TAGNAME": "elicitation",
+          "EXCERPTPOSTID": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency TAGNAME \u2192 EXCERPTPOSTID is meaningful as it establishes a relationship between a tag and its associated excerpt post ID. Given that the mapping is 100% consistent across 1032 rows, it suggests a reliable relationship. While TAGNAME is not a primary key, it serves as a unique identifier for tags, making this dependency valuable for query verification and ensuring data integrity."
+      }
+    },
+    {
+      "table": "tags",
+      "type": "functional",
+      "column_a": "TAGNAME",
+      "column_b": "WIKIPOSTID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "TAGNAME": "bayesian",
+          "WIKIPOSTID": 20257.0
+        },
+        {
+          "TAGNAME": "prior",
+          "WIKIPOSTID": 62157.0
+        },
+        {
+          "TAGNAME": "elicitation",
+          "WIKIPOSTID": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency TAGNAME \u2192 WIKIPOSTID is meaningful as it establishes a clear relationship between tag names and their corresponding wiki post IDs. The observed mapping is consistent across all rows, indicating reliability. Although TAGNAME is not a primary key, it serves as a unique identifier for the tags, making this dependency significant for query verification and ensuring data integrity."
+      }
+    },
+    {
+      "table": "tags",
+      "type": "functional",
+      "column_a": "EXCERPTPOSTID",
+      "column_b": "WIKIPOSTID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EXCERPTPOSTID": 20258.0,
+          "WIKIPOSTID": 20257.0
+        },
+        {
+          "EXCERPTPOSTID": 62158.0,
+          "WIKIPOSTID": 62157.0
+        },
+        {
+          "EXCERPTPOSTID": null,
+          "WIKIPOSTID": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The mapping between EXCERPTPOSTID and WIKIPOSTID is consistent across the dataset, suggesting a meaningful relationship where each excerpt post ID corresponds to a specific wiki post ID. This dependency is not trivial as EXCERPTPOSTID is not a primary or unique key, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "votes",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "POSTID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "POSTID": 3
+        },
+        {
+          "ID": 2,
+          "POSTID": 2
+        },
+        {
+          "ID": 3,
+          "POSTID": 5
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 POSTID is trivial because ID is the primary key of the VOTES table. Each ID uniquely identifies a row, making the mapping to POSTID inherently consistent. This does not provide meaningful semantic value and does not need to be enforced as a constraint."
+      }
+    },
+    {
+      "table": "votes",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "VOTETYPEID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "VOTETYPEID": 2
+        },
+        {
+          "ID": 2,
+          "VOTETYPEID": 2
+        },
+        {
+          "ID": 3,
+          "VOTETYPEID": 2
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 VOTETYPEID is trivial because ID is the primary key of the VOTES table. Primary keys inherently determine all other columns, so enforcing this as a constraint does not add meaningful semantic value or help verify query correctness."
+      }
+    },
+    {
+      "table": "votes",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "CREATIONDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "CREATIONDATE": "2010-07-19"
+        },
+        {
+          "ID": 2,
+          "CREATIONDATE": "2010-07-19"
+        },
+        {
+          "ID": 3,
+          "CREATIONDATE": "2010-07-19"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The ID column is a primary key, which inherently determines the CREATIONDATE. This is a trivial dependency and does not add meaningful semantic value. Enforcing this as a constraint would not provide additional verification for query correctness."
+      }
+    },
+    {
+      "table": "votes",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "USERID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "USERID": null
+        },
+        {
+          "ID": 2.0,
+          "USERID": null
+        },
+        {
+          "ID": 3.0,
+          "USERID": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The observed mapping shows that all USERID values are null for the given IDs, indicating that there is no meaningful relationship between ID and USERID. This suggests that the dependency is not reliable or semantically meaningful, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "votes",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "BOUNTYAMOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "BOUNTYAMOUNT": null
+        },
+        {
+          "ID": 2.0,
+          "BOUNTYAMOUNT": null
+        },
+        {
+          "ID": 3.0,
+          "BOUNTYAMOUNT": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ID \u2192 BOUNTYAMOUNT is not meaningful as BOUNTYAMOUNT is consistently null for all IDs. This suggests that there is no actual relationship or mapping between ID and BOUNTYAMOUNT, making it a trivial case rather than a functional dependency that adds value."
+      }
+    },
+    {
+      "table": "votes",
+      "type": "functional",
+      "column_a": "POSTID",
+      "column_b": "BOUNTYAMOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "POSTID": 3.0,
+          "BOUNTYAMOUNT": null
+        },
+        {
+          "POSTID": 2.0,
+          "BOUNTYAMOUNT": null
+        },
+        {
+          "POSTID": 5.0,
+          "BOUNTYAMOUNT": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency POSTID \u2192 BOUNTYAMOUNT is not meaningful as BOUNTYAMOUNT is consistently null for all POSTID values. This suggests that there is no actual relationship or mapping between POSTID and BOUNTYAMOUNT, making it a coincidental pattern rather than a functional dependency. Enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "comments",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "POSTID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "POSTID": 3
+        },
+        {
+          "ID": 2,
+          "POSTID": 5
+        },
+        {
+          "ID": 3,
+          "POSTID": 9
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a unique identifier for each comment, and it consistently maps to a single POSTID, indicating that each comment is associated with exactly one post. This is a meaningful functional dependency as it reflects the relationship between comments and their respective posts, which is essential for maintaining data integrity and verifying query correctness."
+      }
+    },
+    {
+      "table": "comments",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "SCORE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "SCORE": 5
+        },
+        {
+          "ID": 2,
+          "SCORE": 0
+        },
+        {
+          "ID": 3,
+          "SCORE": 0
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a unique identifier for each comment, and it consistently maps to a single SCORE value across all rows. This is a meaningful functional dependency as it ensures that each comment has a specific score, which is essential for maintaining data integrity and verifying query correctness. Although ID is a primary key, the relationship between ID and SCORE is semantically significant, as it reflects the rating of each comment."
+      }
+    },
+    {
+      "table": "comments",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "TEXT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "TEXT": "Could be a poster child fo argumentative and subjective.  At the least, need to define 'valuable'."
+        },
+        {
+          "ID": 2,
+          "TEXT": "Yes, R is nice- but WHY is it 'valuable'."
+        },
+        {
+          "ID": 3,
+          "TEXT": "Again- why?  How would I convince my boss to use this over, say, Excel."
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ID \u2192 TEXT is meaningful as each unique comment ID corresponds to exactly one comment text. This relationship is reliable given the large number of rows (174285) and is not just a coincidence. Enforcing this constraint would help ensure data integrity and verify query correctness, as it guarantees that each comment ID maps to a unique text."
+      }
+    },
+    {
+      "table": "comments",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "CREATIONDATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "CREATIONDATE": "2010-07-19 19:15:52.0"
+        },
+        {
+          "ID": 2,
+          "CREATIONDATE": "2010-07-19 19:16:14.0"
+        },
+        {
+          "ID": 3,
+          "CREATIONDATE": "2010-07-19 19:18:54.0"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ID column is a primary key, and it uniquely determines the CREATIONDATE for each comment. This is a meaningful functional dependency as it establishes a clear relationship between a comment's unique identifier and its creation date, which is essential for tracking when comments were made. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "comments",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "USERID",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1.0,
+          "USERID": 13.0
+        },
+        {
+          "ID": 2.0,
+          "USERID": 13.0
+        },
+        {
+          "ID": 3.0,
+          "USERID": 13.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The ID column is the primary key of the COMMENTS table, which inherently ensures that each ID maps to exactly one USERID. This is a trivial dependency and does not add meaningful semantic value, as it is already enforced by the primary key constraint."
+      }
+    },
+    {
+      "table": "comments",
+      "type": "functional",
+      "column_a": "ID",
+      "column_b": "USERDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ID": 1,
+          "USERDISPLAYNAME": null
+        },
+        {
+          "ID": 2,
+          "USERDISPLAYNAME": null
+        },
+        {
+          "ID": 3,
+          "USERDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the ID is a primary key and uniquely identifies each comment, the USERDISPLAYNAME being null for many IDs suggests that this is not a meaningful dependency. The relationship does not provide a consistent mapping of USERDISPLAYNAME for all IDs, making it unreliable and not semantically valuable."
+      }
+    },
+    {
+      "table": "comments",
+      "type": "functional",
+      "column_a": "CREATIONDATE",
+      "column_b": "USERDISPLAYNAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "CREATIONDATE": "2010-07-19 19:15:52.0",
+          "USERDISPLAYNAME": null
+        },
+        {
+          "CREATIONDATE": "2010-07-19 19:16:14.0",
+          "USERDISPLAYNAME": null
+        },
+        {
+          "CREATIONDATE": "2010-07-19 19:18:54.0",
+          "USERDISPLAYNAME": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency CREATIONDATE \u2192 USERDISPLAYNAME is not meaningful because USERDISPLAYNAME is often null for many CREATIONDATE values. This indicates that there is no consistent mapping between the two columns, and enforcing this dependency would not add value for query verification."
+      }
+    }
+  ]
+}

@@ -1,0 +1,3197 @@
+{
+  "database": "student_club",
+  "between": [
+    {
+      "table": "income",
+      "column": "AMOUNT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        50,
+        3000
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The AMOUNT column represents the amount of funds received, which is naturally bounded to be non-negative. While the observed data range is [50, 3000], using custom bounds of [0, +\u221e] is more appropriate to account for potential future entries that may be lower than the current minimum observed value, ensuring that all valid income amounts are captured.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "budget",
+      "column": "SPENT",
+      "data_type": "REAL",
+      "strict_bounds": [
+        0.0,
+        327.07
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The SPENT column represents the amount of money spent, which is naturally bounded at 0 (cannot be negative). The observed data range shows a realistic upper limit of 327.07, but since it is a financial figure, it is safer to use custom bounds of [0, +\u221e] to account for future expenses that may exceed current observations.",
+        "chosen_bounds": [
+          0.0,
+          327.07
+        ]
+      }
+    },
+    {
+      "table": "budget",
+      "column": "REMAINING",
+      "data_type": "REAL",
+      "strict_bounds": [
+        -24.25,
+        150.0
+      ],
+      "custom_bounds": [
+        null,
+        0
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The REMAINING column represents the amount of budget remaining, which can logically be negative if expenses exceed the budget. Therefore, it should have a custom bound of [-\u221e, 0] to account for potential overspending, rather than strict bounds which do not reflect the semantic meaning of the data.",
+        "chosen_bounds": [
+          null,
+          0
+        ]
+      }
+    },
+    {
+      "table": "budget",
+      "column": "AMOUNT",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        10,
+        350
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 0,
+        "reasoning": "The AMOUNT column represents a budgeted amount, which is naturally bounded to be non-negative. The observed data range shows a realistic range of values from 10 to 350, but since budgets cannot be negative, using strict bounds [10, 350] is appropriate. Custom bounds [0, +\u221e] would be too broad and not reflective of the actual data observed.",
+        "chosen_bounds": [
+          10,
+          350
+        ]
+      }
+    },
+    {
+      "table": "zip_code",
+      "column": "ZIP_CODE",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        501,
+        99950
+      ],
+      "custom_bounds": [
+        10000,
+        99999
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ZIP_CODE column represents a five-digit number identifying a US post office, which is naturally bounded between 10000 and 99999. The strict observed range includes values that are not valid ZIP codes (e.g., 501 and 99950), so using custom bounds is safer to ensure only valid ZIP codes are included.",
+        "chosen_bounds": [
+          10000,
+          99999
+        ]
+      }
+    },
+    {
+      "table": "expense",
+      "column": "COST",
+      "data_type": "REAL",
+      "strict_bounds": [
+        6.0,
+        295.12
+      ],
+      "custom_bounds": [
+        0,
+        null
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The COST column represents monetary values, which are naturally bounded to be non-negative. While the observed data range is [6.0, 295.12], using custom bounds of [0, +\u221e] is more appropriate to account for potential future expenses that may fall outside the current observed range. This ensures that all valid monetary values are included.",
+        "chosen_bounds": [
+          0,
+          null
+        ]
+      }
+    },
+    {
+      "table": "member",
+      "column": "ZIP",
+      "data_type": "INTEGER",
+      "strict_bounds": [
+        1020,
+        98290
+      ],
+      "custom_bounds": [
+        1000,
+        99999
+      ],
+      "custom_bounds_type": "semantic",
+      "decision": {
+        "should_constrain": 1,
+        "use_custom": 1,
+        "reasoning": "The ZIP column represents postal codes, which are naturally bounded within a specific range. The strict bounds observed (1020 to 98290) are realistic, but the custom bounds (1000 to 99999) are safer as they encompass all valid ZIP codes in the US, ensuring that edge cases are handled. Given the small sample size of 33 rows, relying on custom bounds is prudent to avoid excluding valid ZIP codes.",
+        "chosen_bounds": [
+          1000,
+          99999
+        ]
+      }
+    }
+  ],
+  "in": [
+    {
+      "table": "income",
+      "column": "DATE_RECEIVED",
+      "data_type": "VARCHAR",
+      "categories": [
+        "2019-10-17",
+        "2019-09-04",
+        "2019-10-08",
+        "2019-10-02",
+        "2019-09-18",
+        "2019-10-31",
+        "2019-09-25",
+        "2019-09-14",
+        "2019-09-16",
+        "2019-09-29",
+        "2019-09-08",
+        "2019-09-21",
+        "2019-10-24",
+        "2019-09-27",
+        "2019-09-24",
+        "2019-09-01",
+        "2019-10-10",
+        "2019-10-14",
+        "2019-10-13",
+        "2019-09-09",
+        "2019-09-11",
+        "2019-09-22",
+        "2019-09-23",
+        "2019-10-05",
+        "2019-10-04",
+        "2019-09-28",
+        "2019-09-06",
+        "2019-09-13",
+        "2019-09-12"
+      ],
+      "category_count": 29,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "DATE_RECEIVED is a date field and can have many valid values beyond the current unique entries. Dates are not categorical in nature, and new dates will continue to appear as time progresses, making an IN constraint inappropriate."
+      }
+    },
+    {
+      "table": "income",
+      "column": "AMOUNT",
+      "data_type": "INTEGER",
+      "categories": [
+        50,
+        200,
+        3000,
+        1000
+      ],
+      "category_count": 4,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The AMOUNT column represents monetary values, which can vary widely and are not limited to the four unique values observed. While the current dataset shows only a few amounts, it is likely that more values could appear in the future, making it inappropriate to impose an IN constraint."
+      }
+    },
+    {
+      "table": "income",
+      "column": "SOURCE",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Dues",
+        "Fundraising",
+        "School Appropration",
+        "Sponsorship"
+      ],
+      "category_count": 4,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SOURCE column has a limited and known set of values that represent distinct categories of income. Given the context of income sources, it is reasonable to assume that these are the primary categories, making it a true categorical column suitable for an IN constraint."
+      }
+    },
+    {
+      "table": "income",
+      "column": "NOTES",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Secured donations to help pay for speaker gifts.",
+        "Annual funding from Student Government.",
+        "Ad revenue for use on flyers used to advertise upcoming events."
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The NOTES column contains free-text descriptions that can vary widely and are not limited to a specific set of known values. While there are currently 3 unique values, it is likely that more diverse notes could be added in the future, making it inappropriate to enforce an IN constraint."
+      }
+    },
+    {
+      "table": "budget",
+      "column": "CATEGORY",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Advertisement",
+        "Food",
+        "Speaker Gifts",
+        "Parking",
+        "Club T-Shirts"
+      ],
+      "category_count": 5,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CATEGORY column has a limited and known set of values (Advertisement, Food, Speaker Gifts, Parking, Club T-Shirts) that are likely to represent all valid categories for budgeting purposes. This suggests it is a true categorical column where an IN constraint is appropriate to ensure data integrity."
+      }
+    },
+    {
+      "table": "budget",
+      "column": "SPENT",
+      "data_type": "REAL",
+      "categories": [
+        67.81,
+        121.14,
+        20.2,
+        0.0,
+        173.06,
+        6.0,
+        54.25,
+        74.59,
+        295.12,
+        13.45,
+        327.07,
+        174.25,
+        154.34,
+        16.28,
+        122.06,
+        101.94,
+        122.33
+      ],
+      "category_count": 17,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The SPENT column represents monetary amounts and is not a true categorical column. The unique values indicate a range of possible expenditures, and new values could easily appear in future data. Therefore, an IN constraint would be too limiting."
+      }
+    },
+    {
+      "table": "budget",
+      "column": "REMAINING",
+      "data_type": "REAL",
+      "categories": [
+        7.19,
+        28.86,
+        -0.199999999999999,
+        25.0,
+        150.0,
+        10.0,
+        55.0,
+        -23.06,
+        75.0,
+        4.0,
+        0.75,
+        20.0,
+        0.409999999999997,
+        4.88,
+        11.55,
+        22.9299999999999,
+        -24.25,
+        0.659999999999997,
+        8.72,
+        27.94,
+        48.06,
+        27.67
+      ],
+      "category_count": 22,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The REMAINING column contains real numbers representing calculated values, which can vary based on budget adjustments and expenses. Since these values are not fixed categories and can change with new data, an IN constraint would be too limiting."
+      }
+    },
+    {
+      "table": "budget",
+      "column": "AMOUNT",
+      "data_type": "INTEGER",
+      "categories": [
+        75,
+        150,
+        20,
+        25,
+        10,
+        55,
+        300,
+        350,
+        155
+      ],
+      "category_count": 9,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The AMOUNT column contains a limited set of unique values, but it is not a true categorical column as it represents budget amounts which can vary widely. New amounts could be added in the future, making it inappropriate to restrict to the current unique values."
+      }
+    },
+    {
+      "table": "budget",
+      "column": "EVENT_STATUS",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Closed",
+        "Open",
+        "Planning"
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EVENT_STATUS column has a limited and defined set of values ('Closed', 'Open', 'Planning') that represent the status of an event. Since these values are likely exhaustive for the context of event statuses in this database, an IN constraint is appropriate to ensure data integrity and consistency."
+      }
+    },
+    {
+      "table": "budget",
+      "column": "LINK_TO_EVENT",
+      "data_type": "VARCHAR",
+      "categories": [
+        "recI43CzsZ0Q625ma",
+        "recggMW2eyCYceNcy",
+        "recJ4Witp9tpjaugn",
+        "recHaMmaKyfktt5fW",
+        "recs4x1BYWAsU2SKg",
+        "recwM7GMBSLDlb1Ix",
+        "rec2mJrCofveboaz6",
+        "recEVTik3MlqbvLFi",
+        "recmbOVHSyzXQZpQr",
+        "rec180D2MI4EpckHy",
+        "reczhS8wix6Kzbp9P",
+        "reciRZdAqNIKuMC96",
+        "rec0Si5cQ4rJRVzd6",
+        "recLKj8BbTNqxFbTb",
+        "recAlAwtBZ0Fqbr5K",
+        "recerGvehRmgO0obW",
+        "recMKjJbWRgSQqf4Y",
+        "recykdvf4LgsyA3wZ",
+        "rec0akZnLLpGUloLH",
+        "recWJFyajeK4jCNYz",
+        "recY3Yesu24bRK7tr",
+        "recc8dizaKrSz3GmH",
+        "recLrY8kyOR1PcZeF"
+      ],
+      "category_count": 23,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The LINK_TO_EVENT column contains unique identifiers for events, which are likely generated dynamically and can change over time. This means that new event IDs can be created, making it impractical to enforce an IN constraint. The current unique values do not represent a complete or fixed set of valid values."
+      }
+    },
+    {
+      "table": "zip_code",
+      "column": "TYPE",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Unique",
+        "Standard",
+        "PO Box"
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TYPE column has a limited and known set of valid values ('Unique', 'Standard', 'PO Box'), making it a true categorical column suitable for an IN constraint. The small number of unique values relative to the total rows suggests that this is likely a complete enumeration of the possible types."
+      }
+    },
+    {
+      "table": "expense",
+      "column": "EXPENSE_DESCRIPTION",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Post Cards, Posters",
+        "Water, Cookies",
+        "Pizza",
+        "Posters",
+        "Parking",
+        "Water, chips, cookies",
+        "Club shirts",
+        "Travel Mug",
+        "Alumni Glass",
+        "Water, Veggie tray, supplies",
+        "Water, cookies, chips",
+        "Bakery - Donuts, muffins"
+      ],
+      "category_count": 12,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The EXPENSE_DESCRIPTION column contains a variety of descriptions that are not strictly enumerated and can vary widely based on specific events or purchases. New expense descriptions could easily arise, making it impractical to enforce an IN constraint."
+      }
+    },
+    {
+      "table": "expense",
+      "column": "EXPENSE_DATE",
+      "data_type": "VARCHAR",
+      "categories": [
+        "2019-08-20",
+        "2019-10-08",
+        "2019-09-10",
+        "2019-10-10",
+        "2019-11-19",
+        "2019-10-22",
+        "2019-09-01",
+        "2019-10-01",
+        "2019-09-03",
+        "2019-11-05",
+        "2019-11-04",
+        "2019-09-24",
+        "2019-09-18",
+        "2019-09-15",
+        "2019-11-14",
+        "2019-09-04",
+        "2019-10-15"
+      ],
+      "category_count": 17,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "EXPENSE_DATE is not a true categorical column as it represents dates, which are not limited to a specific set of values. New dates can always appear in future data, making it inappropriate to impose an IN constraint."
+      }
+    },
+    {
+      "table": "expense",
+      "column": "COST",
+      "data_type": "REAL",
+      "categories": [
+        122.06,
+        20.2,
+        51.81,
+        67.81,
+        6.0,
+        92.82,
+        62.6,
+        54.25,
+        103.62,
+        50.13,
+        74.59,
+        59.73,
+        69.33,
+        295.12,
+        124.12,
+        61.52,
+        13.45,
+        16.28,
+        28.15,
+        113.33,
+        195.3
+      ],
+      "category_count": 21,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The COST column is a numerical value representing expenses, which can vary widely and is not limited to a specific set of known values. New costs can arise in future data, making it inappropriate to impose an IN constraint."
+      }
+    },
+    {
+      "table": "expense",
+      "column": "LINK_TO_MEMBER",
+      "data_type": "VARCHAR",
+      "categories": [
+        "rec4BLdZHS2Blfp4v",
+        "recro8T1MPMwRadVH",
+        "recD078PnS3x2doBe"
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The LINK_TO_MEMBER column contains unique identifiers for members, which are not a fixed set of values. New members can be added, leading to new unique identifiers. Therefore, it is not a true categorical column suitable for an IN constraint."
+      }
+    },
+    {
+      "table": "expense",
+      "column": "LINK_TO_BUDGET",
+      "data_type": "VARCHAR",
+      "categories": [
+        "recvKTAWAFKkVNnXQ",
+        "recy8KY5bUdzF81vv",
+        "recwXIiKoBMjXJsGZ",
+        "recsI0IzpUuxl2bPh",
+        "recTUGXxhTaFZ2qkg",
+        "recZAjcliIUo4BCKW",
+        "recr60T1tLsfdICV8",
+        "reczf4LoOK6z7oOec",
+        "recMc8TbR76rmUSHG",
+        "recTxecmwIhCdIKvl",
+        "recca5tkvdQgoLKZz",
+        "recJOc7f9KgpgJm5q",
+        "recexNBMuCY9emh6y",
+        "recN9yY7okNrFps0Y",
+        "rec5V70sIuIgpOzDT",
+        "rec1bG6HSft7XIvTP",
+        "recRQdaiKCxFAlPCy",
+        "recKjd7dcURsmP0KY",
+        "rectLnkwVg4AIgY0R",
+        "recutlCwBNym7tS12",
+        "rec0QmEc3cSQFQ6V2",
+        "recZuCiQzCDAs4zDQ",
+        "rec1z6ISJU2HdIsVm",
+        "recZdw5TjWrRTj4kp"
+      ],
+      "category_count": 24,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The LINK_TO_BUDGET column contains unique identifiers that are likely generated dynamically and can vary widely. Given the nature of these values, it is not a true categorical column with a limited set of known values, and new identifiers could be created in the future, making an IN constraint inappropriate."
+      }
+    },
+    {
+      "table": "member",
+      "column": "POSITION",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Member",
+        "Inactive",
+        "President",
+        "Vice President",
+        "Treasurer",
+        "Secretary"
+      ],
+      "category_count": 6,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSITION column contains a limited and defined set of roles within the club, which are likely to remain consistent. The unique values suggest a controlled vocabulary, making it appropriate to enforce an IN constraint to ensure data integrity."
+      }
+    },
+    {
+      "table": "member",
+      "column": "T_SHIRT_SIZE",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Medium",
+        "X-Large",
+        "Large",
+        "Small"
+      ],
+      "category_count": 4,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The T_SHIRT_SIZE column has a limited and known set of valid values (Small, Medium, Large, X-Large) that are commonly used for clothing sizes. Given that these sizes are standard and unlikely to change, an IN constraint is appropriate to ensure data integrity."
+      }
+    },
+    {
+      "table": "member",
+      "column": "LINK_TO_MAJOR",
+      "data_type": "VARCHAR",
+      "categories": [
+        "recxK3MHQFbR9J5uO",
+        "rec7BxKpjJ7bNph3O",
+        "recdIBgeU38UbV2sy",
+        "recaJdSK83k6ekRJL",
+        "recCk8lCDOTRp6rKN",
+        "rectOU2QnznthfWv7",
+        "recf3mPmWq4JXKf4L",
+        "rec9CqGCGV8Y8rOSY",
+        "recxRBSgVYeSEGvyo",
+        "recR2UFppcwddeAkz",
+        "recuN6taqCVkaZMZS",
+        "recAiT3yTABWypvHu",
+        "recObV24Ass2ouQHK",
+        "rec1N0upiVLy5esTO",
+        "recXLfKqMqRArcKNg",
+        "recRA9IxLl6eKPsJX",
+        "rec09LedkREyskCNv",
+        "recIzqYuV3wMONTgB",
+        "recB3VldnYdFtttTk",
+        "reclQ8BVvj2w4cQ4V",
+        "recT9LoDnC8ZvdPqM",
+        "recKJHO1P6ZC5m567",
+        "recVNDNQrJxsXPFXa",
+        "recVeoVlIsO6k6iUM",
+        "rectez0Ce1okUhv8w",
+        "recVYIFAwjT91pnv7"
+      ],
+      "category_count": 26,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The LINK_TO_MAJOR column contains unique identifiers for majors, which are likely to change or expand over time as new majors are introduced. The current unique values do not represent a complete set of possible majors, indicating that this is not a true categorical column suitable for an IN constraint."
+      }
+    },
+    {
+      "table": "attendance",
+      "column": "LINK_TO_EVENT",
+      "data_type": "VARCHAR",
+      "categories": [
+        "rec2N69DMcrqN9PJC",
+        "rec5XDvJLyxDsGZWc",
+        "recEVTik3MlqbvLFi",
+        "recGxVCwaLW3mDIa3",
+        "recI43CzsZ0Q625ma",
+        "recIuIXdbLe5j5vCA",
+        "recLKj8BbTNqxFbTb",
+        "recLrY8kyOR1PcZeF",
+        "recggMW2eyCYceNcy",
+        "reciRZdAqNIKuMC96",
+        "reckYL4xtQWpkTJ8k",
+        "recmbOVHSyzXQZpQr",
+        "recoVo6dFSzG1ypX7",
+        "recsgSUqFCJqekzL5",
+        "recvCUOytx5jPw7kh",
+        "recykdvf4LgsyA3wZ",
+        "reczhS8wix6Kzbp9P"
+      ],
+      "category_count": 17,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The LINK_TO_EVENT column contains unique identifiers for events, which are likely generated dynamically. While there are currently 17 unique values, new events can be created in the future, meaning the set of valid values is not fixed. Therefore, an IN constraint would be too limiting."
+      }
+    },
+    {
+      "table": "attendance",
+      "column": "LINK_TO_MEMBER",
+      "data_type": "VARCHAR",
+      "categories": [
+        "recD078PnS3x2doBe",
+        "recP6DJPyi5donvXL",
+        "rec28ORZgcm1dtqBZ",
+        "recTjHY5xXhvkCdVT",
+        "recZ4PkGERzl9ziHO",
+        "recEFd8s6pkrTt4Pz",
+        "recEymrwCUKxiiosI",
+        "recQaxyXBQG5BBtD0",
+        "recT92PyyZCGq1R68",
+        "recJMazpPVexyFYTc",
+        "reccW7q1KkhSKZsea",
+        "recjHj4BS5A541n9v",
+        "recL94zpn6Xh6kQii",
+        "reccSUPwy30AeZLEb",
+        "recttfySfQnYb68u3",
+        "recf4UKTfipCzgcSA",
+        "recro8T1MPMwRadVH",
+        "recsTO4OZIF9rbubk",
+        "rec75vvFxgYtHmqxY",
+        "reco0mr8dXTgs5wWA",
+        "recuSfhAZIlKba4s2",
+        "recxBj3tjKTGHqucS",
+        "recUdRhbhcEO1Hk5r",
+        "recVsoJJHFI8bgtfw",
+        "rec4BLdZHS2Blfp4v",
+        "recL4aEZBZoPk9NYx",
+        "recWh2lJVOT6HjChK",
+        "rec280Sk7o31iG0Tx",
+        "rec3pH4DxMcWHMRB7",
+        "rec2a03QXbFQAUZ7X"
+      ],
+      "category_count": 30,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The LINK_TO_MEMBER column contains unique identifiers for members, which are likely generated dynamically and can change over time. This means that while the current dataset has 30 unique values, new members can be added in the future, leading to new unique identifiers. Therefore, it is not a true categorical column suitable for an IN constraint."
+      }
+    },
+    {
+      "table": "event",
+      "column": "TYPE",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Meeting",
+        "Election",
+        "Game",
+        "Guest Speaker",
+        "Social",
+        "Registration",
+        "Community Service",
+        "Budget"
+      ],
+      "category_count": 8,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TYPE column contains a limited set of known event types that are likely to remain consistent, making it a true categorical column suitable for an IN constraint. While new event types could theoretically be introduced, the current values represent distinct categories that are relevant to the context of events, suggesting that an enumeration is appropriate."
+      }
+    },
+    {
+      "table": "event",
+      "column": "NOTES",
+      "data_type": "VARCHAR",
+      "categories": [
+        "All active members can vote for new officers between 4pm-8pm.",
+        "Attend Women's soccer game as a group.",
+        "Semester social event. Optional attendance.",
+        "Attend school football game as a group.",
+        "Students can stop by the table to get information on the club and register.",
+        "Monthly officers meeting",
+        "Attend school Woman's Lacrosse game as a group.",
+        "Volunteer opportunity to help paint new home.",
+        "Attend school teams Lacrosse game as a group.",
+        "Officers and Budget Committee only",
+        "Volunteer opportunity to remove graffiti in town.",
+        "Volunteer opportunity to pack backpacks for underprivileged youth.",
+        "Members and alumni can attend a community theater play at a reduced price. Active membership required.",
+        "Volunteer opportunity to sort donations for distribution.",
+        "Attend school teams baseball game as a group."
+      ],
+      "category_count": 15,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The NOTES column contains free-text descriptions of events, which are not limited to a specific set of known values. The unique values suggest a variety of potential notes that could change over time, indicating that new descriptions could appear in future data. Therefore, it is not appropriate to impose an IN constraint."
+      }
+    },
+    {
+      "table": "event",
+      "column": "LOCATION",
+      "data_type": "VARCHAR",
+      "categories": [
+        "MU 215",
+        "Campus Soccer/Lacrosse stadium",
+        "900 E. Washington St.",
+        "Campus Football stadium",
+        "Campus Common",
+        "258 S. Maple St.",
+        "Conference Room BA 452",
+        "Various locations",
+        "45 N. Smith St.",
+        "100 W. Main Street",
+        "1308 106th Ave.",
+        "Campus Baseball Stadium"
+      ],
+      "category_count": 12,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The LOCATION column contains specific addresses and venue names, which can vary widely and are not limited to a fixed set. New locations may be added in the future, making it inappropriate to enforce an IN constraint."
+      }
+    },
+    {
+      "table": "event",
+      "column": "STATUS",
+      "data_type": "VARCHAR",
+      "categories": [
+        "Open",
+        "Planning",
+        "Closed"
+      ],
+      "category_count": 3,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The STATUS column has a limited and defined set of values ('Open', 'Planning', 'Closed') that represent the state of an event. These values are likely exhaustive for the context of event management, making it a true categorical column suitable for an IN constraint."
+      }
+    },
+    {
+      "table": "major",
+      "column": "COLLEGE",
+      "data_type": "VARCHAR",
+      "categories": [
+        "College of Agriculture and Applied Sciences",
+        "College of Natural Resources",
+        "School of Business",
+        "College of Engineering",
+        "College of Humanities and Social Sciences",
+        "College of Science",
+        "College of Education & Human Services",
+        "College of the Arts"
+      ],
+      "category_count": 8,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The COLLEGE column contains a limited and defined set of unique values that represent the colleges within the institution. Given that there are only 8 unique values and they are likely to remain stable, an IN constraint is appropriate to ensure data integrity and consistency."
+      }
+    }
+  ],
+  "not_null": [
+    {
+      "table": "income",
+      "column": "INCOME_ID",
+      "data_type": "VARCHAR",
+      "total_rows": 36,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The INCOME_ID serves as a unique identifier for each record of income, making it essential for distinguishing between different income entries. As a primary key, it logically requires a NOT NULL constraint to ensure data integrity and uniqueness."
+      }
+    },
+    {
+      "table": "income",
+      "column": "DATE_RECEIVED",
+      "data_type": "VARCHAR",
+      "total_rows": 36,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DATE_RECEIVED field is logically required as it indicates when the funds were received, which is essential for tracking income. The column description supports this necessity, and it is reasonable to conclude that future records should always include this information."
+      }
+    },
+    {
+      "table": "income",
+      "column": "AMOUNT",
+      "data_type": "INTEGER",
+      "total_rows": 36,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The AMOUNT field represents the amount of funds received, which is essential for tracking income. It is logically required for every record of income, as it directly relates to the financial aspect of the club. The column description indicates that it is a necessary value, and future records would not make sense without this information."
+      }
+    },
+    {
+      "table": "income",
+      "column": "SOURCE",
+      "data_type": "VARCHAR",
+      "total_rows": 36,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SOURCE column is logically required as it indicates where the funds come from, which is essential for understanding the income's origin. The description emphasizes its importance, and while current data is complete, future records should also include this information to maintain data integrity."
+      }
+    },
+    {
+      "table": "budget",
+      "column": "BUDGET_ID",
+      "data_type": "VARCHAR",
+      "total_rows": 52,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The BUDGET_ID is a unique identifier for each budget entry, which logically requires it to be present for every record. As a primary key, it should not allow null values, ensuring each budget entry can be distinctly identified."
+      }
+    },
+    {
+      "table": "budget",
+      "column": "CATEGORY",
+      "data_type": "VARCHAR",
+      "total_rows": 52,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CATEGORY field is logically required as it defines the area for which the budgeted amount is allocated. The description indicates that it is essential for categorizing budget entries, and future records would not make sense without this information."
+      }
+    },
+    {
+      "table": "budget",
+      "column": "SPENT",
+      "data_type": "REAL",
+      "total_rows": 52,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SPENT column represents the total amount spent in a budgeted category for an event, which is essential for tracking expenses. It is logically required for every budget entry to have a value, as it directly impacts financial reporting and budget management. The column description indicates that it summarizes expenses, reinforcing its necessity."
+      }
+    },
+    {
+      "table": "budget",
+      "column": "REMAINING",
+      "data_type": "REAL",
+      "total_rows": 52,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The REMAINING column represents a calculated value that indicates the amount left in a budget category after expenses. Since it is essential for understanding the financial status of a budget entry, it should always have a value. The column description implies that it is a necessary field for budget management, and logically, every budget entry should have a remaining amount calculated."
+      }
+    },
+    {
+      "table": "budget",
+      "column": "AMOUNT",
+      "data_type": "INTEGER",
+      "total_rows": 52,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The AMOUNT field represents the budgeted amount for a specified category and event, which is essential for the budget's functionality. It is logically required for every budget entry to have a defined amount, as it directly impacts financial planning and tracking. The column description indicates that it is a fundamental part of the budget entry, making it necessary to enforce a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "budget",
+      "column": "EVENT_STATUS",
+      "data_type": "VARCHAR",
+      "total_rows": 52,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EVENT_STATUS column indicates the current status of an event, which is essential for understanding the budget's context. Since it categorizes the event as Open, Planning, or Closed, it is logically required for every budget entry to have a status. Future records would need this information to maintain clarity and functionality in the database."
+      }
+    },
+    {
+      "table": "budget",
+      "column": "LINK_TO_EVENT",
+      "data_type": "VARCHAR",
+      "total_rows": 52,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LINK_TO_EVENT column serves as a foreign key linking budget entries to specific events, making it logically required for every budget record. The column description indicates that it references the Event table, which further supports the necessity of this field being non-null to maintain data integrity."
+      }
+    },
+    {
+      "table": "zip_code",
+      "column": "ZIP_CODE",
+      "data_type": "INTEGER",
+      "total_rows": 41877,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ZIP_CODE field is essential for identifying the location associated with each record. Given that it is a unique identifier for a US post office and is logically required for any address-related data, it should have a NOT NULL constraint to ensure data integrity."
+      }
+    },
+    {
+      "table": "zip_code",
+      "column": "TYPE",
+      "data_type": "VARCHAR",
+      "total_rows": 41877,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TYPE column categorizes ZIP codes into essential classifications (Standard, Unique, PO Box), which are logically required for understanding the nature of the ZIP code. The column description indicates that it provides important information about the ZIP code, suggesting it should always be present. Therefore, a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "zip_code",
+      "column": "CITY",
+      "data_type": "VARCHAR",
+      "total_rows": 41877,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The CITY field is logically required as it identifies the city associated with a ZIP code, which is essential for accurate postal addressing. The column description indicates that it pertains to the ZIP code, suggesting that every ZIP code must have a corresponding city. Future records would reasonably require this field to ensure completeness and accuracy in the database."
+      }
+    },
+    {
+      "table": "zip_code",
+      "column": "STATE",
+      "data_type": "VARCHAR",
+      "total_rows": 41877,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The STATE column is logically required as it identifies the state associated with the ZIP code, which is essential for accurate geographic representation. The column description indicates that it pertains to the state related to the ZIP code, suggesting it should always be present. Future records would reasonably require this information to maintain data integrity."
+      }
+    },
+    {
+      "table": "zip_code",
+      "column": "SHORT_STATE",
+      "data_type": "VARCHAR",
+      "total_rows": 41877,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The SHORT_STATE column represents the abbreviation of the state to which the ZIP code pertains. This information is essential for identifying the state associated with a ZIP code, making it logically required for every record. The column description indicates that it is a key attribute related to the ZIP code, and future records would reasonably need this field to maintain data integrity."
+      }
+    },
+    {
+      "table": "expense",
+      "column": "EXPENSE_ID",
+      "data_type": "VARCHAR",
+      "total_rows": 32,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EXPENSE_ID is a unique identifier for each record of expense, which logically requires it to be present for every record. As a primary key, it should not allow null values to ensure each expense can be uniquely identified."
+      }
+    },
+    {
+      "table": "expense",
+      "column": "EXPENSE_DESCRIPTION",
+      "data_type": "VARCHAR",
+      "total_rows": 32,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EXPENSE_DESCRIPTION field is logically required as it provides essential information about the nature of the expense. The description is crucial for understanding what the funds were spent on, and omitting this information would hinder the clarity and usefulness of the expense records. Therefore, it should have a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "expense",
+      "column": "EXPENSE_DATE",
+      "data_type": "VARCHAR",
+      "total_rows": 32,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EXPENSE_DATE is logically required for each expense record as it indicates when the expense was incurred. The column description specifies that it is the date the expense was incurred, which suggests it is essential for tracking expenses accurately. Future records would reasonably need this field to maintain the integrity of the expense data."
+      }
+    },
+    {
+      "table": "expense",
+      "column": "COST",
+      "data_type": "REAL",
+      "total_rows": 32,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The COST field represents the dollar amount of the expense, which is essential for understanding the financial implications of each expense record. It is logically required for every expense entry, as an expense without a cost does not make sense. The column description indicates that it is a critical attribute, and future records should not reasonably omit this field."
+      }
+    },
+    {
+      "table": "expense",
+      "column": "LINK_TO_MEMBER",
+      "data_type": "VARCHAR",
+      "total_rows": 32,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LINK_TO_MEMBER column is essential as it links each expense to a specific member, making it a required foreign key for maintaining data integrity. Without this link, it would be impossible to identify who incurred the expense, which is critical for accountability and tracking purposes."
+      }
+    },
+    {
+      "table": "expense",
+      "column": "LINK_TO_BUDGET",
+      "data_type": "VARCHAR",
+      "total_rows": 32,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LINK_TO_BUDGET column is essential as it serves as a foreign key linking expenses to their corresponding budget entries. Each expense must be associated with a budget to ensure proper tracking and accountability of funds, making this field logically required for every record."
+      }
+    },
+    {
+      "table": "member",
+      "column": "MEMBER_ID",
+      "data_type": "VARCHAR",
+      "total_rows": 33,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The MEMBER_ID is a unique identifier for each member, which logically requires it to be present for every record. As a primary key, it should not allow null values to ensure each member can be distinctly identified."
+      }
+    },
+    {
+      "table": "member",
+      "column": "FIRST_NAME",
+      "data_type": "VARCHAR",
+      "total_rows": 33,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The FIRST_NAME field is logically required for every member record as it is essential for identifying individuals. The column description indicates it is a member's first name, which suggests it should always be present. Future records would reasonably require this field to ensure proper identification and communication."
+      }
+    },
+    {
+      "table": "member",
+      "column": "LAST_NAME",
+      "data_type": "VARCHAR",
+      "total_rows": 33,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LAST_NAME field is logically required as it is a fundamental part of a member's identity. It is unlikely that future records would reasonably omit this field, and the column description implies that it is essential for identifying members."
+      }
+    },
+    {
+      "table": "member",
+      "column": "EMAIL",
+      "data_type": "VARCHAR",
+      "total_rows": 33,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EMAIL field is logically required as it serves as a primary means of communication with members. The column description indicates it is essential for identifying members, and it is reasonable to expect that future records will also require an email address for contact purposes."
+      }
+    },
+    {
+      "table": "member",
+      "column": "POSITION",
+      "data_type": "VARCHAR",
+      "total_rows": 33,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The POSITION field is logically required as it indicates the role of the member within the club, which is essential for understanding member responsibilities and organizational structure. The column description suggests that it is a key attribute of a member, and future records would likely need this information to maintain clarity in member roles."
+      }
+    },
+    {
+      "table": "member",
+      "column": "T_SHIRT_SIZE",
+      "data_type": "VARCHAR",
+      "total_rows": 33,
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The T_SHIRT_SIZE field is not logically required for every record, as it is an optional attribute related to member preferences. Future records could reasonably omit this field if a member does not wish to specify a t-shirt size."
+      }
+    },
+    {
+      "table": "member",
+      "column": "PHONE",
+      "data_type": "VARCHAR",
+      "total_rows": 33,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The PHONE column is essential for contacting members, making it logically required for every record. The description indicates it is the best telephone to contact the member, suggesting it should always be present. Future records would likely need this information, so a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "member",
+      "column": "ZIP",
+      "data_type": "INTEGER",
+      "total_rows": 33,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The ZIP column is likely required as it represents the zip code of the member's hometown, which is essential for identifying the member's location. The column description indicates it is a key piece of information, and it is reasonable to expect that every member would have a zip code associated with them."
+      }
+    },
+    {
+      "table": "attendance",
+      "column": "LINK_TO_EVENT",
+      "data_type": "VARCHAR",
+      "total_rows": 326,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LINK_TO_EVENT column is a foreign key that links attendance records to specific events. It is logically required for every attendance record to reference an event, making it essential for the integrity of the attendance data. The column description indicates that it is a unique identifier of the event attended, further supporting the need for a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "attendance",
+      "column": "LINK_TO_MEMBER",
+      "data_type": "VARCHAR",
+      "total_rows": 326,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The LINK_TO_MEMBER column is essential as it serves as a foreign key linking attendance records to members. Each attendance record must reference a member to be meaningful, making this field logically required for every record."
+      }
+    },
+    {
+      "table": "event",
+      "column": "EVENT_ID",
+      "data_type": "VARCHAR",
+      "total_rows": 42,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EVENT_ID is a unique identifier for each event, which logically requires it to be present for every record. As a primary key, it should not allow null values to ensure each event can be distinctly identified."
+      }
+    },
+    {
+      "table": "event",
+      "column": "EVENT_NAME",
+      "data_type": "VARCHAR",
+      "total_rows": 42,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EVENT_NAME field is logically required as it serves as a primary identifier for events. The column description indicates it is essential for understanding what the event is, and it is unlikely that future records would be meaningful without this information."
+      }
+    },
+    {
+      "table": "event",
+      "column": "EVENT_DATE",
+      "data_type": "VARCHAR",
+      "total_rows": 42,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EVENT_DATE is logically required for every event record as it indicates when the event takes place. Omitting this field would make it impossible to determine the timing of events, which is essential for event management. The column description supports this requirement, indicating that it is a key attribute of an event."
+      }
+    },
+    {
+      "table": "event",
+      "column": "TYPE",
+      "data_type": "VARCHAR",
+      "total_rows": 42,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The TYPE column categorizes the event, which is essential for understanding the nature of the event. Given that it serves as a key identifier for the event's purpose and the column description implies it is a required attribute, it should have a NOT NULL constraint to ensure all records have this critical information."
+      }
+    },
+    {
+      "table": "event",
+      "column": "STATUS",
+      "data_type": "VARCHAR",
+      "total_rows": 42,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The STATUS field is logically required as it indicates the current state of the event (Open, Closed, Planning). This information is essential for understanding the event's lifecycle and management. Future records would need this field to determine the event's status, making it necessary to enforce a NOT NULL constraint."
+      }
+    },
+    {
+      "table": "major",
+      "column": "MAJOR_ID",
+      "data_type": "VARCHAR",
+      "total_rows": 113,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "MAJOR_ID is a unique identifier for each major, which logically requires it to be present for every record. As a primary key, it should have a NOT NULL constraint to ensure data integrity and uniqueness."
+      }
+    },
+    {
+      "table": "major",
+      "column": "MAJOR_NAME",
+      "data_type": "VARCHAR",
+      "total_rows": 113,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The MAJOR_NAME field is logically required as it represents the name of the major, which is essential for identifying the major in the context of the student club. The column description indicates that it is a key attribute of the major, and it is unlikely that a major would exist without a name. Therefore, a NOT NULL constraint is appropriate."
+      }
+    },
+    {
+      "table": "major",
+      "column": "DEPARTMENT",
+      "data_type": "VARCHAR",
+      "total_rows": 113,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The DEPARTMENT field is logically required as it identifies the department offering the major, which is essential for categorizing majors. The column description implies that this information is necessary for each major, and it is unlikely that a major would exist without an associated department."
+      }
+    },
+    {
+      "table": "major",
+      "column": "COLLEGE",
+      "data_type": "VARCHAR",
+      "total_rows": 113,
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The COLLEGE field is logically required as it indicates the academic division that offers the major. This is essential information for categorizing majors and is likely to be necessary for every record in the MAJOR table. The column description supports this requirement, and it is reasonable to expect that future records will also need this information."
+      }
+    }
+  ],
+  "dependency": [
+    {
+      "table": "income",
+      "type": "functional",
+      "column_a": "INCOME_ID",
+      "column_b": "DATE_RECEIVED",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "INCOME_ID": "rec0s9ZrO15zhzUeE",
+          "DATE_RECEIVED": "2019-10-17"
+        },
+        {
+          "INCOME_ID": "rec7f5XMQZexgtQJo",
+          "DATE_RECEIVED": "2019-09-04"
+        },
+        {
+          "INCOME_ID": "rec8BUJa8GXUjiglg",
+          "DATE_RECEIVED": "2019-10-08"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency INCOME_ID \u2192 DATE_RECEIVED is meaningful as each unique income record should have a specific date received. This relationship is consistent across the observed data and reflects a natural mapping. Since INCOME_ID is a unique identifier for each income record, enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "income",
+      "type": "functional",
+      "column_a": "INCOME_ID",
+      "column_b": "AMOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "INCOME_ID": "rec0s9ZrO15zhzUeE",
+          "AMOUNT": 50
+        },
+        {
+          "INCOME_ID": "rec7f5XMQZexgtQJo",
+          "AMOUNT": 50
+        },
+        {
+          "INCOME_ID": "rec8BUJa8GXUjiglg",
+          "AMOUNT": 50
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While INCOME_ID is a unique identifier for each income record, the consistent mapping of INCOME_ID to AMOUNT does not indicate a meaningful semantic relationship. The AMOUNT could vary for different records, and enforcing this dependency may not add value for query verification as it is primarily a primary key relationship."
+      }
+    },
+    {
+      "table": "income",
+      "type": "functional",
+      "column_a": "INCOME_ID",
+      "column_b": "SOURCE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "INCOME_ID": "rec0s9ZrO15zhzUeE",
+          "SOURCE": "Dues"
+        },
+        {
+          "INCOME_ID": "rec7f5XMQZexgtQJo",
+          "SOURCE": "Dues"
+        },
+        {
+          "INCOME_ID": "rec8BUJa8GXUjiglg",
+          "SOURCE": "Dues"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the observed mapping shows consistency, the relationship between INCOME_ID and SOURCE is not meaningful as a functional dependency. The SOURCE can have multiple values (e.g., 'Dues' and 'Fundraising') for different INCOME_IDs, indicating that the dependency is not reliable and could break with future data. Additionally, INCOME_ID is a unique identifier, making this dependency trivial."
+      }
+    },
+    {
+      "table": "income",
+      "type": "functional",
+      "column_a": "INCOME_ID",
+      "column_b": "NOTES",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "INCOME_ID": "rec0s9ZrO15zhzUeE",
+          "NOTES": null
+        },
+        {
+          "INCOME_ID": "rec7f5XMQZexgtQJo",
+          "NOTES": null
+        },
+        {
+          "INCOME_ID": "rec8BUJa8GXUjiglg",
+          "NOTES": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While INCOME_ID is a unique identifier for each income record, the NOTES field is often null, indicating that there is no consistent mapping of INCOME_ID to a specific value in NOTES. This suggests that the relationship is not meaningful or reliable, as it does not provide useful information for query verification."
+      }
+    },
+    {
+      "table": "income",
+      "type": "functional",
+      "column_a": "INCOME_ID",
+      "column_b": "LINK_TO_MEMBER",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "INCOME_ID": "rec0s9ZrO15zhzUeE",
+          "LINK_TO_MEMBER": "reccW7q1KkhSKZsea"
+        },
+        {
+          "INCOME_ID": "rec7f5XMQZexgtQJo",
+          "LINK_TO_MEMBER": "recTjHY5xXhvkCdVT"
+        },
+        {
+          "INCOME_ID": "rec8BUJa8GXUjiglg",
+          "LINK_TO_MEMBER": "recUdRhbhcEO1Hk5r"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency INCOME_ID \u2192 LINK_TO_MEMBER is meaningful as each income record should be associated with exactly one member. This relationship is consistent across the observed data, and enforcing this constraint would help ensure data integrity and verify query correctness. Although there is one instance of LINK_TO_MEMBER being null, it does not negate the overall dependency since it indicates that not all income records must be linked to a member."
+      }
+    },
+    {
+      "table": "income",
+      "type": "functional",
+      "column_a": "DATE_RECEIVED",
+      "column_b": "AMOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DATE_RECEIVED": "2019-10-17",
+          "AMOUNT": 50
+        },
+        {
+          "DATE_RECEIVED": "2019-09-04",
+          "AMOUNT": 50
+        },
+        {
+          "DATE_RECEIVED": "2019-10-08",
+          "AMOUNT": 50
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency DATE_RECEIVED \u2192 AMOUNT is not meaningful as it suggests that for each date, there is a fixed amount, which is not a natural mapping relationship. The observed data shows a consistent pattern, but it is likely coincidental and does not reflect a true functional dependency. The same amount can be received on different dates, indicating that DATE_RECEIVED is not a unique identifier for AMOUNT. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "income",
+      "type": "functional",
+      "column_a": "DATE_RECEIVED",
+      "column_b": "SOURCE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DATE_RECEIVED": "2019-10-17",
+          "SOURCE": "Dues"
+        },
+        {
+          "DATE_RECEIVED": "2019-09-04",
+          "SOURCE": "Dues"
+        },
+        {
+          "DATE_RECEIVED": "2019-10-08",
+          "SOURCE": "Dues"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency DATE_RECEIVED \u2192 SOURCE is not meaningful as it suggests that each date corresponds to a single source of income, which is not semantically valid. Multiple sources can occur on the same date, making this a coincidental pattern rather than a reliable functional dependency. Additionally, DATE_RECEIVED is not a unique key, and enforcing this constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "income",
+      "type": "functional",
+      "column_a": "DATE_RECEIVED",
+      "column_b": "NOTES",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DATE_RECEIVED": "2019-10-17",
+          "NOTES": null
+        },
+        {
+          "DATE_RECEIVED": "2019-09-04",
+          "NOTES": null
+        },
+        {
+          "DATE_RECEIVED": "2019-10-08",
+          "NOTES": null
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency DATE_RECEIVED \u2192 NOTES is not meaningful as DATE_RECEIVED is not a unique identifier for income records; multiple records can share the same date but have different notes. Additionally, the presence of null values in NOTES suggests that this relationship is coincidental rather than a reliable mapping. Therefore, enforcing this as a constraint would not add value."
+      }
+    },
+    {
+      "table": "income",
+      "type": "functional",
+      "column_a": "AMOUNT",
+      "column_b": "SOURCE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "AMOUNT": 50,
+          "SOURCE": "Dues"
+        },
+        {
+          "AMOUNT": 200,
+          "SOURCE": "Fundraising"
+        },
+        {
+          "AMOUNT": 3000,
+          "SOURCE": "School Appropration"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the observed mapping is consistent, the relationship between AMOUNT and SOURCE does not represent a meaningful semantic dependency. The same amount can come from different sources, and thus this dependency is not reliable or unique. Enforcing this constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "income",
+      "type": "functional",
+      "column_a": "AMOUNT",
+      "column_b": "NOTES",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "AMOUNT": 50,
+          "NOTES": null
+        },
+        {
+          "AMOUNT": 200,
+          "NOTES": "Secured donations to help pay for speaker gifts."
+        },
+        {
+          "AMOUNT": 3000,
+          "NOTES": "Annual funding from Student Government."
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency AMOUNT \u2192 NOTES is not meaningful as it does not represent a consistent semantic relationship. The NOTES field is free-text and can vary widely for the same AMOUNT, indicating that this is not a reliable functional dependency. Additionally, the AMOUNT is not a primary or unique key, and enforcing this constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "income",
+      "type": "functional",
+      "column_a": "SOURCE",
+      "column_b": "NOTES",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "SOURCE": "Dues",
+          "NOTES": null
+        },
+        {
+          "SOURCE": "Fundraising",
+          "NOTES": "Secured donations to help pay for speaker gifts."
+        },
+        {
+          "SOURCE": "School Appropration",
+          "NOTES": "Annual funding from Student Government."
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency SOURCE \u2192 NOTES is meaningful as it establishes a clear relationship between the source of income and the associated notes providing context. The observed mapping is consistent, indicating reliability. This relationship is not trivial since SOURCE is not a primary or unique key, and enforcing this constraint would help ensure data integrity and correctness in queries related to income sources."
+      }
+    },
+    {
+      "table": "budget",
+      "type": "functional",
+      "column_a": "BUDGET_ID",
+      "column_b": "CATEGORY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "BUDGET_ID": "rec0QmEc3cSQFQ6V2",
+          "CATEGORY": "Advertisement"
+        },
+        {
+          "BUDGET_ID": "rec1bG6HSft7XIvTP",
+          "CATEGORY": "Food"
+        },
+        {
+          "BUDGET_ID": "rec1z6ISJU2HdIsVm",
+          "CATEGORY": "Food"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency BUDGET_ID \u2192 CATEGORY is meaningful as each budget entry should correspond to a specific category of spending. The observed mapping is consistent, and enforcing this constraint would help ensure data integrity and verify query correctness, as each budget ID should uniquely determine its category."
+      }
+    },
+    {
+      "table": "budget",
+      "type": "functional",
+      "column_a": "BUDGET_ID",
+      "column_b": "SPENT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "BUDGET_ID": "rec0QmEc3cSQFQ6V2",
+          "SPENT": 67.81
+        },
+        {
+          "BUDGET_ID": "rec1bG6HSft7XIvTP",
+          "SPENT": 121.14
+        },
+        {
+          "BUDGET_ID": "rec1z6ISJU2HdIsVm",
+          "SPENT": 20.2
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency BUDGET_ID \u2192 SPENT is meaningful because each budget entry (identified by BUDGET_ID) should consistently track the amount spent. This relationship is not just coincidental; it reflects the logical structure of budgeting where each unique budget ID corresponds to a specific amount spent. Enforcing this constraint would help ensure data integrity and verify that the spending amounts are correctly associated with their respective budget entries."
+      }
+    },
+    {
+      "table": "budget",
+      "type": "functional",
+      "column_a": "BUDGET_ID",
+      "column_b": "REMAINING",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "BUDGET_ID": "rec0QmEc3cSQFQ6V2",
+          "REMAINING": 7.19
+        },
+        {
+          "BUDGET_ID": "rec1bG6HSft7XIvTP",
+          "REMAINING": 28.86
+        },
+        {
+          "BUDGET_ID": "rec1z6ISJU2HdIsVm",
+          "REMAINING": -0.199999999999999
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency BUDGET_ID \u2192 REMAINING is meaningful because each budget entry uniquely determines its remaining amount, which is a critical aspect of budget management. This relationship is consistent across the observed data and reflects a natural mapping that is essential for verifying the correctness of budget calculations. Enforcing this constraint would help ensure data integrity and accuracy in financial reporting."
+      }
+    },
+    {
+      "table": "budget",
+      "type": "functional",
+      "column_a": "BUDGET_ID",
+      "column_b": "AMOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "BUDGET_ID": "rec0QmEc3cSQFQ6V2",
+          "AMOUNT": 75
+        },
+        {
+          "BUDGET_ID": "rec1bG6HSft7XIvTP",
+          "AMOUNT": 150
+        },
+        {
+          "BUDGET_ID": "rec1z6ISJU2HdIsVm",
+          "AMOUNT": 20
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency BUDGET_ID \u2192 AMOUNT is meaningful because each budget entry (identified by BUDGET_ID) has a specific amount allocated, which is a natural mapping relationship. Since BUDGET_ID is a unique identifier for each budget entry, this constraint helps ensure data integrity and can verify query correctness by ensuring that each budget ID consistently maps to its corresponding amount."
+      }
+    },
+    {
+      "table": "budget",
+      "type": "functional",
+      "column_a": "BUDGET_ID",
+      "column_b": "EVENT_STATUS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "BUDGET_ID": "rec0QmEc3cSQFQ6V2",
+          "EVENT_STATUS": "Closed"
+        },
+        {
+          "BUDGET_ID": "rec1bG6HSft7XIvTP",
+          "EVENT_STATUS": "Closed"
+        },
+        {
+          "BUDGET_ID": "rec1z6ISJU2HdIsVm",
+          "EVENT_STATUS": "Closed"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency BUDGET_ID \u2192 EVENT_STATUS is meaningful because each budget entry is associated with a specific event status (Closed, Open, Planning). This relationship is not coincidental, as it reflects the actual state of the budget in relation to the event. Enforcing this constraint would help ensure data integrity and verify query correctness, as it guarantees that each budget ID corresponds to a valid event status."
+      }
+    },
+    {
+      "table": "budget",
+      "type": "functional",
+      "column_a": "BUDGET_ID",
+      "column_b": "LINK_TO_EVENT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "BUDGET_ID": "rec0QmEc3cSQFQ6V2",
+          "LINK_TO_EVENT": "recI43CzsZ0Q625ma"
+        },
+        {
+          "BUDGET_ID": "rec1bG6HSft7XIvTP",
+          "LINK_TO_EVENT": "recggMW2eyCYceNcy"
+        },
+        {
+          "BUDGET_ID": "rec1z6ISJU2HdIsVm",
+          "LINK_TO_EVENT": "recJ4Witp9tpjaugn"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency BUDGET_ID \u2192 LINK_TO_EVENT is meaningful as each budget entry is uniquely associated with a specific event. This relationship is consistent across the observed data and reflects a natural mapping where each budget is tied to one event. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "budget",
+      "type": "functional",
+      "column_a": "REMAINING",
+      "column_b": "AMOUNT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "REMAINING": 7.19,
+          "AMOUNT": 75.0
+        },
+        {
+          "REMAINING": 28.86,
+          "AMOUNT": 150.0
+        },
+        {
+          "REMAINING": -0.199999999999999,
+          "AMOUNT": 20.0
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between REMAINING and AMOUNT is not a meaningful functional dependency as it appears to be coincidental rather than a consistent semantic relationship. The values of AMOUNT are not uniquely determined by REMAINING, as multiple REMAINING values can correspond to the same AMOUNT. Additionally, the calculation of REMAINING as AMOUNT - SPENT suggests that it is derived rather than a standalone determinant, making this dependency unreliable for future data."
+      }
+    },
+    {
+      "table": "zip_code",
+      "type": "functional",
+      "column_a": "ZIP_CODE",
+      "column_b": "TYPE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ZIP_CODE": 501,
+          "TYPE": "Unique"
+        },
+        {
+          "ZIP_CODE": 544,
+          "TYPE": "Unique"
+        },
+        {
+          "ZIP_CODE": 601,
+          "TYPE": "Standard"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ZIP_CODE \u2192 TYPE is meaningful as each ZIP code consistently maps to a specific type (Standard, Unique, PO Box) across a large dataset of 41877 rows. This relationship is not coincidental and reflects a semantic mapping that can help verify query correctness, ensuring that the type of ZIP code is accurately represented."
+      }
+    },
+    {
+      "table": "zip_code",
+      "type": "functional",
+      "column_a": "ZIP_CODE",
+      "column_b": "CITY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ZIP_CODE": 501,
+          "CITY": "Holtsville"
+        },
+        {
+          "ZIP_CODE": 544,
+          "CITY": "Holtsville"
+        },
+        {
+          "ZIP_CODE": 601,
+          "CITY": "Adjuntas"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ZIP_CODE \u2192 CITY is meaningful as each ZIP code consistently maps to a specific city, which is a reliable semantic relationship. Given the large number of rows (41877), this dependency is unlikely to break in future data. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "zip_code",
+      "type": "functional",
+      "column_a": "ZIP_CODE",
+      "column_b": "COUNTY",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ZIP_CODE": 501,
+          "COUNTY": "Suffolk County"
+        },
+        {
+          "ZIP_CODE": 544,
+          "COUNTY": "Suffolk County"
+        },
+        {
+          "ZIP_CODE": 601,
+          "COUNTY": "Adjuntas Municipio"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ZIP_CODE \u2192 COUNTY is meaningful as it establishes a clear relationship between ZIP codes and their corresponding counties. Although there are some null values for COUNTY, the majority of ZIP_CODE entries have consistent COUNTY mappings, indicating a reliable pattern. This relationship is not trivial, as ZIP_CODE is not a primary key in this context, and enforcing this constraint would help ensure data integrity and verify query correctness regarding geographic information."
+      }
+    },
+    {
+      "table": "zip_code",
+      "type": "functional",
+      "column_a": "ZIP_CODE",
+      "column_b": "STATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ZIP_CODE": 501,
+          "STATE": "New York"
+        },
+        {
+          "ZIP_CODE": 544,
+          "STATE": "New York"
+        },
+        {
+          "ZIP_CODE": 601,
+          "STATE": "Puerto Rico"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ZIP_CODE \u2192 STATE is meaningful as each ZIP code corresponds to exactly one state, which is a reliable semantic relationship. Given the large number of rows (41877), this dependency is consistent and not coincidental. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "zip_code",
+      "type": "functional",
+      "column_a": "ZIP_CODE",
+      "column_b": "SHORT_STATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ZIP_CODE": 501,
+          "SHORT_STATE": "NY"
+        },
+        {
+          "ZIP_CODE": 544,
+          "SHORT_STATE": "NY"
+        },
+        {
+          "ZIP_CODE": 601,
+          "SHORT_STATE": "PR"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency ZIP_CODE \u2192 SHORT_STATE is meaningful as each ZIP code consistently maps to a specific state abbreviation. This relationship is reliable given the large number of rows (41877) and reflects a natural mapping between ZIP codes and their corresponding state codes. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "zip_code",
+      "type": "functional",
+      "column_a": "STATE",
+      "column_b": "SHORT_STATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "STATE": "New York",
+          "SHORT_STATE": "NY"
+        },
+        {
+          "STATE": "Puerto Rico",
+          "SHORT_STATE": "PR"
+        },
+        {
+          "STATE": "Massachusetts",
+          "SHORT_STATE": "MA"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency STATE \u2192 SHORT_STATE is meaningful as each state consistently maps to its corresponding abbreviation. This relationship is reliable across a large dataset (41877 rows) and is not coincidental. Enforcing this constraint would help ensure data integrity and verify query correctness, as it establishes a clear semantic relationship between the full state name and its abbreviation."
+      }
+    },
+    {
+      "table": "expense",
+      "type": "functional",
+      "column_a": "EXPENSE_ID",
+      "column_b": "EXPENSE_DESCRIPTION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EXPENSE_ID": "rec017x6R3hQqkLAo",
+          "EXPENSE_DESCRIPTION": "Post Cards, Posters"
+        },
+        {
+          "EXPENSE_ID": "rec1nIjoZKTYayqZ6",
+          "EXPENSE_DESCRIPTION": "Water, Cookies"
+        },
+        {
+          "EXPENSE_ID": "rec1oMgNFt7Y0G40x",
+          "EXPENSE_DESCRIPTION": "Pizza"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EXPENSE_ID is a unique identifier for each expense, and it consistently maps to a single EXPENSE_DESCRIPTION. This is a meaningful semantic relationship as each expense should have a distinct description associated with its ID. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "expense",
+      "type": "functional",
+      "column_a": "EXPENSE_ID",
+      "column_b": "EXPENSE_DATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EXPENSE_ID": "rec017x6R3hQqkLAo",
+          "EXPENSE_DATE": "2019-08-20"
+        },
+        {
+          "EXPENSE_ID": "rec1nIjoZKTYayqZ6",
+          "EXPENSE_DATE": "2019-10-08"
+        },
+        {
+          "EXPENSE_ID": "rec1oMgNFt7Y0G40x",
+          "EXPENSE_DATE": "2019-09-10"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency EXPENSE_ID \u2192 EXPENSE_DATE is meaningful because each unique expense ID corresponds to exactly one expense date, indicating a reliable mapping. This relationship is not coincidental, as it reflects the nature of expenses being recorded with a specific date. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents the possibility of having multiple dates for a single expense ID."
+      }
+    },
+    {
+      "table": "expense",
+      "type": "functional",
+      "column_a": "EXPENSE_ID",
+      "column_b": "COST",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EXPENSE_ID": "rec017x6R3hQqkLAo",
+          "COST": 122.06
+        },
+        {
+          "EXPENSE_ID": "rec1nIjoZKTYayqZ6",
+          "COST": 20.2
+        },
+        {
+          "EXPENSE_ID": "rec1oMgNFt7Y0G40x",
+          "COST": 51.81
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency EXPENSE_ID \u2192 COST is meaningful because each unique EXPENSE_ID corresponds to exactly one COST value, which is a natural mapping in the context of expenses. Since EXPENSE_ID is a unique identifier for each expense record, this relationship is reliable and should be enforced as a constraint to ensure data integrity and correctness in queries."
+      }
+    },
+    {
+      "table": "expense",
+      "type": "functional",
+      "column_a": "EXPENSE_ID",
+      "column_b": "APPROVED",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EXPENSE_ID": "rec017x6R3hQqkLAo",
+          "APPROVED": "true"
+        },
+        {
+          "EXPENSE_ID": "rec1nIjoZKTYayqZ6",
+          "APPROVED": "true"
+        },
+        {
+          "EXPENSE_ID": "rec1oMgNFt7Y0G40x",
+          "APPROVED": "true"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While EXPENSE_ID is a unique identifier for each expense, the APPROVED status can vary and is not guaranteed to be consistent across all records. The observed mapping shows that some expenses are approved while others are not, indicating that the relationship is not meaningful as a functional dependency. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "expense",
+      "type": "functional",
+      "column_a": "EXPENSE_ID",
+      "column_b": "LINK_TO_MEMBER",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EXPENSE_ID": "rec017x6R3hQqkLAo",
+          "LINK_TO_MEMBER": "rec4BLdZHS2Blfp4v"
+        },
+        {
+          "EXPENSE_ID": "rec1nIjoZKTYayqZ6",
+          "LINK_TO_MEMBER": "recro8T1MPMwRadVH"
+        },
+        {
+          "EXPENSE_ID": "rec1oMgNFt7Y0G40x",
+          "LINK_TO_MEMBER": "recD078PnS3x2doBe"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency EXPENSE_ID \u2192 LINK_TO_MEMBER is meaningful because each expense is uniquely associated with a member who incurred it. This relationship is consistent across the observed data, and enforcing this constraint would help ensure data integrity and verify query correctness by confirming that each expense is linked to a valid member."
+      }
+    },
+    {
+      "table": "expense",
+      "type": "functional",
+      "column_a": "EXPENSE_ID",
+      "column_b": "LINK_TO_BUDGET",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EXPENSE_ID": "rec017x6R3hQqkLAo",
+          "LINK_TO_BUDGET": "recvKTAWAFKkVNnXQ"
+        },
+        {
+          "EXPENSE_ID": "rec1nIjoZKTYayqZ6",
+          "LINK_TO_BUDGET": "recy8KY5bUdzF81vv"
+        },
+        {
+          "EXPENSE_ID": "rec1oMgNFt7Y0G40x",
+          "LINK_TO_BUDGET": "recwXIiKoBMjXJsGZ"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency EXPENSE_ID \u2192 LINK_TO_BUDGET is meaningful because each expense should be linked to exactly one budget entry, ensuring data integrity. This relationship is consistent across the observed data and reflects a natural mapping in the context of expenses and budgets. Enforcing this constraint would help verify query correctness and maintain the integrity of the data model."
+      }
+    },
+    {
+      "table": "expense",
+      "type": "functional",
+      "column_a": "EXPENSE_DESCRIPTION",
+      "column_b": "APPROVED",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EXPENSE_DESCRIPTION": "Post Cards, Posters",
+          "APPROVED": "true"
+        },
+        {
+          "EXPENSE_DESCRIPTION": "Water, Cookies",
+          "APPROVED": "true"
+        },
+        {
+          "EXPENSE_DESCRIPTION": "Pizza",
+          "APPROVED": "true"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between EXPENSE_DESCRIPTION and APPROVED is not meaningful as a functional dependency because the same EXPENSE_DESCRIPTION can have different APPROVED values (e.g., 'Posters' has both true and null). This indicates that the mapping is not consistent and could break with future data, making it unreliable as a constraint."
+      }
+    },
+    {
+      "table": "expense",
+      "type": "functional",
+      "column_a": "EXPENSE_DATE",
+      "column_b": "APPROVED",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EXPENSE_DATE": "2019-08-20",
+          "APPROVED": "true"
+        },
+        {
+          "EXPENSE_DATE": "2019-10-08",
+          "APPROVED": "true"
+        },
+        {
+          "EXPENSE_DATE": "2019-09-10",
+          "APPROVED": "true"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between EXPENSE_DATE and APPROVED is not meaningful as a functional dependency because multiple expenses can occur on the same date, leading to different approval statuses. This suggests that the mapping is coincidental rather than a reliable semantic relationship. Additionally, EXPENSE_DATE is not a unique identifier, which further undermines the validity of this dependency."
+      }
+    },
+    {
+      "table": "expense",
+      "type": "functional",
+      "column_a": "COST",
+      "column_b": "APPROVED",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "COST": 122.06,
+          "APPROVED": "true"
+        },
+        {
+          "COST": 20.2,
+          "APPROVED": "true"
+        },
+        {
+          "COST": 51.81,
+          "APPROVED": "true"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between COST and APPROVED appears to be coincidental rather than a meaningful semantic dependency. The same COST can correspond to both approved and unapproved statuses, indicating that COST does not uniquely determine APPROVED. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "MEMBER_ID",
+      "column_b": "FIRST_NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MEMBER_ID": "rec1x5zBFIqoOuPW8",
+          "FIRST_NAME": "Angela"
+        },
+        {
+          "MEMBER_ID": "rec280Sk7o31iG0Tx",
+          "FIRST_NAME": "Grant"
+        },
+        {
+          "MEMBER_ID": "rec28ORZgcm1dtqBZ",
+          "FIRST_NAME": "Luisa"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency MEMBER_ID \u2192 FIRST_NAME is meaningful as each member ID uniquely identifies a member's first name. This is a semantic relationship, and since MEMBER_ID is a primary key, it ensures that the mapping is reliable and consistent across the dataset. Enforcing this constraint would help verify query correctness by ensuring that each member ID corresponds to exactly one first name."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "MEMBER_ID",
+      "column_b": "LAST_NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MEMBER_ID": "rec1x5zBFIqoOuPW8",
+          "LAST_NAME": "Sanders"
+        },
+        {
+          "MEMBER_ID": "rec280Sk7o31iG0Tx",
+          "LAST_NAME": "Gilmour"
+        },
+        {
+          "MEMBER_ID": "rec28ORZgcm1dtqBZ",
+          "LAST_NAME": "Guidi"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency MEMBER_ID \u2192 LAST_NAME is meaningful as MEMBER_ID is a unique identifier for each member, and it consistently maps to a single LAST_NAME. This relationship is not coincidental, as it reflects the natural mapping of members to their last names. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "MEMBER_ID",
+      "column_b": "EMAIL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MEMBER_ID": "rec1x5zBFIqoOuPW8",
+          "EMAIL": "angela.sanders@lpu.edu"
+        },
+        {
+          "MEMBER_ID": "rec280Sk7o31iG0Tx",
+          "EMAIL": "grant.gilmour@lpu.edu"
+        },
+        {
+          "MEMBER_ID": "rec28ORZgcm1dtqBZ",
+          "EMAIL": "luisa.guidi@lpu.edu"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency MEMBER_ID \u2192 EMAIL is meaningful as each member should have a unique email address associated with their unique identifier. This relationship is reliable given the consistent mapping observed across 33 rows. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents multiple members from having the same email address."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "MEMBER_ID",
+      "column_b": "POSITION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MEMBER_ID": "rec1x5zBFIqoOuPW8",
+          "POSITION": "Member"
+        },
+        {
+          "MEMBER_ID": "rec280Sk7o31iG0Tx",
+          "POSITION": "Member"
+        },
+        {
+          "MEMBER_ID": "rec28ORZgcm1dtqBZ",
+          "POSITION": "Member"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency MEMBER_ID \u2192 POSITION is meaningful as it establishes a clear relationship between a member's unique identifier and their role within the club. Although the current data shows some members with the same position, the role of a member can vary, and thus it is not trivial. Enforcing this constraint would help ensure data integrity and verify that each member's position is consistently associated with their unique ID."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "MEMBER_ID",
+      "column_b": "T_SHIRT_SIZE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MEMBER_ID": "rec1x5zBFIqoOuPW8",
+          "T_SHIRT_SIZE": "Medium"
+        },
+        {
+          "MEMBER_ID": "rec280Sk7o31iG0Tx",
+          "T_SHIRT_SIZE": "X-Large"
+        },
+        {
+          "MEMBER_ID": "rec28ORZgcm1dtqBZ",
+          "T_SHIRT_SIZE": "Medium"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency MEMBER_ID \u2192 T_SHIRT_SIZE is meaningful as each member has a specific t-shirt size associated with their unique identifier. This relationship is consistent across the observed data, and enforcing this constraint would help ensure data integrity and correctness in queries related to member t-shirt sizes."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "MEMBER_ID",
+      "column_b": "PHONE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MEMBER_ID": "rec1x5zBFIqoOuPW8",
+          "PHONE": "(651) 928-4507"
+        },
+        {
+          "MEMBER_ID": "rec280Sk7o31iG0Tx",
+          "PHONE": "403-555-1310"
+        },
+        {
+          "MEMBER_ID": "rec28ORZgcm1dtqBZ",
+          "PHONE": "442-555-5882"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency MEMBER_ID \u2192 PHONE is meaningful as each member should have a unique phone number associated with their unique identifier. This relationship is reliable given the consistent mapping observed across 33 rows, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "MEMBER_ID",
+      "column_b": "ZIP",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MEMBER_ID": "rec1x5zBFIqoOuPW8",
+          "ZIP": 55108
+        },
+        {
+          "MEMBER_ID": "rec280Sk7o31iG0Tx",
+          "ZIP": 29440
+        },
+        {
+          "MEMBER_ID": "rec28ORZgcm1dtqBZ",
+          "ZIP": 10002
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency MEMBER_ID \u2192 ZIP is meaningful as each member should have a unique ZIP code associated with their ID. This relationship is consistent across the observed data and reflects a natural mapping where each member's ID corresponds to their hometown ZIP code. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents the possibility of multiple members sharing the same ZIP code without a valid reason."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "MEMBER_ID",
+      "column_b": "LINK_TO_MAJOR",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MEMBER_ID": "rec1x5zBFIqoOuPW8",
+          "LINK_TO_MAJOR": "recxK3MHQFbR9J5uO"
+        },
+        {
+          "MEMBER_ID": "rec280Sk7o31iG0Tx",
+          "LINK_TO_MAJOR": "rec7BxKpjJ7bNph3O"
+        },
+        {
+          "MEMBER_ID": "rec28ORZgcm1dtqBZ",
+          "LINK_TO_MAJOR": "recdIBgeU38UbV2sy"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency MEMBER_ID \u2192 LINK_TO_MAJOR is meaningful as it establishes a relationship between members and their respective majors. Each member should be linked to exactly one major, and the observed data supports this relationship, making it reliable. Although there is a null value for one member, this does not negate the overall dependency for the majority of the data. Enforcing this constraint would help ensure data integrity and verify query correctness regarding member-major associations."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "FIRST_NAME",
+      "column_b": "LAST_NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FIRST_NAME": "Angela",
+          "LAST_NAME": "Sanders"
+        },
+        {
+          "FIRST_NAME": "Grant",
+          "LAST_NAME": "Gilmour"
+        },
+        {
+          "FIRST_NAME": "Luisa",
+          "LAST_NAME": "Guidi"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency FIRST_NAME \u2192 LAST_NAME is not meaningful as a functional dependency because first names are not unique identifiers; multiple individuals can share the same first name while having different last names. This relationship is coincidental in the current data and does not represent a reliable mapping that would hold true in future data. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "FIRST_NAME",
+      "column_b": "EMAIL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FIRST_NAME": "Angela",
+          "EMAIL": "angela.sanders@lpu.edu"
+        },
+        {
+          "FIRST_NAME": "Grant",
+          "EMAIL": "grant.gilmour@lpu.edu"
+        },
+        {
+          "FIRST_NAME": "Luisa",
+          "EMAIL": "luisa.guidi@lpu.edu"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the observed mapping is consistent, using FIRST_NAME as a determinant for EMAIL is not meaningful as multiple members can share the same first name, leading to potential future conflicts. This dependency is not reliable and does not represent a unique mapping relationship."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "FIRST_NAME",
+      "column_b": "POSITION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FIRST_NAME": "Angela",
+          "POSITION": "Member"
+        },
+        {
+          "FIRST_NAME": "Grant",
+          "POSITION": "Member"
+        },
+        {
+          "FIRST_NAME": "Luisa",
+          "POSITION": "Member"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency FIRST_NAME \u2192 POSITION is not meaningful as a functional dependency because multiple members can share the same first name but have different positions. This is evident from the data where 'Angela', 'Grant', 'Luisa', and others all have the position 'Member', while 'Sacha' is 'President' and 'Phillip' is 'Vice President'. Therefore, this relationship is coincidental and not reliable for future data."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "FIRST_NAME",
+      "column_b": "T_SHIRT_SIZE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FIRST_NAME": "Angela",
+          "T_SHIRT_SIZE": "Medium"
+        },
+        {
+          "FIRST_NAME": "Grant",
+          "T_SHIRT_SIZE": "X-Large"
+        },
+        {
+          "FIRST_NAME": "Luisa",
+          "T_SHIRT_SIZE": "Medium"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency FIRST_NAME \u2192 T_SHIRT_SIZE is not meaningful as a functional dependency because first names are not unique identifiers; multiple members can share the same first name, leading to potential inconsistencies in T_SHIRT_SIZE. This relationship appears coincidental and does not provide a reliable mapping for future data."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "FIRST_NAME",
+      "column_b": "PHONE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FIRST_NAME": "Angela",
+          "PHONE": "(651) 928-4507"
+        },
+        {
+          "FIRST_NAME": "Grant",
+          "PHONE": "403-555-1310"
+        },
+        {
+          "FIRST_NAME": "Luisa",
+          "PHONE": "442-555-5882"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency FIRST_NAME \u2192 PHONE is not meaningful as a functional dependency because first names are not unique identifiers; multiple members can share the same first name, leading to potential ambiguity in phone numbers. This makes the relationship coincidental rather than a reliable mapping. Enforcing this constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "FIRST_NAME",
+      "column_b": "ZIP",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FIRST_NAME": "Angela",
+          "ZIP": 55108
+        },
+        {
+          "FIRST_NAME": "Grant",
+          "ZIP": 29440
+        },
+        {
+          "FIRST_NAME": "Luisa",
+          "ZIP": 10002
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency FIRST_NAME \u2192 ZIP is not meaningful as a functional dependency because first names are not unique identifiers; multiple individuals can share the same first name, leading to potential inconsistencies in future data. This relationship appears coincidental in the current sample and does not provide a reliable mapping for query verification."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "FIRST_NAME",
+      "column_b": "LINK_TO_MAJOR",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "FIRST_NAME": "Angela",
+          "LINK_TO_MAJOR": "recxK3MHQFbR9J5uO"
+        },
+        {
+          "FIRST_NAME": "Grant",
+          "LINK_TO_MAJOR": "rec7BxKpjJ7bNph3O"
+        },
+        {
+          "FIRST_NAME": "Luisa",
+          "LINK_TO_MAJOR": "recdIBgeU38UbV2sy"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency FIRST_NAME \u2192 LINK_TO_MAJOR is not meaningful as a functional dependency because first names are not unique identifiers; multiple members can share the same first name, leading to potential inconsistencies in future data. Additionally, the presence of a null value for Randy indicates that the relationship is not reliable. This dependency does not represent a semantic relationship like code to name, and enforcing it would not add value for query verification."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "LAST_NAME",
+      "column_b": "EMAIL",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LAST_NAME": "Sanders",
+          "EMAIL": "angela.sanders@lpu.edu"
+        },
+        {
+          "LAST_NAME": "Gilmour",
+          "EMAIL": "grant.gilmour@lpu.edu"
+        },
+        {
+          "LAST_NAME": "Guidi",
+          "EMAIL": "luisa.guidi@lpu.edu"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the observed mapping is consistent, using LAST_NAME as a determinant for EMAIL is not meaningful as multiple members can share the same last name, leading to potential conflicts. This dependency is not reliable and does not represent a unique mapping relationship."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "LAST_NAME",
+      "column_b": "POSITION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LAST_NAME": "Sanders",
+          "POSITION": "Member"
+        },
+        {
+          "LAST_NAME": "Gilmour",
+          "POSITION": "Member"
+        },
+        {
+          "LAST_NAME": "Guidi",
+          "POSITION": "Member"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency LAST_NAME \u2192 POSITION is not meaningful as a functional dependency because a last name does not uniquely determine a position within the member table. Multiple members can share the same last name but hold different positions, indicating that this relationship is coincidental rather than a reliable mapping. Additionally, last names are not unique identifiers, which further undermines the validity of this dependency."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "LAST_NAME",
+      "column_b": "T_SHIRT_SIZE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LAST_NAME": "Sanders",
+          "T_SHIRT_SIZE": "Medium"
+        },
+        {
+          "LAST_NAME": "Gilmour",
+          "T_SHIRT_SIZE": "X-Large"
+        },
+        {
+          "LAST_NAME": "Guidi",
+          "T_SHIRT_SIZE": "Medium"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency LAST_NAME \u2192 T_SHIRT_SIZE is not meaningful as it is likely coincidental; multiple members can share the same last name but have different t-shirt sizes. This relationship does not represent a unique mapping and could break with future data, making it unreliable for constraint enforcement."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "LAST_NAME",
+      "column_b": "PHONE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LAST_NAME": "Sanders",
+          "PHONE": "(651) 928-4507"
+        },
+        {
+          "LAST_NAME": "Gilmour",
+          "PHONE": "403-555-1310"
+        },
+        {
+          "LAST_NAME": "Guidi",
+          "PHONE": "442-555-5882"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency LAST_NAME \u2192 PHONE is not meaningful as a functional dependency because last names are not unique identifiers; multiple members can share the same last name, leading to potential conflicts in phone numbers. This relationship appears coincidental in the current data and does not provide a reliable mapping for future data."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "LAST_NAME",
+      "column_b": "ZIP",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LAST_NAME": "Sanders",
+          "ZIP": 55108
+        },
+        {
+          "LAST_NAME": "Gilmour",
+          "ZIP": 29440
+        },
+        {
+          "LAST_NAME": "Guidi",
+          "ZIP": 10002
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency LAST_NAME \u2192 ZIP is not meaningful as last names do not uniquely determine ZIP codes. Multiple individuals can share the same last name but live in different ZIP code areas, making this a coincidental pattern rather than a reliable functional dependency. Enforcing this constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "LAST_NAME",
+      "column_b": "LINK_TO_MAJOR",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "LAST_NAME": "Sanders",
+          "LINK_TO_MAJOR": "recxK3MHQFbR9J5uO"
+        },
+        {
+          "LAST_NAME": "Gilmour",
+          "LINK_TO_MAJOR": "rec7BxKpjJ7bNph3O"
+        },
+        {
+          "LAST_NAME": "Guidi",
+          "LINK_TO_MAJOR": "recdIBgeU38UbV2sy"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency LAST_NAME \u2192 LINK_TO_MAJOR is not meaningful as a functional dependency because last names are not unique identifiers; multiple members can share the same last name, leading to potential inconsistencies. Additionally, the presence of a null value for one last name indicates that this relationship is not reliable or consistent across all data. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "EMAIL",
+      "column_b": "POSITION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EMAIL": "angela.sanders@lpu.edu",
+          "POSITION": "Member"
+        },
+        {
+          "EMAIL": "grant.gilmour@lpu.edu",
+          "POSITION": "Member"
+        },
+        {
+          "EMAIL": "luisa.guidi@lpu.edu",
+          "POSITION": "Member"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the observed mapping is consistent, the relationship between EMAIL and POSITION is not inherently meaningful as a functional dependency. The POSITION can vary for different members with different EMAILs, and it is not a unique identifier for the member's role. Additionally, EMAIL is not a primary key in the context of this analysis, and enforcing this dependency may not add significant value for query verification."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "EMAIL",
+      "column_b": "T_SHIRT_SIZE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EMAIL": "angela.sanders@lpu.edu",
+          "T_SHIRT_SIZE": "Medium"
+        },
+        {
+          "EMAIL": "grant.gilmour@lpu.edu",
+          "T_SHIRT_SIZE": "X-Large"
+        },
+        {
+          "EMAIL": "luisa.guidi@lpu.edu",
+          "T_SHIRT_SIZE": "Medium"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the observed mapping is consistent, the relationship between EMAIL and T_SHIRT_SIZE is not inherently meaningful as it does not represent a natural mapping like a code to a name. Additionally, T_SHIRT_SIZE can vary among members, and enforcing this dependency could lead to issues if a member changes their size preference. Therefore, it is not a reliable functional dependency to enforce."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "EMAIL",
+      "column_b": "PHONE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EMAIL": "angela.sanders@lpu.edu",
+          "PHONE": "(651) 928-4507"
+        },
+        {
+          "EMAIL": "grant.gilmour@lpu.edu",
+          "PHONE": "403-555-1310"
+        },
+        {
+          "EMAIL": "luisa.guidi@lpu.edu",
+          "PHONE": "442-555-5882"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EMAIL column serves as a unique identifier for each member, and it consistently maps to a single PHONE number across the observed data. This suggests a meaningful semantic relationship where each email address is associated with exactly one phone number. Enforcing this constraint would help maintain data integrity and verify query correctness, as it ensures that no two members can have the same email with different phone numbers."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "EMAIL",
+      "column_b": "ZIP",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EMAIL": "angela.sanders@lpu.edu",
+          "ZIP": 55108
+        },
+        {
+          "EMAIL": "grant.gilmour@lpu.edu",
+          "ZIP": 29440
+        },
+        {
+          "EMAIL": "luisa.guidi@lpu.edu",
+          "ZIP": 10002
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency EMAIL \u2192 ZIP is meaningful as it suggests a consistent mapping where each email corresponds to a specific ZIP code. Given that the observed mapping is 100% consistent across 33 rows, it indicates reliability. This relationship is not trivial since EMAIL is not a primary key in the context of the MEMBER table, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "EMAIL",
+      "column_b": "LINK_TO_MAJOR",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EMAIL": "angela.sanders@lpu.edu",
+          "LINK_TO_MAJOR": "recxK3MHQFbR9J5uO"
+        },
+        {
+          "EMAIL": "grant.gilmour@lpu.edu",
+          "LINK_TO_MAJOR": "rec7BxKpjJ7bNph3O"
+        },
+        {
+          "EMAIL": "luisa.guidi@lpu.edu",
+          "LINK_TO_MAJOR": "recdIBgeU38UbV2sy"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EMAIL column serves as a unique identifier for members, and it consistently maps to a LINK_TO_MAJOR value, indicating a meaningful relationship between a member's email and their major. This dependency is not trivial, as it provides a semantic link that can help verify the correctness of queries related to member majors."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "PHONE",
+      "column_b": "ZIP",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PHONE": "(651) 928-4507",
+          "ZIP": 55108
+        },
+        {
+          "PHONE": "403-555-1310",
+          "ZIP": 29440
+        },
+        {
+          "PHONE": "442-555-5882",
+          "ZIP": 10002
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While the observed mapping is consistent in the current data, the relationship between PHONE and ZIP is not semantically meaningful. A phone number does not uniquely determine a ZIP code, as multiple individuals can share the same ZIP code and have different phone numbers. This dependency is likely coincidental and may not hold true with future data, making it unreliable for enforcement as a constraint."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "PHONE",
+      "column_b": "LINK_TO_MAJOR",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "PHONE": "(651) 928-4507",
+          "LINK_TO_MAJOR": "recxK3MHQFbR9J5uO"
+        },
+        {
+          "PHONE": "403-555-1310",
+          "LINK_TO_MAJOR": "rec7BxKpjJ7bNph3O"
+        },
+        {
+          "PHONE": "442-555-5882",
+          "LINK_TO_MAJOR": "recdIBgeU38UbV2sy"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency PHONE \u2192 LINK_TO_MAJOR does not represent a meaningful semantic relationship. While there is a consistent mapping in the current data, the PHONE number is not a unique identifier for a member, as it can be shared or changed. Additionally, the presence of a null LINK_TO_MAJOR for one PHONE indicates that this relationship is not reliable and could break with future data. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "member",
+      "type": "functional",
+      "column_a": "ZIP",
+      "column_b": "LINK_TO_MAJOR",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "ZIP": 55108,
+          "LINK_TO_MAJOR": "recxK3MHQFbR9J5uO"
+        },
+        {
+          "ZIP": 29440,
+          "LINK_TO_MAJOR": "rec7BxKpjJ7bNph3O"
+        },
+        {
+          "ZIP": 10002,
+          "LINK_TO_MAJOR": "recdIBgeU38UbV2sy"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The dependency ZIP \u2192 LINK_TO_MAJOR does not represent a meaningful semantic relationship. ZIP codes do not inherently determine a specific major, as multiple majors can exist in the same ZIP code area. Additionally, the presence of null values for LINK_TO_MAJOR indicates that not all ZIP codes are associated with a major, further weakening the reliability of this dependency. Therefore, enforcing this as a constraint would not add value for query verification."
+      }
+    },
+    {
+      "table": "event",
+      "type": "functional",
+      "column_a": "EVENT_ID",
+      "column_b": "EVENT_NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EVENT_ID": "rec0Si5cQ4rJRVzd6",
+          "EVENT_NAME": "March Meeting"
+        },
+        {
+          "EVENT_ID": "rec0akZnLLpGUloLH",
+          "EVENT_NAME": "Officers meeting - January"
+        },
+        {
+          "EVENT_ID": "rec0dZPcWXF0QjNnE",
+          "EVENT_NAME": "Spring Elections"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "EVENT_ID is a unique identifier for each event, and it consistently maps to a single EVENT_NAME. This is a meaningful semantic relationship, as each event should have a unique name associated with its ID. Enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "event",
+      "type": "functional",
+      "column_a": "EVENT_ID",
+      "column_b": "EVENT_DATE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EVENT_ID": "rec0Si5cQ4rJRVzd6",
+          "EVENT_DATE": "2020-03-10T12:00:00"
+        },
+        {
+          "EVENT_ID": "rec0akZnLLpGUloLH",
+          "EVENT_DATE": "2020-01-14T09:30:00"
+        },
+        {
+          "EVENT_ID": "rec0dZPcWXF0QjNnE",
+          "EVENT_DATE": "2019-11-24T09:00:00"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The EVENT_ID is a unique identifier for each event, and it consistently maps to a single EVENT_DATE across all observed rows. This indicates a meaningful functional dependency, as each event should have a specific date associated with it. Enforcing this constraint would help ensure data integrity and verify query correctness regarding event scheduling."
+      }
+    },
+    {
+      "table": "event",
+      "type": "functional",
+      "column_a": "EVENT_ID",
+      "column_b": "TYPE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EVENT_ID": "rec0Si5cQ4rJRVzd6",
+          "TYPE": "Meeting"
+        },
+        {
+          "EVENT_ID": "rec0akZnLLpGUloLH",
+          "TYPE": "Meeting"
+        },
+        {
+          "EVENT_ID": "rec0dZPcWXF0QjNnE",
+          "TYPE": "Election"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency EVENT_ID \u2192 TYPE is meaningful as each event has a specific type associated with it. Given that EVENT_ID is a unique identifier for events, this relationship is reliable and not coincidental. Enforcing this constraint would help ensure data integrity and verify query correctness, as it guarantees that each event type is consistently associated with its corresponding event ID."
+      }
+    },
+    {
+      "table": "event",
+      "type": "functional",
+      "column_a": "EVENT_ID",
+      "column_b": "NOTES",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EVENT_ID": "rec0Si5cQ4rJRVzd6",
+          "NOTES": null
+        },
+        {
+          "EVENT_ID": "rec0akZnLLpGUloLH",
+          "NOTES": null
+        },
+        {
+          "EVENT_ID": "rec0dZPcWXF0QjNnE",
+          "NOTES": "All active members can vote for new officers between 4pm-8pm."
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency EVENT_ID \u2192 NOTES is meaningful because each event can have specific notes associated with it, and while some notes may be null, the relationship is consistent across the dataset. This constraint helps ensure that for each unique event, there is a clear mapping to its notes, which can aid in query verification and data integrity."
+      }
+    },
+    {
+      "table": "event",
+      "type": "functional",
+      "column_a": "EVENT_ID",
+      "column_b": "LOCATION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EVENT_ID": "rec0Si5cQ4rJRVzd6",
+          "LOCATION": "MU 215"
+        },
+        {
+          "EVENT_ID": "rec0akZnLLpGUloLH",
+          "LOCATION": null
+        },
+        {
+          "EVENT_ID": "rec0dZPcWXF0QjNnE",
+          "LOCATION": "MU 215"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency EVENT_ID \u2192 LOCATION is meaningful as each event should have a specific location associated with it. Although there are null values for LOCATION, the consistent mapping of EVENT_ID to LOCATION for non-null entries suggests a reliable relationship. Enforcing this constraint would help ensure that every event has a defined location, enhancing data integrity and query correctness."
+      }
+    },
+    {
+      "table": "event",
+      "type": "functional",
+      "column_a": "EVENT_ID",
+      "column_b": "STATUS",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EVENT_ID": "rec0Si5cQ4rJRVzd6",
+          "STATUS": "Open"
+        },
+        {
+          "EVENT_ID": "rec0akZnLLpGUloLH",
+          "STATUS": "Open"
+        },
+        {
+          "EVENT_ID": "rec0dZPcWXF0QjNnE",
+          "STATUS": "Open"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency EVENT_ID \u2192 STATUS is meaningful as each event has a specific status (Open, Closed, Planning) that is directly related to its unique identifier. This relationship is consistent across the observed data and reflects a natural mapping. Enforcing this constraint would help ensure data integrity and verify query correctness regarding event statuses."
+      }
+    },
+    {
+      "table": "event",
+      "type": "functional",
+      "column_a": "EVENT_NAME",
+      "column_b": "TYPE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EVENT_NAME": "March Meeting",
+          "TYPE": "Meeting"
+        },
+        {
+          "EVENT_NAME": "Officers meeting - January",
+          "TYPE": "Meeting"
+        },
+        {
+          "EVENT_NAME": "Spring Elections",
+          "TYPE": "Election"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency EVENT_NAME \u2192 TYPE is meaningful as it establishes a clear semantic relationship between event names and their types. The observed mapping is consistent across 42 rows, suggesting reliability. While EVENT_NAME is not a primary key, it provides valuable context for understanding the nature of events, which can enhance query correctness and data integrity."
+      }
+    },
+    {
+      "table": "event",
+      "type": "functional",
+      "column_a": "EVENT_NAME",
+      "column_b": "NOTES",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EVENT_NAME": "March Meeting",
+          "NOTES": null
+        },
+        {
+          "EVENT_NAME": "Officers meeting - January",
+          "NOTES": null
+        },
+        {
+          "EVENT_NAME": "Spring Elections",
+          "NOTES": "All active members can vote for new officers between 4pm-8pm."
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While there is a consistent mapping observed between EVENT_NAME and NOTES, the relationship is not inherently meaningful as EVENT_NAME is not a unique identifier (it can be repeated for different events). Additionally, the presence of null values in NOTES suggests that the relationship is not reliable or necessary for enforcing data integrity. Therefore, this dependency does not warrant a constraint."
+      }
+    },
+    {
+      "table": "event",
+      "type": "functional",
+      "column_a": "EVENT_NAME",
+      "column_b": "LOCATION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EVENT_NAME": "March Meeting",
+          "LOCATION": "MU 215"
+        },
+        {
+          "EVENT_NAME": "Officers meeting - January",
+          "LOCATION": null
+        },
+        {
+          "EVENT_NAME": "Spring Elections",
+          "LOCATION": "MU 215"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While there is a consistent mapping observed between EVENT_NAME and LOCATION, the presence of null values for some events indicates that the relationship is not universally applicable. Additionally, EVENT_NAME is not a unique identifier, as multiple events can share the same name, making this dependency unreliable and potentially coincidental. Therefore, enforcing this as a functional dependency constraint would not add value."
+      }
+    },
+    {
+      "table": "event",
+      "type": "functional",
+      "column_a": "EVENT_DATE",
+      "column_b": "NOTES",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "EVENT_DATE": "2020-03-10T12:00:00",
+          "NOTES": null
+        },
+        {
+          "EVENT_DATE": "2020-01-14T09:30:00",
+          "NOTES": null
+        },
+        {
+          "EVENT_DATE": "2019-11-24T09:00:00",
+          "NOTES": "All active members can vote for new officers between 4pm-8pm."
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "While there is a consistent mapping observed between EVENT_DATE and NOTES, the relationship is not meaningful as EVENT_DATE is not a unique identifier for events. Multiple events can occur on the same date, leading to potential future violations of this dependency. Additionally, the presence of null values in NOTES suggests that the relationship is not reliable or significant enough to enforce as a constraint."
+      }
+    },
+    {
+      "table": "event",
+      "type": "functional",
+      "column_a": "NOTES",
+      "column_b": "LOCATION",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "NOTES": null,
+          "LOCATION": "MU 215"
+        },
+        {
+          "NOTES": null,
+          "LOCATION": null
+        },
+        {
+          "NOTES": "All active members can vote for new officers between 4pm-8pm.",
+          "LOCATION": "MU 215"
+        }
+      ],
+      "decision": {
+        "should_constrain": 0,
+        "reasoning": "The relationship between NOTES and LOCATION does not represent a meaningful functional dependency. The NOTES field is not a unique identifier and can have multiple locations associated with it, indicating that the mapping is coincidental rather than a reliable semantic relationship. Additionally, the presence of null values in both columns suggests that this dependency is not consistent across all rows, further weakening the case for enforcing it as a constraint."
+      }
+    },
+    {
+      "table": "major",
+      "type": "functional",
+      "column_a": "MAJOR_ID",
+      "column_b": "MAJOR_NAME",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MAJOR_ID": "rec06DF6vZ1CyPKpc",
+          "MAJOR_NAME": "Outdoor Product Design and Development"
+        },
+        {
+          "MAJOR_ID": "rec09LedkREyskCNv",
+          "MAJOR_NAME": "Agricultural Communication"
+        },
+        {
+          "MAJOR_ID": "rec0Eanv576RhQllI",
+          "MAJOR_NAME": "Fisheries and Aquatic Sciences"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "MAJOR_ID is a unique identifier for each major, and it consistently maps to a single MAJOR_NAME. This is a meaningful semantic relationship, as each major ID corresponds to exactly one major name, which is essential for maintaining data integrity and ensuring accurate queries."
+      }
+    },
+    {
+      "table": "major",
+      "type": "functional",
+      "column_a": "MAJOR_ID",
+      "column_b": "DEPARTMENT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MAJOR_ID": "rec06DF6vZ1CyPKpc",
+          "DEPARTMENT": "School of Applied Sciences, Technology and Education"
+        },
+        {
+          "MAJOR_ID": "rec09LedkREyskCNv",
+          "DEPARTMENT": "School of Applied Sciences, Technology and Education"
+        },
+        {
+          "MAJOR_ID": "rec0Eanv576RhQllI",
+          "DEPARTMENT": "Watershed Sciences Department"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The MAJOR_ID uniquely determines the DEPARTMENT, as each major is associated with exactly one department. This is a meaningful semantic relationship, and enforcing this constraint would help ensure data integrity and verify query correctness."
+      }
+    },
+    {
+      "table": "major",
+      "type": "functional",
+      "column_a": "MAJOR_ID",
+      "column_b": "COLLEGE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MAJOR_ID": "rec06DF6vZ1CyPKpc",
+          "COLLEGE": "College of Agriculture and Applied Sciences"
+        },
+        {
+          "MAJOR_ID": "rec09LedkREyskCNv",
+          "COLLEGE": "College of Agriculture and Applied Sciences"
+        },
+        {
+          "MAJOR_ID": "rec0Eanv576RhQllI",
+          "COLLEGE": "College of Natural Resources"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency MAJOR_ID \u2192 COLLEGE is meaningful as each major is associated with exactly one college, which is a semantic relationship. The observed mapping is consistent across all rows, indicating reliability. Enforcing this constraint would help ensure data integrity and verify query correctness, as it prevents the possibility of a major being incorrectly associated with multiple colleges."
+      }
+    },
+    {
+      "table": "major",
+      "type": "functional",
+      "column_a": "MAJOR_NAME",
+      "column_b": "DEPARTMENT",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MAJOR_NAME": "Outdoor Product Design and Development",
+          "DEPARTMENT": "School of Applied Sciences, Technology and Education"
+        },
+        {
+          "MAJOR_NAME": "Agricultural Communication",
+          "DEPARTMENT": "School of Applied Sciences, Technology and Education"
+        },
+        {
+          "MAJOR_NAME": "Fisheries and Aquatic Sciences",
+          "DEPARTMENT": "Watershed Sciences Department"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency MAJOR_NAME \u2192 DEPARTMENT is meaningful as each major is consistently associated with a specific department, indicating a clear semantic relationship. The observed mapping is 100% consistent across the current data, suggesting reliability. This constraint would help verify query correctness by ensuring that any given major name always corresponds to the correct department."
+      }
+    },
+    {
+      "table": "major",
+      "type": "functional",
+      "column_a": "MAJOR_NAME",
+      "column_b": "COLLEGE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "MAJOR_NAME": "Outdoor Product Design and Development",
+          "COLLEGE": "College of Agriculture and Applied Sciences"
+        },
+        {
+          "MAJOR_NAME": "Agricultural Communication",
+          "COLLEGE": "College of Agriculture and Applied Sciences"
+        },
+        {
+          "MAJOR_NAME": "Fisheries and Aquatic Sciences",
+          "COLLEGE": "College of Natural Resources"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency MAJOR_NAME \u2192 COLLEGE is meaningful as each major is consistently associated with a specific college, indicating a reliable semantic relationship. This mapping is not coincidental, as it reflects the organizational structure of the academic institution. Enforcing this constraint would help ensure data integrity and verify query correctness regarding the relationship between majors and their respective colleges."
+      }
+    },
+    {
+      "table": "major",
+      "type": "functional",
+      "column_a": "DEPARTMENT",
+      "column_b": "COLLEGE",
+      "relationship": "->",
+      "sample_data": [
+        {
+          "DEPARTMENT": "School of Applied Sciences, Technology and Education",
+          "COLLEGE": "College of Agriculture and Applied Sciences"
+        },
+        {
+          "DEPARTMENT": "Watershed Sciences Department",
+          "COLLEGE": "College of Natural Resources"
+        },
+        {
+          "DEPARTMENT": "Economics and Finance Department",
+          "COLLEGE": "School of Business"
+        }
+      ],
+      "decision": {
+        "should_constrain": 1,
+        "reasoning": "The dependency DEPARTMENT \u2192 COLLEGE is meaningful as each department is consistently associated with a specific college, indicating a clear semantic relationship. This mapping is reliable with 100% consistency in the observed data, suggesting it is not coincidental. Enforcing this constraint would help ensure data integrity and verify query correctness regarding the relationship between departments and their respective colleges."
+      }
+    }
+  ]
+}
