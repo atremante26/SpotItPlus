@@ -7,9 +7,7 @@ import csv
 import traceback
 import argparse
 import re
-from constants import (
-    DATE_SHIFT_PATTERN,
-)
+from pathlib import Path
 
 def clean_up(generated_sql):
 
@@ -59,22 +57,28 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    CURRENT_PATH = os.path.dirname(os.path.abspath(__file__))
-    sys.path.insert(0, CURRENT_PATH)
+    # Set up paths
+    SPOTIT_ROOT = os.path.dirname(os.path.abspath(__file__))
+    VERIEQL_ROOT = os.path.join(SPOTIT_ROOT, "verieql")
+    sys.path.insert(0, VERIEQL_ROOT)
+    
+    # Imports from verieql
+    from constants import DATE_SHIFT_PATTERN
+
     if args.vanilla:
         from VeriEQL_vanilla.verieql import verify_sql_equivalence
         from VeriEQL_vanilla.constants import DIALECT
-        DEV_CONSTRAINTS_PATH = os.path.join(CURRENT_PATH, "BIRD_schemas", "table_constraints.json")
+        DEV_CONSTRAINTS_PATH = os.path.join(VERIEQL_ROOT, "BIRD_schemas", "table_constraints.json")
     else:
         from verieql import verify_sql_equivalence
         from constants import DIALECT
-        DEV_CONSTRAINTS_PATH = os.path.join(CURRENT_PATH, "constraint_extraction/constraint_results/LLM/all_constraints_LLM.json")
+        DEV_CONSTRAINTS_PATH = os.path.join(SPOTIT_ROOT, "constraint_extraction/constraint_results/LLM/all_constraints_LLM.json")
 
     question_idx = args.question
     bound_size = args.bound
 
-    BENCHMARKS_PATH = os.path.join(CURRENT_PATH, "BIRD_schemas", "dev.json")
-    DEV_TABLE_DEF_PATH = os.path.join(CURRENT_PATH, "BIRD_schemas", "table_to_columns.json")
+    BENCHMARKS_PATH = os.path.join(VERIEQL_ROOT, "BIRD_schemas", "dev.json")
+    DEV_TABLE_DEF_PATH = os.path.join(VERIEQL_ROOT, "BIRD_schemas", "table_to_columns.json")
 
     print(f"Running question {question_idx} with bound {bound_size}")
 
@@ -102,7 +106,8 @@ if __name__ == '__main__':
             print(f"GOLD_SQL AFTER: {gold_sql}")
 
             # Get the generated SQL
-            output_dic = json.load(open(args.prediction_path))
+            prediction_path = os.path.join('verieql', args.prediction_path)
+            output_dic = json.load(open(prediction_path))
             generated_sql = output_dic[str(question_idx)]
             stopper = '\t'
             generated_sql = generated_sql.split(stopper)[0]
