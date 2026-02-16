@@ -456,17 +456,17 @@ def find_dependency(df, schema, table_name=""):
 if __name__ == "__main__":
     # TEST WITH ALL DATABASES
     database_paths = {
-        "thrombosis_prediction": "BIRD_dev/thrombosis_prediction",
-        "california_schools": "BIRD_dev/california_schools",
-        "debit_card_specializing": "BIRD_dev/debit_card_specializing",
-        "financial": "BIRD_dev/financial",
-        "formula_1": "BIRD_dev/formula_1",
-        "card_games": "BIRD_dev/card_games",
-        "european_football_2": "BIRD_dev/european_football_2",
-        "toxicology": "BIRD_dev/toxicology",
-        "student_club": "BIRD_dev/student_club",
-        "superhero": "BIRD_dev/superhero",
-        "codebase_community": "BIRD_dev/codebase_community"
+        "thrombosis_prediction": "verieql/BIRD_dev/thrombosis_prediction",
+        "california_schools": "verieql/BIRD_dev/california_schools",
+        "debit_card_specializing": "verieql/BIRD_dev/debit_card_specializing",
+        "financial": "verieql/BIRD_dev/financial",
+        "formula_1": "verieql/BIRD_dev/formula_1",
+        "card_games": "verieql/BIRD_dev/card_games",
+        "european_football_2": "verieql/BIRD_dev/european_football_2",
+        "toxicology": "verieql/BIRD_dev/toxicology",
+        "student_club": "verieql/BIRD_dev/student_club",
+        "superhero": "verieql/BIRD_dev/superhero",
+        "codebase_community": "verieql/BIRD_dev/codebase_community"
     }
     
     all_constraints = {}  

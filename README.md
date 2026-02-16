@@ -23,6 +23,9 @@ If you already cloned without `--recursive`, initialize submodules:
 git submodule update --init verieql
 ```
 
+**Note:** You may see an error about cloning the Spider2 benchmark submodule. This can be safely ignored - Spider2 is not required for SpotIt+ functionality.
+
+
 ### Set Up Python Environment
 
 Create and activate a virtual environment:
@@ -42,37 +45,32 @@ pip install -r requirements.txt
 
 SpotIt+ uses a custom version of Z3 from VeriEQL. Follow these steps carefully:
 
-**Install z3-solver via pip:**
-```bash
-   pip install z3-solver
-```
-
 **Copy VeriEQL's custom Z3 bindings:**
    
    You need Z3 bindings from a working VeriEQL installation. If you have access to one, copy them:
 ```bash
-   # Replace /path/to/working/venv with your actual path
-   cp /path/to/working/venv/lib/python3.11/site-packages/z3/*.py \
-      venv/lib/python3.11/site-packages/z3/
+# Replace /path/to/working/venv with your actual path
+cp /path/to/working/venv/lib/python3.11/site-packages/z3/*.py \
+   venv/lib/python3.11/site-packages/z3/
    
-   cp -r /path/to/working/venv/lib/python3.11/site-packages/z3/lib \
-         venv/lib/python3.11/site-packages/z3/
+cp -r /path/to/working/venv/lib/python3.11/site-packages/z3/lib \
+   venv/lib/python3.11/site-packages/z3/
 ```
    
    Otherwise, you may need to build Z3 from source (see VeriEQL documentation).
 
 ## Quick Start
 
-Verify your installation by running a simple example:
+Verify your installation by running a simple example (using ALPHA-SQL method):
 ```bash
 # Run verification on a single question with SpotIt+ constraints
-python run_llm.py verieql/predictions/example.json --question 0 --bound 2
+python run_llm.py predictions/alpha_sql.json --question 1 --bound 2
 
 # Run with SpotIt+-NoV constraints
-python run_rule_based.py verieql/predictions/example.json --question 0 --bound 2
+python run_rule_based.py predictions/alpha_sql.json --question 1 --bound 2
 
 # Run SpotIt baseline
-python run_llm.py verieql/predictions/example.json --question 0 --bound 2 --vanilla
+python run_llm.py predictions/alpha_sql.json --question 1 --bound 2 --vanilla
 ```
 
 ## Usage
