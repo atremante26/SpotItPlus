@@ -1,13 +1,8 @@
 # SpotIt+
 
-Text-to-SQL systems translate natural language questions into executable database queries, serving as key components in modern chatbots and intelligent assistants. Determining whether a generated SQL query is correct is non-trivial. Existing evaluation platforms rely on test-based evaluation: executing the generated and gold SQL queries on a fixed test database and comparing results. This approach is overly optimistic, as non-equivalent queries may return identical results on test instances.
-
 We present SpotIt+, a bounded-verification-based tool for Text-to-SQL evaluation. SpotIt+ systematically searches for database instances that differentiate generated and gold queries. The result is either a proof of equivalence within the bounded search space, or a concrete counterexample database witnessing non-equivalence.
 
 A key challenge is ensuring counterexamples reflect realistic data. SpotIt+ addresses this through a constraint-extraction pipeline that mines database constraints from example databases and uses a LLM to validate whether mined constraints represent genuine domain properties. The system extracts five constraint types (range, categorical, null, functional dependencies, and ordering dependencies) and encodes them as SMT constraints, guiding the Z3 solver toward realistic counterexamples.
-
-Experimental results on the BIRD benchmark show that SpotIt+ generates more realistic counterexamples while uncovering numerous discrepancies that test-based evaluation overlooks. SpotIt+ extends [VeriEQL](https://github.com/VeriEQL/VeriEQL), a bounded SQL verification framework.
-
 
 ## Installation
 
